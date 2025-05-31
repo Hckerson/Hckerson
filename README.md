@@ -2,7 +2,7 @@
 
 A modern, responsive portfolio website built with Next.js 13, TypeScript, and Tailwind CSS. This portfolio showcases my work, skills, and experience as a full-stack developer.
 
-![Portfolio Preview](https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)
+![Portfolio Preview](https://res.cloudinary.com/hckerson/image/upload/f_auto,q_auto/v1/profile/hckerson?_a=BAMABkUq0)
 
 ## 🚀 Features
 
