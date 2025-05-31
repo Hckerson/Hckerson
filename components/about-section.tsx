@@ -26,9 +26,9 @@ const skills = [
 
 const education = [
   {
-    degree: "B.S. Computer Science",
+    degree: "B.S. Computer Engineering",
     institution: "University Name",
-    year: "2018-2022",
+    year: "2022-now",
     description:
       "Graduated with honors. Focused on web development and algorithms.",
   },
@@ -38,7 +38,7 @@ const education = [
     year: "2021",
     description:
       "Intensive 12-week program covering modern web development techniques.",
-  },
+  },  
 ];
 
 const certifications = [
@@ -148,7 +148,7 @@ export default function AboutSection() {
                   </CardContent>
                 </Card>
               </TabsContent>
-              <TabsContent value="certifications" className="mt-4">
+              {/* <TabsContent value="certifications" className="mt-4">
                 <Card>
                   <CardContent className="pt-6 space-y-4">
                     {certifications.map((cert, index) => (
@@ -164,7 +164,7 @@ export default function AboutSection() {
                     ))}
                   </CardContent>
                 </Card>
-              </TabsContent>
+              </TabsContent> */}
             </Tabs>
           </motion.div>
         </div>

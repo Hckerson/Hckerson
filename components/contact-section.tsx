@@ -60,7 +60,7 @@ export default function ContactSection() {
       form.reset();
       
       toast({
-        title: "Message sent",
+        title: "Message sent ",
         description: "Thank you for your message. I'll get back to you soon!",
       });
     }, 1500);
@@ -106,8 +106,8 @@ export default function ContactSection() {
                     <Mail className="h-5 w-5 mt-0.5 text-primary" />
                     <div>
                       <h4 className="font-medium">Email</h4>
-                      <a href="mailto:your.email@example.com" className="text-muted-foreground hover:text-primary transition-colors">
-                        your.email@example.com
+                      <a href="mailto:hckerson@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
+                        hckeron@gmail.com
                       </a>
                     </div>
                   </div>
@@ -117,7 +117,7 @@ export default function ContactSection() {
                     <div>
                       <h4 className="font-medium">Phone</h4>
                       <a href="tel:+11234567890" className="text-muted-foreground hover:text-primary transition-colors">
-                        +1 (123) 456-7890
+                        +234 9125194271
                       </a>
                     </div>
                   </div>
@@ -127,7 +127,7 @@ export default function ContactSection() {
                     <div>
                       <h4 className="font-medium">Location</h4>
                       <p className="text-muted-foreground">
-                        San Francisco, CA
+                        Lagos, Nigeria
                       </p>
                     </div>
                   </div>
@@ -138,7 +138,7 @@ export default function ContactSection() {
                   <div className="flex gap-4">
                     <Button variant="outline" size="icon" asChild>
                       <a
-                        href="https://github.com/yourusername"
+                        href="https://github.com/hckerson"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="GitHub Profile"
@@ -148,7 +148,7 @@ export default function ContactSection() {
                     </Button>
                     <Button variant="outline" size="icon" asChild>
                       <a
-                        href="https://linkedin.com/in/yourusername"
+                        href="https://linkedin.com/in/hckerson"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="LinkedIn Profile"
@@ -158,7 +158,7 @@ export default function ContactSection() {
                     </Button>
                     <Button variant="outline" size="icon" asChild>
                       <a
-                        href="https://twitter.com/yourusername"
+                        href="https://twitter.com/hckerson_jnr"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Twitter Profile"

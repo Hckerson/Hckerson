@@ -1,8 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { useToast } from "@/hooks/use-toast";
 import {
   FileText,
   Calendar,
@@ -12,7 +14,9 @@ import {
   Briefcase,
   GraduationCap,
   Award,
+  Loader2,
 } from "lucide-react";
+import { generateResume } from "@/lib/generate-resume";
 
 const workExperience = [
   {
@@ -53,12 +57,96 @@ const workExperience = [
   },
 ];
 
+const education = [
+  {
+    degree: "B.S. in Computer Science",
+    institution: "University Name",
+    year: "2018-2022",
+    description:
+      "Still grinding. Focused on web development, algorithms, and database systems. trying to break into the web3 space",
+  },
+];
+
+const certifications = [
+  // {
+  //   name: "AWS Certified Developer",
+  //   issuer: "Amazon Web Services",
+  //   year: "2023",
+  // },
+  // {
+  //   name: "Google Cloud Professional Developer",
+  //   issuer: "Google",
+  //   year: "2022",
+  // },
+  // {
+  //   name: "React Advanced Concepts",
+  //   issuer: "Frontend Masters",
+  //   year: "2022",
+  // },
+  {
+    name: "W3Schools JavaScript Certification",
+    issuer: "W3Schools",
+    year: "2024",
+  },
+  {
+    name: "W3Schools React Certification",
+    issuer: "W3Schools",
+    year: "2024",
+  },
+];
+
+const skills = [
+  "JavaScript",
+  "TypeScript",
+  "React",
+  "Next.js",
+  "Node.js",
+  "Python",
+  "PostgreSQL",
+  "AWS",
+  "Docker",
+  "CI/CD",
+  "Git",
+  "REST APIs",
+];
+
 export default function ResumeSection() {
+  const [isDownloading, setIsDownloading] = useState(false);
+  const { toast } = useToast();
+
+  const handleDownload = async () => {
+    setIsDownloading(true);
+    try {
+      await generateResume({
+        personalInfo: {
+          name: "Hckerson",
+          email: "hckerson@gmail.com",
+          phone: "+234 9125194271",
+          location: "Nigeria",
+        },
+        experience: workExperience,
+        education,
+        skills,
+        certifications,
+      });
+      toast({
+        title: "Resume downloaded successfully",
+        description: "Your resume has been downloaded in DOCX format.",
+      });
+    } catch (error) {
+      toast({
+        title: "Download failed",
+        description:
+          "There was an error downloading your resume. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsDownloading(false);
+    }
+  };
+
   return (
-    <section
-      id="resume"
-      className="py-24 scroll-mt-24 p-2"
-    >
+    <section id="resume" className="py-24 scroll-mt-24">
       <div className="container max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -72,9 +160,18 @@ export default function ResumeSection() {
             My professional journey and experience in the tech industry.
           </p>
           <div className="mt-6">
-            <Button size="lg">
-              <ArrowDownToLine className="mr-2 h-4 w-4" />
-              Download Full Resume
+            <Button size="lg" onClick={handleDownload} disabled={isDownloading}>
+              {isDownloading ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Generating Resume...
+                </>
+              ) : (
+                <>
+                  <ArrowDownToLine className="mr-2 h-4 w-4" />
+                  Download Resume
+                </>
+              )}
             </Button>
           </div>
         </motion.div>
@@ -92,7 +189,7 @@ export default function ResumeSection() {
             </div>
 
             <div className="relative border-l-2 border-muted pl-6 space-y-8 ml-3">
-              {workExperience.map((job, index) => (
+              {/* {workExperience.map((job, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
@@ -129,7 +226,7 @@ export default function ResumeSection() {
                     </CardContent>
                   </Card>
                 </motion.div>
-              ))}
+              ))} */}
             </div>
           </motion.div>
 
@@ -145,13 +242,15 @@ export default function ResumeSection() {
                 <GraduationCap className="h-6 w-6 text-primary" />
                 <h3 className="text-2xl font-semibold">Education</h3>
               </div>
-              
+
               <div className="relative border-l-2 border-muted pl-6 space-y-8 ml-3">
                 <div className="relative">
                   <div className="absolute -left-[37px] h-6 w-6 rounded-full bg-background border-2 border-primary" />
                   <Card>
                     <CardContent className="pt-6">
-                      <h4 className="text-lg font-semibold">B.S. in Computer Science</h4>
+                      <h4 className="text-lg font-semibold">
+                        B.S. in Computer Science
+                      </h4>
                       <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-sm text-muted-foreground mt-1">
                         <div className="flex items-center">
                           <Building className="mr-1 h-4 w-4" />
@@ -163,8 +262,9 @@ export default function ResumeSection() {
                         </div>
                       </div>
                       <p className="mt-3 text-sm">
-                        Graduated with honors. Focused on web development, algorithms, and database systems. 
-                        Senior project: Developed a real-time collaboration platform for remote teams.
+                        "Still grinding. Focused on web development, algorithms,
+                        and database systems. trying to break into the web3
+                        space"
                       </p>
                     </CardContent>
                   </Card>
@@ -177,24 +277,20 @@ export default function ResumeSection() {
                 <Award className="h-6 w-6 text-primary" />
                 <h3 className="text-2xl font-semibold">Certifications</h3>
               </div>
-              
+
               <div className="relative border-l-2 border-muted pl-6 space-y-8 ml-3">
                 <div className="relative">
                   <div className="absolute -left-[37px] h-6 w-6 rounded-full bg-background border-2 border-primary" />
                   <Card>
                     <CardContent className="pt-6 space-y-4">
-                      <div>
-                        <h4 className="font-medium">AWS Certified Developer</h4>
-                        <p className="text-sm text-muted-foreground">Amazon Web Services • 2023</p>
-                      </div>
-                      <div>
-                        <h4 className="font-medium">Google Cloud Professional Developer</h4>
-                        <p className="text-sm text-muted-foreground">Google • 2022</p>
-                      </div>
-                      <div>
-                        <h4 className="font-medium">React Advanced Concepts</h4>
-                        <p className="text-sm text-muted-foreground">Frontend Masters • 2022</p>
-                      </div>
+                      {certifications.map((cert, index) => (
+                        <div key={index}>
+                          <h4 className="font-medium">{cert.name}</h4>
+                          <p className="text-sm text-muted-foreground">
+                            {cert.issuer} • {cert.year}
+                          </p>
+                        </div>
+                      ))}
                     </CardContent>
                   </Card>
                 </div>

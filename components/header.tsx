@@ -44,7 +44,7 @@ export default function Header() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 p-2 transition-all duration-300",
         scrolled
           ? "bg-background/80 backdrop-blur-md shadow-sm py-3"
           : "bg-transparent py-6"
@@ -56,7 +56,7 @@ export default function Header() {
           className="text-xl font-bold transition-all hover:opacity-80"
           aria-label="Go to homepage"
         >
-          YourName
+          Hckerson
         </Link>
 
         {/* Desktop Navigation */}

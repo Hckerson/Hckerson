@@ -29,7 +29,7 @@ export default function HeroSection() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight"
               >
-                <span className="text-primary">Your Name</span>
+                <span className="text-primary">Hckerson</span>
                 <br />
                 Full-Stack Developer
               </motion.h1>
@@ -69,7 +69,7 @@ export default function HeroSection() {
             >
               <Button variant="ghost" size="icon" asChild>
                 <a
-                  href="https://github.com/yourusername"
+                  href="https://github.com/Hckerson"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub Profile"
@@ -79,7 +79,7 @@ export default function HeroSection() {
               </Button>
               <Button variant="ghost" size="icon" asChild>
                 <a
-                  href="https://linkedin.com/in/yourusername"
+                  href="https://linkedin.com/in/hckerson"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn Profile"
@@ -89,7 +89,7 @@ export default function HeroSection() {
               </Button>
               <Button variant="ghost" size="icon" asChild>
                 <a
-                  href="https://twitter.com/yourusername"
+                  href="https://twitter.com/hckerson_jnr"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Twitter Profile"
@@ -108,8 +108,8 @@ export default function HeroSection() {
           >
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden border-4 border-background shadow-xl mx-auto">
               <img
-                src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                alt="Your Name"
+                src="https://res.cloudinary.com/hckerson/image/upload/f_auto,q_auto/v1/profile/hckerson?_a=BAMABkUq0"
+                alt="Hckerson"
                 className="w-full h-full object-cover"
               />
             </div>

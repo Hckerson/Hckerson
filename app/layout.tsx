@@ -1,31 +1,53 @@
-import './globals.css';
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import { ThemeProvider } from '@/components/theme-provider';
-import Header from '@/components/header';
-import Footer from '@/components/footer';
+import "./globals.css";
+import type { Metadata } from "next";
+import { inter } from "@/app/fonts/font";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
+import LenisScrollContainer from "@/hooks/lenis";
+import { ThemeProvider } from "@/components/theme-provider";
 
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Your Name - Portfolio',
-  description: 'Full-Stack Developer specializing in Next.js & Tailwind CSS',
-  keywords: ['developer', 'portfolio', 'web development', 'nextjs', 'tailwind css'],
-  authors: [{ name: 'Your Name' }],
-  creator: 'Your Name',
+  metadataBase: new URL('https://hckerson.vercel.app'),
+  title: "Hckerson - Portfolio",
+  description: "Full-Stack Developer specializing in Next.js & Tailwind CSS",
+  keywords: [
+    "developer",
+    "portfolio",
+    "web development",
+    "nextjs",
+    "tailwind css",
+    "backend",
+    "frontend",
+    "full-stack",
+    "javascript",
+    "typescript",
+    "react",
+    "nodejs",
+    "express",
+    "mongodb",
+    "postgresql",
+    "docker",
+    "kubernetes",
+    "aws",
+    "ci/cd",
+    "devops", 
+  ],
+  authors: [{ name: "Hckerson" }],
+  creator: "Hckerson",
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://yourportfolio.com',
-    title: 'Your Name - Portfolio',
-    description: 'Full-Stack Developer specializing in Next.js & Tailwind CSS',
-    siteName: 'Your Name Portfolio',
+    type: "website",
+    locale: "en_US",
+    url: "https://hckerson.vercel.app",
+    title: "Hckerson - Portfolio",
+    description: "Full-Stack Developer specializing in Next.js & Tailwind CSS",
+    siteName: "Hckerson Portfolio",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Your Name - Portfolio',
-    description: 'Full-Stack Developer specializing in Next.js & Tailwind CSS',
-    creator: '@yourusername',
+    card: "summary_large_image",
+    title: "Hckerson - Portfolio",
+    description: "Full-Stack Developer specializing in Next.js & Tailwind CSS",
+    creator: "@hckerson",
   },
 };
 
@@ -45,7 +67,9 @@ export default function RootLayout({
         >
           <div className="flex min-h-screen flex-col">
             <Header />
-            <main className="flex-1">{children}</main>
+            <main className="flex-1">
+              <LenisScrollContainer>{children}</LenisScrollContainer>
+            </main>
             <Footer />
           </div>
         </ThemeProvider>
