@@ -27,8 +27,8 @@ const skills = [
 const education = [
   {
     degree: "B.S. Computer Engineering",
-    institution: "University Name",
-    year: "2022-now",
+    institution: "Obafemi Awolowo University",
+    year: "2023-now",
     description:
       "Graduated with honors. Focused on web development and algorithms.",
   },
@@ -42,23 +42,32 @@ const education = [
 ];
 
 const certifications = [
+  // {
+  //   name: "AWS Certified Developer",
+  //   issuer: "Amazon Web Services",
+  //   year: "2023",
+  // },
+  // {
+  //   name: "Google Cloud Professional Developer",
+  //   issuer: "Google",
+  //   year: "2022",
+  // },
+  // {
+  //   name: "React Advanced Concepts",
+  //   issuer: "Frontend Masters",
+  //   year: "2022",
+  // },
   {
-    name: "AWS Certified Developer",
-    issuer: "Amazon Web Services",
-    year: "2023",
+    name: "W3Schools JavaScript Certification",
+    issuer: "W3Schools",
+    year: "2024",
   },
   {
-    name: "Google Cloud Professional Developer",
-    issuer: "Google",
-    year: "2022",
-  },
-  {
-    name: "React Advanced Concepts",
-    issuer: "Frontend Masters",
-    year: "2022",
+    name: "W3Schools React Certification",
+    issuer: "W3Schools",
+    year: "2024",
   },
 ];
-
 export default function AboutSection() {
   return (
     <section
@@ -89,7 +98,7 @@ export default function AboutSection() {
             <h3 className="text-2xl font-semibold mb-4">My Story</h3>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                I've been coding for over 5 years, starting with simple HTML websites and gradually expanding my skillset to encompass the entire web development stack.
+                I've been coding for over 3 years, starting with simple HTML websites and gradually expanding my skillset to encompass the entire web development stack.
               </p>
               <p>
                 My journey has taken me through startups, agencies, and enterprise environments, where I've developed a versatile approach to problem-solving and a deep appreciation for user-centered design.
@@ -148,7 +157,7 @@ export default function AboutSection() {
                   </CardContent>
                 </Card>
               </TabsContent>
-              {/* <TabsContent value="certifications" className="mt-4">
+              <TabsContent value="certifications" className="mt-4">
                 <Card>
                   <CardContent className="pt-6 space-y-4">
                     {certifications.map((cert, index) => (
@@ -164,7 +173,7 @@ export default function AboutSection() {
                     ))}
                   </CardContent>
                 </Card>
-              </TabsContent> */}
+              </TabsContent>
             </Tabs>
           </motion.div>
         </div>

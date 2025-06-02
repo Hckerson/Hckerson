@@ -25,39 +25,35 @@ const workExperience = [
     location: "Remote",
     period: "2023 - Present",
     responsibilities: [
-      "Implemented real-time file synchronization system using Firebase",
-      "Developed secure file upload/download functionality with drag-and-drop features",
-      "Built efficient state management system for file operations",
-      "Collaborated with team to implement responsive design patterns",
-      "Optimized application performance for large file transfers",
-      "Integrated real-time collaboration features",
+      "Developed a clone of the Dropbox file sharing service using React, Node.js, and Firebase",
+      "Created a secure file upload/download functionality with drag-and-drop features",
+      "Built an efficient state management system for file operations",
+      "Collaborated with a team to implement responsive design patterns",
     ],
   },
   {
     title: "Backend Developer",
     company: "One Place Clone",
     location: "Remote",
-    period: "2023 - Present",
+    period: "2024 - Present",
     responsibilities: [
-      "Developed retail management system for store operations",
-      "Implemented efficient data management for sales and inventory tracking",
-      "Created responsive design patterns for various store devices",
-      "Built user authentication and authorization systems",
-      "Optimized database queries for better performance",
-      "Collaborated with frontend team on API integration",
+      "Developed a clone of the One Place retail management system using React, Node.js, and PostgreSQL",
+      "Created a secure user authentication and authorization system",
+      "Built a responsive dashboard for sales and inventory tracking",
+      "Developed a market analysis tool and portfolio management features",
+      "Collaborated with a team to implement responsive design patterns",
     ],
   },
   {
     title: "Full Stack Developer",
     company: "FinAdvise",
     location: "Remote",
-    period: "2023 - Present",
+    period: "2025 - Present",
     responsibilities: [
       "Implemented real-time financial data visualization using Chart.js",
       "Built secure user authentication system",
       "Developed intuitive dashboard for investment tracking",
       "Created market analysis tools and portfolio management features",
-      "Integrated real-time data updates and caching mechanisms",
       "Collaborated on system architecture and performance optimization",
     ],
   },
@@ -65,9 +61,9 @@ const workExperience = [
     title: "Full Stack Developer",
     company: "Serene Heaven",
     location: "Remote",
-    period: "2023 - Present",
+    period: "2025 - Present",
     responsibilities: [
-      "Implemented secure payment processing with Stripe integration",
+      // "Implemented secure payment processing with Stripe integration",
       "Developed responsive booking system with real-time availability",
       "Created admin dashboard for reservation management",
       "Built room inventory management system",
@@ -184,7 +180,7 @@ export default function ResumeSection() {
             linkedin: "https://linkedin.com/in/hckerson",
             portfolio: "https://hckerson.vercel.app",
             twitter: "https://twitter.com/hckerson_jnr", // optional
-            email: "hckerson@gmail.com"
+            email: "hckerson@gmail.com",
           },
         },
         experience: workExperience,
@@ -252,7 +248,7 @@ export default function ResumeSection() {
             </div>
 
             <div className="relative border-l-2 border-muted pl-6 space-y-8 ml-3">
-              {/* {workExperience.map((job, index) => (
+              {workExperience.map((job, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
@@ -289,7 +285,7 @@ export default function ResumeSection() {
                     </CardContent>
                   </Card>
                 </motion.div>
-              ))} */}
+              ))}
             </div>
           </motion.div>
 
