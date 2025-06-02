@@ -185,7 +185,7 @@ export default function ProjectsSection() {
       : projects.filter((project) => project.category === activeTab);
 
   return (
-    <section id="projects" className="py-24 scroll-mt-24 p-2">
+    <section id="projects" className="py-24 scroll-mt-24 p-2 2xl:flex justify-center">
       <div className="container max-w-[1280px]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
