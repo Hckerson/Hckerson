@@ -72,9 +72,9 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="py-24 bg-muted/50 scroll-mt-24 p-2"
+      className="py-24 bg-muted/50 scroll-mt-24 p-2 2xl:flex justify-center"
     >
-      <div className="container max-w-5xl">
+      <div className="container max-w-5xl ">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

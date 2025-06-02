@@ -205,7 +205,7 @@ export default function ResumeSection() {
   };
 
   return (
-    <section id="resume" className="py-24 scroll-mt-24">
+    <section id="resume" className="py-24 scroll-mt-24 px-3 2xl:flex justify-center">
       <div className="container max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
