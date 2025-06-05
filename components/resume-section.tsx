@@ -111,9 +111,9 @@ const workExperience = [
 
 const education = [
   {
-    degree: "B.S. in Computer Science",
+    degree: "B.S.C in Computer Science",
     institution: "Obafemi Awolowo University",
-    year: "2022-now",
+    year: "2023-now",
     description:
       "Still grinding. Focused on web development, algorithms, and database systems. trying to break into the web3 space",
   },
@@ -313,11 +313,11 @@ export default function ResumeSection() {
                       <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-sm text-muted-foreground mt-1">
                         <div className="flex items-center">
                           <Building className="mr-1 h-4 w-4" />
-                          University Name
+                          Obafemi Awolowo University
                         </div>
                         <div className="flex items-center">
                           <Calendar className="mr-1 h-4 w-4" />
-                          2018 - 2022
+                          2023 - now
                         </div>
                       </div>
                       <p className="mt-3 text-sm">
