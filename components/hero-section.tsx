@@ -12,7 +12,7 @@ export default function HeroSection() {
 
   return (
     <>
-      <section className="relative min-h-screen flex items-center justify-center py-24 pt-36 overflow-hidden">
+      <section className="relative min-h-screen flex items-center p-3 justify-center py-24 pt-36 overflow-hidden">
         {/* Background decoration */}
         <div className="absolute inset-0 -z-10">
           <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />

@@ -185,7 +185,10 @@ export default function ProjectsSection() {
       : projects.filter((project) => project.category === activeTab);
 
   return (
-    <section id="projects" className="py-24 scroll-mt-24 p-2 2xl:flex justify-center">
+    <section
+      id="projects"
+      className="py-24 scroll-mt-24 p-2 flex justify-center"
+    >
       <div className="container max-w-[1280px]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -209,17 +212,25 @@ export default function ProjectsSection() {
           onValueChange={setActiveTab}
           className="mb-8"
         >
-          <div className="flex justify-center">
+          <div className="flex justify-center ">
             <TabsList>
-              <TabsTrigger value="all">All Projects</TabsTrigger>
-              <TabsTrigger value="frontend">Frontend</TabsTrigger>
-              <TabsTrigger value="backend">Backend</TabsTrigger>
-              <TabsTrigger value="fullstack">Full Stack</TabsTrigger>
+              <TabsTrigger value="all" className="md:text-base text-xs">
+                All Projects
+              </TabsTrigger>
+              <TabsTrigger value="frontend" className="md:text-base text-xs">
+                Frontend
+              </TabsTrigger>
+              <TabsTrigger value="backend" className="md:text-base text-xs">
+                Backend
+              </TabsTrigger>
+              <TabsTrigger value="fullstack" className="md:text-base text-xs">
+                Full Stack
+              </TabsTrigger>
             </TabsList>
           </div>
         </Tabs>
 
-        <div className="grid gap-8 md:grid-cols-3 lg:grid-cols-4">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {filteredProjects.map((project, index) => (
             <motion.div
               key={project.id}

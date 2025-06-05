@@ -16,7 +16,7 @@ import {
   Award,
   Loader2,
 } from "lucide-react";
-import { generateResume } from "@/lib/generate-resume";
+import { generateResume } from "@/lib/actions/generate-resume";
 
 const workExperience = [
   {
@@ -205,7 +205,10 @@ export default function ResumeSection() {
   };
 
   return (
-    <section id="resume" className="py-24 scroll-mt-24 px-3 2xl:flex justify-center">
+    <section
+      id="resume"
+      className="py-24 scroll-mt-24 px-3 flex justify-center"
+    >
       <div className="container max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

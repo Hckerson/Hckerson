@@ -1,6 +1,6 @@
 "use client";
-
 import { useState } from "react";
+import axios from "axios";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -17,23 +17,27 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Github, 
-  Linkedin, 
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Github,
+  Linkedin,
   Twitter,
   Send,
-  Loader2
+  Loader2,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
   email: z.string().email({ message: "Please enter a valid email address." }),
-  subject: z.string().min(5, { message: "Subject must be at least 5 characters." }),
-  message: z.string().min(10, { message: "Message must be at least 10 characters." }),
+  subject: z
+    .string()
+    .min(5, { message: "Subject must be at least 5 characters." }),
+  message: z
+    .string()
+    .min(10, { message: "Message must be at least 10 characters." }),
 });
 
 export default function ContactSection() {
@@ -50,26 +54,28 @@ export default function ContactSection() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
-    
-    // Simulate API call
-    setTimeout(() => {
-      console.log(values);
-      setIsSubmitting(false);
-      form.reset();
-      
+    const result = await axios.post("/api/routeClientMail", form);
+    if (result.status == 200) {
       toast({
         title: "Message sent ",
         description: "Thank you for your message. I'll get back to you soon!",
       });
-    }, 1500);
+      setIsSubmitting(false);
+    } else {
+      toast({
+        title: "Error sending message",
+        description: "Try again later",
+      });
+      setIsSubmitting(false);
+    }
   }
 
   return (
     <section
       id="contact"
-      className="py-24 bg-muted/50 scroll-mt-24 p-2 2xl:flex justify-center"
+      className="py-24 bg-muted/50 scroll-mt-24 3 flex justify-center"
     >
       <div className="container max-w-5xl">
         <motion.div
@@ -81,7 +87,8 @@ export default function ContactSection() {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Have a project in mind or just want to say hello? Feel free to reach out!
+            Have a project in mind or just want to say hello? Feel free to reach
+            out!
           </p>
         </motion.div>
 
@@ -97,7 +104,9 @@ export default function ContactSection() {
                 <div className="space-y-4">
                   <h3 className="text-xl font-semibold">Contact Information</h3>
                   <p className="text-muted-foreground">
-                    Feel free to reach out through any of the following channels. I'm always open to discussing new projects, creative ideas, or opportunities.
+                    Feel free to reach out through any of the following
+                    channels. I'm always open to discussing new projects,
+                    creative ideas, or opportunities.
                   </p>
                 </div>
 
@@ -106,29 +115,33 @@ export default function ContactSection() {
                     <Mail className="h-5 w-5 mt-0.5 text-primary" />
                     <div>
                       <h4 className="font-medium">Email</h4>
-                      <a href="mailto:hckerson@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
-                        hckeron@gmail.com
+                      <a
+                        href="mailto:hckerson@gmail.com"
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        hckerson@gmail.com
                       </a>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start gap-3">
                     <Phone className="h-5 w-5 mt-0.5 text-primary" />
                     <div>
                       <h4 className="font-medium">Phone</h4>
-                      <a href="tel:+11234567890" className="text-muted-foreground hover:text-primary transition-colors">
+                      <a
+                        href="tel:+11234567890"
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                      >
                         +234 9125194271
                       </a>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start gap-3">
                     <MapPin className="h-5 w-5 mt-0.5 text-primary" />
                     <div>
                       <h4 className="font-medium">Location</h4>
-                      <p className="text-muted-foreground">
-                        Lagos, Nigeria
-                      </p>
+                      <p className="text-muted-foreground">Lagos, Nigeria</p>
                     </div>
                   </div>
                 </div>
@@ -181,7 +194,10 @@ export default function ContactSection() {
             <Card>
               <CardContent className="pt-6">
                 <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                  <form
+                    onSubmit={form.handleSubmit(onSubmit)}
+                    className="space-y-6"
+                  >
                     <FormField
                       control={form.control}
                       name="name"
@@ -202,7 +218,11 @@ export default function ContactSection() {
                         <FormItem>
                           <FormLabel>Email</FormLabel>
                           <FormControl>
-                            <Input placeholder="your.email@example.com" type="email" {...field} />
+                            <Input
+                              placeholder="your.email@example.com"
+                              type="email"
+                              {...field}
+                            />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -215,7 +235,10 @@ export default function ContactSection() {
                         <FormItem>
                           <FormLabel>Subject</FormLabel>
                           <FormControl>
-                            <Input placeholder="What's this about?" {...field} />
+                            <Input
+                              placeholder="What's this about?"
+                              {...field}
+                            />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -228,17 +251,21 @@ export default function ContactSection() {
                         <FormItem>
                           <FormLabel>Message</FormLabel>
                           <FormControl>
-                            <Textarea 
-                              placeholder="Your message here..." 
-                              className="min-h-32" 
-                              {...field} 
+                            <Textarea
+                              placeholder="Your message here..."
+                              className="min-h-32"
+                              {...field}
                             />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
                       )}
                     />
-                    <Button type="submit" className="w-full" disabled={isSubmitting}>
+                    <Button
+                      type="submit"
+                      className="w-full"
+                      disabled={isSubmitting}
+                    >
                       {isSubmitting ? (
                         <>
                           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
