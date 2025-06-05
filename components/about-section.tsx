@@ -38,7 +38,7 @@ const education = [
     year: "2021",
     description:
       "Intensive 12-week program covering modern web development techniques.",
-  },  
+  },
 ];
 
 const certifications = [
@@ -72,7 +72,7 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="py-24 bg-muted/50 scroll-mt-24 p-2 2xl:flex justify-center"
+      className="py-24 bg-muted/50 scroll-mt-24 p-3 flex justify-center"
     >
       <div className="container max-w-5xl ">
         <motion.div
@@ -84,7 +84,8 @@ export default function AboutSection() {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            I'm a passionate full-stack developer with a keen eye for detail and a love for clean, efficient code.
+            I'm a passionate full-stack developer with a keen eye for detail and
+            a love for clean, efficient code.
           </p>
         </motion.div>
 
@@ -98,16 +99,25 @@ export default function AboutSection() {
             <h3 className="text-2xl font-semibold mb-4">My Story</h3>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                I've been coding for over 3 years, starting with simple HTML websites and gradually expanding my skillset to encompass the entire web development stack.
+                I've been coding for over 3 years, starting with simple HTML
+                websites and gradually expanding my skillset to encompass the
+                entire web development stack.
               </p>
               <p>
-                My journey has taken me through startups, agencies, and enterprise environments, where I've developed a versatile approach to problem-solving and a deep appreciation for user-centered design.
+                My journey has taken me through startups, agencies, and
+                enterprise environments, where I've developed a versatile
+                approach to problem-solving and a deep appreciation for
+                user-centered design.
               </p>
               <p>
-                I'm particularly passionate about creating accessible, performant web applications that provide exceptional user experiences regardless of device or connection speed.
+                I'm particularly passionate about creating accessible,
+                performant web applications that provide exceptional user
+                experiences regardless of device or connection speed.
               </p>
               <p>
-                When I'm not coding, you'll find me hiking mountain trails, experimenting with new cooking recipes, or contributing to open-source projects.
+                When I'm not coding, you'll find me hiking mountain trails,
+                experimenting with new cooking recipes, or contributing to
+                open-source projects.
               </p>
             </div>
           </motion.div>
@@ -161,7 +171,10 @@ export default function AboutSection() {
                 <Card>
                   <CardContent className="pt-6 space-y-4">
                     {certifications.map((cert, index) => (
-                      <div key={index} className="flex justify-between items-center">
+                      <div
+                        key={index}
+                        className="flex justify-between items-center"
+                      >
                         <div>
                           <h4 className="font-semibold">{cert.name}</h4>
                           <p className="text-sm text-muted-foreground">

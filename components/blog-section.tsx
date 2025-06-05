@@ -20,7 +20,8 @@ const articles = [
     title: "How I Optimized Next.js Page Load by 50%",
     excerpt:
       "A step-by-step guide on how I improved the performance of a Next.js application using various optimization techniques.",
-    image: "https://images.pexels.com/photos/4974915/pexels-photo-4974915.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    image:
+      "https://images.pexels.com/photos/4974915/pexels-photo-4974915.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     date: "May 15, 2023",
     readTime: "6 min read",
     tags: ["Next.js", "Performance", "Web Vitals"],
@@ -31,7 +32,8 @@ const articles = [
     title: "Building a Stripe Subscription System with Supabase",
     excerpt:
       "Learn how to implement a complete subscription system using Stripe and Supabase for your SaaS application.",
-    image: "https://images.pexels.com/photos/5483075/pexels-photo-5483075.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    image:
+      "https://images.pexels.com/photos/5483075/pexels-photo-5483075.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     date: "April 22, 2023",
     readTime: "8 min read",
     tags: ["Stripe", "Supabase", "SaaS"],
@@ -42,7 +44,8 @@ const articles = [
     title: "Lessons from My First Hackathon",
     excerpt:
       "Reflections and key takeaways from participating in my first 48-hour hackathon and what I would do differently next time.",
-    image: "https://images.pexels.com/photos/3182746/pexels-photo-3182746.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    image:
+      "https://images.pexels.com/photos/3182746/pexels-photo-3182746.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     date: "March 10, 2023",
     readTime: "5 min read",
     tags: ["Hackathon", "Team Collaboration", "Rapid Development"],
@@ -54,7 +57,7 @@ export default function BlogSection() {
   return (
     <section
       id="blog"
-      className="py-24 bg-muted/50 scroll-mt-24 p-2 2xl:flex justify-center"
+      className="py-24 bg-muted/50 scroll-mt-24 p-3 flex justify-center"
     >
       <div className="container max-w-5xl">
         <motion.div
@@ -64,9 +67,12 @@ export default function BlogSection() {
           transition={{ duration: 0.5 }}
           className="mb-12 text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Latest Articles</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Latest Articles
+          </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Sharing my knowledge and experiences through technical articles and tutorials.
+            Sharing my knowledge and experiences through technical articles and
+            tutorials.
           </p>
         </motion.div>
 
@@ -88,7 +94,9 @@ export default function BlogSection() {
                   />
                 </div>
                 <CardHeader>
-                  <CardTitle className="line-clamp-2">{article.title}</CardTitle>
+                  <CardTitle className="line-clamp-2">
+                    {article.title}
+                  </CardTitle>
                   <div className="flex items-center gap-4 text-xs text-muted-foreground">
                     <div className="flex items-center">
                       <CalendarDays className="mr-1 h-3 w-3" />
@@ -113,7 +121,11 @@ export default function BlogSection() {
                   </div>
                 </CardContent>
                 <CardFooter>
-                  <Button asChild variant="ghost" className="w-full justify-between group">
+                  <Button
+                    asChild
+                    variant="ghost"
+                    className="w-full justify-between group"
+                  >
                     <Link href={article.url}>
                       Read article
                       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
