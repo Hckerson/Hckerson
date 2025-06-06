@@ -6,9 +6,8 @@ import Footer from "@/components/footer";
 import LenisScrollContainer from "@/hooks/lenis";
 import { ThemeProvider } from "@/components/theme-provider";
 
-
 export const metadata: Metadata = {
-  metadataBase: new URL('https://hckerson.vercel.app'),
+  metadataBase: new URL("https://hckerson.vercel.app"),
   title: "Hckerson - Portfolio",
   description: "Full-Stack Developer specializing in Next.js & Tailwind CSS",
   keywords: [
@@ -31,7 +30,7 @@ export const metadata: Metadata = {
     "kubernetes",
     "aws",
     "ci/cd",
-    "devops", 
+    "devops",
   ],
   authors: [{ name: "Hckerson" }],
   creator: "Hckerson",
@@ -48,6 +47,10 @@ export const metadata: Metadata = {
     title: "Hckerson - Portfolio",
     description: "Full-Stack Developer specializing in Next.js & Tailwind CSS",
     creator: "@hckerson",
+  },
+  icons: {
+    icon: [{ url: "/favicon.ico" }, { url: "/icon.png", type: "image/png" }],
+    apple: [{ url: "/apple-icon.png" }],
   },
 };
 
