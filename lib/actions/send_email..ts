@@ -10,26 +10,27 @@ export default async function sendEmail({
   subject: string;
   message: string;
 }) {
+  await transporter.verify();
+  console.log("Server is ready to take our messages");
   try {
-    // Verify the connection first
-    await transporter.verify();
-    console.log("Server is ready to take our messages");
-
-    // Send the email and wait for the result
     const info = await transporter.sendMail({
-      from: process.env.SENDER_EMAIL,
-      to: to,
-      subject: subject,
-      text: message,
-      html: message,
+      from: process.env.SENDER_EMAIL, // sender address
+      to: to, // list of receivers
+      subject: subject, // Subject line
+      text: message, // plain text body
+      html: message, // html body
     });
-
     console.log("Message sent: %s", info.messageId);
     console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-
-    return info; // Return the info object for better error handling
+    return {
+      success: true,
+      messageID: info.messageId,
+      previewUrl: nodemailer.getTestMessageUrl(info),
+    };
   } catch (err) {
-    console.error("Error while sending mail:", err);
-    throw err; // Re-throw the error to be caught by the route handler
+    console.error("Error while sending mail", err);
+    return {
+      success: false,
+    };
   }
 }
