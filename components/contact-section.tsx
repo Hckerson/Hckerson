@@ -58,12 +58,15 @@ export default function ContactSection() {
     setIsSubmitting(true);
     const result = await axios.post("/api/routeClientMail", form);
     if (result.status == 200) {
+      console.log(result.data)
+      console.log('done')
       toast({
         title: "Message sent ",
         description: "Thank you for your message. I'll get back to you soon!",
       });
       setIsSubmitting(false);
     } else {
+      console.log('Not sent')
       toast({
         title: "Error sending message",
         description: "Try again later",
