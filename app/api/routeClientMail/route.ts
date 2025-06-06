@@ -2,18 +2,18 @@ import sendEmail from "@/lib/actions/send_email.";
 export async function POST(request: Request) {
   console.log("Starting message routing");
   const message_body = await request.json();
-  const body  = message_body.control._formValues
-  const {name, email, subject, message} = body
+  const body = message_body.control._formValues;
+  const { name, email, subject, message } = body;
   const payload = {
-    to: 'hckerson@gmail.com',
+    to: "hckerson@gmail.com",
     subject: subject,
-    message: `Mail from ${name} <br/> ${message} <br/> Sent from ${email}`
-  }
+    message: `Mail from ${name} <br/> ${message} <br/> Sent from ${email}`,
+  };
   try {
-    await sendEmail(payload)
+    await sendEmail(payload);
+    return new Response("Message sent successfully", { status: 200 });
   } catch (error) {
-    console.error(`Error sending mail, ${error}`)
+    console.error(`Error sending mail, ${error}`);
+    return new Response("Message not sent", { status: 400 });
   }
-
-  return new Response("Message sent successfully", { status: 200 });
 }
