@@ -12,9 +12,9 @@ export async function POST(request: Request) {
   try {
     const result = await sendEmail(payload);
     if (result.success) {
-      return new Response("Message sent successfully", { status: 200 });
+      return new Response(JSON.stringify(result), { status: 200 });
     }else{
-      return new Response("Message not sent", { status: 400 });
+      return new Response(JSON.stringify(result), { status: 400 });
     }
   } catch (error) {
     console.error(`Error sending mail, ${error}`);
