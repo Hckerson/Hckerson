@@ -74,7 +74,7 @@ export default function HeroSection() {
               >
                 <Button variant="ghost" size="icon" asChild>
                   <a
-                    href="https://github.com/yourusername"
+                    href="https://github.com/hckerson"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="GitHub Profile"
@@ -84,7 +84,7 @@ export default function HeroSection() {
                 </Button>
                 <Button variant="ghost" size="icon" asChild>
                   <a
-                    href="https://linkedin.com/in/yourusername"
+                    href="https://linkedin.com/in/hckerson"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="LinkedIn Profile"
@@ -94,7 +94,7 @@ export default function HeroSection() {
                 </Button>
                 <Button variant="ghost" size="icon" asChild>
                   <a
-                    href="https://twitter.com/yourusername"
+                    href="https://twitter.com/hckerson_jnr"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Twitter Profile"
