@@ -13,7 +13,7 @@ Currently working 🧑‍💻 on myself, becoming a better programmer! One line 
 
 Reach out to me here 👇  
 [![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=flat&logo=twitter&logoColor=white)](https://twitter.com/hckerson_jnr)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/victorola-hckerson)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/hckerson)
 
 ## GitHub Stats
 ![VickyJay's GitHub Stats](https://github-readme-stats.vercel.app/api?username=hckerson&show_icons=true&theme=dark)
