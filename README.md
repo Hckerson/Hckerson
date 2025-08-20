@@ -6,7 +6,7 @@
 </p>
 
 <p align='center'>
-<a href="https://wa.me/2349075789680?text=Hello+Hckerson" target="_blank">
+<a href="https://wa.me/2349125194271?text=Hello+Hckerson" target="_blank">
   <img src="https://img.shields.io/badge/WHATSAPP-%2325D366.svg?&style=for-the-badge&logo=whatsapp&logoColor=white" />
 </a>&nbsp;&nbsp;
 <a href="https://twitter.com/hckerson_jnr" target="_blank">
