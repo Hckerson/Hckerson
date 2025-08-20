@@ -4,82 +4,23 @@ A modern, responsive portfolio website built with Next.js 13, TypeScript, and Ta
 
 ![Portfolio Preview](https://res.cloudinary.com/hckerson/image/upload/f_auto,q_auto/v1/profile/hckerson?_a=BAMABkUq0)
 
-## 🚀 Features
 
-- ✨ Modern and responsive design
-- 🌙 Dark/Light mode support
-- 📱 Mobile-first approach
-- ⚡ Fast page loads with Next.js
-- 🎨 Beautiful UI with Tailwind CSS
-- 🔍 SEO optimized
-- 📝 Blog section
-- 📄 Resume section
-- 📬 Contact form
-- 🎯 Smooth scrolling
-- 🎭 Framer Motion animations
+# Hi there! 👋 I'Hckerson⚡
 
-## 🛠️ Tech Stack
+I am a Software Developer focused on Backend (Javascript/Nestjs/Typescript/Nextjs/Express)
 
-- **Framework:** [Next.js 13](https://nextjs.org/)
-- **Language:** [TypeScript](https://www.typescriptlang.org/)
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-- **UI Components:** [shadcn/ui](https://ui.shadcn.com/)
-- **Icons:** [Lucide Icons](https://lucide.dev/)
-- **Animations:** [Framer Motion](https://www.framer.com/motion/)
-- **Form Handling:** [React Hook Form](https://react-hook-form.com/)
-- **Validation:** [Zod](https://zod.dev/)
+Currently working 🧑‍💻 on myself, becoming a better programmer! One line at a time!
 
-## 🏗️ Project Structure
+Reach out to me here 👇  
+[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=flat&logo=twitter&logoColor=white)](https://twitter.com/hckerson_jnr)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/victorola-hckerson)
 
-```
-├── app/
-│   ├── layout.tsx
-│   ├── page.tsx
-│   └── globals.css
-├── components/
-│   ├── ui/
-│   ├── hero-section.tsx
-│   ├── about-section.tsx
-│   ├── projects-section.tsx
-│   ├── blog-section.tsx
-│   ├── resume-section.tsx
-│   └── contact-section.tsx
-├── lib/
-│   └── utils.ts
-└── public/
-    └── assets/
-```
+## GitHub Stats
+![VickyJay's GitHub Stats](https://github-readme-stats.vercel.app/api?username=hckerson&show_icons=true&theme=dark)
 
-## 🚀 Getting Started
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/hckerson/hckerson.git
-   ```
-
-2. Install dependencies:
-
-   ```bash
-   cd hckerson
-   npm install
-   ```
-
-3. Run the development server:
-
-   ```bash
-   npm run dev
-   ```
-
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/yourusername/hckerson/issues).
+## Most Used Languages
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=hckerson&layout=compact&theme=dark)
+   
 
 ## 📫 Contact
 
@@ -89,4 +30,3 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 
 ---
 
-⭐️ If you like this project, please give it a star on GitHub!
