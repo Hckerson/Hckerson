@@ -99,7 +99,7 @@ const projects = [
       "logo.jpg",
     tags: ["NestJS", "GraphQL", "TypeScript", "PostgreSQL", "React", "Apollo Client"],
     liveUrl: "https://tixsync.vercel.app",
-    githubUrl: "https://github.com/yourusername/TixSync",
+    githubUrl: "https://github.com/hckerson/TixSync",
     category: "fullstack",
     learnings: 
       "Implemented complex seat reservation system with timed holds, built type-safe APIs using GraphQL Code Generator, handled real-time ticket availability updates, and integrated secure payment processing."
@@ -118,34 +118,34 @@ const projects = [
     learnings:
       "Built a caching layer with Redis to improve performance and reduce external API calls.",
   },
-  {
-    id: 7,
-    title: "Personal Finance Tracker",
-    description:
-      "A web application to track expenses, income, and financial goals with data visualization and budget planning features.",
-    image:
-      "https://images.pexels.com/photos/5483075/pexels-photo-5483075.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    tags: ["Firebase", "Chart.js", "Vuetify", "PWA"],
-    liveUrl: "https://example.com/project5",
-    githubUrl: "https://github.com/yourusername/project5",
-    category: "frontend",
-    learnings:
-      "Implemented progressive web app features for offline usage and push notifications.",
-  },
-  {
-    id: 8,
-    title: "E-Commerce Platform",
-    description:
-      "A full-featured e-commerce platform with product listings, cart functionality, user authentication, and payment processing.",
-    image:
-      "https://images.pexels.com/photos/5632402/pexels-photo-5632402.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe", "Supabase"],
-    liveUrl: "https://example.com/project1",
-    githubUrl: "https://github.com/yourusername/project1",
-    category: "fullstack",
-    learnings:
-      "Implemented Stripe payment integration and webhook handling for a seamless checkout experience.",
-  },
+  // {
+  //   id: 7,
+  //   title: "Personal Finance Tracker",
+  //   description:
+  //     "A web application to track expenses, income, and financial goals with data visualization and budget planning features.",
+  //   image:
+  //     "https://images.pexels.com/photos/5483075/pexels-photo-5483075.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  //   tags: ["Firebase", "Chart.js", "Vuetify", "PWA"],
+  //   liveUrl: "https://example.com/project5",
+  //   githubUrl: "https://github.com/yourusername/project5",
+  //   category: "frontend",
+  //   learnings:
+  //     "Implemented progressive web app features for offline usage and push notifications.",
+  // },
+  // {
+  //   id: 8,
+  //   title: "E-Commerce Platform",
+  //   description:
+  //     "A full-featured e-commerce platform with product listings, cart functionality, user authentication, and payment processing.",
+  //   image:
+  //     "https://images.pexels.com/photos/5632402/pexels-photo-5632402.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  //   tags: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe", "Supabase"],
+  //   liveUrl: "https://example.com/project1",
+  //   githubUrl: "https://github.com/yourusername/project1",
+  //   category: "fullstack",
+  //   learnings:
+  //     "Implemented Stripe payment integration and webhook handling for a seamless checkout experience.",
+  // },
   //     {id: 5,
   //   title: "Task Management Dashboard",
   //   description:
