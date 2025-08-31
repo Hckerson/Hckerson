@@ -92,18 +92,18 @@ const projects = [
   },
   {
     id: 5,
-    title: "Task Management Dashboard",
-    description:
-      "A Kanban-style task management application with drag-and-drop functionality, task assignments, and deadline tracking.",
+    title: "TixSync",
+    description: 
+      "A full-stack event ticketing platform that enables event organizers to create and manage events, handle ticket sales. Features include seat reservation system, QR code tickets, multiple ticket tiers, and payment processing.",
     image:
-      "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    tags: ["React", "Redux", "Express", "PostgreSQL", "Material UI"],
-    liveUrl: "https://example.com/project3",
-    githubUrl: "https://github.com/yourusername/project3",
-    category: "frontend",
-    learnings:
-      "Implemented complex drag-and-drop functionality with React DnD, and optimized state management with Redux.",
-  },
+      "logo.jpg",
+    tags: ["NestJS", "GraphQL", "TypeScript", "PostgreSQL", "React", "Apollo Client"],
+    liveUrl: "https://tixsync.vercel.app",
+    githubUrl: "https://github.com/yourusername/TixSync",
+    category: "fullstack",
+    learnings: 
+      "Implemented complex seat reservation system with timed holds, built type-safe APIs using GraphQL Code Generator, handled real-time ticket availability updates, and integrated secure payment processing."
+},
   {
     id: 6,
     title: "Weather API Service",
@@ -146,6 +146,19 @@ const projects = [
     learnings:
       "Implemented Stripe payment integration and webhook handling for a seamless checkout experience.",
   },
+  //     {id: 5,
+  //   title: "Task Management Dashboard",
+  //   description:
+  //     "A Kanban-style task management application with drag-and-drop functionality, task assignments, and deadline tracking.",
+  //   image:
+  //     "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  //   tags: ["React", "Redux", "Express", "PostgreSQL", "Material UI"],
+  //   liveUrl: "https://example.com/project3",
+  //   githubUrl: "https://github.com/yourusername/project3",
+  //   category: "frontend",
+  //   learnings:
+  //     "Implemented complex drag-and-drop functionality with React DnD, and optimized state management with Redux.",
+  // }
   // {
   //   id: 7,
   //   title: "Content Management System",
