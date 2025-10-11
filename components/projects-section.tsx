@@ -112,7 +112,7 @@ const projects = [
 			"Radix UI",
 			"Framer Motion",
 		],
-		liveUrl: "https://openlibrary.app",
+		liveUrl: "https://openlibrary-five.vercel.app/",
 		githubUrl: "https://github.com/yourusername/e-library-frontend",
 		category: "fullstack",
 		learnings:
