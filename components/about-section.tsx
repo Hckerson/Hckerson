@@ -30,7 +30,7 @@ const education = [
     institution: "Obafemi Awolowo University",
     year: "2023-now",
     description:
-      "Graduated with honors. Focused on web development and algorithms.",
+      "Hoping to Graduate with honors. Focused on web development and algorithms.",
   },
   {
     degree: "Full-Stack Web Development",
