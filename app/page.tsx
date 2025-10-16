@@ -11,10 +11,10 @@ export default function Home() {
     <>
       <HeroSection />
       <AboutSection />
-      <ProjectsSection />
+      {/* <ProjectsSection />
       <BlogSection />
       <ResumeSection />
-      <ContactSection />
+      <ContactSection /> */}
       <Toaster />
     </>
   );
