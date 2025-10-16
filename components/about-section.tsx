@@ -25,20 +25,20 @@ const skills = [
 ];
 
 const education = [
-	{
-		degree: "B.S. Computer Engineering",
-		institution: "Obafemi Awolowo University",
-		year: "2023-now",
-		description:
-			"Graduated with honors. Focused on web development and algorithms.",
-	},
-	{
-		degree: "Full-Stack Web Development",
-		institution: "Coding Bootcamp",
-		year: "2021",
-		description:
-			"Intensive 12-week program covering modern web development techniques.",
-	},
+  {
+    degree: "B.S. Computer Engineering",
+    institution: "Obafemi Awolowo University",
+    year: "2023-now",
+    description:
+      "Hoping to Graduate with honors. Focused on web development and algorithms.",
+  },
+  {
+    degree: "Full-Stack Web Development",
+    institution: "Coding Bootcamp",
+    year: "2021",
+    description:
+      "Intensive 12-week program covering modern web development techniques.",
+  },
 ];
 
 const certifications = [
