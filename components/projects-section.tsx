@@ -194,18 +194,18 @@ export default function ProjectsSection() {
 			id="projects"
 			className="py-24 scroll-mt-24 p-2 flex justify-center"
 		>
-			<div className="container max-w-[1280px]">
+			<div className="container xl:max-w-[1280px]">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true, margin: "-100px" }}
+					viewport={{ once: true }}
 					transition={{ duration: 0.5 }}
 					className="mb-12 text-center"
 				>
 					<h2 className="text-3xl md:text-4xl font-bold mb-4">
 						Featured Projects
 					</h2>
-					<p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+					<p className="text-xl text-muted-foreground  mx-auto">
 						A selection of my recent work, showcasing my skills and
 						experience in building web applications.
 					</p>
@@ -239,7 +239,7 @@ export default function ProjectsSection() {
 							</TabsTrigger>
 							<TabsTrigger
 								value="fullstack"
-								className="md:text-base text-xs"
+								className="md:text-base text-xs sm:block hidden"
 							>
 								Full Stack
 							</TabsTrigger>
@@ -247,13 +247,12 @@ export default function ProjectsSection() {
 					</div>
 				</Tabs>
 
-				<div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+				<div className="grid gap-4 md:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 					{filteredProjects.map((project, index) => (
 						<motion.div
 							key={project.id}
 							initial={{ opacity: 0, y: 20 }}
 							whileInView={{ opacity: 1, y: 0 }}
-							viewport={{ once: true, margin: "-50px" }}
 							transition={{ duration: 0.3, delay: index * 0.1 }}
 						>
 							<Card className="h-full flex flex-col overflow-hidden group">
