@@ -247,8 +247,8 @@ export default function ResumeSection() {
 
 				<div className="grid gap-8 md:grid-cols-2">
 					<motion.div
-						initial={{ opacity: 0, x: -20 }}
-						whileInView={{ opacity: 1, x: 0 }}
+						initial={{ opacity: 0, y: -20 }}
+						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true }}
 						transition={{ duration: 0.5 }}
 					>
@@ -309,8 +309,8 @@ export default function ResumeSection() {
 					</motion.div>
 
 					<motion.div
-						initial={{ opacity: 0, x: 20 }}
-						whileInView={{ opacity: 1, x: 0 }}
+						initial={{ opacity: 0, y: 20 }}
+						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true }}
 						transition={{ duration: 0.5, delay: 0.2 }}
 						className="space-y-8"
