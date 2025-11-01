@@ -1,6 +1,6 @@
 <p align="center">
   <h1 align='center'>Hi there!👋🏾 I'm Hckerson⚡</h1> 
-  <p align="center"> I am a Software Developer focused on Frontend (Javascript/NestJs/Typescript/NextJs/Express)</p>
+  <p align="center"> I am a Software Developer invested in  Fullstack dev (Javascript/NestJs/Typescript/NextJs/Express)</p>
   <p align='center'>Currently working 👨‍🍳 on myself, becoming a better programmer! One line at a time!</p>
   <p align='center'> Reach out to me here 👇</p>
 </p>
@@ -37,3 +37,4 @@
 </p>
  
 </p>
+
