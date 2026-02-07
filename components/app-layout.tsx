@@ -1,3 +1,5 @@
+import "@/public/styles/globals.css";
+
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (
     <body className="h-screen w-full antialiased">
