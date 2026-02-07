@@ -1,8 +1,9 @@
+import HeroSection from "@/components/sections/hero-section";
 
-export default function first() {
+export default function Homepage() {
     return(
-        <div>
-            <div></div>
+        <div className="box-border w-full">
+            <HeroSection /> 
         </div>
     )
 }
