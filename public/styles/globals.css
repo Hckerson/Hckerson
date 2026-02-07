@@ -11,10 +11,11 @@
     --color-foreground: var(--foreground);
     --color-background: var(--background);
     --breakpoint-xs: 480px;
+    --animate-springify: springify 3.5s;
+    --animate-opacify: opacify 1s ease-in;
     --animate-rotate-paa: rotatePaa 5s linear infinite;
     --animate-slide-in-up: slideInUp 0.5s ease-out forwards;
-    --animate-opacify: opacify 1s ease-in;
-    --animate-springify: springify 3.5s;
+    --animate-slide-infinitely: slideInfinitely 10s linear infinite;
 
     @keyframes rotatePaa {
         0% {
@@ -68,6 +69,18 @@
         }
         100% {
             transform: translateY(445%);
+        }
+    }
+
+    @keyframes slideInfinitely {
+        0% {
+            transform: translateX(0);
+        }
+        50% {
+            transform: translateX(10%);
+        }
+        100% {
+            transform: translateX(0%);
         }
     }
 }
