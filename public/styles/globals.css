@@ -4,7 +4,6 @@
 :root {
     --background: #050c14;
     --foreground: #ffffff;
-
 }
 
 @theme inline {
@@ -15,7 +14,8 @@
     --animate-opacify: opacify 1s ease-in;
     --animate-rotate-paa: rotatePaa 5s linear infinite;
     --animate-slide-in-up: slideInUp 0.5s ease-out forwards;
-    --animate-slide-infinitely: slideInfinitely 10s linear infinite;
+    --animate-slide-left-to-right: slideLeftToRight 10s linear infinite;
+    --animate-slide-right-to-left: slideRightToLeft 10s linear 2s infinite;
 
     @keyframes rotatePaa {
         0% {
@@ -72,12 +72,24 @@
         }
     }
 
-    @keyframes slideInfinitely {
+    @keyframes slideLeftToRight {
         0% {
             transform: translateX(0);
         }
         50% {
-            transform: translateX(10%);
+            transform: translateX(8%);
+        }
+        100% {
+            transform: translateX(0%);
+        }
+    }
+
+    @keyframes slideRightToLeft {
+        0% {
+            transform: translateX(0);
+        }
+        50% {
+            transform: translateX(-8%);
         }
         100% {
             transform: translateX(0%);
@@ -94,7 +106,7 @@
 }
 
 .md-text {
-    @apply xl:text-[60px] text-[29px] md:text-[44px];
+    @apply text-[29px] md:text-[44px] xl:text-[60px];
 }
 
 .base-text {
@@ -129,7 +141,6 @@
     @apply delay-150 duration-300 ease-in-out;
 }
 
-
 body {
     background: var(--background);
     color: var(--foreground);
@@ -158,6 +169,24 @@ body {
         #ce07d5,
         #03b2d1,
         #a09612
+    );
+}
+
+.blury {
+    background: radial-gradient(
+        50% 50% at 50% 50%,
+        hsla(210, 100%, 85%, 0.06) 0,
+        hsla(210, 100%, 55%, 0.02) 80%,
+        transparent 100%
+    );
+}
+
+.blury-01 {
+    background: radial-gradient(
+        68.54% 68.72% at 55.02% 31.46%,
+        hsla(210, 100%, 85%, 0.08) 0,
+        hsla(210, 100%, 55%, 0.02) 50%,
+        hsla(210, 100%, 45%, 0) 80%
     );
 }
 
