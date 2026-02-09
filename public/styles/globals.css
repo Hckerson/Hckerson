@@ -6,6 +6,11 @@
     --foreground: #ffffff;
 }
 
+.dark {
+    --background: #050c14;
+    --foreground: #ffffff;
+}
+
 @theme inline {
     --color-foreground: var(--foreground);
     --color-background: var(--background);
@@ -15,7 +20,7 @@
     --animate-rotate-paa: rotatePaa 5s linear infinite;
     --animate-slide-in-up: slideInUp 0.5s ease-out forwards;
     --animate-slide-left-to-right: slideLeftToRight 10s linear infinite;
-    --animate-slide-right-to-left: slideRightToLeft 10s linear 2s infinite;
+    --animate-slide-right-to-left: slideRightToLeft 11s linear infinite;
 
     @keyframes rotatePaa {
         0% {
