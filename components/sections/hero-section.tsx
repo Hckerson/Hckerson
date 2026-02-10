@@ -2,6 +2,7 @@ import { clashDisplay } from "@/app/fonts/font";
 
 import clsx from "clsx";
 import Link from "next/link";
+import Button from "../ui/button";
 
 export default function HeroSection() {
     return (
