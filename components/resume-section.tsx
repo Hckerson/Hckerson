@@ -28,7 +28,6 @@ const workExperience = [
       "Developed a clone of the Dropbox file sharing service using React, Node.js, and Firebase",
       "Created a secure file upload/download functionality with drag-and-drop features",
       "Built an efficient state management system for file operations",
-      "Collaborated with a team to implement responsive design patterns",
     ],
   },
   {
@@ -41,20 +40,6 @@ const workExperience = [
       "Created a secure user authentication and authorization system",
       "Built a responsive dashboard for sales and inventory tracking",
       "Developed a market analysis tool and portfolio management features",
-      "Collaborated with a team to implement responsive design patterns",
-    ],
-  },
-  {
-    title: "Full Stack Developer",
-    company: "FinAdvise",
-    location: "Remote",
-    period: "2025 - Present",
-    responsibilities: [
-      "Implemented real-time financial data visualization using Chart.js",
-      "Built secure user authentication system",
-      "Developed intuitive dashboard for investment tracking",
-      "Created market analysis tools and portfolio management features",
-      "Collaborated on system architecture and performance optimization",
     ],
   },
   {
@@ -68,7 +53,6 @@ const workExperience = [
       "Created admin dashboard for reservation management",
       "Built room inventory management system",
       "Implemented user authentication and authorization",
-      "Collaborated on system architecture and database design",
     ],
   },
   // {
@@ -196,12 +180,6 @@ export default function ResumeSection() {
             description:
               "A cloud storage application with secure file upload/download, drag-and-drop features, and real-time state management.",
             technologies: ["React", "Node.js", "Firebase", "Tailwind CSS"],
-          },
-          {
-            name: "FinAdvise",
-            description:
-              "Financial data visualization platform with real-time charts, secure authentication, and investment tracking.",
-            technologies: ["Next.js", "Chart.js", "PostgreSQL", "Prisma"],
           },
         ],
         languages: ["English (Fluent)", "Yoruba (Native)"],
