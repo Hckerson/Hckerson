@@ -1,7 +1,7 @@
 import { clashDisplay } from "@/app/fonts/font";
-
 import clsx from "clsx";
 import Link from "next/link";
+import Button from "../ui/button";
 
 export default function HeroSection() {
     return (
@@ -28,11 +28,11 @@ export default function HeroSection() {
             </div>
             <div className="absolute inset-0">
                 <div className="relative flex h-full w-full items-center justify-center">
-                    <div className="flex text-center max-w-[80ch] items-center gap-y-6 flex-col">
+                    <div className="flex max-w-[80ch] flex-col items-center gap-y-4 text-center md:gap-y-5 xl:gap-y-6">
                         <p
                             className={clsx(
                                 clashDisplay.className,
-                                "md-text w-[15ch] bg-linear-to-b from-white to-gray-500 bg-clip-text text-center leading-[1.1] font-bold text-transparent",
+                                "md-text w-[15ch] bg-linear-to-b from-white from-20% to-neutral-400 bg-clip-text text-center leading-none font-bold text-transparent",
                             )}
                         >
                             <span className="block">Creative</span>
