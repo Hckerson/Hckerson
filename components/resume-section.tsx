@@ -156,7 +156,7 @@ export default function ResumeSection() {
     try {
       await generateResume({
         personalInfo: {
-          name: "Hckerson",
+          name: "Emmanuel Aderibigbe (Hckerson)",
           email: "hckerson@gmail.com",
           phone: "+234 9125194271",
           location: "Nigeria",
@@ -234,7 +234,9 @@ export default function ResumeSection() {
           transition={{ duration: 0.5 }}
           className="mb-12 text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Resume</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Emmanuel Aderibigbe's Resume
+          </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             My professional journey and experience in the tech industry.
           </p>

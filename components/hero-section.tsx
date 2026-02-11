@@ -34,7 +34,10 @@ export default function HeroSection() {
                   transition={{ duration: 0.5, delay: 0.2 }}
                   className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight"
                 >
-                  <span className="text-primary">Hckerson</span>
+                  <span className="text-primary">Emmanuel Aderibigbe</span>
+                  <span className="text-2xl md:text-3xl font-medium text-muted-foreground ml-2 underline decoration-primary/30 underline-offset-8">
+                    (Hckerson)
+                  </span>
                   <br />
                   Full-Stack Developer
                 </motion.h1>
@@ -44,8 +47,8 @@ export default function HeroSection() {
                   transition={{ duration: 0.5, delay: 0.4 }}
                   className="mt-4 text-xl text-muted-foreground"
                 >
-                  Building responsive, accessible web apps with modern JavaScript
-                  and Python backends
+                  Building responsive, accessible web apps with modern
+                  JavaScript and Python backends
                 </motion.p>
               </div>
 
@@ -162,4 +165,4 @@ export default function HeroSection() {
       )}
     </>
   );
-}  
+}

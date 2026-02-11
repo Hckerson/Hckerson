@@ -47,7 +47,7 @@ export default function Header() {
         "fixed top-0 left-0 right-0 z-50 p-3 transition-all duration-300",
         scrolled
           ? "bg-background/80 backdrop-blur-md shadow-sm py-3"
-          : "bg-transparent py-6"
+          : "bg-transparent py-6",
       )}
     >
       <div className="container flex items-center justify-between">
@@ -70,7 +70,7 @@ export default function Header() {
                     "px-4 py-2 rounded-md text-sm font-medium transition-colors",
                     pathname === item.href
                       ? "text-primary"
-                      : "text-muted-foreground hover:text-primary"
+                      : "text-muted-foreground hover:text-primary",
                   )}
                 >
                   {item.name}
@@ -111,7 +111,7 @@ export default function Header() {
                         "block py-3 text-lg font-medium transition-colors",
                         pathname === item.href
                           ? "text-primary"
-                          : "text-muted-foreground hover:text-primary"
+                          : "text-muted-foreground hover:text-primary",
                       )}
                       onClick={() => setMobileMenuOpen(false)}
                     >

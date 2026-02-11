@@ -8,7 +8,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://hckerson.vercel.app"),
-  title: "Hckerson - Portfolio",
+  title: "Emmanuel Aderibigbe (Hckerson) - Portfolio",
   description: "Full-Stack Developer specializing in Next.js & Tailwind CSS",
   keywords: [
     "developer",
@@ -32,8 +32,8 @@ export const metadata: Metadata = {
     "ci/cd",
     "devops",
   ],
-  authors: [{ name: "Hckerson" }],
-  creator: "Hckerson",
+  authors: [{ name: "Emmanuel Aderibigbe (Hckerson)" }],
+  creator: "Emmanuel Aderibigbe",
   openGraph: {
     type: "website",
     locale: "en_US",
