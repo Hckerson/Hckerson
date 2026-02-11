@@ -152,12 +152,13 @@ const skills = [
   "TypeScript",
   "React",
   "Next.js",
+  "NestJS",
   "Node.js",
+  "Express",
   "Python",
   "PostgreSQL",
-  // "AWS",
-  // "Docker",
-  // "CI/CD",
+  "MongoDB",
+  "Prisma",
   "Git",
   "REST APIs",
 ];
@@ -187,6 +188,44 @@ export default function ResumeSection() {
         education,
         skills,
         certifications,
+        summary:
+          "Passionate Full Stack Developer with a strong foundation in modern web technologies. Experienced in building scalable applications with React, Next.js, and Node.js, and proficient in backend development with NestJS and databases like PostgreSQL and MongoDB. Dedicated to writing clean, maintainable code and delivering high-quality user experiences.",
+        projects: [
+          {
+            name: "Dropbox Clone",
+            description:
+              "A cloud storage application with secure file upload/download, drag-and-drop features, and real-time state management.",
+            technologies: ["React", "Node.js", "Firebase", "Tailwind CSS"],
+          },
+          {
+            name: "FinAdvise",
+            description:
+              "Financial data visualization platform with real-time charts, secure authentication, and investment tracking.",
+            technologies: ["Next.js", "Chart.js", "PostgreSQL", "Prisma"],
+          },
+        ],
+        languages: ["English (Fluent)", "Yoruba (Native)"],
+        awards: [
+          {
+            name: "W3Schools Certified Developer",
+            year: "2024",
+            description:
+              "Achieved top scores in JavaScript and React certifications.",
+          },
+          {
+            name: "Hactoberfest Contributor",
+            year: "2024",
+            description:
+              "Contributed to multiple open-source projects during the annual event.",
+          },
+        ],
+        interests: [
+          "Open Source",
+          "Web3",
+          "Blockchain",
+          "UI/UX Design",
+          "Machine Learning",
+        ],
       });
       toast({
         title: "Resume downloaded successfully",

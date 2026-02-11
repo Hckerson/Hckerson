@@ -118,6 +118,13 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     marginBottom: 3,
   },
+  twoColumn: {
+    flexDirection: "row",
+    gap: 20,
+  },
+  column: {
+    flex: 1,
+  },
 });
 
 interface ResumeData {
@@ -153,6 +160,20 @@ interface ResumeData {
     issuer: string;
     year: string;
   }>;
+  summary?: string;
+  projects?: Array<{
+    name: string;
+    description: string;
+    link?: string;
+    technologies?: string[];
+  }>;
+  languages?: string[];
+  awards?: Array<{
+    name: string;
+    year: string;
+    description?: string;
+  }>;
+  interests?: string[];
 }
 
 export const ResumePDF = ({ data }: { data: ResumeData }) => (
@@ -189,6 +210,14 @@ export const ResumePDF = ({ data }: { data: ResumeData }) => (
           </Link>
         </View>
       </View>
+
+      {/* Summary */}
+      {data.summary && (
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Professional Summary</Text>
+          <Text style={{ lineHeight: 1.5 }}>{data.summary}</Text>
+        </View>
+      )}
 
       {/* Experience */}
       <View style={styles.section}>
@@ -245,6 +274,89 @@ export const ResumePDF = ({ data }: { data: ResumeData }) => (
           ))}
         </View>
       </View>
+
+      {/* Projects */}
+      {data.projects && data.projects.length > 0 && (
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Projects</Text>
+          {data.projects.map((project, index) => (
+            <View key={index} style={styles.experienceItem}>
+              <View style={styles.itemHeader}>
+                <Text style={styles.itemTitle}>{project.name}</Text>
+                {project.link && (
+                  <Link style={styles.link} src={project.link}>
+                    Link
+                  </Link>
+                )}
+              </View>
+              <Text style={{ marginBottom: 4, lineHeight: 1.4 }}>
+                {project.description}
+              </Text>
+              {project.technologies && (
+                <View style={styles.skillsGrid}>
+                  {project.technologies.map((tech, i) => (
+                    <View key={i} style={styles.skillTag}>
+                      <Text>{tech}</Text>
+                    </View>
+                  ))}
+                </View>
+              )}
+            </View>
+          ))}
+        </View>
+      )}
+
+      {/* Awards & Achievements */}
+      {data.awards && data.awards.length > 0 && (
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Awards & Achievements</Text>
+          {data.awards.map((award, index) => (
+            <View key={index} style={{ marginBottom: 5 }}>
+              <View style={styles.itemHeader}>
+                <Text style={styles.itemTitle}>{award.name}</Text>
+                <Text style={styles.itemPeriod}>{award.year}</Text>
+              </View>
+              {award.description && (
+                <Text style={{ fontSize: 9, color: "#555" }}>
+                  {award.description}
+                </Text>
+              )}
+            </View>
+          ))}
+        </View>
+      )}
+
+      {/* Languages & Interests */}
+      {((data.languages && data.languages.length > 0) ||
+        (data.interests && data.interests.length > 0)) && (
+        <View style={styles.twoColumn}>
+          {data.languages && data.languages.length > 0 && (
+            <View style={styles.column}>
+              <Text style={styles.sectionTitle}>Languages</Text>
+              <View style={styles.skillsGrid}>
+                {data.languages.map((lang, index) => (
+                  <View key={index} style={styles.skillTag}>
+                    <Text>{lang}</Text>
+                  </View>
+                ))}
+              </View>
+            </View>
+          )}
+
+          {data.interests && data.interests.length > 0 && (
+            <View style={styles.column}>
+              <Text style={styles.sectionTitle}>Interests</Text>
+              <View style={styles.skillsGrid}>
+                {data.interests.map((interest, index) => (
+                  <View key={index} style={styles.skillTag}>
+                    <Text>{interest}</Text>
+                  </View>
+                ))}
+              </View>
+            </View>
+          )}
+        </View>
+      )}
 
       {/* Certifications */}
       <View style={styles.section}>

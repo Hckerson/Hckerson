@@ -1,6 +1,6 @@
 import { pdf } from "@react-pdf/renderer";
 import { saveAs } from "file-saver";
-import { ResumePDF } from "@/components/resume-pdf";
+import { ResumePDF } from "../../components/resume-pdf";
 import React from "react";
 
 interface ResumeData {
@@ -36,6 +36,20 @@ interface ResumeData {
     issuer: string;
     year: string;
   }>;
+  summary?: string;
+  projects?: Array<{
+    name: string;
+    description: string;
+    link?: string;
+    technologies?: string[];
+  }>;
+  languages?: string[];
+  awards?: Array<{
+    name: string;
+    year: string;
+    description?: string;
+  }>;
+  interests?: string[];
 }
 
 export async function generateResume(data: ResumeData): Promise<void> {
