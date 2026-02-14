@@ -17,11 +17,11 @@ export default function Button({
 }: Button) {
     const small = size == "sm" || size == "md";
     const sizes = {
-        "h-[36px] lg:h-[42px] xl:h-[48px] w-30 lg:w-35 xl:w-40 xl:rounded-xl md:rounded-lg rounded-md":
+        "h-[36px] lg:h-[42px] xl:h-[48px] w-25 lg:w-30 xl:w-35 xl:rounded-xl md:rounded-lg rounded-md":
             size == "sm",
         "h-[40px] lg:h-[46px] xl:h-[52px] w-35 lg:w-40 xl:w-45 xl:rounded-xl rounded-lg":
             size == "md",
-        "h-[42px] lg:h-[56px] xl:h-[64px] w-37.5 lg:w-45 xl:w-50 xl:rounded-2xl md:rounded-xl rounded-lg":
+        "h-[42px] lg:h-[56px] xl:h-[64px] w-37.5 lg:w-45 xl:w-50 xl:rounded-3xl md:rounded-xl rounded-lg":
             size == "lg",
         "h-[48px] lg:h-[64px] xl:h-[72px] w-45 lg:w-55 xl:w-60 xl:rounded-3xl md:rounded-2xl rounded-xl":
             size == "xl",
@@ -43,7 +43,6 @@ export default function Button({
                     <p
                         className={clsx(
                             "xs:text-base absolute inset-0 flex items-center justify-center text-sm transition-colors duration-150 ease-in",
-                            classname,
                         )}
                     >
                         {children}
