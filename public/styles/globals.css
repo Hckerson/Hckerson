@@ -103,27 +103,27 @@
 }
 
 .xlarge-text {
-    @apply xs:text-[44.5px] text-[32px] leading-[1.1] sm:text-[60px] lg:text-[88px] xl:text-[128px];
+    @apply xs:text-[44px] text-[32px] leading-[1.1] sm:text-[56px] md:text-[68px] lg:text-[80px] xl:text-[92px] 2xl:text-[100px];
 }
 
 .large-text {
-    @apply text-[36px] leading-[1.2] md:text-[52px] xl:text-[84px];
+    @apply xs:text-[36px] text-[28px] leading-[1.2] sm:text-[44px] md:text-[52px] lg:text-[60px] xl:text-[72px] 2xl:text-[84px];
 }
 
 .md-text {
-    @apply text-[29px] md:text-[44px] xl:text-[60px];
+    @apply xs:text-[30px] text-[24px] sm:text-[36px] md:text-[42px] lg:text-[48px] xl:text-[54px] 2xl:text-[60px];
 }
 
 .base-text {
-    @apply text-[14px] md:text-[21px] xl:text-[32px];
+    @apply xs:text-[18px] text-[16px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[30px] 2xl:text-[32px];
 }
 
 .sm-text {
-    @apply text-[10px] md:text-[15px] xl:text-[20px];
+    @apply xs:text-[14px] text-[12px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] 2xl:text-[24px];
 }
 
 .xs-text {
-    @apply text-[8px] sm:text-[16px];
+    @apply xs:text-[11px] text-[10px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px];
 }
 
 .large-pad {
