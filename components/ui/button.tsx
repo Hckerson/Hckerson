@@ -4,40 +4,36 @@ import { Loader2 } from "lucide-react";
 
 interface Button extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     isLoading?: boolean;
-    variant?: "default" | "ghost" | "dark";
-    size?: "sm" | "md" | "lg" | "custom";
-    styles?: string;
+    size?: "sm" | "md" | "lg" | "xl" | "custom";
+    classname?: string;
     children: React.ReactNode;
 }
 export default function Button({
     children,
     isLoading,
+    classname,
     size = "custom",
-    styles,
-    variant,
     ...rest
 }: Button) {
     const small = size == "sm" || size == "md";
-    const colors = {
-        "bg-linear-to-r from-[#6973E7] to-[#3944B8] border border-2 border-[#6973E7]":
-            variant == "default",
-        "bg-black": variant == "dark",
-        "": variant == undefined || "",
-    };
     const sizes = {
-        "rounded-[8px] xl:w-40 w-30 h-[36px] lg:h-12.5 ": small,
-        "xl:rounded-[12px] rounded-[8px] xl:w-50 h-[42px] w-37.5 lg:h-[56px]":
+        "h-[36px] lg:h-[42px] xl:h-[48px] w-30 lg:w-35 xl:w-40 xl:rounded-xl md:rounded-lg rounded-md":
+            size == "sm",
+        "h-[40px] lg:h-[46px] xl:h-[52px] w-35 lg:w-40 xl:w-45 xl:rounded-xl rounded-lg":
+            size == "md",
+        "h-[42px] lg:h-[56px] xl:h-[64px] w-37.5 lg:w-45 xl:w-50 xl:rounded-2xl md:rounded-xl rounded-lg":
             size == "lg",
-        "lg:h-[52px] h-[40px] ": (size = "custom"),
+        "h-[48px] lg:h-[64px] xl:h-[72px] w-45 lg:w-55 xl:w-60 xl:rounded-3xl md:rounded-2xl rounded-xl":
+            size == "xl",
+        "h-[40px] lg:h-[52px]": size == "custom",
     };
     return (
         <button
             {...rest}
             className={clsx(
-                "relative z-0 flex cursor-pointer items-center justify-center overflow-hidden shadow-inner",
-                colors,
+                "relative z-0 flex cursor-pointer items-center justify-center overflow-hidden rounded-2xl shadow-inner",
                 sizes,
-                styles,
+                classname,
             )}
         >
             {small ? (
@@ -47,7 +43,7 @@ export default function Button({
                     <p
                         className={clsx(
                             "xs:text-base absolute inset-0 flex items-center justify-center text-sm transition-colors duration-150 ease-in",
-                            styles,
+                            classname,
                         )}
                     >
                         {children}
@@ -57,8 +53,7 @@ export default function Button({
                 <div
                     className={clsx(
                         "absolute inset-0 flex h-full items-center justify-center border-none! transition-colors duration-150 ease-in hover:bg-none",
-                        colors,
-                        styles,
+                        classname,
                     )}
                 >
                     {isLoading && (
