@@ -41,9 +41,22 @@ export default function HeroSection() {
                         <p className="xs-text">
                             {`I’m hckerson, I build high-performance web applications. I’m driven by pixel-perfect implementation, scalability, and pushing the boundaries of what the modern web can do.`}{" "}
                         </p>
-                        <span>
+                        <span className="flex space-x-3">
                             <Link href="/contact">
-                                <Button>Contact Me</Button>
+                                <Button
+                                    size="sm"
+                                    classname="bg-cyan-400 text-black"
+                                >
+                                    Contact Me
+                                </Button>
+                            </Link>
+                            <Link href="/projects">
+                                <Button
+                                    size="sm"
+                                    classname="bg-transparent text-white border border-white/20"
+                                >
+                                    {`Let's Talk`}
+                                </Button>
                             </Link>
                         </span>
                     </div>
