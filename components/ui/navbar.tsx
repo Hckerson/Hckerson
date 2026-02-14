@@ -1,18 +1,20 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-export default function Navbar() {
+const createConnection = (serverUrl: string, roomId: string) => {
+    return {
+        disconnect: () => {},
+        connect: () => {},
+    };
+};
+
+function ChatRoom() {
+    const [roomId, setRoomId] = useState("1");
+    const [serverUrl, setServerUrl] = useState("https://localhost:1234");
+
     useEffect(() => {
-        window.addEventListener("scroll", () => {
-            
-        });
-
-        return () => {
-            window.removeEventListener("scroll", () => {});
-        };
-    }, []);
-    return (
-        <nav className="fixed top-10 w-full">
-            <div></div>
-        </nav>
-    );
+        const connection = createConnection(serverUrl, roomId);
+        connection.connect();
+        return () => connection.disconnect();
+    }, []); // 🔴 React Hook useEffect has missing dependencies: 'roomId' and 'serverUrl'
+    // ...
 }
