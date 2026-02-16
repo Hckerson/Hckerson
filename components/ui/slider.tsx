@@ -1,6 +1,6 @@
 export default function Slider() {
     return (
-        <div className="fixed top-0 h-screen w-full">
+        <div className="absolute top-0 h-screen w-full">
             <div className="absolute inset-0 overflow-hidden">
                 <div className="animate-slide-left-to-right absolute inset-0 top-0 left-0 bg-transparent">
                     <div className="flex h-screen w-fit -translate-y-112.5 -rotate-45">
