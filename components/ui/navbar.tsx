@@ -1,23 +1,26 @@
 "use client";
 import clsx from "clsx";
+import { ImHome3 } from "react-icons/im";
 import { useEffect, useState } from "react";
+import { MdLightMode } from "react-icons/md";
+import { MdNightlight } from "react-icons/md";
 
 export default function Navbar() {
     const [animationStarted, setAnimationStarted] = useState<Boolean>(false);
     useEffect(() => {
         const scrollController = (e: Event) => {
             const verticalOffset = window.scrollY;
-            if (verticalOffset > 100) {
+            if (verticalOffset > 30) {
                 setAnimationStarted(true);
+            } else {
+                setAnimationStarted(false);
             }
         };
 
         window.addEventListener("scroll", scrollController);
 
         return () => {
-            window.removeEventListener("scroll", () => {
-                setAnimationStarted(false);
-            });
+            window.removeEventListener("scroll", scrollController);
         };
     }, []);
     return (
@@ -26,11 +29,19 @@ export default function Navbar() {
         >
             <div
                 className={clsx(
-                    "mx-auto h-fit transition-transform duration-300 ease-in-out",
+                    "mx-auto h-fit overflow-hidden rounded-full bg-stone-950 transition-transform duration-300 ease-in-out",
                     animationStarted ? "-translate-y-10" : "bottom-0",
                 )}
             >
-                sup
+                <div className="flex divide-x divide-stone-900 p-2">
+                    <div className="rounded-full bg-stone-800 p-2">
+                        <ImHome3 />
+                    </div>
+                    <div></div>
+                    <div>
+                        
+                    </div>
+                </div>
             </div>
         </nav>
     );
