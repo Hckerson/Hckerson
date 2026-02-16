@@ -1,6 +1,9 @@
 import clsx from "clsx";
+import Link from "next/link";
+import Button from "../ui/button";
 import { initial } from "@/lib/constant";
 import { clashDisplay } from "@/public/fonts/font";
+import { Link as LinkIcon } from "lucide-react";
 
 export default function AboutSection() {
     return (
@@ -60,6 +63,17 @@ export default function AboutSection() {
                         </span>
                         .
                     </p>
+                    <Link href="/about" className="group">
+                        <Button
+                            size="sm"
+                            classname="flex items-center   bg-cyan-400 text-black"
+                        >
+                            <span className="flex gap-x-2 transition-colors duration-300 ease-in group-hover:text-white">
+                                <p>Let's Talk</p>
+                                <LinkIcon className="size-4" />
+                            </span>
+                        </Button>
+                    </Link>
                 </div>
             </div>
         </section>
