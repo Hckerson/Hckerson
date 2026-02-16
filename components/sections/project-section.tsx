@@ -1,0 +1,24 @@
+import { clashDisplay } from "@/public/fonts/font";
+import { clsx } from "clsx";
+
+export default function ProjectSection() {
+    return (
+        <section className="xlarge-pady flex w-full bg-stone-950">
+            <div className="relative mx-auto w-5xl">
+                <div>
+                    <p
+                        className={clsx(
+                            clashDisplay.className,
+                            "base-text font-semibold",
+                        )}
+                    >
+                        Featured Projecs
+                    </p>
+                    <p className="text-stone-400 xs-text">
+                        {`Here are some of my recent projects. I'm always working on something new, so be sure to check back often.`}
+                    </p>
+                </div>
+            </div>
+        </section>
+    );
+}
