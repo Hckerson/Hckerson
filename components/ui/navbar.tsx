@@ -3,7 +3,6 @@ import clsx from "clsx";
 import useTheme from "@/hooks/useTheme";
 import { useEffect, useState } from "react";
 import { MdLightMode } from "react-icons/md";
-import { MdNightlight } from "react-icons/md";
 import { LiaHomeSolid } from "react-icons/lia";
 import { navlinks } from "@/lib/data/mapped-data";
 import { MdOutlineNightlight } from "react-icons/md";

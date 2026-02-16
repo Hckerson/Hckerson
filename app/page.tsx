@@ -6,7 +6,6 @@ export default function Homepage() {
     return (
         <div className="relative box-border w-full">
      
-            <Slider />
             <HeroSection />
             <AboutSection />
         </div>
