@@ -1,12 +1,13 @@
-import { clashDisplay } from "@/app/fonts/font";
 import clsx from "clsx";
 import Link from "next/link";
+import Slider from "../ui/slider";
 import Button from "../ui/button";
+import { clashDisplay } from "@/app/fonts/font";
 
 export default function HeroSection() {
     return (
         <section className="relative box-border h-screen w-full">
-
+            <Slider />
             <div className="absolute inset-0">
                 <div className="relative flex h-full w-full items-center justify-center">
                     <div className="flex max-w-[80ch] flex-col items-center gap-y-4 text-center md:gap-y-5 xl:gap-y-6">
