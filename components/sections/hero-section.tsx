@@ -2,7 +2,7 @@ import clsx from "clsx";
 import Link from "next/link";
 import Slider from "../ui/slider";
 import Button from "../ui/button";
-import { clashDisplay } from "@/app/fonts/font";
+import { clashDisplay } from "@/public/fonts/font";
 
 export default function HeroSection() {
     return (
@@ -20,8 +20,8 @@ export default function HeroSection() {
                             <span className="block">Creative</span>
                             <span> Software Engineer.</span>
                         </p>
-                        <p className="xs-text">
-                            {`I’m hckerson, I build high-performance web applications. I’m driven by pixel-perfect implementation, scalability, and pushing the boundaries of what the modern web can do.`}{" "}
+                        <p className="xs-text text-neutral-400">
+                            {`I’m hckerson, a Full-Stack Engineer building high-performance products at the intersection of design and scalable architecture.`}{" "}
                         </p>
                         <span className="flex space-x-3">
                             <Link href="/contact">
