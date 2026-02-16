@@ -1,5 +1,6 @@
 "use client";
 import clsx from "clsx";
+import useTheme from "@/hooks/useTheme";
 import { ImHome3 } from "react-icons/im";
 import { useEffect, useState } from "react";
 import { MdLightMode } from "react-icons/md";
@@ -23,6 +24,8 @@ export default function Navbar() {
             window.removeEventListener("scroll", scrollController);
         };
     }, []);
+
+    const { currentTheme } = useTheme();
     return (
         <nav
             className={clsx("fixed flex h-25 w-full items-end bg-transparent")}
@@ -33,13 +36,20 @@ export default function Navbar() {
                     animationStarted ? "-translate-y-10" : "bottom-0",
                 )}
             >
-                <div className="flex divide-x divide-stone-900 p-2">
-                    <div className="rounded-full bg-stone-800 p-2">
-                        <ImHome3 />
+                <div className="flex divide-x divide-stone-900 gap-x-2 p-2">
+                    <div className="pr-1">
+                        <div className="rounded-full bg-stone-800 p-2">
+                            <ImHome3 />
+                        </div>
                     </div>
-                    <div></div>
-                    <div>
-                        
+                    <div className="w-10"></div>
+                    <div className="w-10"></div>
+                    <div className="rounded-full p-2">
+                        {currentTheme === "light" ? (
+                            <MdLightMode />
+                        ) : (
+                            <MdNightlight />
+                        )}
                     </div>
                 </div>
             </div>
