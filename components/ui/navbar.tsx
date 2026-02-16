@@ -29,7 +29,7 @@ export default function Navbar() {
     const { currentTheme } = useTheme();
     return (
         <nav
-            className={clsx("fixed flex h-25 w-full items-end bg-transparent")}
+            className={clsx("fixed flex h-25 z-50 w-full items-end bg-transparent")}
         >
             <div
                 className={clsx(
