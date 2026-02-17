@@ -37,7 +37,7 @@ export default function Navbar() {
                     animationStarted ? "-translate-y-8" : "bottom-0",
                 )}
             >
-                <div className="flex items-center gap-x-2 p-2">
+                <div className="flex items-center gap-x-4 p-2">
                     <div className="pr-1">
                         <div className="rounded-full bg-stone-800 p-1">
                             <LiaHomeSolid className="size-4" />

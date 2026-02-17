@@ -139,7 +139,7 @@
 }
 
 .xlarge-pady {
-    @apply py-12 sm:py-20 xl:py-28;
+    @apply py-20 sm:py-28 xl:py-38;
 }
 
 .large-pady {
