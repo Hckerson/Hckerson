@@ -1,4 +1,17 @@
-const cardStyles = {
+import { Color } from "@/lib/types";
+
+const cardStyles: Record<
+    Color,
+    {
+        border: string;
+        text: string;
+        light: string;
+        dark: string;
+        shadow: string;
+        linear: string;
+        fade: string;
+    }
+> = {
     orange: {
         border: "border-orange",
         text: "text-orange",
@@ -116,7 +129,7 @@ const cardStyles = {
         linear: "to-clay",
         fade: "#1D1F1B",
     },
-     blue: {
+    blue: {
         light: "bg-blue",
         border: "border-blue",
         text: "text-blue",
