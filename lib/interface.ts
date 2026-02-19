@@ -1,8 +1,19 @@
 import { IconType } from "react-icons";
+import { ProjectLevel, ProjectStatus, ProjectType } from "./types";
 
-export interface Navlinks {
+export interface Navlink {
     name: string;
     link: string;
     icon: IconType;
     visible: string;
+}
+
+export interface Project {
+    date: string; 
+    name: string;
+    category: string;
+    type: ProjectType
+    description: string;
+    level: ProjectLevel;
+    status: ProjectStatus
 }
