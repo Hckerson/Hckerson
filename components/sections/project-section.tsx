@@ -4,7 +4,7 @@ import { clsx } from "clsx";
 export default function ProjectSection() {
     return (
         <section className="xlarge-pady flex w-full bg-stone-950">
-            <div className="relative mx-auto w-5xl">
+            <div className="relative mx-auto w-6xl">
                 <div>
                     <p
                         className={clsx(
