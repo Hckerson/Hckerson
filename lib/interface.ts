@@ -9,11 +9,15 @@ export interface Navlink {
 }
 
 export interface Project {
-    date: string; 
+    date: string;
     name: string;
     category: string;
-    type: ProjectType
+    type: ProjectType;
+    thumbnailSrc: string;
     description: string;
     level: ProjectLevel;
-    status: ProjectStatus
+    status: ProjectStatus;
 }
+
+
+
