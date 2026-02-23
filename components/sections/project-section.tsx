@@ -18,6 +18,10 @@ export default function ProjectSection() {
                         {`Here are some of my recent projects. I'm always working on something new, so be sure to check back often.`}
                     </p>
                 </div>
+                <div className="grid md:grid-cols-2">
+{
+}
+                </div>
             </div>
         </section>
     );
