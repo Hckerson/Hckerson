@@ -40,7 +40,7 @@ export default function Navbar() {
                 <div className="flex items-center gap-x-4 p-2">
                     <div className="pr-1">
                         <div className="rounded-full bg-stone-800 p-1">
-                            <LiaHomeSolid className="size-4" />
+                            <LiaHomeSolid className="size-5" />
                         </div>
                     </div>
                     <div className="h-5 w-0.5 bg-stone-800"></div>
@@ -58,7 +58,7 @@ export default function Navbar() {
                                 )}
                             >
                                 <span>
-                                    <Icon className="" />
+                                    <Icon className="size-5" />
                                 </span>
                                 <p className="xs-text">{link.name}</p>
                             </div>
