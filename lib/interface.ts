@@ -1,5 +1,10 @@
 import { IconType } from "react-icons";
-import { ProjectLevel, ProjectStatus, ProjectType } from "./types";
+import {
+    ProjectLevel,
+    ProjectStatus,
+    ProjectType,
+    SkillCategory,
+} from "./types";
 
 export interface Navlink {
     name: string;
@@ -61,4 +66,10 @@ export interface Certification {
     name: string;
     issuer: string;
     year: string;
+}
+
+export interface Skill {
+    name: string;
+    icon: string;
+    categories: SkillCategory[];
 }

@@ -4,6 +4,7 @@ import {
     Education,
     Navlink,
     PortfolioProject,
+    Skill,
     WorkExperience,
 } from "../interface";
 import { FaBlog } from "react-icons/fa6";
@@ -337,20 +338,70 @@ const certifications: Certification[] = [
     },
 ];
 
-const skills: string[] = [
-    "JavaScript",
-    "TypeScript",
-    "React",
-    "Next.js",
-    "NestJS",
-    "Node.js",
-    "Express",
-    "Python",
-    "PostgreSQL",
-    "MongoDB",
-    "Prisma",
-    "Git",
-    "REST APIs",
+const skills: Skill[] = [
+    { name: "HTML", icon: "/icons/html.svg", categories: ["Markup Language"] },
+    { name: "CSS", icon: "/icons/css.svg", categories: ["Styling"] },
+    {
+        name: "JavaScript",
+        icon: "/icons/javascript.svg",
+        categories: ["Programming Language"],
+    },
+    {
+        name: "TypeScript",
+        icon: "/icons/typescript.svg",
+        categories: ["Programming Language"],
+    },
+    {
+        name: "React.js",
+        icon: "/icons/react.svg",
+        categories: ["Frontend Library"],
+    },
+    {
+        name: "Next.js",
+        icon: "/icons/nextjs.svg",
+        categories: ["Fullstack Framework"],
+    },
+    {
+        name: "Tailwind CSS",
+        icon: "/icons/tailwind.svg",
+        categories: ["Styling"],
+    },
+    {
+        name: "Framer Motion",
+        icon: "/icons/framer.svg",
+        categories: ["Animations"],
+    },
+    {
+        name: "Node.js",
+        icon: "/icons/nodejs.svg",
+        categories: ["Backend Runtime"],
+    },
+    {
+        name: "Go (Fiber)",
+        icon: "/icons/go.svg",
+        categories: ["Backend Framework"],
+    },
+    { name: "Hono", icon: "/icons/hono.svg", categories: ["Web Framework"] },
+    {
+        name: "PostgreSQL",
+        icon: "/icons/postgresql.svg",
+        categories: ["Database"],
+    },
+    {
+        name: "Firebase",
+        icon: "/icons/firebase.svg",
+        categories: ["Database", "Auth"],
+    },
+    {
+        name: "Git & GitHub",
+        icon: "/icons/git.svg",
+        categories: ["Version Control"],
+    },
+    {
+        name: "SEO",
+        icon: "/icons/seo.svg",
+        categories: ["Search Optimization"],
+    },
 ];
 
 export {
