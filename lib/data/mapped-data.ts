@@ -339,67 +339,80 @@ const certifications: Certification[] = [
 ];
 
 const skills: Skill[] = [
-    { name: "HTML", icon: "/icons/html.svg", categories: ["Markup Language"] },
-    { name: "CSS", icon: "/icons/css.svg", categories: ["Styling"] },
+    {
+        name: "HTML",
+        icon: "/images/icons/html.webp",
+        categories: ["Markup Language"],
+    },
+    { name: "CSS", icon: "/images/icons/css.webp", categories: ["Styling"] },
     {
         name: "JavaScript",
-        icon: "/icons/javascript.svg",
+        icon: "/images/icons/js.webp",
         categories: ["Programming Language"],
     },
     {
         name: "TypeScript",
-        icon: "/icons/typescript.svg",
+        icon: "/images/icons/ts.webp",
         categories: ["Programming Language"],
     },
     {
         name: "React.js",
-        icon: "/icons/react.svg",
+        icon: "/images/icons/react.webp",
         categories: ["Frontend Library"],
     },
     {
         name: "Next.js",
-        icon: "/icons/nextjs.svg",
+        icon: "/images/icons/nextjs.svg",
         categories: ["Fullstack Framework"],
     },
     {
         name: "Tailwind CSS",
-        icon: "/icons/tailwind.svg",
+        icon: "/images/icons/tailwind.webp",
         categories: ["Styling"],
     },
     {
         name: "Framer Motion",
-        icon: "/icons/framer.svg",
+        icon: "/images/icons/framer.webp",
         categories: ["Animations"],
     },
     {
         name: "Node.js",
-        icon: "/icons/nodejs.svg",
+        icon: "/images/icons/nodejs.webp",
         categories: ["Backend Runtime"],
     },
     {
-        name: "Go (Fiber)",
-        icon: "/icons/go.svg",
+        name: "NestJS",
+        icon: "/images/icons/nestjs.svg", // Missing icon
         categories: ["Backend Framework"],
     },
-    { name: "Hono", icon: "/icons/hono.svg", categories: ["Web Framework"] },
+    {
+        name: "Go (Fiber)",
+        icon: "/images/icons/go-fiber.svg",
+        categories: ["Backend Framework"],
+    },
     {
         name: "PostgreSQL",
-        icon: "/icons/postgresql.svg",
+        icon: "/images/icons/postgres.webp",
+        categories: ["Database"],
+    },
+    {
+        name: "Prisma",
+        icon: "/images/icons/prisma.svg", // Missing icon
         categories: ["Database"],
     },
     {
         name: "Firebase",
-        icon: "/icons/firebase.svg",
+        icon: "/images/icons/firebase.webp",
         categories: ["Database", "Auth"],
     },
     {
         name: "Git & GitHub",
-        icon: "/icons/git.svg",
+        icon: "/images/icons/git.webp",
         categories: ["Version Control"],
     },
     {
         name: "SEO",
-        icon: "/icons/seo.svg",
+        icon: "/images/icons/seo.webp",
         categories: ["Search Optimization"],
     },
 ];
