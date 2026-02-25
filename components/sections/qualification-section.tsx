@@ -1,9 +1,7 @@
-import clsx from "clsx";
-import SkillCard from "../ui/cards/skill-card";
-import { skills } from "@/lib/data/mapped-data";
 import { clashDisplay } from "@/public/fonts/font";
+import clsx from "clsx";
 
-export default function SkillSection() {
+export default function QualificationSection() {
     return (
         <section className="xlarge-pady flex w-full bg-stone-950">
             <div className="relative mx-auto w-6xl space-y-5">
@@ -21,11 +19,7 @@ export default function SkillSection() {
                     </p>
                 </div>
 
-                <div className="g grid md:grid-cols-2 md:gap-5 xl:grid-cols-3 ">
-                    {skills.map((skill) => (
-                        <SkillCard key={skill.name} skill={skill} />
-                    ))}
-                </div>
+                <div className="g grid md:grid-cols-2 md:gap-5 xl:grid-cols-3"></div>
             </div>
         </section>
     );
