@@ -24,7 +24,7 @@ export default function HeroSection() {
                             {`I’m hckerson, a Full-Stack Engineer building high-performance products at the intersection of design and scalable architecture.`}{" "}
                         </p>
                         <span className="flex space-x-3">
-                            <Link href="/contact">
+                            <Link href="/contact" className="size-fit focus:outline-">
                                 <Button
                                     size="sm"
                                     classname="bg-cyan-400 text-black"
