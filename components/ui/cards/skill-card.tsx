@@ -3,8 +3,8 @@ import { Skill } from "@/lib/interface";
 
 export default function SkillCard({ skill }: { skill: Skill }) {
     return (
-        <div className="flex gap-x-3 rounded-xl bg-stone-950 border-2 border-stone-800 p-2 md:rounded-2xl">
-            <div className="rounded-lg bg-stone-800 p-3 size-14 md:rounded-xl">
+        <div className="flex gap-x-3 rounded-xl bg-stone-950 border-2 border-stone-800 p-1.5 md:rounded-2xl">
+            <div className="rounded-lg bg-stone-800 p-2.5 size-14 md:rounded-xl">
                 <Image
                     src={skill.icon}
                     alt={skill.name}
