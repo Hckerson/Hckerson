@@ -4,7 +4,7 @@ import clsx from "clsx";
 export default function QualificationSection() {
     return (
         <section className="xlarge-pady flex w-full bg-stone-950">
-            <div className="relative mx-auto w-6xl space-y-5">
+            <div className="large-pad relative mx-auto w-full max-w-6xl">
                 <div>
                     <p
                         className={clsx(
@@ -12,10 +12,10 @@ export default function QualificationSection() {
                             "base-text font-semibold",
                         )}
                     >
-                        Skills and Technologies
+                        Qualifications
                     </p>
                     <p className="xs-text text-stone-400">
-                        {`Here are some of my skills. I'm always working on something new, so be sure to check back often.`}
+                        Why you should hire me
                     </p>
                 </div>
 
