@@ -53,6 +53,9 @@ export interface WorkExperience {
     location: string;
     period: string;
     responsibilities: string[];
+    skills: string[];
+    description: string;
+    achievements: string[];
 }
 
 export interface Education {
