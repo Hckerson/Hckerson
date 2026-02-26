@@ -6,7 +6,7 @@ import { clashDisplay } from "@/public/fonts/font";
 export default function SkillSection() {
     return (
         <section className="xlarge-pady flex w-full bg-stone-950">
-            <div className="large-pad relative mx-auto w-full max-w-6xl">
+            <div className="large-pad relative mx-auto w-full max-w-7xl">
                 <div>
                     <p
                         className={clsx(
