@@ -3,18 +3,18 @@ import { Skill } from "@/lib/interface";
 
 export default function SkillCard({ skill }: { skill: Skill }) {
     return (
-        <div className="flex gap-x-3 rounded-xl items-center bg-stone-950 border-2 border-stone-800 p-1.5 md:rounded-2xl">
-            <div className="rounded-lg bg-stone-800 p-2.5 size-14 md:rounded-xl">
+        <div className="flex items-center gap-x-3 rounded-xl border-2 border-stone-800 bg-stone-950 p-1.5 md:rounded-2xl">
+            <div className="flex aspect-square size-13 items-center justify-center rounded-lg bg-stone-800 bg-cover p-2 md:rounded-xl">
                 <Image
                     src={skill.icon}
                     alt={skill.name}
-                    width={40}
-                    height={40}
+                    width={30}
+                    height={30}
                 />
             </div>
             <div className="leading-[1.2]">
-                <p className="sm-text font-medium">{skill.name}</p>
-                <p className="xs-text text-stone-400">
+                <p className="xs-text font-semibold">{skill.name}</p>
+                <p className="text-[10px] text-stone-400 sm:text-[12px] md:text-[11px] xl:text-[13px] 2xl:text-[14px]">
                     {skill.categories.join(" / ")}
                 </p>
             </div>

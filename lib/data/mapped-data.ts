@@ -387,7 +387,7 @@ const skills: Skill[] = [
     },
     {
         name: "Go (Fiber)",
-        icon: "/images/icons/go-fiber.svg",
+        icon: "/images/icons/fiber.svg",
         categories: ["Backend Framework"],
     },
     {

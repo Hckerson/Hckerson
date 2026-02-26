@@ -6,7 +6,7 @@ import SkillCard from "../ui/cards/skill-card";
 export default function ProjectSection() {
     return (
         <section className="xlarge-pady flex w-full bg-stone-950">
-            <div className="relative mx-auto w-6xl max-w-6xl">
+            <div className="relative mx-auto w-full max-w-6xl large-pad">
                 <div>
                     <p
                         className={clsx(
