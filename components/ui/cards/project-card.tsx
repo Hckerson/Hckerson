@@ -7,9 +7,9 @@ import { ProjectStatus, Color } from "@/lib/types";
 import { PortfolioProject } from "@/lib/interface";
 
 const projectDefinitions: Record<ProjectStatus, { bg: Color; label: string }> =
-    {
+    {   
         active: { bg: "green", label: "Active" },
-        planned: { bg: "ash", label: "Planned" },
+            planned: { bg: "ash", label: "Planned" },
         backlog: { bg: "orange", label: "Backlog" },
         completed: { bg: "blue", label: "Completed" },
     };
