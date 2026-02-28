@@ -236,6 +236,13 @@ const workExperience: WorkExperience[] = [
             "Created a secure file upload/download functionality with drag-and-drop features",
             "Built an efficient state management system for file operations",
         ],
+        skills: ["React", "Node.js", "Firebase", "TypeScript", "Tailwind CSS"],
+        description:
+            "Built a fully functional cloud storage clone with real-time updates and secure file handling.",
+        achievements: [
+            "Implemented seamless drag-and-drop file uploading",
+            "Reduced file operation latency by 30% through optimized state management",
+        ],
     },
     {
         title: "Backend Developer",
@@ -248,6 +255,13 @@ const workExperience: WorkExperience[] = [
             "Built a responsive dashboard for sales and inventory tracking",
             "Developed a market analysis tool and portfolio management features",
         ],
+        skills: ["Node.js", "PostgreSQL", "React", "Express", "JWT"],
+        description:
+            "Engineered a robust backend for a retail management system focusing on data integrity and security.",
+        achievements: [
+            "Designed a scalable database schema for high-volume inventory tracking",
+            "Implemented role-based access control (RBAC) for enhanced security",
+        ],
     },
     {
         title: "Full Stack Developer",
@@ -255,11 +269,23 @@ const workExperience: WorkExperience[] = [
         location: "Remote",
         period: "2025 - Present",
         responsibilities: [
-            // "Implemented secure payment processing with Stripe integration",
             "Developed responsive booking system with real-time availability",
             "Created admin dashboard for reservation management",
             "Built room inventory management system",
             "Implemented user authentication and authorization",
+        ],
+        skills: [
+            "Next.js",
+            "TypeScript",
+            "Prisma",
+            "PostgreSQL",
+            "Tailwind CSS",
+        ],
+        description:
+            "Lead developer for a luxury hotel booking platform with integrated booking logic and admin controls.",
+        achievements: [
+            "Built a real-time room availability checker",
+            "Automated reservation emails and confirmation workflows",
         ],
     },
     // {

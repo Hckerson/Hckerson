@@ -1,11 +1,10 @@
 import clsx from "clsx";
 import Link from "next/link";
 import Image from "next/image";
-import { Project } from "@/lib/interface";
 import { FolderClosed } from "lucide-react";
 import { clashDisplay } from "@/public/fonts/font";
 import { ProjectStatus, Color } from "@/lib/types";
-
+import { PortfolioProject } from "@/lib/interface";
 
 const projectDefinitions: Record<ProjectStatus, { bg: Color; label: string }> =
     {
@@ -15,15 +14,15 @@ const projectDefinitions: Record<ProjectStatus, { bg: Color; label: string }> =
         completed: { bg: "blue", label: "Completed" },
     };
 
-export default function ProjectCard({ data }: { data: Project }) {
-    const { status, name, description, thumbnailSrc } = data;
+export default function ProjectCard({ data }: { data: PortfolioProject }) {
+    const { title, description, image, status } = data;
     const props = projectDefinitions[status];
     return (
         <div className="flex h-100 overflow-hidden rounded-xl border border-stone-500 p-5 md:rounded-2xl xl:rounded-3xl xl:p-6">
             <div className="h-full w-full">
                 <Image
-                    src={thumbnailSrc}
-                    alt={name}
+                    src={image}
+                    alt={`Project-${title} thunbnail`}
                     fill
                     className="h-full w-full object-cover"
                 />
@@ -35,7 +34,7 @@ export default function ProjectCard({ data }: { data: Project }) {
                         "large-text font-semibold",
                     )}
                 >
-                    {name}
+                    {title}
                 </p>
                 <p className="base-text">{description}</p>
             </div>
