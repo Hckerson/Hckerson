@@ -13,16 +13,6 @@ export interface Navlink {
     visible: string;
 }
 
-export interface Project {
-    date: string;
-    name: string;
-    category: string;
-    type: ProjectType;
-    thumbnailSrc: string;
-    description: string;
-    level: ProjectLevel;
-    status: ProjectStatus;
-}
 
 export interface PortfolioProject {
     id: number;
@@ -30,6 +20,7 @@ export interface PortfolioProject {
     description: string;
     image: string;
     tags: string[];
+    status: ProjectStatus;
     liveUrl: string;
     githubUrl: string;
     category: string;

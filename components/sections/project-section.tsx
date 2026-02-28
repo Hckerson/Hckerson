@@ -1,7 +1,7 @@
-import { skills } from "@/lib/data/mapped-data";
-import { clashDisplay } from "@/public/fonts/font";
 import { clsx } from "clsx";
-import SkillCard from "../ui/cards/skill-card";
+import { clashDisplay } from "@/public/fonts/font";
+import ProjectCard from "../ui/cards/project-card";
+import { projects } from "@/lib/data/mapped-data";
 
 export default function ProjectSection() {
     return (
@@ -19,6 +19,11 @@ export default function ProjectSection() {
                     <p className="xs-text text-stone-400">
                         {`Here are some of my recent projects. I'm always working on something new, so be sure to check back often.`}
                     </p>
+                </div>
+                <div className="box-border grid w-full grid-cols-1 xl:grid-cols-2">
+                    {projects.map((project) => (
+                        <ProjectCard key={project.id} data={project} />
+                    ))}
                 </div>
             </div>
         </section>
