@@ -41,6 +41,7 @@ const projects: PortfolioProject[] = [
         liveUrl: "https://dropbox-clone-seven-psi.vercel.app/",
         githubUrl: "https://github.com/hckerson/dropbox-clone",
         category: "fullstack",
+        status: "completed",
         learnings:
             "Implemented drag-and-drop file uploads, real-time file synchronization, and mastered complex state management for file operations.",
     },
@@ -60,6 +61,7 @@ const projects: PortfolioProject[] = [
         liveUrl: "https://one-place-clone.onrender.com/",
         githubUrl: "https://github.com/hckerson/One_place-clone",
         category: "backend",
+        status: "completed",
         learnings:
             "Developed a user-friendly interface for retail workers, implemented efficient data management for sales and inventory, and created responsive design patterns for various store devices.",
     },
@@ -80,6 +82,7 @@ const projects: PortfolioProject[] = [
         liveUrl: "https://serene-heaven.vercel.app/",
         githubUrl: "https://github.com/hckerson/serene-heaven",
         category: "frontend",
+        status: "completed",
         learnings:
             "Implemented secure payment processing with Stripe, built a responsive booking system, and created an intuitive admin interface for hotel management.",
     },
@@ -101,6 +104,7 @@ const projects: PortfolioProject[] = [
         liveUrl: "https://cresora.vercel.app", // Update with your actual URL
         githubUrl: "https://github.com/hckerson/cresora", // Update with your actual repo
         category: "frontend",
+        status: "completed",
         learnings:
             "Built an interactive financial dashboard with React Flow for data visualization, implemented complex UI components with Radix UI, and created a responsive design system for financial data presentation. Mastered advanced React patterns for state management and component composition.",
     },
@@ -123,6 +127,7 @@ const projects: PortfolioProject[] = [
         liveUrl: "https://openlibrary-five.vercel.app/",
         githubUrl: "https://github.com/yourusername/e-library-frontend",
         category: "fullstack",
+        status: "completed",
         learnings:
             "Built a sophisticated PDF management system with advanced reading features including annotations, bookmarks, and search. Implemented role-based authentication with NextAuth.js, created responsive admin dashboard with analytics, and developed a scalable architecture using Prisma ORM with PostgreSQL. Mastered complex state management for PDF viewing, user permissions, and real-time collaboration features.",
     },
@@ -143,6 +148,7 @@ const projects: PortfolioProject[] = [
         liveUrl: "https://tixsync.vercel.app",
         githubUrl: "https://github.com/hckerson/TixSync",
         category: "fullstack",
+        status: "completed",
         learnings:
             "Implemented complex seat reservation system with timed holds, built type-safe APIs using GraphQL Code Generator, handled real-time ticket availability updates, and integrated secure payment processing.",
     },
