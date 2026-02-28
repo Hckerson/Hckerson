@@ -30,7 +30,7 @@ const projects: PortfolioProject[] = [
         title: "Dropbox Website Clone",
         description:
             "A modern clone of the Dropbox website featuring file upload/download, real-time collaboration, and a responsive design that mirrors the original platform's sleek interface.",
-        image: "dropbox.png",
+        image: "/images/projects/cover/dropbox.png",
         tags: [
             "Next.js",
             "TypeScript",
@@ -50,7 +50,7 @@ const projects: PortfolioProject[] = [
         title: "One Place Clone",
         description:
             "A comprehensive retail management web application designed for store workers to manage sales, inventory, and customer interactions. Features include product management, sales tracking, and customer service tools.",
-        image: "one_place.png",
+        image: "/images/projects/cover/one_place.png",
         tags: [
             "Next.js",
             "TypeScript",
@@ -66,11 +66,11 @@ const projects: PortfolioProject[] = [
             "Developed a user-friendly interface for retail workers, implemented efficient data management for sales and inventory, and created responsive design patterns for various store devices.",
     },
     {
-        id: 4,
+        id: 3,
         title: "Serene Heaven",
         description:
             "A luxury hotel booking platform featuring elegant room displays, real-time availability checking, and seamless booking experience. Includes admin dashboard for managing reservations and room inventory.",
-        image: "serene_heaven.png",
+        image: "/images/projects/cover/serene_heaven.png",
         tags: [
             "Next.js",
             "TypeScript",
@@ -87,11 +87,11 @@ const projects: PortfolioProject[] = [
             "Implemented secure payment processing with Stripe, built a responsive booking system, and created an intuitive admin interface for hotel management.",
     },
     {
-        id: 7,
-        title: "Cresora - Financial Management Platform",
+        id: 4,
+        title: "Cresora - Finance Platform",
         description:
             "A comprehensive financial management platform designed for SMEs in Indonesia, featuring AI-powered insights, real-time cash tracking, bill management, and flexible reporting. Built with modern web technologies and interactive data visualization.",
-        image: "cresora.png", // You'll need to add this image
+        image: "/images/projects/cover/cresora.png", // You'll need to add this image
         tags: [
             "Next.js",
             "TypeScript",
@@ -109,34 +109,11 @@ const projects: PortfolioProject[] = [
             "Built an interactive financial dashboard with React Flow for data visualization, implemented complex UI components with Radix UI, and created a responsive design system for financial data presentation. Mastered advanced React patterns for state management and component composition.",
     },
     {
-        id: 8,
-        title: "OpenLibrary - Academic Resource Platform",
-        description:
-            "A comprehensive digital library platform designed for Nigerian campus students and lecturers, featuring PDF management, advanced reading tools, and collaborative study features. Includes AI-powered search, PDF annotations, user authentication, and admin dashboard for content management.",
-        image: "openlibrary.png",
-        tags: [
-            "Next.js",
-            "TypeScript",
-            "Tailwind CSS",
-            "Prisma",
-            "PostgreSQL",
-            "NextAuth.js",
-            "Radix UI",
-            "Framer Motion",
-        ],
-        liveUrl: "https://openlibrary-five.vercel.app/",
-        githubUrl: "https://github.com/yourusername/e-library-frontend",
-        category: "fullstack",
-        status: "completed",
-        learnings:
-            "Built a sophisticated PDF management system with advanced reading features including annotations, bookmarks, and search. Implemented role-based authentication with NextAuth.js, created responsive admin dashboard with analytics, and developed a scalable architecture using Prisma ORM with PostgreSQL. Mastered complex state management for PDF viewing, user permissions, and real-time collaboration features.",
-    },
-    {
-        id: 9,
+        id: 5,
         title: "TixSync",
         description:
             "A full-stack event ticketing platform that enables event organizers to create and manage events, handle ticket sales. Features include seat reservation system, QR code tickets, multiple ticket tiers, and payment processing.",
-        image: "logo.jpg",
+        image: "/images/projects/cover/logo.jpg",
         tags: [
             "NestJS",
             "GraphQL",
