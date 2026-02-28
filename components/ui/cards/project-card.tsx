@@ -18,25 +18,27 @@ export default function ProjectCard({ data }: { data: PortfolioProject }) {
     const { title, description, image, status } = data;
     const props = projectDefinitions[status];
     return (
-        <div className="flex h-100 overflow-hidden rounded-xl border border-stone-500 p-5 md:rounded-2xl xl:rounded-3xl xl:p-6">
-            <div className="h-full w-full">
+        <div className="relative flex h-90 flex-col overflow-hidden rounded-xl md:rounded-2xl xl:rounded-3xl">
+            <div className="relative max-h-60 w-full flex-1">
+                <div className="absolute inset-0 bg-black opacity-20 transition-all duration-300 ease-in-out hover:translate-y-full"></div>
                 <Image
                     src={image}
                     alt={`Project-${title} thunbnail`}
-                    fill
-                    className="h-full w-full object-cover"
+                    width={500}
+                    height={500}
+                    className="w-full transition-all duration-300 ease-in-out hover:scale-110"
                 />
             </div>
-            <div className="absolute inset-x-0 z-10 space-y-4 bg-linear-to-b from-stone-950 to-stone-900 p-4 md:p-5 xl:p-6">
+            <div className="relative h-30 space-y-1 bg-linear-to-b from-stone-950 to-stone-900 p-4 leading-[1.1] md:p-5">
                 <p
                     className={clsx(
                         clashDisplay.className,
-                        "large-text font-semibold",
+                        "base-text font-semibold",
                     )}
                 >
                     {title}
                 </p>
-                <p className="base-text">{description}</p>
+                <p className="xs-text">{description}</p>
             </div>
         </div>
     );
