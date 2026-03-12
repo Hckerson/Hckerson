@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 const useTheme = () => {
     const [currentTheme, setCurrentTheme] =
-        useState<Omit<Theme, "system">>("light");
+        useState<Omit<Theme, "system">>("dark");
 
     useEffect(() => {
         const theme = window.matchMedia("(prefers-color-scheme: dark)").matches
