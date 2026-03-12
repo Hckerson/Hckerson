@@ -1,5 +1,7 @@
+import { workExperience } from "@/lib/data/mapped-data";
 import { clashDisplay } from "@/public/fonts/font";
 import clsx from "clsx";
+import QulaificationCard from "../ui/cards/qualification-card";
 
 export default function QualificationSection() {
     return (
@@ -20,7 +22,14 @@ export default function QualificationSection() {
                 </div>
 
                 <div className="box-border w-full rounded-lg border border-stone-600 sm:rounded-xl lg:rounded-2xl">
-                    
+                    {workExperience.map((work, idx) => {
+                        return (
+                            <QulaificationCard
+                                key={`${work.company}-${idx}`}
+                                data={work}
+                            />
+                        );
+                    })}
                 </div>
             </div>
         </section>
