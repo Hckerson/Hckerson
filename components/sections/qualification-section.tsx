@@ -21,12 +21,13 @@ export default function QualificationSection() {
                     </p>
                 </div>
 
-                <div className="box-border w-full rounded-lg border border-stone-600 sm:rounded-xl lg:rounded-2xl">
+                <div className="box-border w-full rounded-lg border divide-y divide-stone-600 border-stone-800 sm:rounded-xl lg:rounded-2xl">
                     {workExperience.map((work, idx) => {
                         return (
                             <QulaificationCard
                                 key={`${work.company}-${idx}`}
                                 data={work}
+                                id={idx}
                             />
                         );
                     })}

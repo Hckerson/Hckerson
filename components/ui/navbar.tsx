@@ -39,7 +39,7 @@ export default function Navbar() {
             >
                 <div className="flex items-center gap-x-4 p-2">
                     <div className="pr-1">
-                        <div className="rounded-full bg-stone-800 p-1">
+                        <div className="rounded-full bg-stone-800 p-1.5">
                             <LiaHomeSolid className="size-5" />
                         </div>
                     </div>

@@ -211,6 +211,32 @@ const articles: Article[] = [
 const workExperience: WorkExperience[] = [
     {
         title: "Full Stack Developer",
+        company: "Vouchmark",
+        location: "Remote",
+        period: "2024 - Present",
+        responsibilities: [
+            "Leading the design and implementation of both frontend and backend architectures",
+            "Developing a robust business verification platform for supplier onboarding and trust scoring",
+            "Integrating complex ERP systems like SAP with the Vouchmark platform",
+            "Ensuring scalability and security of the entire system architecture",
+        ],
+        skills: [
+            "Next.js",
+            "TypeScript",
+            "Node.js",
+            "PostgreSQL",
+            "System Architecture",
+            "ERP Integration",
+        ],
+        description:
+            "Managing the end-to-end technical architecture and development for a business verification platform focused on African markets.",
+        achievements: [
+            "Architected a scalable full-stack solution from the ground up",
+            "Improved business verification efficiency through automated risk assessment tools",
+        ],
+    },
+    {
+        title: "Full Stack Developer",
         company: "Dropbox Clone",
         location: "Remote",
         period: "2023 - Present",
@@ -271,42 +297,6 @@ const workExperience: WorkExperience[] = [
             "Automated reservation emails and confirmation workflows",
         ],
     },
-    // {
-    //   title: "Senior Full-Stack Developer",
-    //   company: "Tech Innovators Inc.",
-    //   location: "San Francisco, CA",
-    //   period: "2021 - Present",
-    //   responsibilities: [
-    //     "Lead development of a SaaS platform serving over 50,000 users",
-    //     "Implemented CI/CD pipelines reducing deployment time by 40%",
-    //     "Mentored junior developers and conducted code reviews",
-    //     "Optimized database queries resulting in 60% performance improvement",
-    //   ],
-    // },
-    // {
-    //   title: "Full-Stack Developer",
-    //   company: "Digital Solutions Co.",
-    //   location: "Austin, TX",
-    //   period: "2019 - 2021",
-    //   responsibilities: [
-    //     "Developed responsive web applications using React and Node.js",
-    //     "Integrated third-party APIs including payment gateways and mapping services",
-    //     "Collaborated with UX/UI designers to implement user-friendly interfaces",
-    //     "Participated in Agile development process with bi-weekly sprints",
-    //   ],
-    // },
-    // {
-    //   title: "Junior Web Developer",
-    //   company: "Creative Web Agency",
-    //   location: "Seattle, WA",
-    //   period: "2018 - 2019",
-    //   responsibilities: [
-    //     "Built and maintained client websites using JavaScript, HTML, and CSS",
-    //     "Created custom WordPress themes and plugins",
-    //     "Performed website optimizations to improve load times",
-    //     "Assisted with technical support and bug fixes",
-    //   ],
-    // },
 ];
 
 const education: Education[] = [
