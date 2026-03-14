@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "./radix/styles.css";
 @custom-variant light (&:where(.light, .light *));
 
 :root {
@@ -22,6 +21,27 @@
     --animate-slide-in-up: slideInUp 0.5s ease-out forwards;
     --animate-slide-left-to-right: slideLeftToRight 10s linear infinite;
     --animate-slide-right-to-left: slideRightToLeft 10s linear infinite;
+
+    --animate-accordion-down: accordion-down 0.3s ease-out;
+    --animate-accordion-up: accordion-up 0.3s ease-out;
+
+    @keyframes accordion-down {
+        from {
+            height: 0;
+        }
+        to {
+            height: var(--radix-accordion-content-height);
+        }
+    }
+
+    @keyframes accordion-up {
+        from {
+            height: var(--radix-accordion-content-height);
+        }
+        to {
+            height: 0;
+        }
+    }
 
     @keyframes rotatePaa {
         0% {
