@@ -7,8 +7,8 @@ import {
     Skill,
     WorkExperience,
 } from "../interface";
-import { FaBlog } from "react-icons/fa6";
 import { LuTags } from "react-icons/lu";
+import { FaBlog } from "react-icons/fa6";
 import { BsFolder2Open } from "react-icons/bs";
 import { VscGithubAlt } from "react-icons/vsc";
 
