@@ -2,6 +2,7 @@ import { workExperience } from "@/lib/data/mapped-data";
 import { clashDisplay } from "@/public/fonts/font";
 import clsx from "clsx";
 import QulaificationCard from "../ui/cards/qualification-card";
+import { Accordion } from "@radix-ui/react-accordion";
 
 export default function QualificationSection() {
     return (
@@ -21,16 +22,22 @@ export default function QualificationSection() {
                     </p>
                 </div>
 
-                <div className="box-border w-full rounded-lg border divide-y divide-stone-600 border-stone-800 sm:rounded-xl lg:rounded-2xl">
-                    {workExperience.map((work, idx) => {
-                        return (
-                            <QulaificationCard
-                                key={`${work.company}-${idx}`}
-                                data={work}
-                                id={idx}
-                            />
-                        );
-                    })}
+                <div className="box-border w-full divide-y divide-stone-600 rounded-lg border border-stone-800 sm:rounded-xl lg:rounded-2xl">
+                    <Accordion
+                        type="single"
+                        key={`${workExperience[0].company}`}
+                        defaultValue={`${workExperience[0].company}`}
+                    >
+                        {workExperience.map((work, idx) => {
+                            return (
+                                <QulaificationCard
+                                    key={`${work.company}-${idx}`}
+                                    data={work}
+                                    id={idx}
+                                />
+                            );
+                        })}
+                    </Accordion>
                 </div>
             </div>
         </section>
