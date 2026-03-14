@@ -64,12 +64,12 @@ export default function QulaificationCard({
                             <p className={clsx("xs-text font-semibold")}>
                                 Skills and Technologies
                             </p>
-                            <ul className="flex flex-wrap gap-2">
+                            <ul className="flex flex-wrap gap-2 my-2">
                                 {data.skills.map((skill, idx) => {
                                     return (
                                         <li
                                             key={`${skill}-${idx}`}
-                                            className="xs-text flex items-center justify-center rounded-full bg-stone-800 px-2 py-1 font-medium text-stone-400"
+                                            className="xs-text flex items-center justify-center rounded-full bg-stone-800 px-2 py-1 font-mediu"
                                         >
                                             <p>{skill}</p>
                                         </li>
