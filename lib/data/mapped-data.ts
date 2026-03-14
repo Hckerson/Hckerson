@@ -212,7 +212,7 @@ const workExperience: WorkExperience[] = [
     {
         title: "Full Stack Developer",
         company: "Vouchmark",
-        location: "Remote",
+        location: "Global/Remote",
         period: "2024 - Present",
         responsibilities: [
             "Leading the design and implementation of both frontend and backend architectures",

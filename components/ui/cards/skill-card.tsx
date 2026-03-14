@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { Skill } from "@/lib/interface";
+import clsx from "clsx";
+import { clashDisplay } from "@/public/fonts/font";
 
 export default function SkillCard({ skill }: { skill: Skill }) {
     return (
@@ -13,8 +15,15 @@ export default function SkillCard({ skill }: { skill: Skill }) {
                 />
             </div>
             <div className="leading-[1.2]">
-                <p className="xs-text font-semibold">{skill.name}</p>
-                <p className="text-[10px] text-stone-400 sm:text-[12px] md:text-[11px] xl:text-[13px] 2xl:text-[14px]">
+                <p
+                    className={clsx(
+                        "xs-text font-medium",
+                        clashDisplay.className,
+                    )}
+                >
+                    {skill.name}
+                </p>
+                <p className="text-[10px] font-medium text-stone-300 sm:text-[12px] md:text-[11px] xl:text-[13px] 2xl:text-[14px]">
                     {skill.categories.join(" / ")}
                 </p>
             </div>
