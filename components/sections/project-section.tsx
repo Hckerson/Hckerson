@@ -20,7 +20,7 @@ export default function ProjectSection() {
                         {`Here are some of my recent projects. I'm always working on something new, so be sure to check back often.`}
                     </p>
                 </div>
-                <div className="box-border mt-6  grid w-full grid-cols-1 gap-6 xl:grid-cols-2">
+                <div className="mt-6 box-border flex gap-x-6 overflow-x-auto">
                     {projects.map((project) => (
                         <ProjectCard key={project.id} data={project} />
                     ))}
