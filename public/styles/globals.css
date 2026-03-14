@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./radix/styles.css";
 @custom-variant light (&:where(.light, .light *));
 
 :root {

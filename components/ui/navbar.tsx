@@ -1,5 +1,6 @@
 "use client";
 import clsx from "clsx";
+import { Moon } from "lucide-react";
 import useTheme from "@/hooks/useTheme";
 import { useEffect, useState } from "react";
 import { MdLightMode } from "react-icons/md";
@@ -29,7 +30,9 @@ export default function Navbar() {
     const { currentTheme } = useTheme();
     return (
         <nav
-            className={clsx("fixed flex h-25 z-50 w-full items-end bg-transparent")}
+            className={clsx(
+                "fixed z-50 flex h-25 w-full items-end bg-transparent",
+            )}
         >
             <div
                 className={clsx(
@@ -37,7 +40,7 @@ export default function Navbar() {
                     animationStarted ? "-translate-y-8" : "bottom-0",
                 )}
             >
-                <div className="flex items-center gap-x-4 p-2">
+                <div className="flex items-center gap-x-3 p-2">
                     <div className="pr-1">
                         <div className="rounded-full bg-stone-800 p-1.5">
                             <LiaHomeSolid className="size-5" />
@@ -51,27 +54,25 @@ export default function Navbar() {
                             <div
                                 key={`navlink-item-${idx}`}
                                 className={clsx(
-                                    "flex w-fit items-center gap-x-2 mx-1",
+                                    "mx-1 flex w-fit items-center gap-x-2",
                                     idx === navlinks.length - 1
                                         ? "pr-0"
                                         : "pr-2",
                                 )}
                             >
                                 <span>
-                                    <Icon className="size-5" />
+                                    <Icon className="size-4" />
                                 </span>
-                                <p className="xs-text">{link.name}</p>
+                                <p className="xs-text font-medium text-stone-200">
+                                    {link.name}
+                                </p>
                             </div>
                         );
                     })}
                     <div className="h-5 w-0.5 bg-stone-800"></div>
 
                     <div className="rounded-full p-2">
-                        {currentTheme === "light" ? (
-                            <MdLightMode />
-                        ) : (
-                            <MdOutlineNightlight />
-                        )}
+                        {currentTheme === "light" ? <MdLightMode  className="size-4"/> : <Moon className="size-4" />}
                     </div>
                 </div>
             </div>

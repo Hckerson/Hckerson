@@ -1,12 +1,11 @@
 import { WorkExperience } from "@/lib/interface";
 import {
-    Accordion,
     AccordionContent,
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion";
-import { PiSuitcaseLight } from "react-icons/pi";
 import clsx from "clsx";
+import { PiSuitcaseLight } from "react-icons/pi";
 import { workExperience } from "@/lib/data/mapped-data";
 
 export default function QulaificationCard({
@@ -69,7 +68,7 @@ export default function QulaificationCard({
                                     return (
                                         <li
                                             key={`${skill}-${idx}`}
-                                            className="xs-text flex items-center justify-center rounded-full bg-stone-800 px-2 py-1 font-mediu"
+                                            className="xs-text flex items-center justify-center rounded-full bg-stone-800 px-2 py-1 font-medium text-white"
                                         >
                                             <p>{skill}</p>
                                         </li>
@@ -90,7 +89,9 @@ export default function QulaificationCard({
                                         className="flex gap-x-2"
                                     >
                                         <span className="xs-text flex size-4 items-center justify-center rounded-full bg-stone-800 font-medium text-stone-400">
-                                            <p className="text-[10px]">{idx + 1}</p>
+                                            <p className="text-[10px]">
+                                                {idx + 1}
+                                            </p>
                                         </span>
                                         <p className="xs-text font-medium text-stone-400">
                                             {achievement}
