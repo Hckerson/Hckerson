@@ -9,14 +9,18 @@ import { navlinks } from "@/lib/data/mapped-data";
 import { MdOutlineNightlight } from "react-icons/md";
 
 export default function Navbar() {
-    const [animationStarted, setAnimationStarted] = useState<Boolean>(false);
+    const [lastOffsetValue, setLastOffsetValue] = useState<number>(0);
+    const [scrollDirection, setScrollDirection] = useState<"up" | "down">(
+        "down",
+    );
     useEffect(() => {
         const scrollController = (e: Event) => {
             const verticalOffset = window.scrollY;
-            if (verticalOffset > 30) {
-                setAnimationStarted(true);
+            setLastOffsetValue(verticalOffset);
+            if (lastOffsetValue < verticalOffset) {
+                setScrollDirection("up");
             } else {
-                setAnimationStarted(false);
+                setScrollDirection("down");
             }
         };
 
@@ -37,7 +41,9 @@ export default function Navbar() {
             <div
                 className={clsx(
                     "mx-auto h-fit overflow-hidden rounded-full bg-stone-950 transition-transform duration-300 ease-in-out",
-                    animationStarted ? "-translate-y-8" : "bottom-0",
+                    scrollDirection === "up"
+                        ? "-translate-y-8"
+                        : "translate-y-0",
                 )}
             >
                 <div className="flex items-center gap-x-3 p-2">
@@ -72,7 +78,11 @@ export default function Navbar() {
                     <div className="h-5 w-0.5 bg-stone-800"></div>
 
                     <div className="rounded-full p-2">
-                        {currentTheme === "light" ? <MdLightMode  className="size-4"/> : <Moon className="size-4" />}
+                        {currentTheme === "light" ? (
+                            <MdLightMode className="size-4" />
+                        ) : (
+                            <Moon className="size-4" />
+                        )}
                     </div>
                 </div>
             </div>
