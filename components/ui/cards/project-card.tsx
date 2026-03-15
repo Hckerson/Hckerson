@@ -28,7 +28,7 @@ export default function ProjectCard({ data }: { data: PortfolioProject }) {
                     icon="solar:hamburger-menu-broken"
                     width="24"
                     height="24"
-                    className="my-auto flex text-white stroke-2 hover:scale-105"
+                    className="my-auto flex stroke-2 text-white hover:scale-105"
                 />
             </span>
             <span className="absolute -top-10 -right-10 z-20 flex size-8 items-center justify-center rounded-full bg-black transition-all duration-500 ease-in-out group-hover:-translate-x-14 group-hover:translate-y-14">
@@ -36,7 +36,7 @@ export default function ProjectCard({ data }: { data: PortfolioProject }) {
                     icon="arcticons:cinexplore"
                     width="24"
                     height="24"
-                    className="my-auto flex text-white stroke-2 hover:scale-105"
+                    className="my-auto flex stroke-2 text-white hover:scale-105"
                 />
             </span>
             <Image

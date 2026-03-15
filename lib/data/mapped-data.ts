@@ -31,6 +31,7 @@ const projects: PortfolioProject[] = [
         description:
             "A modern clone of the Dropbox website featuring file upload/download, real-time collaboration, and a responsive design that mirrors the original platform's sleek interface.",
         image: "/images/projects/cover/dropbox.png",
+        landscape: "/images/projects/cover/dropbox-landscape.png",
         tags: [
             "Next.js",
             "TypeScript",
@@ -51,6 +52,7 @@ const projects: PortfolioProject[] = [
         description:
             "An interactive digital \"Playground of Possibility\" where students participate in STEM, storytelling, and design competitions. It features a gamified national leaderboard and specialized creator roles.",
         image: "/images/projects/cover/playwork.png",
+        landscape: "/images/projects/cover/playwork-landscape.png",
         tags: [
             "Next.js",
             "Tailwind CSS",
@@ -71,6 +73,7 @@ const projects: PortfolioProject[] = [
         description:
             "A luxury hotel booking platform featuring elegant room displays, real-time availability checking, and seamless booking experience. Includes admin dashboard for managing reservations and room inventory.",
         image: "/images/projects/cover/serene-haven.png",
+        landscape: "/images/projects/cover/serena-landscape.png",
         tags: [
             "Next.js",
             "TypeScript",
@@ -92,6 +95,7 @@ const projects: PortfolioProject[] = [
         description:
             "A comprehensive financial management platform designed for SMEs in Indonesia, featuring AI-powered insights, real-time cash tracking, bill management, and flexible reporting. Built with modern web technologies and interactive data visualization.",
         image: "/images/projects/cover/cresora.png",
+        landscape: "/images/projects/cover/cresora-landscape.png",
         tags: [
             "Next.js",
             "TypeScript",
