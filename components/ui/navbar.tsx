@@ -1,6 +1,6 @@
 "use client";
 import clsx from "clsx";
-import { Moon } from "lucide-react";
+import { Link, Moon } from "lucide-react";
 import useTheme from "@/hooks/useTheme";
 import { useEffect, useState } from "react";
 import { MdLightMode } from "react-icons/md";
@@ -47,11 +47,11 @@ export default function Navbar() {
                 )}
             >
                 <div className="flex items-center gap-x-3 p-2">
-                    <div className="pr-1">
+                    <Link href="/" className="pr-1">
                         <div className="rounded-full bg-stone-800 p-1.5">
                             <LiaHomeSolid className="size-5" />
                         </div>
-                    </div>
+                    </Link>
                     <div className="h-5 w-0.5 bg-stone-800"></div>
                     {navlinks.map((link, idx) => {
                         const Icon = link.icon;

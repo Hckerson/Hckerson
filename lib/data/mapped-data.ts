@@ -13,12 +13,12 @@ import { BsFolder2Open } from "react-icons/bs";
 import { VscGithubAlt } from "react-icons/vsc";
 
 const navlinks: Navlink[] = [
-    { name: "Projects", link: "/arena", visible: "sm", icon: BsFolder2Open },
-    { name: "Pricing", link: "/competitions", visible: "md", icon: LuTags },
-    { name: "Blog", link: "/how-it-works", visible: "md", icon: FaBlog },
+    { name: "Projects", link: "/projects", visible: "sm", icon: BsFolder2Open },
+    { name: "Pricing", link: "/pricing", visible: "md", icon: LuTags },
+    { name: "Blog", link: "/blog", visible: "md", icon: FaBlog },
     {
         name: "Github",
-        link: "/national-leaderboard",
+        link: "https://github.com/hckerson",
         visible: "md",
         icon: VscGithubAlt,
     },
