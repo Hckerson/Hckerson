@@ -1,18 +1,21 @@
 "use client";
 import clsx from "clsx";
-import { Link, Moon } from "lucide-react";
+import Link from "next/link";
+import { Moon } from "lucide-react";
 import useTheme from "@/hooks/useTheme";
 import { useEffect, useState } from "react";
 import { MdLightMode } from "react-icons/md";
 import { LiaHomeSolid } from "react-icons/lia";
 import { navlinks } from "@/lib/data/mapped-data";
-import { MdOutlineNightlight } from "react-icons/md";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
     const [lastOffsetValue, setLastOffsetValue] = useState<number>(0);
     const [scrollDirection, setScrollDirection] = useState<"up" | "down">(
         "down",
     );
+    const pathname = usePathname();
+
     useEffect(() => {
         const scrollController = (e: Event) => {
             const verticalOffset = window.scrollY;
@@ -46,24 +49,31 @@ export default function Navbar() {
                         : "translate-y-0",
                 )}
             >
-                <div className="flex items-center gap-x-3 p-2">
+                <div className="flex items-center  p-2">
                     <Link href="/" className="pr-1">
-                        <div className="rounded-full bg-stone-800 p-1.5">
+                        <div
+                            className={clsx(
+                                "rounded-full p-1.5",
+                                pathname === "/" && "bg-stone-800",
+                            )}
+                        >
                             <LiaHomeSolid className="size-5" />
                         </div>
                     </Link>
-                    <div className="h-5 w-0.5 bg-stone-800"></div>
+                    <div className="h-5 w-0.5 bg-stone-800 mr-1"></div>
                     {navlinks.map((link, idx) => {
                         const Icon = link.icon;
 
                         return (
-                            <div
+                            <Link
+                                href={link.link}
                                 key={`navlink-item-${idx}`}
                                 className={clsx(
-                                    "mx-1 flex w-fit items-center gap-x-2",
-                                    idx === navlinks.length - 1
-                                        ? "pr-0"
-                                        : "pr-2",
+                                    "mx-1 flex w-fit items-center gap-x-2 rounded-3xl px-2.5 py-1.5",
+                                    // idx === navlinks.length - 1
+                                    //     ? "pr-1"
+                                    //     : "pr-2",
+                                    pathname === link.link && "bg-stone-800 border border-stone-700",
                                 )}
                             >
                                 <span>
@@ -72,7 +82,7 @@ export default function Navbar() {
                                 <p className="xs-text font-medium text-stone-200">
                                     {link.name}
                                 </p>
-                            </div>
+                            </Link>
                         );
                     })}
                     <div className="h-5 w-0.5 bg-stone-800"></div>
