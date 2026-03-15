@@ -19,6 +19,7 @@ export interface PortfolioProject {
     title: string;
     description: string;
     image: string;
+    landscape?: string;
     tags: string[];
     status: ProjectStatus;
     liveUrl: string;

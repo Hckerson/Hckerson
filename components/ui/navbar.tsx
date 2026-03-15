@@ -49,18 +49,19 @@ export default function Navbar() {
                         : "translate-y-0",
                 )}
             >
-                <div className="flex items-center  p-2">
+                <div className="flex items-center p-2">
                     <Link href="/" className="pr-1">
                         <div
                             className={clsx(
                                 "rounded-full p-1.5",
-                                pathname === "/" && "bg-stone-800",
+                                pathname === "/" &&
+                                    "border-stone-700 bg-stone-800",
                             )}
                         >
                             <LiaHomeSolid className="size-5" />
                         </div>
                     </Link>
-                    <div className="h-5 w-0.5 bg-stone-800 mr-1"></div>
+                    <div className="mr-1 h-5 w-0.5 bg-stone-800"></div>
                     {navlinks.map((link, idx) => {
                         const Icon = link.icon;
 
@@ -70,10 +71,9 @@ export default function Navbar() {
                                 key={`navlink-item-${idx}`}
                                 className={clsx(
                                     "mx-1 flex w-fit items-center gap-x-2 rounded-3xl px-2.5 py-1.5",
-                                    // idx === navlinks.length - 1
-                                    //     ? "pr-1"
-                                    //     : "pr-2",
-                                    pathname === link.link && "bg-stone-800 border border-stone-700",
+
+                                    pathname === link.link &&
+                                        "border border-stone-700 bg-stone-800",
                                 )}
                             >
                                 <span>
