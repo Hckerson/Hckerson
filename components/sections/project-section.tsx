@@ -6,7 +6,7 @@ import { projects } from "@/lib/data/mapped-data";
 export default function ProjectSection() {
     return (
         <section className="xlarge-pady flex w-full bg-stone-950">
-            <div className="large-pad relative mx-auto w-full max-w-[1320px]">
+            <div className="large-pad relative mx-auto w-full max-w-330">
                 <div className="leading-[1.2]">
                     <p
                         className={clsx(

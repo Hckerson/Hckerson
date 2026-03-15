@@ -68,7 +68,7 @@ export default function QulaificationCard({
                                     return (
                                         <li
                                             key={`${skill}-${idx}`}
-                                            className="xs-text flex items-center justify-center rounded-full bg-stone-800 px-2 py-1 font-medium text-white"
+                                            className="xs-text flex items-center border border-stone-700 justify-center rounded-full bg-stone-800 px-2 py-1 font-medium text-white"
                                         >
                                             <p>{skill}</p>
                                         </li>

@@ -21,22 +21,22 @@ export default function ProjectCard({ data }: { data: PortfolioProject }) {
     const { title, description, image, status } = data;
     const props = projectDefinitions[status];
     return (
-        <div className="group relative flex h-90 min-w-[300px] flex-col overflow-hidden rounded-xl md:rounded-2xl xl:rounded-3xl">
+        <div className="group relative flex h-90 min-w-75 flex-col overflow-hidden rounded-xl md:rounded-2xl xl:rounded-3xl">
             <div className="absolute inset-0 hidden bg-black opacity-20 transition-all duration-300 ease-in-out hover:translate-y-full"></div>
-            <span className="absolute -top-10 -left-10 z-20 flex size-8 items-center justify-center rounded-full bg-black transition-all duration-300 ease-in-out group-hover:translate-14">
+            <span className="absolute -top-10 -left-10 z-20 flex size-8 items-center justify-center rounded-full bg-black transition-all duration-500 ease-in-out group-hover:translate-14">
                 <Icon
                     icon="solar:hamburger-menu-broken"
                     width="24"
                     height="24"
-                    className="my-auto flex text-white stroke-2"
+                    className="my-auto flex text-white stroke-2 hover:scale-105"
                 />
             </span>
-            <span className="absolute -top-10 -right-10 z-20 flex size-8 items-center justify-center rounded-full bg-black transition-all duration-300 ease-in-out group-hover:-translate-x-14 group-hover:translate-y-14">
+            <span className="absolute -top-10 -right-10 z-20 flex size-8 items-center justify-center rounded-full bg-black transition-all duration-500 ease-in-out group-hover:-translate-x-14 group-hover:translate-y-14">
                 <Icon
                     icon="arcticons:cinexplore"
                     width="24"
                     height="24"
-                    className="my-auto flex text-white stroke-2"
+                    className="my-auto flex text-white stroke-2 hover:scale-105"
                 />
             </span>
             <Image
