@@ -1,3 +1,4 @@
+import Footer from "@/components/ui/footer";
 import HeroSection from "@/components/sections/hero-section";
 import SkillSection from "@/components/sections/skill-section";
 import AboutSection from "@/components/sections/about-section";
@@ -12,6 +13,7 @@ export default function Homepage() {
             <ProjectSection />
             <SkillSection />
             <QualificationSection />
+            <Footer />
         </div>
     );
 }
