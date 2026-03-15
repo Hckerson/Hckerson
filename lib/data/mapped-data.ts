@@ -47,30 +47,30 @@ const projects: PortfolioProject[] = [
     },
     {
         id: 2,
-        title: "One Place Clone",
+        title: "Playwork DREAMS",
         description:
-            "A comprehensive retail management web application designed for store workers to manage sales, inventory, and customer interactions. Features include product management, sales tracking, and customer service tools.",
-        image: "/images/projects/cover/one_place.png",
+            "An interactive digital \"Playground of Possibility\" where students participate in STEM, storytelling, and design competitions. It features a gamified national leaderboard and specialized creator roles.",
+        image: "/images/projects/cover/playwork.png",
         tags: [
             "Next.js",
-            "TypeScript",
             "Tailwind CSS",
-            "React Query",
             "Framer Motion",
+            "Radix UI",
+            "AI Integration",
         ],
-        liveUrl: "https://one-place-clone.onrender.com/",
-        githubUrl: "https://github.com/hckerson/One_place-clone",
-        category: "backend",
+        liveUrl: "https://play-sage-nine.vercel.app/",
+        githubUrl: "https://github.com/hckerson/play-sage-nine",
+        category: "frontend",
         status: "completed",
         learnings:
-            "Developed a user-friendly interface for retail workers, implemented efficient data management for sales and inventory, and created responsive design patterns for various store devices.",
+            "Built an interactive platform with a gamified national leaderboard system, integrated AI tools for instant student feedback, and implemented specialized creator role experiences.",
     },
     {
         id: 3,
         title: "Serene Heaven",
         description:
             "A luxury hotel booking platform featuring elegant room displays, real-time availability checking, and seamless booking experience. Includes admin dashboard for managing reservations and room inventory.",
-        image: "/images/projects/cover/serene_heaven.png",
+        image: "/images/projects/cover/serene-haven.png",
         tags: [
             "Next.js",
             "TypeScript",
@@ -91,7 +91,7 @@ const projects: PortfolioProject[] = [
         title: "Cresora - Finance Platform",
         description:
             "A comprehensive financial management platform designed for SMEs in Indonesia, featuring AI-powered insights, real-time cash tracking, bill management, and flexible reporting. Built with modern web technologies and interactive data visualization.",
-        image: "/images/projects/cover/cresora.png", // You'll need to add this image
+        image: "/images/projects/cover/cresora.png",
         tags: [
             "Next.js",
             "TypeScript",
@@ -108,68 +108,6 @@ const projects: PortfolioProject[] = [
         learnings:
             "Built an interactive financial dashboard with React Flow for data visualization, implemented complex UI components with Radix UI, and created a responsive design system for financial data presentation. Mastered advanced React patterns for state management and component composition.",
     },
-    {
-        id: 5,
-        title: "TixSync",
-        description:
-            "A full-stack event ticketing platform that enables event organizers to create and manage events, handle ticket sales. Features include seat reservation system, QR code tickets, multiple ticket tiers, and payment processing.",
-        image: "/images/projects/cover/logo.jpg",
-        tags: [
-            "NestJS",
-            "GraphQL",
-            "TypeScript",
-            "PostgreSQL",
-            "React",
-            "Apollo Client",
-        ],
-        liveUrl: "https://tixsync.vercel.app",
-        githubUrl: "https://github.com/hckerson/TixSync",
-        category: "fullstack",
-        status: "completed",
-        learnings:
-            "Implemented complex seat reservation system with timed holds, built type-safe APIs using GraphQL Code Generator, handled real-time ticket availability updates, and integrated secure payment processing.",
-    },
-    // {
-    //   id: 8,
-    //   title: "E-Commerce Platform",
-    //   description:
-    //     "A full-featured e-commerce platform with product listings, cart functionality, user authentication, and payment processing.",
-    //   image:
-    //     "https://images.pexels.com/photos/5632402/pexels-photo-5632402.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    //   tags: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe", "Supabase"],
-    //   liveUrl: "https://example.com/project1",
-    //   githubUrl: "https://github.com/yourusername/project1",
-    //   category: "fullstack",
-    //   learnings:
-    //     "Implemented Stripe payment integration and webhook handling for a seamless checkout experience.",
-    // {
-    //   id: 7,
-    //   title: "Content Management System",
-    //   description:
-    //     "A headless CMS with a user-friendly admin interface, content modeling, and API generation.",
-    //   image:
-    //     "https://images.pexels.com/photos/4974915/pexels-photo-4974915.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    //   tags: ["Next.js", "GraphQL", "MongoDB", "Docker", "AWS"],
-    //   liveUrl: "https://example.com/project6",
-    //   githubUrl: "https://github.com/yourusername/project6",
-    //   category: "backend",
-    //   learnings:
-    //     "Designed a flexible content modeling system that allows users to create custom schemas.",
-    // },
-    // {
-    //   id: 8,
-    //   title: "Real-time Chat Application",
-    //   description:
-    //     "A real-time messaging platform with channels, direct messages, and file sharing capabilities.",
-    //   image:
-    //     "https://images.pexels.com/photos/2882552/pexels-photo-2882552.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    //   tags: ["React", "Node.js", "Socket.io", "MongoDB", "Tailwind CSS"],
-    //   liveUrl: "https://example.com/project2",
-    //   githubUrl: "https://github.com/yourusername/project2",
-    //   category: "fullstack",
-    //   learnings:
-    //     "Learned how to handle real-time data synchronization between multiple clients using WebSockets.",
-    // },
 ];
 
 const articles: Article[] = [
