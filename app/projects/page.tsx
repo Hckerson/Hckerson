@@ -1,19 +1,54 @@
 "use client";
 import clsx from "clsx";
 import { useState } from "react";
+import { EffectFade } from "swiper/modules";
 import { projects } from "@/lib/data/mapped-data";
 import { PortfolioProject } from "@/lib/interface";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ProjectCard from "@/components/ui/cards/project-card";
+import Image from "next/image";
 
 export default function Projects() {
     const [currentProject, setCurrentProject] =
-        useState<PortfolioProject | null>();
+        useState<PortfolioProject | null>(projects[0]);
     const projectLength = projects.length;
 
     return (
         <div className="relative h-screen w-full">
-            <div className="absolute left-10 my-auto flex h-full w-[10px]">
+            <div className="absolute inset-0 z-10 w-full">
+                <div className="relative size-full">
+                    <div className="absolute inset-0 bg-black/50">
+                        <Swiper
+                            slidesPerView={1}
+                            className="h-screen w-screen"
+                            modules={[EffectFade]}
+                            effect="fade"
+                            autoplay={{
+                                delay: 2500,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true,
+                            }}
+                        >
+                            {projects.map((project) => {
+                                return (
+                                    <SwiperSlide key={project.id} className="">
+                                        {({ isActive }) => (
+                                            <Image
+                                                src={project.image}
+                                                alt={project.title}
+                                                fill
+                                                className=""
+                                            />
+                                        )}
+                                    </SwiperSlide>
+                                );
+                            })}
+                            <SwiperSlide />
+                        </Swiper>
+                    </div>
+                </div>
+            </div>
+            <div className="absolute left-10 z-30 my-auto flex h-full w-2.5">
                 <div className="relative flex size-full">
                     <div className="relative my-auto flex h-full max-h-[80%] flex-col items-center justify-between">
                         <div className="absolute inset-y-0 z-0 mx-auto w-px bg-stone-500 opacity-50"></div>
@@ -37,7 +72,7 @@ export default function Projects() {
                     </div>
                 </div>
             </div>
-            <div className="ml-24 grid h-full grid-cols-2">
+            <div className="relative z-40 ml-24 grid h-full grid-cols-[45%_auto]">
                 <div className="relative flex size-full flex-col items-center justify-center">
                     <span className="absolute px-16">
                         <div className="overflow-hidden">
@@ -52,11 +87,36 @@ export default function Projects() {
                 </div>
                 <div className="flex h-full">
                     <div className="my-auto flex w-full overflow-x-auto [scrollbar-width:none]">
-                        {projects.map((project) => {
-                            return (
-                                <ProjectCard key={project.id} data={project} />
-                            );
-                        })}
+                        <Swiper
+                            spaceBetween={25}
+                            slidesPerView={2.5}
+                            className="xl:w-170"
+                            modules={[]}
+                            loop={true}
+                            autoplay={{
+                                delay: 2500,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true,
+                            }}
+                            onSlideChange={(swiper) => {
+                                console.log(swiper.realIndex);
+                                setCurrentProject(projects[swiper.realIndex]);
+                            }}
+                        >
+                            {projects.map((project) => {
+                                return (
+                                    <SwiperSlide key={project.id} className="">
+                                        {({ isActive }) => (
+                                            <ProjectCard
+                                                hidden
+                                                data={project}
+                                                isActive={isActive}
+                                            />
+                                        )}
+                                    </SwiperSlide>
+                                );
+                            })}
+                        </Swiper>
                     </div>
                 </div>
             </div>
