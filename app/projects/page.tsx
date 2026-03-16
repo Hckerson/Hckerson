@@ -1,17 +1,26 @@
 "use client";
 import clsx from "clsx";
+import Image from "next/image";
+import "swiper/css/effect-fade";
 import { useState } from "react";
-import { EffectFade } from "swiper/modules";
 import { projects } from "@/lib/data/mapped-data";
 import { PortfolioProject } from "@/lib/interface";
 import { Swiper, SwiperSlide } from "swiper/react";
+import type { Swiper as SwiperType } from "swiper";
 import ProjectCard from "@/components/ui/cards/project-card";
-import Image from "next/image";
+import {
+    Autoplay,
+    EffectFade,
+    Controller,
+    EffectCoverflow,
+} from "swiper/modules";
 
 export default function Projects() {
     const [currentProject, setCurrentProject] =
         useState<PortfolioProject | null>(projects[0]);
     const projectLength = projects.length;
+    const [controlledSwiperInstance, setControlledSwiperInstance] =
+        useState<SwiperType | null>(null);
 
     return (
         <div className="relative h-screen w-full">
@@ -21,13 +30,16 @@ export default function Projects() {
                         <Swiper
                             slidesPerView={1}
                             className="h-screen w-screen"
-                            modules={[EffectFade]}
-                            effect="fade"
-                            autoplay={{
-                                delay: 2500,
-                                disableOnInteraction: false,
-                                pauseOnMouseEnter: true,
+                            modules={[EffectFade, EffectCoverflow]}
+                            onSwiper={setControlledSwiperInstance}
+                            effect="coverflow"
+                            coverflowEffect={{
+                                rotate: 30,
+                                slideShadows: false,
                             }}
+                            loop={true}
+                            fadeEffect={{ crossFade: true }}
+                            allowTouchMove={false}
                         >
                             {projects.map((project) => {
                                 return (
@@ -46,7 +58,6 @@ export default function Projects() {
                                     </SwiperSlide>
                                 );
                             })}
-                            <SwiperSlide />
                         </Swiper>
                     </div>
                 </div>
@@ -94,16 +105,23 @@ export default function Projects() {
                             spaceBetween={25}
                             slidesPerView={2.5}
                             className="xl:w-170"
-                            modules={[]}
+                            modules={[Autoplay]}
                             loop={true}
                             autoplay={{
-                                delay: 2500,
+                                delay: 2000,
                                 disableOnInteraction: false,
                                 pauseOnMouseEnter: true,
                             }}
                             onSlideChange={(swiper) => {
-                                console.log(swiper.realIndex);
                                 setCurrentProject(projects[swiper.realIndex]);
+                                if (
+                                    controlledSwiperInstance &&
+                                    !controlledSwiperInstance.destroyed
+                                ) {
+                                    controlledSwiperInstance.slideToLoop(
+                                        swiper.realIndex,
+                                    );
+                                }
                             }}
                         >
                             {projects.map((project) => {
