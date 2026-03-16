@@ -33,12 +33,15 @@ export default function Projects() {
                                 return (
                                     <SwiperSlide key={project.id} className="">
                                         {({ isActive }) => (
-                                            <Image
-                                                src={project.image}
-                                                alt={project.title}
-                                                fill
-                                                className=""
-                                            />
+                                            <div className="relative size-full">
+                                                <Image
+                                                    src={project.landscape!}
+                                                    alt={project.title}
+                                                    fill
+                                                    className="bg-cover bg-center"
+                                                />
+                                                <div className="absolute inset-0 bg-black/50"></div>
+                                            </div>
                                         )}
                                     </SwiperSlide>
                                 );
