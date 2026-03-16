@@ -73,7 +73,7 @@ const projects: PortfolioProject[] = [
         description:
             "A luxury hotel booking platform featuring elegant room displays, real-time availability checking, and seamless booking experience. Includes admin dashboard for managing reservations and room inventory.",
         image: "/images/projects/cover/serene-haven.png",
-        landscape: "/images/projects/cover/serena-landscape.png",
+        landscape: "/images/projects/cover/serene-landscape.png",
         tags: [
             "Next.js",
             "TypeScript",
