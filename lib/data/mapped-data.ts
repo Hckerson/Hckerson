@@ -50,7 +50,7 @@ const projects: PortfolioProject[] = [
         id: 2,
         title: "Playwork DREAMS",
         description:
-            "An interactive digital \"Playground of Possibility\" where students participate in STEM, storytelling, and design competitions. It features a gamified national leaderboard and specialized creator roles.",
+            'An interactive digital "Playground of Possibility" where students participate in STEM, storytelling, and design competitions. It features a gamified national leaderboard and specialized creator roles.',
         image: "/images/projects/cover/playwork.png",
         landscape: "/images/projects/cover/playwork-landscape.png",
         tags: [
@@ -112,6 +112,19 @@ const projects: PortfolioProject[] = [
         learnings:
             "Built an interactive financial dashboard with React Flow for data visualization, implemented complex UI components with Radix UI, and created a responsive design system for financial data presentation. Mastered advanced React patterns for state management and component composition.",
     },
+    // {
+    //     id: 5,
+    //     title: "",
+    //     description: "",
+    //     image: "",
+    //     landscape: "",
+    //     tags: [],
+    //     liveUrl: "",
+    //     githubUrl: "",
+    //     category: "",
+    //     status: "planned",
+    //     learnings: "",
+    // },
 ];
 
 const articles: Article[] = [
