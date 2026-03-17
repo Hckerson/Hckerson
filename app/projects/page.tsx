@@ -110,7 +110,6 @@ export default function Projects() {
                             autoplay={{
                                 delay: 2000,
                                 disableOnInteraction: false,
-                                pauseOnMouseEnter: true,
                             }}
                             onSlideChange={(swiper) => {
                                 setCurrentProject(projects[swiper.realIndex]);

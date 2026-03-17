@@ -10,24 +10,25 @@ import { navlinks } from "@/lib/data/mapped-data";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
-    const [lastOffsetValue, setLastOffsetValue] = useState<number>(0);
-    const [scrollDirection, setScrollDirection] = useState<"up" | "down">(
-        "down",
-    );
+    const [scrollDirection, setScrollDirection] = useState<"up" | "down">("down");
     const pathname = usePathname();
 
     useEffect(() => {
-        const scrollController = (e: Event) => {
+        let lastScrollY = window.scrollY;
+
+        const scrollController = () => {
             const verticalOffset = window.scrollY;
-            setLastOffsetValue(verticalOffset);
-            if (lastOffsetValue < verticalOffset) {
+            
+            if (verticalOffset > lastScrollY) {
                 setScrollDirection("up");
-            } else {
+            } else if (verticalOffset < lastScrollY) {
                 setScrollDirection("down");
             }
+            
+            lastScrollY = verticalOffset;
         };
 
-        window.addEventListener("scroll", scrollController);
+        window.addEventListener("scroll", scrollController, { passive: true });
 
         return () => {
             window.removeEventListener("scroll", scrollController);
