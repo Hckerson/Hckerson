@@ -71,13 +71,13 @@ export default function Projects() {
                                 <span
                                     key={project.id}
                                     className={clsx(
-                                        "z-10 flex size-9 items-center justify-center rounded-full bg-stone-500 transition-all duration-800 ease-in",
+                                        "z-10 flex size-8 items-center justify-center rounded-full bg-stone-500 transition-all duration-800 ease-in",
                                         project.id === currentProject?.id
                                             ? "scale-100"
                                             : "scale-45",
                                     )}
                                 >
-                                    <p className="font-semibold">
+                                    <p className="font-bold">
                                         {project.id}
                                     </p>
                                 </span>
@@ -88,7 +88,7 @@ export default function Projects() {
             </div>
             <div className="relative z-40 ml-24 grid h-full grid-cols-[45%_auto]">
                 <div className="relative flex size-full flex-col items-center justify-center">
-                    <span className="absolute px-16">
+                    <span className="absolute ">
                         <div className="overflow-hidden">
                             <p className="xxlarge-text font-semibold tracking-tighter">
                                 {currentProject?.title}

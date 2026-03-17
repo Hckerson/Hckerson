@@ -33,15 +33,15 @@ export default function ProjectCard({
             className={clsx(
                 "group relative flex flex-col overflow-hidden transition-all duration-300 ease-in-out",
                 hidden
-                    ? "h-100 min-w-50 rounded-lg md:rounded-xl xl:rounded-2xl"
-                    : "h-90 min-w-75 rounded-xl md:rounded-2xl xl:rounded-3xl",
+                    ? "min-h-100 min-w-50 rounded-lg md:rounded-xl xl:rounded-2xl"
+                    : "min-h-90 min-w-70 rounded-xl md:rounded-2xl xl:rounded-3xl",
                 isActive ? "scale-y-100" : "scale-y-80",
             )}
         >
             <div className="absolute inset-0 hidden bg-black opacity-20 transition-all duration-300 ease-in-out hover:translate-y-full"></div>
             {!hidden && (
                 <>
-                    <span className="absolute -top-10 -left-10 z-20 flex size-8 items-center justify-center rounded-full bg-black transition-all duration-500 ease-in-out group-hover:translate-14">
+                    <span className="absolute -top-10 -left-10 z-20 flex size-9 items-center justify-center rounded-full bg-black transition-all duration-500 ease-in-out group-hover:translate-15">
                         <Icon
                             icon="solar:hamburger-menu-broken"
                             width="24"
@@ -49,7 +49,7 @@ export default function ProjectCard({
                             className="my-auto flex stroke-2 text-white hover:scale-105"
                         />
                     </span>
-                    <span className="absolute -top-10 -right-10 z-20 flex size-8 items-center justify-center rounded-full bg-black transition-all duration-500 ease-in-out group-hover:-translate-x-14 group-hover:translate-y-14">
+                    <span className="absolute -top-10 -right-10 z-20 flex size-9 items-center justify-center rounded-full bg-black transition-all duration-500 ease-in-out group-hover:-translate-x-15 group-hover:translate-y-15">
                         <Icon
                             icon="arcticons:cinexplore"
                             width="24"
