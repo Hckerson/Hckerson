@@ -8,12 +8,7 @@ import { PortfolioProject } from "@/lib/interface";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper";
 import ProjectCard from "@/components/ui/cards/project-card";
-import {
-    Autoplay,
-    EffectFade,
-    Controller,
-    EffectCoverflow,
-} from "swiper/modules";
+import { Autoplay, EffectFade, EffectCoverflow } from "swiper/modules";
 
 export default function Projects() {
     const [currentProject, setCurrentProject] =
@@ -125,11 +120,16 @@ export default function Projects() {
                                 return (
                                     <SwiperSlide key={project.id} className="">
                                         {({ isActive }) => (
-                                            <ProjectCard
-                                                hidden
-                                                data={project}
-                                                isActive={isActive}
-                                            />
+                                            <a
+                                                href={project.liveUrl}
+                                                target="_blank"
+                                            >
+                                                <ProjectCard
+                                                    hidden
+                                                    data={project}
+                                                    isActive={isActive}
+                                                />
+                                            </a>
                                         )}
                                     </SwiperSlide>
                                 );
