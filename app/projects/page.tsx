@@ -9,6 +9,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper";
 import ProjectCard from "@/components/ui/cards/project-card";
 import { Autoplay, EffectFade, EffectCoverflow } from "swiper/modules";
+import { clashDisplay } from "@/public/fonts/font";
 
 export default function Projects() {
     const [currentProject, setCurrentProject] =
@@ -83,7 +84,12 @@ export default function Projects() {
                 <div className="relative flex size-full flex-col items-center justify-center">
                     <span className="absolute">
                         <div className="overflow-hidden">
-                            <p className="xxlarge-text font-semibold tracking-tighter">
+                            <p
+                                className={clsx(
+                                    "xxlarge-text font-semibold tracking-tighter",
+                                    clashDisplay.className,
+                                )}
+                            >
                                 {currentProject?.title}
                             </p>
                         </div>

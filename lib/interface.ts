@@ -68,3 +68,12 @@ export interface Skill {
     icon: string;
     categories: SkillCategory[];
 }
+
+export interface PricingPlan {
+    name: string;
+    price: number | string;
+    description: string;
+    features: string[];
+    isPopular?: boolean;
+    starter?: string;
+}
