@@ -22,6 +22,7 @@ const navlinks: Navlink[] = [
         link: "https://github.com/hckerson",
         visible: "md",
         icon: VscGithubAlt,
+        external: true,
     },
 ];
 
