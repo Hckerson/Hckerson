@@ -25,13 +25,13 @@ export default function Button({
             size == "lg",
         "h-[48px] lg:h-[64px] xl:h-[72px] w-45 lg:w-55 xl:w-60 xl:rounded-3xl md:rounded-2xl rounded-xl":
             size == "xl",
-        "h-[40px] lg:h-[52px]": size == "custom",
+        "h-[40px] lg:h-[50px]": size == "custom",
     };
     return (
         <button
             {...rest}
             className={clsx(
-                "relative z-0 flex cursor-pointer items-center justify-center overflow-hidden rounded-2xl shadow-inner",
+                "relative z-0 flex cursor-pointer items-center justify-center overflow-hidden  shadow-inner",
                 sizes,
                 classname,
             )}
