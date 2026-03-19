@@ -11,6 +11,7 @@ export interface Navlink {
     link: string;
     icon: IconType;
     visible: string;
+    external?: boolean;
 }
 
 

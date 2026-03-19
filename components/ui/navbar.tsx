@@ -10,7 +10,9 @@ import { navlinks } from "@/lib/data/mapped-data";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
-    const [scrollDirection, setScrollDirection] = useState<"up" | "down">("down");
+    const [scrollDirection, setScrollDirection] = useState<"up" | "down">(
+        "down",
+    );
     const pathname = usePathname();
 
     useEffect(() => {
@@ -18,13 +20,13 @@ export default function Navbar() {
 
         const scrollController = () => {
             const verticalOffset = window.scrollY;
-            
+
             if (verticalOffset > lastScrollY) {
                 setScrollDirection("up");
             } else if (verticalOffset < lastScrollY) {
                 setScrollDirection("down");
             }
-            
+
             lastScrollY = verticalOffset;
         };
 
@@ -54,9 +56,9 @@ export default function Navbar() {
                     <Link href="/" className="pr-1">
                         <div
                             className={clsx(
-                                "rounded-full p-1.5",
+                                "rounded-full p-1.5 hover:border hover:border-stone-700 hover:bg-stone-800",
                                 pathname === "/" &&
-                                    "border-stone-700 bg-stone-800",
+                                    "border border-stone-700 bg-stone-800",
                             )}
                         >
                             <LiaHomeSolid className="size-5" />
@@ -70,8 +72,14 @@ export default function Navbar() {
                             <Link
                                 href={link.link}
                                 key={`navlink-item-${idx}`}
+                                target={link.external ? "_blank" : undefined}
+                                rel={
+                                    link.external
+                                        ? "noopener noreferrer"
+                                        : undefined
+                                }
                                 className={clsx(
-                                    "mx-1 flex w-fit items-center gap-x-2 rounded-3xl px-2.5 py-1.5",
+                                    "mx-1 flex w-fit items-center gap-x-2 rounded-3xl px-2.5 py-1.5 hover:border hover:border-stone-700 hover:bg-stone-800",
 
                                     pathname === link.link &&
                                         "border border-stone-700 bg-stone-800",
@@ -88,12 +96,15 @@ export default function Navbar() {
                     })}
                     <div className="h-5 w-0.5 bg-stone-800"></div>
 
-                    <div className="rounded-full p-2">
-                        {currentTheme === "light" ? (
-                            <MdLightMode className="size-4" />
-                        ) : (
-                            <Moon className="size-4" />
-                        )}
+                    <div className="rounded-full ml-1 p-2 hover:border hover:border-stone-700 hover:bg-stone-800">
+                        <button type="button">
+
+                            {currentTheme === "light" ? (
+                                <MdLightMode className="size-4" />
+                            ) : (
+                                <Moon className="size-4" />
+                            )}
+                        </button>
                     </div>
                 </div>
             </div>

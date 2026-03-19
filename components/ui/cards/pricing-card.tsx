@@ -57,12 +57,15 @@ export default function PricingCard({ plan }: { plan: PricingPlan }) {
                     >
                         Features
                     </legend>
-                    <p className="mb-4 text-stone-400">
+                    <p className="xs-text mb-4 text-stone-400">
                         Everything in {plan.starter}, plus:
                     </p>
                     <ul className="w-full space-y-2">
                         {plan.features.map((feature, index) => (
-                            <li className="flex w-full gap-x-2">
+                            <li
+                                key={`${feature}-${index}`}
+                                className="flex w-full gap-x-2"
+                            >
                                 <Icon
                                     icon="icon-park-solid:check-one"
                                     width="20"
