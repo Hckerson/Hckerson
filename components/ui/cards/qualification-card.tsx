@@ -49,7 +49,7 @@ export default function QulaificationCard({
                 </div>
             </AccordionTrigger>
             <AccordionContent>
-                <div className="box-border w-full p-4 pt-0 md:p-5 md:pt-0 xl:p-6 xl:pt-0">
+                <div className="box-border w-full p-3 pt-0 md:p-4 md:pt-0 xl:p-5 xl:pt-0">
                     <div className="flex">
                         <div className="flex-1">
                             <p className={clsx("xs-text font-semibold")}>
@@ -63,7 +63,7 @@ export default function QulaificationCard({
                             <p className={clsx("xs-text font-semibold")}>
                                 Skills and Technologies
                             </p>
-                            <ul className="flex flex-wrap gap-2 my-2">
+                            <ul className="flex flex-wrap gap-1.5 my-2">
                                 {data.skills.map((skill, idx) => {
                                     return (
                                         <li

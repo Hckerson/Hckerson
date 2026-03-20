@@ -7,10 +7,10 @@ import { Link as LinkIcon } from "lucide-react";
 
 export default function AboutSection() {
     return (
-        <section className="bg-surface-tertiary flex h-screen w-full items-center justify-center opacity-90">
-            <div className="flex items-center gap-x-10 md:gap-x-20 xl:gap-x-30">
+        <section className="bg-surface-tertiary flex h-screen w-full items-center justify-center px-6 opacity-90">
+            <div className="flex flex-col-reverse items-center gap-10 md:gap-x-20 lg:flex-row xl:gap-x-30">
                 <div className="flex size-75 items-center justify-center rounded-xl bg-[repeating-linear-gradient(135deg,#292524,#44403c)] md:rounded-2xl xl:rounded-3xl">
-                    <p className="md-text text-text-sub font-bold">{initial}</p>
+                    <p className=" text-[48px] xl:text-[42px] 2xl:text-[36px] text-text-sub font-bold">{initial}</p>
                 </div>
                 <div className="flex max-w-[60ch] flex-col gap-y-4">
                     <h2

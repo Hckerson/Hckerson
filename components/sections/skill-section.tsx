@@ -5,8 +5,8 @@ import { clashDisplay } from "@/public/fonts/font";
 
 export default function SkillSection() {
     return (
-        <section className="flex w-full bg-surface-secondary">
-            <div className="large-pad relative mx-auto w-full space-y-6 max-w-7xl">
+        <section className="bg-surface-secondary flex w-full">
+            <div className="md-pad relative mx-auto w-full max-w-7xl space-y-6">
                 <div className="leading-[1.2]">
                     <p
                         className={clsx(
@@ -21,7 +21,7 @@ export default function SkillSection() {
                     </p>
                 </div>
 
-                <div className="g grid sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
+                <div className="grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
                     {skills.map((skill) => (
                         <SkillCard key={skill.name} skill={skill} />
                     ))}
