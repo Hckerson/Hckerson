@@ -64,6 +64,11 @@
     --rainbow-8: #ce07d5;
     --rainbow-9: #03b2d1;
     --rainbow-10: #a09612;
+
+    --blur-bg-1: hsla(210, 100%, 85%, 0.06);
+    --blur-bg-2: hsla(210, 100%, 55%, 0.02);
+    --blur-bg-3: hsla(210, 100%, 85%, 0.08);
+    --blur-bg-4: hsla(206 89.9% 12.1% / 0.08);
 }
 
 .light {
@@ -117,6 +122,11 @@
     --card-fade-mauve: #fefaff;
     --card-shadow-pink: #fdf2f8;
     --card-fade-pink: #fffafc;
+
+    --blur-bg-1: hsla(210, 100%, 45%, 0.06);
+    --blur-bg-2: hsla(210, 100%, 35%, 0.02);
+    --blur-bg-3: hsla(210, 100%, 45%, 0.08);
+    --blur-bg-4: hsla(206 89.9% 82.1% / 0.08);
 }
 
 @theme inline {
@@ -325,7 +335,7 @@ body {
 }
 
 .rainbow-box {
-    background: #000;
+    background: var(--background);
     background-clip: padding-box;
 }
 .rainbow-box::before {
@@ -353,8 +363,8 @@ body {
 .blury {
     background: radial-gradient(
         50% 50% at 50% 50%,
-        hsla(210, 100%, 85%, 0.06) 0,
-        hsla(210, 100%, 55%, 0.02) 80%,
+        var(--blur-bg-1) 0,
+        var(--blur-bg-2) 80%,
         transparent 100%
     );
 }
@@ -362,14 +372,14 @@ body {
 .blury-01 {
     background: radial-gradient(
         68.54% 68.72% at 55.02% 51.46%,
-        hsla(210, 100%, 85%, 0.08) 0,
-        hsla(206 89.9% 12.1% / 0.08) 50%,
+        var(--blur-bg-3) 0,
+        var(--blur-bg-4) 50%,
         hsla(210, 100%, 45%, 0) 80%
     );
 }
 
 .blue-gradient {
-    background-color: #051428;
+    background-color: var(--surface-primary);
     background-clip: padding-box;
 }
 
@@ -380,7 +390,7 @@ body {
     inset: 0;
     margin: -1.5px;
     border-radius: inherit;
-    background: linear-gradient(to top, #051428, #053373);
+    background: linear-gradient(to top, var(--surface-primary), var(--surface-tertiary));
 }
 
 .dashed-line {
@@ -388,7 +398,7 @@ body {
     height: 2px;
     background-image: repeating-linear-gradient(
         to right,
-        #ffffff80 0 6px,
+        var(--border) 0 6px,
         /* dash */ transparent 6px 12px /* space */
     );
 }
@@ -400,11 +410,11 @@ body {
     inset: 0;
     background: repeating-linear-gradient(
         to right,
-        black 0 9px,
+        var(--background) 0 9px,
         /* dash */ transparent 9px 18px /* space */
     );
 }
 
 .glow:hover {
-    box-shadow: 0 0 35px var(--color-yellow);
+    box-shadow: 0 0 35px var(--accent-yellow);
 }

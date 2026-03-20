@@ -36,7 +36,7 @@ export default function Pricing() {
                     >
                         Our Pricing Plans
                     </p>
-                    <p className="xs-text text-stone-400">
+                    <p className="xs-text text-text-muted">
                         Designed for every state of journey. Start today, no
                         contracts, cancel anytime.
                     </p>
