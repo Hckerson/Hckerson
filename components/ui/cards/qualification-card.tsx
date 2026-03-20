@@ -24,10 +24,10 @@ export default function QulaificationCard({
             )}
         >
             <AccordionTrigger>
-                <div className="box-border w-full p-4 md:p-5 xl:p-6">
+                <div className="box-border w-full p-2.5 md:p-4 xl:p-5">
                     <div className="flex w-full justify-between">
-                        <div className="flex items-center justify-center gap-x-4">
-                            <div className="size-10">
+                        <div className="flex items-center justify-center gap-x-2.5 md:gap-x-4">
+                            <div className="md:size-8 xl:size-10 size-4">
                                 <div className="flex size-full items-center justify-center rounded-full bg-surface-tertiary">
                                     <PiSuitcaseLight size={24} />
                                 </div>
@@ -51,7 +51,7 @@ export default function QulaificationCard({
             <AccordionContent>
                 <div className="box-border w-full p-3 pt-0 md:p-4 md:pt-0 xl:p-5 xl:pt-0">
                     <div className="flex">
-                        <div className="flex-1">
+                        <div className="flex-1 space-x-1">
                             <p className={clsx("xs-text font-semibold")}>
                                 Description
                             </p>
