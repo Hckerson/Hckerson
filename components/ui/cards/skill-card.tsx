@@ -6,7 +6,7 @@ import { clashDisplay } from "@/public/fonts/font";
 export default function SkillCard({ skill }: { skill: Skill }) {
     return (
         <div className="flex items-center gap-x-3 rounded-xl border-2 border-border bg-surface-secondary p-1.5 md:rounded-2xl">
-            <div className="flex aspect-square size-13 items-center justify-center rounded-lg bg-surface-tertiary bg-cover p-2 md:rounded-xl">
+            <div className="flex aspect-square size-10 md:size-11 xl:size-13 items-center justify-center rounded-lg bg-surface-tertiary bg-cover p-2 md:rounded-xl">
                 <Image
                     src={skill.icon}
                     alt={skill.name}

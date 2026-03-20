@@ -7,7 +7,7 @@ import { Accordion } from "@radix-ui/react-accordion";
 export default function QualificationSection() {
     return (
         <section className="xlarge-pady flex w-full bg-surface-secondary">
-            <div className="large-pad relative mx-auto w-full max-w-7xl space-y-6">
+            <div className="md-pad relative mx-auto w-full max-w-7xl space-y-6">
                 <div className="leading-[1.2]">
                     <p
                         className={clsx(

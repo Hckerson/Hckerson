@@ -46,25 +46,25 @@ export default function Navbar() {
         >
             <div
                 className={clsx(
-                    "mx-auto h-fit overflow-hidden rounded-full bg-surface-secondary transition-transform duration-300 ease-in-out",
+                    "bg-surface-secondary mx-auto h-fit overflow-hidden rounded-full transition-transform duration-300 ease-in-out",
                     scrollDirection === "up"
                         ? "-translate-y-8"
                         : "translate-y-0",
                 )}
             >
-                <div className="flex items-center p-2">
+                <div className="flex items-center p-1 md:p-2">
                     <Link href="/" className="pr-1">
                         <div
                             className={clsx(
-                                "rounded-full p-1.5 hover:border hover:border-border hover:bg-surface-tertiary",
+                                "hover:border-border hover:bg-surface-tertiary rounded-full p-1.5 hover:border",
                                 pathname === "/" &&
-                                    "border border-border bg-surface-tertiary",
+                                    "border-border bg-surface-tertiary border",
                             )}
                         >
-                            <LiaHomeSolid className="size-5" />
+                            <LiaHomeSolid className="size-3 md:size-4" />
                         </div>
                     </Link>
-                    <div className="mr-1 h-5 w-0.5 bg-border"></div>
+                    <div className="bg-border mr-1 h-5 w-0.5"></div>
                     {navlinks.map((link, idx) => {
                         const Icon = link.icon;
 
@@ -79,30 +79,29 @@ export default function Navbar() {
                                         : undefined
                                 }
                                 className={clsx(
-                                    "mx-1 flex w-fit items-center gap-x-2 rounded-3xl px-2.5 py-1.5 hover:border hover:border-border hover:bg-surface-tertiary",
+                                    "hover:border-border hover:bg-surface-tertiary mx-1 flex w-fit items-center gap-x-0.5 rounded-3xl px-1.5 md:px-2.5 py-1.5 hover:border md:gap-x-2",
 
                                     pathname === link.link &&
-                                        "border border-border bg-surface-tertiary",
+                                        "border-border bg-surface-tertiary border",
                                 )}
                             >
                                 <span>
-                                    <Icon className="size-4" />
+                                    <Icon className="size-3 md:size-4" />
                                 </span>
-                                <p className="xs-text font-medium text-text-secondary">
+                                <p className="xs-text text-text-secondary font-medium">
                                     {link.name}
                                 </p>
                             </Link>
                         );
                     })}
-                    <div className="h-5 w-0.5 bg-border"></div>
+                    <div className="bg-border h-5 w-0.5"></div>
 
-                    <div className="rounded-full ml-1 p-1.5 flex items-center hover:border hover:border-border hover:bg-surface-tertiary">
+                    <div className="hover:border-border hover:bg-surface-tertiary ml-1 flex items-center rounded-full p-1.5 hover:border">
                         <button type="button" onClick={toggleTheme}>
-
                             {currentTheme === "light" ? (
-                                <MdLightMode className="size-4" />
+                                <MdLightMode className="size-3 md:size-4" />
                             ) : (
-                                <Moon className="size-4" />
+                                <Moon className="size-3 md:size-4" />
                             )}
                         </button>
                     </div>

@@ -14,17 +14,20 @@ export default function HeroSection() {
                         <p
                             className={clsx(
                                 clashDisplay.className,
-                                "md-text w-[15ch] bg-linear-to-b from-text-primary from-20% to-text-muted bg-clip-text text-center leading-none font-bold text-transparent",
+                                "md-text from-text-primary to-text-muted w-[15ch] bg-linear-to-b from-20% bg-clip-text text-center leading-none font-bold text-transparent",
                             )}
                         >
                             <span className="block">Creative</span>
                             <span> Software Engineer.</span>
                         </p>
-                        <p className="xs-text text-text-muted">
+                        <p className="xs-text text-text-muted px-3 text-wrap">
                             {`I’m hckerson, a Full-Stack Engineer building high-performance products at the intersection of design and scalable architecture.`}{" "}
                         </p>
                         <span className="flex space-x-3">
-                            <Link href="/contact" className="size-fit focus:outline-">
+                            <Link
+                                href="/contact"
+                                className="focus:outline- size-fit"
+                            >
                                 <Button
                                     size="sm"
                                     classname="bg-accent-cyan text-background"
