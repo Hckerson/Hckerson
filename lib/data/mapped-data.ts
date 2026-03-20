@@ -376,7 +376,7 @@ const skills: Skill[] = [
 const pricingPlans: PricingPlan[] = [
     {
         name: "MVP Starter",
-        price: 1500,
+        price: 300,
         starter: "our free plan",
         description: "Perfect for validating your idea with a solid MVP.",
         features: [
@@ -389,7 +389,7 @@ const pricingPlans: PricingPlan[] = [
     },
     {
         name: "Full-Stack SaaS",
-        price: 3500,
+        price: 500,
         starter: "MVP Starter",
         description: "A complete, scalable SaaS solution from scratch.",
         features: [
