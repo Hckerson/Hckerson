@@ -1,56 +1,70 @@
-import * as React from "react";
-import { Slot } from "@radix-ui/react-slot";
-import { cva, type VariantProps } from "class-variance-authority";
+"use client";
+import clsx from "clsx";
+import { Loader2 } from "lucide-react";
 
-import { cn } from "@/lib/actions/utils";
-
-const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
-  {
-    variants: {
-      variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline:
-          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
-      },
-      size: {
-        default: "h-10 px-4 py-2",
-        sm: "h-9 rounded-md px-3",
-        lg: "h-11 rounded-md px-8",
-        icon: "h-10 w-10",
-      },
-    },
-    defaultVariants: {
-      variant: "default",
-      size: "default",
-    },
-  }
-);
-
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
-  asChild?: boolean;
+interface Button extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+    isLoading?: boolean;
+    size?: "sm" | "md" | "lg" | "xl" | "custom";
+    classname?: string;
+    children: React.ReactNode;
 }
-
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : "button";
+export default function Button({
+    children,
+    isLoading,
+    classname,
+    size = "custom",
+    ...rest
+}: Button) {
+    const small = size == "sm" || size == "md";
+    const sizes = {
+        "h-[36px] lg:h-[42px] xl:h-[48px] w-25 lg:w-30 xl:w-35 xl:rounded-xl md:rounded-lg rounded-md":
+            size == "sm",
+        "h-[40px] lg:h-[46px] xl:h-[52px] w-35 lg:w-40 xl:w-45 xl:rounded-xl rounded-lg":
+            size == "md",
+        "h-[42px] lg:h-[56px] xl:h-[64px] w-37.5 lg:w-45 xl:w-50 xl:rounded-3xl md:rounded-xl rounded-lg":
+            size == "lg",
+        "h-[48px] lg:h-[64px] xl:h-[72px] w-45 lg:w-55 xl:w-60 xl:rounded-3xl md:rounded-2xl rounded-xl":
+            size == "xl",
+        "h-[40px] lg:h-[50px]": size == "custom",
+    };
     return (
-      <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
-        ref={ref}
-        {...props}
-      />
+        <button
+            {...rest}
+            className={clsx(
+                "relative z-0 flex cursor-pointer items-center justify-center overflow-hidden  shadow-inner",
+                sizes,
+                classname,
+            )}
+        >
+            {small ? (
+                isLoading ? (
+                    <Loader2 className="size-6 animate-spin" />
+                ) : (
+                    <span
+                        className={clsx(
+                            "xs:text-base absolute inset-0 flex items-center justify-center text-sm transition-colors duration-150 ease-in",
+                        )}
+                    >
+                        {children}
+                    </span>
+                )
+            ) : (
+                <div
+                    className={clsx(
+                        "absolute inset-0 flex h-full items-center justify-center border-none! transition-colors duration-150 ease-in hover:bg-none",
+                        classname,
+                    )}
+                >
+                    {isLoading && (
+                        <span className="pl-2">
+                            <Loader2 className="relative flex size-6 animate-spin items-center justify-center" />
+                        </span>
+                    )}
+                    <span className="xs:text-base flex h-full w-full items-center justify-center text-sm">
+                        {children}
+                    </span>
+                </div>
+            )}
+        </button>
     );
-  }
-);
-Button.displayName = "Button";
-
-export { Button, buttonVariants };
+}
