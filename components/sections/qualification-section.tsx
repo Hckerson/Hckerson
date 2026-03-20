@@ -6,7 +6,7 @@ import { Accordion } from "@radix-ui/react-accordion";
 
 export default function QualificationSection() {
     return (
-        <section className="xlarge-pady flex w-full bg-stone-950">
+        <section className="xlarge-pady flex w-full bg-surface-secondary">
             <div className="large-pad relative mx-auto w-full max-w-7xl space-y-6">
                 <div className="leading-[1.2]">
                     <p
@@ -17,12 +17,12 @@ export default function QualificationSection() {
                     >
                         Qualifications
                     </p>
-                    <p className="xs-text text-stone-400">
+                    <p className="xs-text text-text-muted">
                         Why you should hire me
                     </p>
                 </div>
 
-                <div className="box-border w-full divide-y divide-stone-600 rounded-lg border border-stone-800 sm:rounded-xl lg:rounded-2xl">
+                <div className="box-border w-full divide-y divide-border rounded-lg border border-border sm:rounded-xl lg:rounded-2xl">
                     <Accordion
                         type="single"
                         key={`${workExperience[0].company}`}

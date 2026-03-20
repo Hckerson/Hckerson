@@ -5,7 +5,7 @@ import { projects } from "@/lib/data/mapped-data";
 
 export default function ProjectSection() {
     return (
-        <section className="xlarge-pady flex w-full bg-stone-950">
+        <section className="xlarge-pady flex w-full bg-surface-secondary">
             <div className="large-pad relative mx-auto w-full max-w-330">
                 <div className="leading-[1.2]">
                     <p
@@ -16,7 +16,7 @@ export default function ProjectSection() {
                     >
                         Featured Projecs
                     </p>
-                    <p className="xs-text text-stone-400">
+                    <p className="xs-text text-text-muted">
                         {`Here are some of my recent projects. I'm always working on something new, so be sure to check back often.`}
                     </p>
                 </div>

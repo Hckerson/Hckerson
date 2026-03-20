@@ -20,7 +20,7 @@ export default function QulaificationCard({
             value={`${data.company}-${id}`}
             className={clsx(
                 "box-border w-full overflow-hidden",
-                id !== workExperience.length - 1 && "border-b border-stone-800",
+                id !== workExperience.length - 1 && "border-b border-border",
             )}
         >
             <AccordionTrigger>
@@ -28,7 +28,7 @@ export default function QulaificationCard({
                     <div className="flex w-full justify-between">
                         <div className="flex items-center justify-center gap-x-4">
                             <div className="size-10">
-                                <div className="flex size-full items-center justify-center rounded-full bg-stone-800">
+                                <div className="flex size-full items-center justify-center rounded-full bg-surface-tertiary">
                                     <PiSuitcaseLight size={24} />
                                 </div>
                             </div>
@@ -36,12 +36,12 @@ export default function QulaificationCard({
                                 <p className="xs:text-[14px] text-[12px] font-semibold sm:text-[16px] md:text-[18px] lg:text-[20px] 2xl:text-[20px]">
                                     {data.title}
                                 </p>
-                                <p className="xs-text font-medium text-stone-400">
+                                <p className="xs-text font-medium text-text-muted">
                                     {data.company}
                                 </p>
                             </div>
                         </div>
-                        <div className="flex flex-col text-end text-stone-400">
+                        <div className="flex flex-col text-end text-text-muted">
                             <p className="xs-text">{data.location}</p>
                             <p className="text-[12px]">{data.period}</p>
                         </div>
@@ -55,7 +55,7 @@ export default function QulaificationCard({
                             <p className={clsx("xs-text font-semibold")}>
                                 Description
                             </p>
-                            <p className="xs-text my-2 font-medium text-stone-400">
+                            <p className="xs-text my-2 font-medium text-text-muted">
                                 {data.description}
                             </p>
                         </div>
@@ -68,7 +68,7 @@ export default function QulaificationCard({
                                     return (
                                         <li
                                             key={`${skill}-${idx}`}
-                                            className="xs-text flex items-center border border-stone-700 justify-center rounded-full bg-stone-800 px-2 py-1 font-medium text-white"
+                                            className="xs-text flex items-center border border-border justify-center rounded-full bg-surface-tertiary px-2 py-1 font-medium text-text-primary"
                                         >
                                             <p>{skill}</p>
                                         </li>
@@ -88,12 +88,12 @@ export default function QulaificationCard({
                                         key={`${achievement}-${idx}`}
                                         className="flex gap-x-2"
                                     >
-                                        <span className="xs-text flex size-4 items-center justify-center rounded-full bg-stone-800 font-medium text-stone-400">
+                                        <span className="xs-text flex size-4 items-center justify-center rounded-full bg-surface-tertiary font-medium text-text-muted">
                                             <p className="text-[10px]">
                                                 {idx + 1}
                                             </p>
                                         </span>
-                                        <p className="xs-text font-medium text-stone-400">
+                                        <p className="xs-text font-medium text-text-muted">
                                             {achievement}
                                         </p>
                                     </li>

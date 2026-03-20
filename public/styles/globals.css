@@ -4,16 +4,152 @@
 :root {
     --background: #050c14;
     --foreground: #ffffff;
+
+    --surface-primary: #050c14;
+    --surface-secondary: #0c0a09;
+    --surface-tertiary: #1c1917;
+
+    --text-primary: #ffffff;
+    --text-secondary: #d4d4d4;
+    --text-muted: #a8a29e;
+    --text-sub: #78716c;
+
+    --accent-cyan: #22d3ee;
+    --accent-orange: #fb923c;
+    --accent-green: #4ade80;
+    --accent-purple: #c084fc;
+    --accent-red: #f87171;
+    --accent-violet: #8b5cf6;
+    --accent-ash: #94a3b8;
+    --accent-mauve: #e879f9;
+    --accent-pink: #f472b6;
+    --accent-yellow: #facc15;
+    --accent-brown: #a8a29e;
+    --accent-clay: #d6d3d1;
+    --accent-blue: #60a5fa;
+
+    --border: rgba(255, 255, 255, 0.1);
+
+    --button-bg: #ffffff;
+    --button-text: #050c14;
+
+    /* Card Specifics (Dark defaults) */
+    --card-shadow-orange: #592b0b;
+    --card-fade-orange: #1c1615;
+    --card-shadow-cyan: #005862;
+    --card-fade-cyan: #051d27;
+    --card-shadow-green: #06260f;
+    --card-fade-green: #041616;
+    --card-shadow-purple: #3b0040;
+    --card-fade-purple: #190b27;
+    --card-shadow-red: #400001;
+    --card-fade-red: #1e0b12;
+    --card-shadow-violet: #8b0090;
+    --card-fade-violet: #0f1629;
+    --card-shadow-ash: #8b0090;
+    --card-fade-ash: #293544;
+    --card-shadow-mauve: #8b0090;
+    --card-fade-mauve: #1d1924;
+    --card-shadow-pink: #8b0090;
+    --card-fade-pink: #1c0e1e;
+
+    /* Rainbow Colors */
+    --rainbow-1: #2a5595;
+    --rainbow-2: #bb00c2;
+    --rainbow-3: #00c241;
+    --rainbow-4: #fa9663;
+    --rainbow-5: #f6e820;
+    --rainbow-6: #e9721d;
+    --rainbow-7: #023f42;
+    --rainbow-8: #ce07d5;
+    --rainbow-9: #03b2d1;
+    --rainbow-10: #a09612;
 }
 
 .light {
-    --background: #050c14;
-    --foreground: #ffffff;
+    --background: #ffffff;
+    --foreground: #0c0a09;
+
+    --surface-primary: #ffffff;
+    --surface-secondary: #f5f5f4;
+    --surface-tertiary: #e7e5e4;
+
+    --text-primary: #0c0a09;
+    --text-secondary: #292524;
+    --text-muted: #57534e;
+    --text-sub: #78716c;
+
+    --accent-cyan: #0891b2;
+    --accent-orange: #ea580c;
+    --accent-green: #16a34a;
+    --accent-purple: #9333ea;
+    --accent-red: #dc2626;
+    --accent-violet: #7c3aed;
+    --accent-ash: #475569;
+    --accent-mauve: #d946ef;
+    --accent-pink: #db2777;
+    --accent-yellow: #ca8a04;
+    --accent-brown: #78350f;
+    --accent-clay: #78716c;
+    --accent-blue: #2563eb;
+
+    --border: rgba(0, 0, 0, 0.1);
+
+    --button-bg: #0c0a09;
+    --button-text: #ffffff;
+
+    /* Card Specifics (Light variants) */
+    --card-shadow-orange: #ffedd5;
+    --card-fade-orange: #fffaf5;
+    --card-shadow-cyan: #ecfeff;
+    --card-fade-cyan: #f7feff;
+    --card-shadow-green: #f0fdf4;
+    --card-fade-green: #fbfdfb;
+    --card-shadow-purple: #faf5ff;
+    --card-fade-purple: #fdfaff;
+    --card-shadow-red: #fef2f2;
+    --card-fade-red: #fffafa;
+    --card-shadow-violet: #f5f3ff;
+    --card-fade-violet: #fafaff;
+    --card-shadow-ash: #f8fafc;
+    --card-fade-ash: #fcfdfe;
+    --card-shadow-mauve: #fdf4ff;
+    --card-fade-mauve: #fefaff;
+    --card-shadow-pink: #fdf2f8;
+    --card-fade-pink: #fffafc;
 }
 
 @theme inline {
     --color-foreground: var(--foreground);
     --color-background: var(--background);
+
+    --color-surface-primary: var(--surface-primary);
+    --color-surface-secondary: var(--surface-secondary);
+    --color-surface-tertiary: var(--surface-tertiary);
+
+    --color-text-primary: var(--text-primary);
+    --color-text-secondary: var(--text-secondary);
+    --color-text-muted: var(--text-muted);
+    --color-text-sub: var(--text-sub);
+
+    --color-accent-cyan: var(--accent-cyan);
+    --color-accent-orange: var(--accent-orange);
+    --color-accent-green: var(--accent-green);
+    --color-accent-purple: var(--accent-purple);
+    --color-accent-red: var(--accent-red);
+    --color-accent-violet: var(--accent-violet);
+    --color-accent-ash: var(--accent-ash);
+    --color-accent-mauve: var(--accent-mauve);
+    --color-accent-pink: var(--accent-pink);
+    --color-accent-yellow: var(--accent-yellow);
+    --color-accent-brown: var(--accent-brown);
+    --color-accent-clay: var(--accent-clay);
+    --color-accent-blue: var(--accent-blue);
+
+    --color-border: var(--border);
+
+    --color-button-bg: var(--button-bg);
+    --color-button-text: var(--button-text);
     --breakpoint-xs: 480px;
     --animate-springify: springify 3.5s;
     --animate-opacify: opacify 1s ease-in;
@@ -201,16 +337,16 @@ body {
     border-radius: inherit;
     background: linear-gradient(
         45deg,
-        #2a5595,
-        #bb00c2,
-        #00c241,
-        #fa9663,
-        #f6e820,
-        #e9721d,
-        #023f42,
-        #ce07d5,
-        #03b2d1,
-        #a09612
+        var(--rainbow-1),
+        var(--rainbow-2),
+        var(--rainbow-3),
+        var(--rainbow-4),
+        var(--rainbow-5),
+        var(--rainbow-6),
+        var(--rainbow-7),
+        var(--rainbow-8),
+        var(--rainbow-9),
+        var(--rainbow-10)
     );
 }
 
