@@ -41,7 +41,7 @@ export default function Navbar() {
     return (
         <nav
             className={clsx(
-                "fixed z-50 flex h-25 w-full items-end bg-transparent",
+                "fixed z-50 flex h-20 w-full items-end bg-transparent xl:h-25",
             )}
         >
             <div
@@ -79,7 +79,7 @@ export default function Navbar() {
                                         : undefined
                                 }
                                 className={clsx(
-                                    "hover:border-border hover:bg-surface-tertiary mx-1 flex w-fit items-center gap-x-0.5 rounded-3xl px-1.5 md:px-2.5 py-1.5 hover:border md:gap-x-2",
+                                    "hover:border-border hover:bg-surface-tertiary mx-1 flex w-fit items-center gap-x-0.5 rounded-3xl px-1.5 py-1.5 hover:border md:gap-x-2 md:px-2.5",
 
                                     pathname === link.link &&
                                         "border-border bg-surface-tertiary border",
