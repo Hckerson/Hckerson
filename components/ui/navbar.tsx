@@ -37,7 +37,7 @@ export default function Navbar() {
         };
     }, []);
 
-    const { currentTheme } = useTheme();
+    const { currentTheme, toggleTheme } = useTheme();
     return (
         <nav
             className={clsx(
@@ -46,7 +46,7 @@ export default function Navbar() {
         >
             <div
                 className={clsx(
-                    "mx-auto h-fit overflow-hidden rounded-full bg-stone-950 transition-transform duration-300 ease-in-out",
+                    "mx-auto h-fit overflow-hidden rounded-full bg-surface-secondary transition-transform duration-300 ease-in-out",
                     scrollDirection === "up"
                         ? "-translate-y-8"
                         : "translate-y-0",
@@ -56,15 +56,15 @@ export default function Navbar() {
                     <Link href="/" className="pr-1">
                         <div
                             className={clsx(
-                                "rounded-full p-1.5 hover:border hover:border-stone-700 hover:bg-stone-800",
+                                "rounded-full p-1.5 hover:border hover:border-border hover:bg-surface-tertiary",
                                 pathname === "/" &&
-                                    "border border-stone-700 bg-stone-800",
+                                    "border border-border bg-surface-tertiary",
                             )}
                         >
                             <LiaHomeSolid className="size-5" />
                         </div>
                     </Link>
-                    <div className="mr-1 h-5 w-0.5 bg-stone-800"></div>
+                    <div className="mr-1 h-5 w-0.5 bg-border"></div>
                     {navlinks.map((link, idx) => {
                         const Icon = link.icon;
 
@@ -79,25 +79,25 @@ export default function Navbar() {
                                         : undefined
                                 }
                                 className={clsx(
-                                    "mx-1 flex w-fit items-center gap-x-2 rounded-3xl px-2.5 py-1.5 hover:border hover:border-stone-700 hover:bg-stone-800",
+                                    "mx-1 flex w-fit items-center gap-x-2 rounded-3xl px-2.5 py-1.5 hover:border hover:border-border hover:bg-surface-tertiary",
 
                                     pathname === link.link &&
-                                        "border border-stone-700 bg-stone-800",
+                                        "border border-border bg-surface-tertiary",
                                 )}
                             >
                                 <span>
                                     <Icon className="size-4" />
                                 </span>
-                                <p className="xs-text font-medium text-stone-200">
+                                <p className="xs-text font-medium text-text-secondary">
                                     {link.name}
                                 </p>
                             </Link>
                         );
                     })}
-                    <div className="h-5 w-0.5 bg-stone-800"></div>
+                    <div className="h-5 w-0.5 bg-border"></div>
 
-                    <div className="rounded-full ml-1 p-2 hover:border hover:border-stone-700 hover:bg-stone-800">
-                        <button type="button">
+                    <div className="rounded-full ml-1 p-1.5 flex items-center hover:border hover:border-border hover:bg-surface-tertiary">
+                        <button type="button" onClick={toggleTheme}>
 
                             {currentTheme === "light" ? (
                                 <MdLightMode className="size-4" />

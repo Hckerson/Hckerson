@@ -5,7 +5,7 @@ import { clashDisplay } from "@/public/fonts/font";
 
 export default function SkillSection() {
     return (
-        <section className="flex w-full bg-stone-950">
+        <section className="flex w-full bg-surface-secondary">
             <div className="large-pad relative mx-auto w-full space-y-6 max-w-7xl">
                 <div className="leading-[1.2]">
                     <p
@@ -16,7 +16,7 @@ export default function SkillSection() {
                     >
                         Skills and Technologies
                     </p>
-                    <p className="xs-text text-stone-400">
+                    <p className="xs-text text-text-muted">
                         {`Here are some of my skills. I'm always working on something new, so be sure to check back often.`}
                     </p>
                 </div>

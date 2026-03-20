@@ -14,20 +14,20 @@ export default function HeroSection() {
                         <p
                             className={clsx(
                                 clashDisplay.className,
-                                "md-text w-[15ch] bg-linear-to-b from-white from-20% to-neutral-400 bg-clip-text text-center leading-none font-bold text-transparent",
+                                "md-text w-[15ch] bg-linear-to-b from-text-primary from-20% to-text-muted bg-clip-text text-center leading-none font-bold text-transparent",
                             )}
                         >
                             <span className="block">Creative</span>
                             <span> Software Engineer.</span>
                         </p>
-                        <p className="xs-text text-neutral-400">
+                        <p className="xs-text text-text-muted">
                             {`I’m hckerson, a Full-Stack Engineer building high-performance products at the intersection of design and scalable architecture.`}{" "}
                         </p>
                         <span className="flex space-x-3">
                             <Link href="/contact" className="size-fit focus:outline-">
                                 <Button
                                     size="sm"
-                                    classname="bg-cyan-400 text-black"
+                                    classname="bg-accent-cyan text-background"
                                 >
                                     Contact Me
                                 </Button>
@@ -35,7 +35,7 @@ export default function HeroSection() {
                             <Link href="/projects">
                                 <Button
                                     size="sm"
-                                    classname="bg-transparent text-white border border-white/20"
+                                    classname="bg-transparent text-text-primary border border-border"
                                 >
                                     {`Let's Talk`}
                                 </Button>
