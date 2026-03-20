@@ -22,7 +22,6 @@ export default function Projects() {
         <div className="relative h-screen w-full">
             <div className="absolute inset-0 z-10 w-full">
                 <div className="relative size-full">
-                    <div className="absolute inset-0 bg-black/50">
                         <Swiper
                             slidesPerView={1}
                             className="h-screen w-screen"
@@ -56,31 +55,30 @@ export default function Projects() {
                             })}
                         </Swiper>
                     </div>
-                </div>
             </div>
             <div className="absolute left-10 z-30 my-auto flex h-full w-2.5">
                 <div className="relative flex size-full">
                     <div className="relative my-auto flex h-full max-h-[80%] flex-col items-center justify-between">
-                        <div className="absolute inset-y-0 z-0 mx-auto w-px bg-stone-500 opacity-50"></div>
+                        <div className="absolute inset-y-0 z-0 mx-auto w-px bg-border opacity-50"></div>
                         {projects.map((project) => {
                             return (
                                 <span
                                     key={project.id}
                                     className={clsx(
-                                        "z-10 flex size-7 items-center justify-center rounded-full bg-stone-500 transition-all duration-800 ease-in",
+                                        "z-10 flex size-7 items-center justify-center rounded-full bg-surface-tertiary transition-all duration-800 ease-in",
                                         project.id === currentProject?.id
                                             ? "scale-100"
                                             : "scale-45",
                                     )}
                                 >
-                                    <p className="font-bold">{project.id}</p>
+                                    <p className="font-bold text-text-primary">{project.id}</p>
                                 </span>
                             );
                         })}
                     </div>
                 </div>
             </div>
-            <div className="relative z-40 ml-24 grid h-full grid-cols-[45%_auto]">
+            <div className="relative z-40 ml-24 text-white grid h-full grid-cols-[45%_auto]">
                 <div className="relative flex size-full flex-col items-center justify-center">
                     <span className="absolute">
                         <div className="overflow-hidden">
