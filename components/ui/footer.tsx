@@ -6,7 +6,7 @@ import { LuGithub } from "react-icons/lu";
 export default function Footer() {
     return (
         <footer className="pb-3.5 w-full bg-surface-secondary">
-            <div className="mx-auto w-full max-w-7xl border-t border-border pt-1">
+            <div className="mx-auto w-full max-w-7xl border-t px-3 border-border pt-2">
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-x-1 font-medium text-text-muted">
                         <Copyright className="size-4" />
