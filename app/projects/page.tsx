@@ -2,7 +2,7 @@
 import clsx from "clsx";
 import Image from "next/image";
 import "swiper/css/effect-fade";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { projects } from "@/lib/data/mapped-data";
 import { PortfolioProject } from "@/lib/interface";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -17,68 +17,84 @@ export default function Projects() {
     const projectLength = projects.length;
     const [controlledSwiperInstance, setControlledSwiperInstance] =
         useState<SwiperType | null>(null);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 1024);
+        };
+        checkMobile();
+        window.addEventListener("resize", checkMobile);
+        return () => window.removeEventListener("resize", checkMobile);
+    }, []);
 
     return (
         <div className="relative h-screen w-full">
             <div className="absolute inset-0 z-10 w-full">
                 <div className="relative size-full">
-                        <Swiper
-                            slidesPerView={1}
-                            className="h-screen w-screen"
-                            modules={[EffectFade, EffectCoverflow]}
-                            onSwiper={setControlledSwiperInstance}
-                            effect="coverflow"
-                            coverflowEffect={{
-                                rotate: 30,
-                                slideShadows: false,
-                            }}
-                            loop={true}
-                            fadeEffect={{ crossFade: true }}
-                            allowTouchMove={false}
-                        >
-                            {projects.map((project) => {
-                                return (
-                                    <SwiperSlide key={project.id} className="">
-                                        {({ isActive }) => (
-                                            <div className="relative size-full">
-                                                <Image
-                                                    src={project.landscape!}
-                                                    alt={project.title}
-                                                    fill
-                                                    className="bg-cover bg-center"
-                                                />
-                                                <div className="absolute inset-0 bg-black/50"></div>
-                                            </div>
-                                        )}
-                                    </SwiperSlide>
-                                );
-                            })}
-                        </Swiper>
-                    </div>
+                    <Swiper
+                        slidesPerView={1}
+                        className="h-screen w-screen"
+                        modules={[EffectFade, EffectCoverflow]}
+                        onSwiper={setControlledSwiperInstance}
+                        effect="coverflow"
+                        coverflowEffect={{
+                            rotate: 30,
+                            slideShadows: false,
+                        }}
+                        loop={true}
+                        fadeEffect={{ crossFade: true }}
+                        allowTouchMove={false}
+                    >
+                        {projects.map((project) => {
+                            return (
+                                <SwiperSlide key={project.id} className="">
+                                    {({ isActive }) => (
+                                        <div className="relative size-full">
+                                            <Image
+                                                src={
+                                                    isMobile
+                                                        ? project.image!
+                                                        : project.landscape!
+                                                }
+                                                alt={project.title}
+                                                fill
+                                                className="bg-contain bg-center"
+                                            />
+                                            <div className="absolute inset-0 bg-black/50"></div>
+                                        </div>
+                                    )}
+                                </SwiperSlide>
+                            );
+                        })}
+                    </Swiper>
+                </div>
             </div>
-            <div className="absolute left-10 z-30 my-auto flex h-full w-2.5">
+            <div className="absolute left-4 z-30 my-auto flex h-full w-2.5 sm:left-4  xl:left-10">
                 <div className="relative flex size-full">
                     <div className="relative my-auto flex h-full max-h-[80%] flex-col items-center justify-between">
-                        <div className="absolute inset-y-0 z-0 mx-auto w-px bg-border opacity-50"></div>
+                        <div className="bg-border absolute inset-y-0 z-0 mx-auto w-px opacity-50"></div>
                         {projects.map((project) => {
                             return (
                                 <span
                                     key={project.id}
                                     className={clsx(
-                                        "z-10 flex size-7 items-center justify-center rounded-full bg-surface-tertiary transition-all duration-800 ease-in",
+                                        "bg-surface-tertiary z-10 flex size-7 items-center justify-center rounded-full transition-all duration-800 ease-in",
                                         project.id === currentProject?.id
                                             ? "scale-100"
                                             : "scale-45",
                                     )}
                                 >
-                                    <p className="font-bold text-text-primary">{project.id}</p>
+                                    <p className="text-text-primary font-bold">
+                                        {project.id}
+                                    </p>
                                 </span>
                             );
                         })}
                     </div>
                 </div>
             </div>
-            <div className="relative z-40 ml-24 text-white grid h-full grid-cols-[45%_auto]">
+            <div className="relative z-40 ml-10 grid h-full grid-cols-[45%_auto] text-white sm:ml-12 xl:ml-24">
                 <div className="relative flex size-full flex-col items-center justify-center">
                     <span className="absolute">
                         <div className="overflow-hidden">
@@ -99,10 +115,10 @@ export default function Projects() {
                 <div className="flex h-full">
                     <div className="relative my-auto flex w-full overflow-x-auto [scrollbar-width:none]">
                         <Swiper
-                            spaceBetween={25}
-                            slidesPerView={2.5}
-                            className="xl:w-170"
-                            modules={[Autoplay]}
+                            spaceBetween={isMobile ? 12.5 : 25}
+                            slidesPerView={isMobile ? 1.75 : 2.5}
+                            className="md:w-100 lg:w-130 xl:w-170"
+                            // modules={[Autoplay]}
                             loop={true}
                             autoplay={{
                                 delay: 2000,
