@@ -64,7 +64,7 @@ export default function Navbar() {
                             <LiaHomeSolid className="size-3 md:size-4" />
                         </div>
                     </Link>
-                    <div className="bg-border mr-1 h-5 w-0.5"></div>
+                    <div className="bg-border mr-1 h-5 w-px"></div>
                     {navlinks.map((link, idx) => {
                         const Icon = link.icon;
 
@@ -94,7 +94,7 @@ export default function Navbar() {
                             </Link>
                         );
                     })}
-                    <div className="bg-border h-5 w-0.5"></div>
+                    <div className="bg-border h-5 w-px"></div>
 
                     <div className="hover:border-border hover:bg-surface-tertiary ml-1 flex items-center rounded-full p-1.5 hover:border">
                         <button type="button" onClick={toggleTheme}>
