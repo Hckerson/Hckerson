@@ -59,7 +59,7 @@ export default function Projects() {
                                                 }
                                                 alt={project.title}
                                                 fill
-                                                className="bg-contain bg-center"
+                                                className="bg-cover bg-center"
                                             />
                                             <div className="absolute inset-0 bg-black/50"></div>
                                         </div>
