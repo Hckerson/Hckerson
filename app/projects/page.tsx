@@ -10,6 +10,8 @@ import type { Swiper as SwiperType } from "swiper";
 import ProjectCard from "@/components/ui/cards/project-card";
 import { Autoplay, EffectFade, EffectCoverflow } from "swiper/modules";
 import { clashDisplay } from "@/public/fonts/font";
+import Link from "next/link";
+import Button from "@/components/ui/button";
 
 export default function Projects() {
     const [currentProject, setCurrentProject] =
@@ -70,7 +72,7 @@ export default function Projects() {
                     </Swiper>
                 </div>
             </div>
-            <div className="absolute left-4 z-30 my-auto flex h-full w-2.5 sm:left-4  xl:left-10">
+            <div className="absolute left-1 z-30 my-auto flex h-full w-2.5 sm:left-4 xl:left-10">
                 <div className="relative flex size-full">
                     <div className="relative my-auto flex h-full max-h-[80%] flex-col items-center justify-between">
                         <div className="bg-border absolute inset-y-0 z-0 mx-auto w-px opacity-50"></div>
@@ -94,8 +96,8 @@ export default function Projects() {
                     </div>
                 </div>
             </div>
-            <div className="relative z-40 ml-10 grid h-full grid-cols-[45%_auto] text-white sm:ml-12 xl:ml-24">
-                <div className="relative flex size-full flex-col items-center justify-center">
+            <div className="relative z-40 ml-10 grid h-full  text-white sm:ml-12 md:translate-y-0 md:grid-cols-[45%_auto] xl:ml-24">
+                <div className="relative flex size-full flex-col items-center justify-center pr-2 md:pl-0">
                     <span className="absolute">
                         <div className="overflow-hidden">
                             <p
@@ -107,18 +109,41 @@ export default function Projects() {
                                 {currentProject?.title}
                             </p>
                         </div>
-                        <div className="overflow-hidden">
+                        <div className="sm-text overflow-hidden backdrop-blur-[2px]">
                             <p>{currentProject?.description}</p>
+                        </div>
+                        <div className="mt-6 block md:hidden">
+                            <span className="sm-text flex space-x-3">
+                                <Link
+                                    href={`/projects/${currentProject?.id}`}
+                                    className="focus:outline- size-fit"
+                                >
+                                    <Button
+                                        size="sm"
+                                        classname="bg-accent-cyan text-background"
+                                    >
+                                        View Project
+                                    </Button>
+                                </Link>
+                                <Link href="/projects">
+                                    <Button
+                                        size="sm"
+                                        classname="bg-transparent text-text-primary border border-border"
+                                    >
+                                        {`Let's Talk`}
+                                    </Button>
+                                </Link>
+                            </span>
                         </div>
                     </span>
                 </div>
-                <div className="flex h-full">
-                    <div className="relative my-auto flex w-full overflow-x-auto [scrollbar-width:none]">
+                <div className=" md:relative absolute md:translate-x-0 translate-x-1000 md:flex md:h-full md:w-full">
+                    <div className="relative my-auto flex w-full overflow-x-hidden [scrollbar-width:none]">
                         <Swiper
                             spaceBetween={isMobile ? 12.5 : 25}
                             slidesPerView={isMobile ? 1.75 : 2.5}
-                            className="md:w-100 lg:w-130 xl:w-170"
-                            // modules={[Autoplay]}
+                            className="md:h-fit md:w-100 lg:w-130 xl:w-170"
+                            modules={[Autoplay]}
                             loop={true}
                             autoplay={{
                                 delay: 2000,
