@@ -109,7 +109,7 @@ export default function Projects() {
                                 {currentProject?.title}
                             </p>
                         </div>
-                        <div className="sm-text overflow-hidden backdrop-blur-[2px]">
+                        <div className="sm-text overflow-hidden backdrop-blur-[2px] md:backdrop-blur-none">
                             <p>{currentProject?.description}</p>
                         </div>
                         <div className="mt-6 block md:hidden">
