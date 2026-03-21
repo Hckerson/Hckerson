@@ -38,7 +38,7 @@ export default function PricingCard({ plan }: { plan: PricingPlan }) {
                                 : plan.price}
                         </p>
                         {typeof plan.price === "number" && (
-                            <span className="text-text-muted mb-2.5 xs-text">
+                            <span className="text-text-muted xs-text mb-2.5">
                                 per job
                             </span>
                         )}
@@ -64,7 +64,7 @@ export default function PricingCard({ plan }: { plan: PricingPlan }) {
                         {plan.features.map((feature, index) => (
                             <li
                                 key={`${feature}-${index}`}
-                                className="flex w-full gap-x-2 items-center"
+                                className="flex w-full items-center gap-x-2"
                             >
                                 <Icon
                                     icon="icon-park-solid:check-one"
