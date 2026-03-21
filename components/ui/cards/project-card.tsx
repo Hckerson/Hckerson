@@ -33,8 +33,8 @@ export default function ProjectCard({
             className={clsx(
                 "group relative flex flex-col overflow-hidden transition-all duration-300 ease-in-out",
                 hidden
-                    ? "min-h-100 min-w-50 rounded-lg md:rounded-xl xl:rounded-2xl"
-                    : "min-h-90 min-w-70 rounded-xl md:rounded-2xl xl:rounded-3xl",
+                    ? "xl:min-h-100 md:min-h-80 min-w-50 rounded-lg md:rounded-xl xl:rounded-2xl"
+                    : "xl:min-h-90 md:min-h-70 min-w-70 rounded-xl md:rounded-2xl xl:rounded-3xl",
                 isActive ? "scale-y-100" : "scale-y-80",
             )}
         >

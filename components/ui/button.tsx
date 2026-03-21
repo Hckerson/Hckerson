@@ -31,7 +31,7 @@ export default function Button({
         <button
             {...rest}
             className={clsx(
-                "relative z-0 flex cursor-pointer items-center justify-center overflow-hidden  shadow-inner",
+                "relative z-0 flex cursor-pointer items-center justify-center overflow-hidden shadow-inner",
                 sizes,
                 classname,
             )}
@@ -42,7 +42,7 @@ export default function Button({
                 ) : (
                     <span
                         className={clsx(
-                            "xs:text-base absolute inset-0 flex items-center justify-center text-sm transition-colors duration-150 ease-in",
+                            "absolute inset-0 flex items-center justify-center transition-colors duration-150 ease-in",
                         )}
                     >
                         {children}
@@ -60,7 +60,7 @@ export default function Button({
                             <Loader2 className="relative flex size-6 animate-spin items-center justify-center" />
                         </span>
                     )}
-                    <span className="xs:text-base flex h-full w-full items-center justify-center text-sm">
+                    <span className="flex h-full w-full items-center justify-center">
                         {children}
                     </span>
                 </div>
