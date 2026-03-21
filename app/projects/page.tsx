@@ -96,7 +96,7 @@ export default function Projects() {
                     </div>
                 </div>
             </div>
-            <div className="relative z-40 ml-10 grid h-full  text-white sm:ml-12 md:translate-y-0 md:grid-cols-[45%_auto] xl:ml-24">
+            <div className="relative z-40 ml-10 grid h-full overflow-hidden text-white sm:ml-12 md:translate-y-0 md:grid-cols-[45%_auto] xl:ml-24">
                 <div className="relative flex size-full flex-col items-center justify-center pr-2 md:pl-0">
                     <span className="absolute">
                         <div className="overflow-hidden">
@@ -137,7 +137,7 @@ export default function Projects() {
                         </div>
                     </span>
                 </div>
-                <div className=" md:relative absolute md:translate-x-0 translate-x-1000 md:flex md:h-full md:w-full">
+                <div className="absolute translate-x-1000 md:relative md:flex md:h-full md:w-full md:translate-x-0">
                     <div className="relative my-auto flex w-full overflow-x-hidden [scrollbar-width:none]">
                         <Swiper
                             spaceBetween={isMobile ? 12.5 : 25}
