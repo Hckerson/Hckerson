@@ -1,17 +1,17 @@
 "use client";
 import clsx from "clsx";
+import Link from "next/link";
 import Image from "next/image";
 import "swiper/css/effect-fade";
+import Button from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { projects } from "@/lib/data/mapped-data";
 import { PortfolioProject } from "@/lib/interface";
+import { clashDisplay } from "@/public/fonts/font";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper";
 import ProjectCard from "@/components/ui/cards/project-card";
 import { Autoplay, EffectFade, EffectCoverflow } from "swiper/modules";
-import { clashDisplay } from "@/public/fonts/font";
-import Link from "next/link";
-import Button from "@/components/ui/button";
 
 export default function Projects() {
     const [currentProject, setCurrentProject] =
