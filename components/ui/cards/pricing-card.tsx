@@ -45,9 +45,11 @@ export default function PricingCard({ plan }: { plan: PricingPlan }) {
                     </div>
                     <Button
                         size="custom"
-                        classname="w-full bg-button-bg text-button-text rounded-xl"
+                        classname="w-full bg-accent-cyan text-button-text rounded-lg"
                     >
-                        Get started
+                        <p className="text-black">
+                            Get started
+                        </p>
                     </Button>
                     <legend
                         className={clsx(
