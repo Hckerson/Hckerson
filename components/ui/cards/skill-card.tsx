@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Skill } from "@/lib/interface";
 import clsx from "clsx";
-import { clashDisplay } from "@/public/fonts/font";
+import { clashDisplay } from "@/lib/fonts";
 
 export default function SkillCard({ skill }: { skill: Skill }) {
     return (

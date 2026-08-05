@@ -2,7 +2,7 @@
 import Button from "../button";
 import { Icon } from "@iconify-icon/react";
 import { PricingPlan } from "@/lib/interface";
-import { clashDisplay } from "@/public/fonts/font";
+import { clashDisplay } from "@/lib/fonts";
 import clsx from "clsx";
 
 export default function PricingCard({ plan }: { plan: PricingPlan }) {
@@ -45,7 +45,7 @@ export default function PricingCard({ plan }: { plan: PricingPlan }) {
                     </div>
                     <Button
                         size="custom"
-                        classname="w-full bg-accent-cyan text-button-text rounded-lg"
+                        className="bg-accent-cyan text-button-text w-full rounded-lg"
                     >
                         <p className="text-black">Get started</p>
                     </Button>

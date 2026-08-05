@@ -3,7 +3,7 @@
 import clsx from "clsx";
 import Image from "next/image";
 import { Icon } from "@iconify-icon/react";
-import { clashDisplay } from "@/public/fonts/font";
+import { clashDisplay } from "@/lib/fonts";
 import { PortfolioProject } from "@/lib/interface";
 
 export default function ProjectCard({

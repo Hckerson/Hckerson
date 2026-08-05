@@ -1,5 +1,5 @@
 import { clsx } from "clsx";
-import { clashDisplay } from "@/public/fonts/font";
+import { clashDisplay } from "@/lib/fonts";
 import ProjectCard from "../ui/cards/project-card";
 import { projects } from "@/lib/data/mapped-data";
 

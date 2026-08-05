@@ -1,5 +1,5 @@
 import { workExperience } from "@/lib/data/mapped-data";
-import { clashDisplay } from "@/public/fonts/font";
+import { clashDisplay } from "@/lib/fonts";
 import clsx from "clsx";
 import QulaificationCard from "../ui/cards/qualification-card";
 import { Accordion } from "@/components/ui/accordion";

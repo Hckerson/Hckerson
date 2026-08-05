@@ -1,5 +1,5 @@
 import "swiper/css";
-import "@/public/styles/globals.css";
+import "./globals.css";
 import AppLayout from "@/components/app-layout";
 
 export default function RootLayout({
