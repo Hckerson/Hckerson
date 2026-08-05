@@ -2,7 +2,7 @@
 
 import clsx from "clsx";
 import Image from "next/image";
-import { Icon } from "@iconify-icon/react";
+import { Eye, Menu } from "lucide-react";
 import { clashDisplay } from "@/lib/fonts";
 import { PortfolioProject } from "@/lib/interface";
 
@@ -30,19 +30,15 @@ export default function ProjectCard({
             {!hidden && (
                 <>
                     <span className="bg-background absolute -top-10 -left-10 z-20 flex size-9 items-center justify-center rounded-full transition-all duration-500 ease-in-out group-hover:translate-15">
-                        <Icon
-                            icon="solar:hamburger-menu-broken"
-                            width="24"
-                            height="24"
-                            className="text-text-primary my-auto flex stroke-2 hover:scale-105"
+                        <Menu
+                            className="text-text-primary my-auto flex size-6 hover:scale-105"
+                            aria-hidden="true"
                         />
                     </span>
                     <span className="bg-background absolute -top-10 -right-10 z-20 flex size-9 items-center justify-center rounded-full transition-all duration-500 ease-in-out group-hover:-translate-x-15 group-hover:translate-y-15">
-                        <Icon
-                            icon="arcticons:cinexplore"
-                            width="24"
-                            height="24"
-                            className="text-text-primary my-auto flex stroke-2 hover:scale-105"
+                        <Eye
+                            className="text-text-primary my-auto flex size-6 hover:scale-105"
+                            aria-hidden="true"
                         />
                     </span>
                 </>

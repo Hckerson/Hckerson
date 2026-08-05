@@ -8,19 +8,19 @@ import {
     WorkExperience,
     PricingPlan,
 } from "../interface";
-import { LuTags } from "react-icons/lu";
-import { BsFolder2Open } from "react-icons/bs";
-import { VscGithubAlt } from "react-icons/vsc";
+import { FolderOpen, Tags } from "lucide-react";
+import { GithubIcon } from "@/components/ui/brand-icons";
+import { siteConfig } from "../constant";
 
 // /blog is intentionally absent — the route exists but has no posts yet.
 const navlinks: Navlink[] = [
-    { name: "Projects", link: "/projects", visible: "sm", icon: BsFolder2Open },
-    { name: "Pricing", link: "/pricing", visible: "md", icon: LuTags },
+    { name: "Projects", link: "/projects", visible: "sm", icon: FolderOpen },
+    { name: "Pricing", link: "/pricing", visible: "md", icon: Tags },
     {
         name: "Github",
-        link: "https://github.com/hckerson",
+        link: siteConfig.github,
         visible: "md",
-        icon: VscGithubAlt,
+        icon: GithubIcon,
         external: true,
     },
 ];
