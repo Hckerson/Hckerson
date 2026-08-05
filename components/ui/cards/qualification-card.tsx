@@ -5,7 +5,7 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion";
 import clsx from "clsx";
-import { PiSuitcaseLight } from "react-icons/pi";
+import { Briefcase } from "lucide-react";
 
 export default function QulaificationCard({
     data,
@@ -30,7 +30,7 @@ export default function QulaificationCard({
                         <div className="flex items-center justify-center gap-x-2.5 md:gap-x-4">
                             <div className="size-4 md:size-8 xl:size-10">
                                 <div className="bg-surface-tertiary flex size-full items-center justify-center rounded-full">
-                                    <PiSuitcaseLight size={24} />
+                                    <Briefcase className="size-6" />
                                 </div>
                             </div>
                             <div className="-space-y-1 text-start">

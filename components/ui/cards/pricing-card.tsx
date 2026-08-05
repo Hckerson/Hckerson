@@ -1,6 +1,6 @@
 "use client";
 import Button from "../button";
-import { Icon } from "@iconify-icon/react";
+import { CircleCheck } from "lucide-react";
 import { PricingPlan } from "@/lib/interface";
 import { clashDisplay } from "@/lib/fonts";
 import clsx from "clsx";
@@ -66,10 +66,9 @@ export default function PricingCard({ plan }: { plan: PricingPlan }) {
                                 key={`${feature}-${index}`}
                                 className="flex w-full items-center gap-x-2"
                             >
-                                <Icon
-                                    icon="icon-park-solid:check-one"
-                                    width="20"
-                                    height="20"
+                                <CircleCheck
+                                    className="text-accent-cyan size-5 shrink-0"
+                                    aria-hidden="true"
                                 />
                                 <p className="xs-text">
                                     <span key={index}>{feature}</span>

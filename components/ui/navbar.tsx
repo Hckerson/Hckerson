@@ -1,11 +1,9 @@
 "use client";
 import clsx from "clsx";
 import Link from "next/link";
-import { Moon } from "lucide-react";
+import { House, Moon, Sun } from "lucide-react";
 import useTheme from "@/hooks/useTheme";
 import { useEffect, useState } from "react";
-import { MdLightMode } from "react-icons/md";
-import { LiaHomeSolid } from "react-icons/lia";
 import { navlinks } from "@/lib/data/mapped-data";
 import { usePathname } from "next/navigation";
 
@@ -56,7 +54,7 @@ export default function Navbar() {
                                     "border-border bg-surface-tertiary border",
                             )}
                         >
-                            <LiaHomeSolid className="size-3 md:size-4" />
+                            <House className="size-3 md:size-4" />
                         </div>
                     </Link>
                     <div className="bg-border mr-1 h-5 w-px"></div>
@@ -94,7 +92,7 @@ export default function Navbar() {
                     <div className="hover:border-border hover:bg-surface-tertiary ml-1 flex items-center rounded-full p-1.5 hover:border">
                         <button type="button" onClick={toggleTheme}>
                             {currentTheme === "light" ? (
-                                <MdLightMode className="size-3 md:size-4" />
+                                <Sun className="size-3 md:size-4" />
                             ) : (
                                 <Moon className="size-3 md:size-4" />
                             )}
