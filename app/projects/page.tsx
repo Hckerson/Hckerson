@@ -16,7 +16,6 @@ import Button from "@/components/ui/button";
 export default function Projects() {
     const [currentProject, setCurrentProject] =
         useState<PortfolioProject | null>(projects[0]);
-    const projectLength = projects.length;
     const [controlledSwiperInstance, setControlledSwiperInstance] =
         useState<SwiperType | null>(null);
     const [isMobile, setIsMobile] = useState(false);
@@ -51,7 +50,7 @@ export default function Projects() {
                         {projects.map((project) => {
                             return (
                                 <SwiperSlide key={project.id} className="">
-                                    {({ isActive }) => (
+                                    {() => (
                                         <div className="relative size-full">
                                             <Image
                                                 src={

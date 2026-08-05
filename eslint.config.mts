@@ -1,16 +1,24 @@
-import js from "@eslint/js";
-import globals from "globals";
-import tseslint from "typescript-eslint";
-import pluginReact from "eslint-plugin-react";
-import { defineConfig } from "eslint/config";
+import { defineConfig, globalIgnores } from "eslint/config";
+import next from "eslint-config-next/core-web-vitals";
 
+// `eslint-config-next/core-web-vitals` already bundles typescript-eslint,
+// eslint-plugin-react, react-hooks, jsx-a11y and import — don't re-add them.
 export default defineConfig([
+    globalIgnores([".next/**", "out/**", "build/**", "next-env.d.ts"]),
+    next,
     {
-        files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
-        plugins: { js },
-        extends: ["js/recommended", "plugin:react/jsx-runtime"],
-        languageOptions: { globals: globals.browser },
+        // Must match `next/typescript`'s own patterns — that's the config
+        // object that registers the @typescript-eslint plugin namespace.
+        files: ["**/*.ts", "**/*.tsx"],
+        rules: {
+            "@typescript-eslint/no-unused-vars": [
+                "error",
+                {
+                    argsIgnorePattern: "^_",
+                    varsIgnorePattern: "^_",
+                    caughtErrorsIgnorePattern: "^_",
+                },
+            ],
+        },
     },
-    tseslint.configs.recommended,
-    pluginReact.configs.flat.recommended,
 ]);

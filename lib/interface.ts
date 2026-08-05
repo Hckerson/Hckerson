@@ -1,10 +1,5 @@
 import { IconType } from "react-icons";
-import {
-    ProjectLevel,
-    ProjectStatus,
-    ProjectType,
-    SkillCategory,
-} from "./types";
+import { ProjectStatus, SkillCategory } from "./types";
 
 export interface Navlink {
     name: string;

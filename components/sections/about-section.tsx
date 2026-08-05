@@ -67,7 +67,7 @@ export default function AboutSection() {
                             classname="flex items-center bg-accent-cyan text-background"
                         >
                             <span className="group-hover:text-text-primary flex gap-x-2 transition-colors duration-300 ease-in">
-                                <p>Let's Talk</p>
+                                <p>{`Let's Talk`}</p>
                                 <LinkIcon className="size-4" />
                             </span>
                         </Button>
