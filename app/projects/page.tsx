@@ -9,7 +9,7 @@ import type { Swiper as SwiperType } from "swiper";
 import ProjectCard from "@/components/ui/cards/project-card";
 import { Autoplay, EffectCoverflow } from "swiper/modules";
 import useMediaQuery from "@/hooks/useMediaQuery";
-import { clashDisplay } from "@/public/fonts/font";
+import { clashDisplay } from "@/lib/fonts";
 import Link from "next/link";
 import Button from "@/components/ui/button";
 
@@ -111,7 +111,7 @@ export default function Projects() {
                                 >
                                     <Button
                                         size="sm"
-                                        classname="bg-accent-cyan text-background"
+                                        className="bg-accent-cyan text-background"
                                     >
                                         View Project
                                     </Button>
@@ -119,7 +119,7 @@ export default function Projects() {
                                 <Link href="/projects">
                                     <Button
                                         size="sm"
-                                        classname="bg-transparent text-text-primary border border-border"
+                                        className="text-text-primary border-border border bg-transparent"
                                     >
                                         {`Let's Talk`}
                                     </Button>

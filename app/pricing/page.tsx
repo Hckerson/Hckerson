@@ -1,12 +1,12 @@
 "use client";
 import clsx from "clsx";
-import { clashDisplay } from "@/public/fonts/font";
+import { clashDisplay } from "@/lib/fonts";
 import { pricingPlans } from "@/lib/data/mapped-data";
 import PricingCard from "@/components/ui/cards/pricing-card";
 
 export default function Pricing() {
     return (
-        <main className="min-h-screen w-full">
+        <div className="min-h-screen w-full">
             {/* <div className="hidden min-h-screen items-center justify-center">
                 <span className="flex flex-col items-center">
                     <span className="flex space-x-2 rounded-4xl bg-stone-800 px-3 py-2 backdrop-blur-2xl">
@@ -46,6 +46,6 @@ export default function Pricing() {
                     ))}
                 </div>
             </div>
-        </main>
+        </div>
     );
 }

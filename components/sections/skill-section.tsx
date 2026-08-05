@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import SkillCard from "../ui/cards/skill-card";
 import { skills } from "@/lib/data/mapped-data";
-import { clashDisplay } from "@/public/fonts/font";
+import { clashDisplay } from "@/lib/fonts";
 
 export default function SkillSection() {
     return (
