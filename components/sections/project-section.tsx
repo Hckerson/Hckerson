@@ -5,7 +5,7 @@ import { projects } from "@/lib/data/mapped-data";
 
 export default function ProjectSection() {
     return (
-        <section className="xlarge-pady flex w-full bg-surface-secondary">
+        <section className="xlarge-pady bg-surface-secondary flex w-full">
             <div className="large-pad relative mx-auto w-full max-w-330">
                 <div className="leading-[1.2]">
                     <p

@@ -20,15 +20,15 @@ export default function QulaificationCard({
             value={`${data.company}-${id}`}
             className={clsx(
                 "box-border w-full overflow-hidden",
-                id !== workExperience.length - 1 && "border-b border-border",
+                id !== workExperience.length - 1 && "border-border border-b",
             )}
         >
             <AccordionTrigger>
                 <div className="box-border w-full p-2.5 md:p-4 xl:p-5">
                     <div className="flex w-full justify-between">
                         <div className="flex items-center justify-center gap-x-2.5 md:gap-x-4">
-                            <div className="md:size-8 xl:size-10 size-4">
-                                <div className="flex size-full items-center justify-center rounded-full bg-surface-tertiary">
+                            <div className="size-4 md:size-8 xl:size-10">
+                                <div className="bg-surface-tertiary flex size-full items-center justify-center rounded-full">
                                     <PiSuitcaseLight size={24} />
                                 </div>
                             </div>
@@ -36,12 +36,12 @@ export default function QulaificationCard({
                                 <p className="xs:text-[14px] text-[12px] font-semibold sm:text-[16px] md:text-[18px] lg:text-[20px] 2xl:text-[20px]">
                                     {data.title}
                                 </p>
-                                <p className="xs-text font-medium text-text-muted">
+                                <p className="xs-text text-text-muted font-medium">
                                     {data.company}
                                 </p>
                             </div>
                         </div>
-                        <div className="flex flex-col text-end text-text-muted">
+                        <div className="text-text-muted flex flex-col text-end">
                             <p className="xs-text">{data.location}</p>
                             <p className="text-[12px]">{data.period}</p>
                         </div>
@@ -55,7 +55,7 @@ export default function QulaificationCard({
                             <p className={clsx("xs-text font-semibold")}>
                                 Description
                             </p>
-                            <p className="xs-text my-2 font-medium text-text-muted">
+                            <p className="xs-text text-text-muted my-2 font-medium">
                                 {data.description}
                             </p>
                         </div>
@@ -63,12 +63,12 @@ export default function QulaificationCard({
                             <p className={clsx("xs-text font-semibold")}>
                                 Skills and Technologies
                             </p>
-                            <ul className="flex flex-wrap gap-1.5 my-2">
+                            <ul className="my-2 flex flex-wrap gap-1.5">
                                 {data.skills.map((skill, idx) => {
                                     return (
                                         <li
                                             key={`${skill}-${idx}`}
-                                            className="xs-text flex items-center border border-border justify-center rounded-full bg-surface-tertiary px-2 py-1 font-medium text-text-primary"
+                                            className="xs-text border-border bg-surface-tertiary text-text-primary flex items-center justify-center rounded-full border px-2 py-1 font-medium"
                                         >
                                             <p>{skill}</p>
                                         </li>
@@ -88,12 +88,12 @@ export default function QulaificationCard({
                                         key={`${achievement}-${idx}`}
                                         className="flex gap-x-2"
                                     >
-                                        <span className="xs-text flex size-4 items-center justify-center rounded-full bg-surface-tertiary font-medium text-text-muted">
+                                        <span className="xs-text bg-surface-tertiary text-text-muted flex size-4 items-center justify-center rounded-full font-medium">
                                             <p className="text-[10px]">
                                                 {idx + 1}
                                             </p>
                                         </span>
-                                        <p className="xs-text font-medium text-text-muted">
+                                        <p className="xs-text text-text-muted font-medium">
                                             {achievement}
                                         </p>
                                     </li>
