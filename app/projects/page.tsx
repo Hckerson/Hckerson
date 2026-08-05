@@ -9,6 +9,7 @@ import type { Swiper as SwiperType } from "swiper";
 import ProjectCard from "@/components/ui/cards/project-card";
 import { Autoplay, EffectCoverflow } from "swiper/modules";
 import useMediaQuery from "@/hooks/useMediaQuery";
+import { contactHref } from "@/lib/constant";
 import { clashDisplay } from "@/lib/fonts";
 import Link from "next/link";
 import Button from "@/components/ui/button";
@@ -107,7 +108,7 @@ export default function Projects() {
                             <span className="sm-text flex space-x-3">
                                 <Link
                                     href={`/projects/${currentProject?.id}`}
-                                    className="focus:outline- size-fit"
+                                    className="size-fit"
                                 >
                                     <Button
                                         size="sm"
@@ -116,14 +117,15 @@ export default function Projects() {
                                         View Project
                                     </Button>
                                 </Link>
-                                <Link href="/projects">
+                                {/* Was a self-link back to /projects. */}
+                                <a href={contactHref} className="size-fit">
                                     <Button
                                         size="sm"
                                         className="text-text-primary border-border border bg-transparent"
                                     >
                                         {`Let's Talk`}
                                     </Button>
-                                </Link>
+                                </a>
                             </span>
                         </div>
                     </span>
