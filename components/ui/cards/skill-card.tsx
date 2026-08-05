@@ -5,8 +5,8 @@ import { clashDisplay } from "@/public/fonts/font";
 
 export default function SkillCard({ skill }: { skill: Skill }) {
     return (
-        <div className="flex items-center gap-x-3 rounded-xl border-2 border-border bg-surface-secondary p-1.5 md:rounded-2xl">
-            <div className="flex aspect-square size-10 md:size-11 xl:size-13 items-center justify-center rounded-lg bg-surface-tertiary bg-cover p-2 md:rounded-xl">
+        <div className="border-border bg-surface-secondary flex items-center gap-x-3 rounded-xl border-2 p-1.5 md:rounded-2xl">
+            <div className="bg-surface-tertiary flex aspect-square size-10 items-center justify-center rounded-lg bg-cover p-2 md:size-11 md:rounded-xl xl:size-13">
                 <Image
                     src={skill.icon}
                     alt={skill.name}
@@ -23,7 +23,7 @@ export default function SkillCard({ skill }: { skill: Skill }) {
                 >
                     {skill.name}
                 </p>
-                <p className="text-[10px] font-medium text-text-secondary sm:text-[12px] md:text-[11px] xl:text-[13px] 2xl:text-[14px]">
+                <p className="text-text-secondary text-[10px] font-medium sm:text-[12px] md:text-[11px] xl:text-[13px] 2xl:text-[14px]">
                     {skill.categories.join(" / ")}
                 </p>
             </div>

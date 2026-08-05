@@ -40,7 +40,7 @@ export default function Pricing() {
                         contracts, cancel anytime.
                     </p>
                 </span>
-                <div className="mt-10 grid px-6 grid-cols-1 max-w-5xl w-full gap-4 md:grid-cols-2 lg:grid-cols-3">
+                <div className="mt-10 grid w-full max-w-5xl grid-cols-1 gap-4 px-6 md:grid-cols-2 lg:grid-cols-3">
                     {pricingPlans.map((plan) => (
                         <PricingCard key={plan.name} plan={plan} />
                     ))}

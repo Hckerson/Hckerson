@@ -9,7 +9,6 @@ export interface Navlink {
     external?: boolean;
 }
 
-
 export interface PortfolioProject {
     id: number;
     title: string;
