@@ -3,7 +3,6 @@
 import clsx from "clsx";
 import Image from "next/image";
 import { Eye, Menu } from "lucide-react";
-import { clashDisplay } from "@/lib/fonts";
 import { PortfolioProject } from "@/lib/interface";
 
 export default function ProjectCard({
@@ -43,23 +42,20 @@ export default function ProjectCard({
                     </span>
                 </>
             )}
+            {/* 531x856 matches the 1062x1712 sources. The old 500x1000
+                declared a 1:2 box the images never had, and `bg-cover` is a
+                background utility that does nothing to an <img>. */}
             <Image
                 src={image}
-                alt={`Project-${title} thunbnail`}
-                width={500}
-                height={1000}
-                className="size-full bg-cover transition-all duration-300 ease-in-out group-hover:scale-105"
+                alt={`${title} project cover`}
+                width={531}
+                height={856}
+                sizes="(max-width: 768px) 60vw, 320px"
+                className="size-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105"
             />
 
             <div className="bg-background/20 absolute inset-x-0 bottom-0 h-10 space-y-1 p-4 leading-[1.1] backdrop-blur-md">
-                <p
-                    className={clsx(
-                        clashDisplay.className,
-                        "sm-text font-semibold",
-                    )}
-                >
-                    {title}
-                </p>
+                <p className="font-clash sm-text font-semibold">{title}</p>
             </div>
         </div>
     );

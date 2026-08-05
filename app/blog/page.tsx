@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import clsx from "clsx";
-import { clashDisplay } from "@/lib/fonts";
 
 // Unlinked from the navbar until there are real posts. The `articles` array in
 // lib/data/mapped-data.ts is placeholder content and is deliberately not
@@ -15,12 +13,7 @@ export const metadata: Metadata = {
 export default function Blog() {
     return (
         <div className="flex min-h-screen w-full flex-col items-center justify-center gap-y-3 px-6 text-center">
-            <h1
-                className={clsx(
-                    clashDisplay.className,
-                    "base-text text-text-primary font-semibold",
-                )}
-            >
+            <h1 className="font-clash base-text text-text-primary font-semibold">
                 Blog
             </h1>
             <p className="xs-text text-text-muted max-w-[50ch]">

@@ -1,6 +1,4 @@
 import { workExperience } from "@/lib/data/mapped-data";
-import { clashDisplay } from "@/lib/fonts";
-import clsx from "clsx";
 import QulaificationCard from "../ui/cards/qualification-card";
 import { Accordion } from "@/components/ui/accordion";
 
@@ -17,12 +15,7 @@ export default function QualificationSection() {
         <section className="xlarge-pady bg-surface-secondary flex w-full">
             <div className="md-pad relative mx-auto w-full max-w-7xl space-y-6">
                 <div className="leading-[1.2]">
-                    <p
-                        className={clsx(
-                            clashDisplay.className,
-                            "base-text font-semibold",
-                        )}
-                    >
+                    <p className="font-clash base-text font-semibold">
                         Qualifications
                     </p>
                     <p className="xs-text text-text-muted">

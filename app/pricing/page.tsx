@@ -1,6 +1,4 @@
 "use client";
-import clsx from "clsx";
-import { clashDisplay } from "@/lib/fonts";
 import { pricingPlans } from "@/lib/data/mapped-data";
 import PricingCard from "@/components/ui/cards/pricing-card";
 
@@ -16,10 +14,7 @@ export default function Pricing() {
                         </span>
                     </span>
                     <p
-                        className={clsx(
-                            "large-text font-bold",
-                            clashDisplay.className,
-                        )}
+                        className="large-text font-bold font-clash"
                     >
                         Pricing
                     </p>
@@ -27,12 +22,7 @@ export default function Pricing() {
             </div> */}
             <div className="large-pady flex flex-col items-center justify-center">
                 <span className="mt-24 text-center">
-                    <p
-                        className={clsx(
-                            "base-text font-semibold",
-                            clashDisplay.className,
-                        )}
-                    >
+                    <p className="base-text font-clash font-semibold">
                         Our Pricing Plans
                     </p>
                     <p className="xs-text text-text-muted">

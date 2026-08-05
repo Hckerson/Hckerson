@@ -1,5 +1,5 @@
-import "swiper/css";
 import "./globals.css";
+import { clashDisplay } from "@/lib/fonts";
 import AppLayout from "@/components/app-layout";
 
 export default function RootLayout({
@@ -8,7 +8,11 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="en" suppressHydrationWarning>
+        <html
+            lang="en"
+            className={clashDisplay.variable}
+            suppressHydrationWarning
+        >
             <head>
                 {/*
                  * Runs before paint so the correct theme class is on <html>

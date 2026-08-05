@@ -31,8 +31,8 @@ const projects: PortfolioProject[] = [
         title: "Dropbox Website Clone",
         description:
             "A modern clone of the Dropbox website featuring file upload/download, real-time collaboration, and a responsive design that mirrors the original platform's sleek interface.",
-        image: "/images/projects/cover/dropbox.png",
-        landscape: "/images/projects/cover/dropbox-landscape.png",
+        image: "/images/projects/cover/dropbox.webp",
+        landscape: "/images/projects/cover/dropbox-landscape.webp",
         tags: [
             "Next.js",
             "TypeScript",
@@ -52,8 +52,8 @@ const projects: PortfolioProject[] = [
         title: "Playwork DREAMS",
         description:
             'An interactive digital "Playground of Possibility" where students participate in STEM, storytelling, and design competitions. It features a gamified national leaderboard and specialized creator roles.',
-        image: "/images/projects/cover/playwork.png",
-        landscape: "/images/projects/cover/playwork-landscape.png",
+        image: "/images/projects/cover/playwork.webp",
+        landscape: "/images/projects/cover/playwork-landscape.webp",
         tags: [
             "Next.js",
             "Tailwind CSS",
@@ -73,8 +73,8 @@ const projects: PortfolioProject[] = [
         title: "Serene Heaven",
         description:
             "A luxury hotel booking platform featuring elegant room displays, real-time availability checking, and seamless booking experience. Includes admin dashboard for managing reservations and room inventory.",
-        image: "/images/projects/cover/serene-haven.png",
-        landscape: "/images/projects/cover/serene-landscape.png",
+        image: "/images/projects/cover/serene-haven.webp",
+        landscape: "/images/projects/cover/serene-landscape.webp",
         tags: [
             "Next.js",
             "TypeScript",
@@ -95,8 +95,8 @@ const projects: PortfolioProject[] = [
         title: "Cresora - Finance Platform",
         description:
             "A comprehensive financial management platform designed for SMEs in Indonesia, featuring AI-powered insights, real-time cash tracking, bill management, and flexible reporting. Built with modern web technologies and interactive data visualization.",
-        image: "/images/projects/cover/cresora.png",
-        landscape: "/images/projects/cover/cresora-landscape.png",
+        image: "/images/projects/cover/cresora.webp",
+        landscape: "/images/projects/cover/cresora-landscape.webp",
         tags: [
             "Next.js",
             "TypeScript",
