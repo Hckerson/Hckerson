@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import Link from "next/link";
 import Button from "../ui/button";
+import { contactHref } from "@/lib/constant";
 import { clashDisplay } from "@/public/fonts/font";
 
 export default function HeroSection() {
@@ -22,23 +23,20 @@ export default function HeroSection() {
                             {`I’m hckerson, a Full-Stack Engineer building high-performance products at the intersection of design and scalable architecture.`}{" "}
                         </p>
                         <span className="flex space-x-3">
-                            <Link
-                                href="/contact"
-                                className="focus:outline- size-fit"
-                            >
+                            <a href={contactHref} className="size-fit">
                                 <Button
                                     size="sm"
                                     classname="bg-accent-cyan text-background"
                                 >
                                     Contact Me
                                 </Button>
-                            </Link>
+                            </a>
                             <Link href="/projects">
                                 <Button
                                     size="sm"
                                     classname="bg-transparent text-text-primary border border-border"
                                 >
-                                    {`Let's Talk`}
+                                    View Projects
                                 </Button>
                             </Link>
                         </span>

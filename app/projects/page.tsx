@@ -1,14 +1,14 @@
 "use client";
 import clsx from "clsx";
 import Image from "next/image";
-import "swiper/css/effect-fade";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { projects } from "@/lib/data/mapped-data";
 import { PortfolioProject } from "@/lib/interface";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper";
 import ProjectCard from "@/components/ui/cards/project-card";
-import { Autoplay, EffectFade, EffectCoverflow } from "swiper/modules";
+import { Autoplay, EffectCoverflow } from "swiper/modules";
+import useMediaQuery from "@/hooks/useMediaQuery";
 import { clashDisplay } from "@/public/fonts/font";
 import Link from "next/link";
 import Button from "@/components/ui/button";
@@ -18,16 +18,8 @@ export default function Projects() {
         useState<PortfolioProject | null>(projects[0]);
     const [controlledSwiperInstance, setControlledSwiperInstance] =
         useState<SwiperType | null>(null);
-    const [isMobile, setIsMobile] = useState(false);
-
-    useEffect(() => {
-        const checkMobile = () => {
-            setIsMobile(window.innerWidth < 1024);
-        };
-        checkMobile();
-        window.addEventListener("resize", checkMobile);
-        return () => window.removeEventListener("resize", checkMobile);
-    }, []);
+    // Mirrors the previous `window.innerWidth < 1024` threshold.
+    const isMobile = useMediaQuery("(max-width: 1023px)");
 
     return (
         <div className="relative h-screen w-full">
@@ -36,7 +28,7 @@ export default function Projects() {
                     <Swiper
                         slidesPerView={1}
                         className="h-screen w-screen"
-                        modules={[EffectFade, EffectCoverflow]}
+                        modules={[EffectCoverflow]}
                         onSwiper={setControlledSwiperInstance}
                         effect="coverflow"
                         coverflowEffect={{
@@ -44,7 +36,6 @@ export default function Projects() {
                             slideShadows: false,
                         }}
                         loop={true}
-                        fadeEffect={{ crossFade: true }}
                         allowTouchMove={false}
                     >
                         {projects.map((project) => {
@@ -55,8 +46,9 @@ export default function Projects() {
                                             <Image
                                                 src={
                                                     isMobile
-                                                        ? project.image!
-                                                        : project.landscape!
+                                                        ? project.image
+                                                        : (project.landscape ??
+                                                          project.image)
                                                 }
                                                 alt={project.title}
                                                 fill

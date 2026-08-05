@@ -6,21 +6,22 @@ import {
 } from "@/components/ui/accordion";
 import clsx from "clsx";
 import { PiSuitcaseLight } from "react-icons/pi";
-import { workExperience } from "@/lib/data/mapped-data";
 
 export default function QulaificationCard({
     data,
-    id,
+    value,
+    isLast,
 }: {
     data: WorkExperience;
-    id: number;
+    value: string;
+    isLast: boolean;
 }) {
     return (
         <AccordionItem
-            value={`${data.company}-${id}`}
+            value={value}
             className={clsx(
                 "box-border w-full overflow-hidden",
-                id !== workExperience.length - 1 && "border-border border-b",
+                !isLast && "border-border border-b",
             )}
         >
             <AccordionTrigger>
