@@ -2,7 +2,15 @@ import { workExperience } from "@/lib/data/mapped-data";
 import { clashDisplay } from "@/public/fonts/font";
 import clsx from "clsx";
 import QulaificationCard from "../ui/cards/qualification-card";
-import { Accordion } from "@radix-ui/react-accordion";
+import { Accordion } from "@/components/ui/accordion";
+
+// Derive the item values once here so the accordion's `defaultValue` and the
+// items' `value` props cannot drift apart — previously the section passed
+// "Vouchmark" while each item registered as "Vouchmark-0", so nothing opened.
+const items = workExperience.map((work, idx) => ({
+    work,
+    value: `${work.company}-${idx}`,
+}));
 
 export default function QualificationSection() {
     return (
@@ -25,18 +33,17 @@ export default function QualificationSection() {
                 <div className="divide-border border-border box-border w-full divide-y rounded-lg border sm:rounded-xl lg:rounded-2xl">
                     <Accordion
                         type="single"
-                        key={`${workExperience[0].company}`}
-                        defaultValue={`${workExperience[0].company}`}
+                        collapsible
+                        defaultValue={items[0]?.value}
                     >
-                        {workExperience.map((work, idx) => {
-                            return (
-                                <QulaificationCard
-                                    key={`${work.company}-${idx}`}
-                                    data={work}
-                                    id={idx}
-                                />
-                            );
-                        })}
+                        {items.map(({ work, value }, idx) => (
+                            <QulaificationCard
+                                key={value}
+                                value={value}
+                                data={work}
+                                isLast={idx === items.length - 1}
+                            />
+                        ))}
                     </Accordion>
                 </div>
             </div>

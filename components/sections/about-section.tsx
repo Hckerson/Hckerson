@@ -1,7 +1,6 @@
 import clsx from "clsx";
-import Link from "next/link";
 import Button from "../ui/button";
-import { initial } from "@/lib/constant";
+import { contactHref, initial } from "@/lib/constant";
 import { clashDisplay } from "@/public/fonts/font";
 import { Link as LinkIcon } from "lucide-react";
 
@@ -63,17 +62,17 @@ export default function AboutSection() {
                         </span>
                         .
                     </p>
-                    <Link href="/about" className="group">
+                    <a href={contactHref} className="group w-fit">
                         <Button
                             size="sm"
                             classname="flex items-center bg-accent-cyan text-background"
                         >
                             <span className="group-hover:text-text-primary flex gap-x-2 transition-colors duration-300 ease-in">
-                                <p>{`Let's Talk`}</p>
+                                <span>{`Let's Talk`}</span>
                                 <LinkIcon className="size-4" />
                             </span>
                         </Button>
-                    </Link>
+                    </a>
                 </div>
             </div>
         </section>

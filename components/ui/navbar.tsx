@@ -10,9 +10,10 @@ import { navlinks } from "@/lib/data/mapped-data";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
-    const [scrollDirection, setScrollDirection] = useState<"up" | "down">(
-        "down",
-    );
+    // Tracks whether the bar should tuck away. The old state was called
+    // `scrollDirection` but set "up" while scrolling *down*, so the name said
+    // the opposite of both the value and the resulting transform.
+    const [isHidden, setIsHidden] = useState(false);
     const pathname = usePathname();
 
     useEffect(() => {
@@ -22,9 +23,9 @@ export default function Navbar() {
             const verticalOffset = window.scrollY;
 
             if (verticalOffset > lastScrollY) {
-                setScrollDirection("up");
+                setIsHidden(true);
             } else if (verticalOffset < lastScrollY) {
-                setScrollDirection("down");
+                setIsHidden(false);
             }
 
             lastScrollY = verticalOffset;
@@ -39,17 +40,11 @@ export default function Navbar() {
 
     const { currentTheme, toggleTheme } = useTheme();
     return (
-        <nav
-            className={clsx(
-                "fixed z-50 flex h-20 w-full items-end bg-transparent xl:h-25",
-            )}
-        >
+        <nav className="fixed z-50 flex h-20 w-full items-end bg-transparent xl:h-25">
             <div
                 className={clsx(
                     "bg-surface-secondary mx-auto h-fit overflow-hidden rounded-full transition-transform duration-300 ease-in-out",
-                    scrollDirection === "up"
-                        ? "-translate-y-8"
-                        : "translate-y-0",
+                    isHidden ? "-translate-y-8" : "translate-y-0",
                 )}
             >
                 <div className="flex items-center p-1 md:p-2">
