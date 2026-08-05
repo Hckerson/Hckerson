@@ -1,6 +1,5 @@
 "use client";
 import clsx from "clsx";
-import { Icon } from "@iconify-icon/react";
 import { clashDisplay } from "@/public/fonts/font";
 import { pricingPlans } from "@/lib/data/mapped-data";
 import PricingCard from "@/components/ui/cards/pricing-card";

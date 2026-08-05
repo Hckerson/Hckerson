@@ -1,21 +1,10 @@
 "use client";
 
 import clsx from "clsx";
-import Link from "next/link";
 import Image from "next/image";
-import { FolderClosed } from "lucide-react";
 import { Icon } from "@iconify-icon/react";
 import { clashDisplay } from "@/public/fonts/font";
-import { ProjectStatus, Color } from "@/lib/types";
 import { PortfolioProject } from "@/lib/interface";
-
-const projectDefinitions: Record<ProjectStatus, { bg: Color; label: string }> =
-    {
-        active: { bg: "green", label: "Active" },
-        planned: { bg: "ash", label: "Planned" },
-        backlog: { bg: "orange", label: "Backlog" },
-        completed: { bg: "blue", label: "Completed" },
-    };
 
 export default function ProjectCard({
     data,
@@ -26,8 +15,7 @@ export default function ProjectCard({
     hidden?: boolean;
     isActive?: boolean;
 }) {
-    const { title, description, image, status } = data;
-    const props = projectDefinitions[status];
+    const { title, image } = data;
     return (
         <div
             className={clsx(
