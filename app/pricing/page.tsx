@@ -1,30 +1,24 @@
-"use client";
+// No "use client" — this page uses no client-side API. PricingCard declares
+// its own, which is what lets this route export metadata.
+import type { Metadata } from "next";
 import { pricingPlans } from "@/lib/data/mapped-data";
 import PricingCard from "@/components/ui/cards/pricing-card";
+
+export const metadata: Metadata = {
+    title: "Pricing",
+    description:
+        "Engagement options for MVPs, full-stack SaaS builds and custom enterprise work.",
+    alternates: { canonical: "/pricing" },
+};
 
 export default function Pricing() {
     return (
         <div className="min-h-screen w-full">
-            {/* <div className="hidden min-h-screen items-center justify-center">
-                <span className="flex flex-col items-center">
-                    <span className="flex space-x-2 rounded-4xl bg-stone-800 px-3 py-2 backdrop-blur-2xl">
-                        <Icon icon="akar-icons:tag" width="20" height="20" />
-                        <span>
-                            <p>affordable</p>
-                        </span>
-                    </span>
-                    <p
-                        className="large-text font-bold font-clash"
-                    >
-                        Pricing
-                    </p>
-                </span>
-            </div> */}
             <div className="large-pady flex flex-col items-center justify-center">
                 <span className="mt-24 text-center">
-                    <p className="base-text font-clash font-semibold">
+                    <h1 className="base-text font-clash font-semibold">
                         Our Pricing Plans
-                    </p>
+                    </h1>
                     <p className="xs-text text-text-muted">
                         Designed for every state of journey. Start today, no
                         contracts, cancel anytime.

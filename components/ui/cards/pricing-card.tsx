@@ -9,7 +9,9 @@ export default function PricingCard({ plan }: { plan: PricingPlan }) {
             <div className="size-full">
                 <div className="grid p-4 md:p-5 xl:p-6">
                     <div className="flex items-center justify-between">
-                        <p className="font-clash font-semibold">{plan.name}</p>
+                        <h2 className="font-clash font-semibold">
+                            {plan.name}
+                        </h2>
 
                         {plan.isPopular && (
                             <span className="xs-text border-border rounded-lg border px-2 py-1">
@@ -29,15 +31,17 @@ export default function PricingCard({ plan }: { plan: PricingPlan }) {
                             </span>
                         )}
                     </div>
+                    {/* `text-button-text` referenced a --color-button-text
+                        token that does not exist, so it produced no rule. */}
                     <Button
                         size="custom"
-                        className="bg-accent-cyan text-button-text w-full rounded-lg"
+                        className="bg-accent-cyan w-full rounded-lg text-black"
                     >
-                        <p className="text-black">Get started</p>
+                        Get started
                     </Button>
-                    <legend className="font-clash mt-2 font-medium">
-                        Features
-                    </legend>
+                    {/* Was a <legend>, which is only valid inside a
+                        <fieldset>. */}
+                    <h3 className="font-clash mt-2 font-medium">Features</h3>
                     <p className="xs-text text-text-muted mb-4">
                         Everything in {plan.starter}, plus:
                     </p>
@@ -51,9 +55,7 @@ export default function PricingCard({ plan }: { plan: PricingPlan }) {
                                     className="text-accent-cyan size-5 shrink-0"
                                     aria-hidden="true"
                                 />
-                                <p className="xs-text">
-                                    <span key={index}>{feature}</span>
-                                </p>
+                                <span className="xs-text">{feature}</span>
                             </li>
                         ))}
                     </ul>

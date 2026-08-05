@@ -6,9 +6,9 @@ export default function SkillSection() {
         <section className="bg-surface-secondary flex w-full">
             <div className="md-pad relative mx-auto w-full max-w-7xl space-y-6">
                 <div className="leading-[1.2]">
-                    <p className="font-clash base-text font-semibold">
+                    <h2 className="font-clash base-text font-semibold">
                         Skills and Technologies
-                    </p>
+                    </h2>
                     <p className="xs-text text-text-muted">
                         {`Here are some of my skills. I'm always working on something new, so be sure to check back often.`}
                     </p>

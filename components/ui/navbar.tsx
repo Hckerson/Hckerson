@@ -38,7 +38,10 @@ export default function Navbar() {
 
     const { currentTheme, toggleTheme } = useTheme();
     return (
-        <nav className="fixed z-50 flex h-20 w-full items-end bg-transparent xl:h-25">
+        <nav
+            aria-label="Main"
+            className="fixed z-50 flex h-20 w-full items-end bg-transparent xl:h-25"
+        >
             <div
                 className={clsx(
                     "bg-surface-secondary mx-auto h-fit overflow-hidden rounded-full transition-transform duration-300 ease-in-out",
@@ -46,7 +49,7 @@ export default function Navbar() {
                 )}
             >
                 <div className="flex items-center p-1 md:p-2">
-                    <Link href="/" className="pr-1">
+                    <Link href="/" aria-label="Home" className="pr-1">
                         <div
                             className={clsx(
                                 "hover:border-border hover:bg-surface-tertiary rounded-full p-1.5 hover:border",
@@ -54,7 +57,10 @@ export default function Navbar() {
                                     "border-border bg-surface-tertiary border",
                             )}
                         >
-                            <House className="size-3 md:size-4" />
+                            <House
+                                className="size-3 md:size-4"
+                                aria-hidden="true"
+                            />
                         </div>
                     </Link>
                     <div className="bg-border mr-1 h-5 w-px"></div>
@@ -78,23 +84,41 @@ export default function Navbar() {
                                         "border-border bg-surface-tertiary border",
                                 )}
                             >
-                                <span>
-                                    <Icon className="size-3 md:size-4" />
-                                </span>
-                                <p className="xs-text text-text-secondary font-medium">
+                                <Icon
+                                    className="size-3 md:size-4"
+                                    aria-hidden="true"
+                                />
+                                <span className="xs-text text-text-secondary font-medium">
                                     {link.name}
-                                </p>
+                                </span>
                             </Link>
                         );
                     })}
                     <div className="bg-border h-5 w-px"></div>
 
                     <div className="hover:border-border hover:bg-surface-tertiary ml-1 flex items-center rounded-full p-1.5 hover:border">
-                        <button type="button" onClick={toggleTheme}>
+                        {/* Had no accessible name at all — screen readers
+                            announced only "button". */}
+                        <button
+                            type="button"
+                            onClick={toggleTheme}
+                            aria-label={
+                                currentTheme === "light"
+                                    ? "Switch to dark theme"
+                                    : "Switch to light theme"
+                            }
+                            className="cursor-pointer"
+                        >
                             {currentTheme === "light" ? (
-                                <Sun className="size-3 md:size-4" />
+                                <Sun
+                                    className="size-3 md:size-4"
+                                    aria-hidden="true"
+                                />
                             ) : (
-                                <Moon className="size-3 md:size-4" />
+                                <Moon
+                                    className="size-3 md:size-4"
+                                    aria-hidden="true"
+                                />
                             )}
                         </button>
                     </div>

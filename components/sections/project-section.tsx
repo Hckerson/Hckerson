@@ -6,9 +6,9 @@ export default function ProjectSection() {
         <section className="xlarge-pady bg-surface-secondary flex w-full">
             <div className="large-pad relative mx-auto w-full max-w-330">
                 <div className="leading-[1.2]">
-                    <p className="font-clash base-text font-semibold">
+                    <h2 className="font-clash base-text font-semibold">
                         Featured Projecs
-                    </p>
+                    </h2>
                     <p className="xs-text text-text-muted">
                         {`Here are some of my recent projects. I'm always working on something new, so be sure to check back often.`}
                     </p>

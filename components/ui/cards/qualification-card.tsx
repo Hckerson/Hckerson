@@ -24,30 +24,35 @@ export default function QulaificationCard({
                 !isLast && "border-border border-b",
             )}
         >
+            {/* AccordionTrigger renders a <button>, which may only contain
+                phrasing content — these were <div>/<p> before. */}
             <AccordionTrigger>
-                <div className="box-border w-full p-2.5 md:p-4 xl:p-5">
-                    <div className="flex w-full justify-between">
-                        <div className="flex items-center justify-center gap-x-2.5 md:gap-x-4">
-                            <div className="size-4 md:size-8 xl:size-10">
-                                <div className="bg-surface-tertiary flex size-full items-center justify-center rounded-full">
-                                    <Briefcase className="size-6" />
-                                </div>
-                            </div>
-                            <div className="-space-y-1 text-start">
-                                <p className="xs:text-[14px] text-[12px] font-semibold sm:text-[16px] md:text-[18px] lg:text-[20px] 2xl:text-[20px]">
+                <span className="box-border block w-full p-2.5 md:p-4 xl:p-5">
+                    <span className="flex w-full justify-between">
+                        <span className="flex items-center justify-center gap-x-2.5 md:gap-x-4">
+                            <span className="block size-4 md:size-8 xl:size-10">
+                                <span className="bg-surface-tertiary flex size-full items-center justify-center rounded-full">
+                                    <Briefcase
+                                        className="size-6"
+                                        aria-hidden="true"
+                                    />
+                                </span>
+                            </span>
+                            <span className="block -space-y-1 text-start">
+                                <span className="xs:text-[14px] block text-[12px] font-semibold sm:text-[16px] md:text-[18px] lg:text-[20px] 2xl:text-[20px]">
                                     {data.title}
-                                </p>
-                                <p className="xs-text text-text-muted font-medium">
+                                </span>
+                                <span className="xs-text text-text-muted block font-medium">
                                     {data.company}
-                                </p>
-                            </div>
-                        </div>
-                        <div className="text-text-muted flex flex-col text-end">
-                            <p className="xs-text">{data.location}</p>
-                            <p className="text-[12px]">{data.period}</p>
-                        </div>
-                    </div>
-                </div>
+                                </span>
+                            </span>
+                        </span>
+                        <span className="text-text-muted flex flex-col text-end">
+                            <span className="xs-text">{data.location}</span>
+                            <span className="text-[12px]">{data.period}</span>
+                        </span>
+                    </span>
+                </span>
             </AccordionTrigger>
             <AccordionContent>
                 <div className="box-border w-full p-3 pt-0 md:p-4 md:pt-0 xl:p-5 xl:pt-0">

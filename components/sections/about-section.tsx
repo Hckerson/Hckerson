@@ -7,7 +7,9 @@ export default function AboutSection() {
         <section className="bg-surface-tertiary flex h-screen w-full items-center justify-center px-6 opacity-90">
             <div className="flex flex-col-reverse items-center gap-10 md:gap-x-20 lg:flex-row xl:gap-x-30">
                 <div className="flex size-75 items-center justify-center rounded-xl bg-[repeating-linear-gradient(135deg,#292524,#44403c)] md:rounded-2xl xl:rounded-3xl">
-                    <p className="text-text-sub text-[48px] font-bold xl:text-[42px] 2xl:text-[36px]">
+                    {/* Was text-[48px] xl:text-[42px] 2xl:text-[36px] — the
+                        monogram shrank as the viewport grew. */}
+                    <p className="text-text-sub text-[48px] font-bold xl:text-[64px] 2xl:text-[72px]">
                         {initial}
                     </p>
                 </div>

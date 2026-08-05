@@ -15,9 +15,9 @@ export default function QualificationSection() {
         <section className="xlarge-pady bg-surface-secondary flex w-full">
             <div className="md-pad relative mx-auto w-full max-w-7xl space-y-6">
                 <div className="leading-[1.2]">
-                    <p className="font-clash base-text font-semibold">
+                    <h2 className="font-clash base-text font-semibold">
                         Qualifications
-                    </p>
+                    </h2>
                     <p className="xs-text text-text-muted">
                         Why you should hire me
                     </p>

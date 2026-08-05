@@ -8,10 +8,12 @@ export default function HeroSection() {
             <div className="absolute inset-0">
                 <div className="relative flex h-full w-full items-center justify-center">
                     <div className="flex max-w-[80ch] flex-col items-center gap-y-4 text-center md:gap-y-5 xl:gap-y-6">
-                        <p className="font-clash md-text from-text-primary to-text-muted w-[15ch] bg-linear-to-b from-20% bg-clip-text text-center leading-none font-bold text-transparent">
+                        {/* The site's only h1. This was a <p>, leaving every
+                            page without a top-level heading. */}
+                        <h1 className="font-clash md-text from-text-primary to-text-muted w-[15ch] bg-linear-to-b from-20% bg-clip-text text-center leading-none font-bold text-transparent">
                             <span className="block">Creative</span>
                             <span> Software Engineer.</span>
-                        </p>
+                        </h1>
                         <p className="xs-text text-text-muted px-3 text-wrap">
                             {`I’m hckerson, a Full-Stack Engineer building high-performance products at the intersection of design and scalable architecture.`}{" "}
                         </p>
