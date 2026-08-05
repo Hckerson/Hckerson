@@ -1,5 +1,3 @@
-import { clsx } from "clsx";
-import { clashDisplay } from "@/lib/fonts";
 import ProjectCard from "../ui/cards/project-card";
 import { projects } from "@/lib/data/mapped-data";
 
@@ -8,12 +6,7 @@ export default function ProjectSection() {
         <section className="xlarge-pady bg-surface-secondary flex w-full">
             <div className="large-pad relative mx-auto w-full max-w-330">
                 <div className="leading-[1.2]">
-                    <p
-                        className={clsx(
-                            clashDisplay.className,
-                            "base-text font-semibold",
-                        )}
-                    >
+                    <p className="font-clash base-text font-semibold">
                         Featured Projecs
                     </p>
                     <p className="xs-text text-text-muted">

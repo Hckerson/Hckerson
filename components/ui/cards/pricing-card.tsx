@@ -2,8 +2,6 @@
 import Button from "../button";
 import { CircleCheck } from "lucide-react";
 import { PricingPlan } from "@/lib/interface";
-import { clashDisplay } from "@/lib/fonts";
-import clsx from "clsx";
 
 export default function PricingCard({ plan }: { plan: PricingPlan }) {
     return (
@@ -11,14 +9,7 @@ export default function PricingCard({ plan }: { plan: PricingPlan }) {
             <div className="size-full">
                 <div className="grid p-4 md:p-5 xl:p-6">
                     <div className="flex items-center justify-between">
-                        <p
-                            className={clsx(
-                                clashDisplay.className,
-                                "font-semibold",
-                            )}
-                        >
-                            {plan.name}
-                        </p>
+                        <p className="font-clash font-semibold">{plan.name}</p>
 
                         {plan.isPopular && (
                             <span className="xs-text border-border rounded-lg border px-2 py-1">
@@ -27,12 +18,7 @@ export default function PricingCard({ plan }: { plan: PricingPlan }) {
                         )}
                     </div>
                     <div className="my-4 flex items-end gap-x-2">
-                        <p
-                            className={clsx(
-                                "text-[24px] font-semibold xl:text-[28px] 2xl:text-[32px]",
-                                clashDisplay.className,
-                            )}
-                        >
+                        <p className="font-clash text-[24px] font-semibold xl:text-[28px] 2xl:text-[32px]">
                             {typeof plan.price === "number"
                                 ? `$${plan.price}`
                                 : plan.price}
@@ -49,12 +35,7 @@ export default function PricingCard({ plan }: { plan: PricingPlan }) {
                     >
                         <p className="text-black">Get started</p>
                     </Button>
-                    <legend
-                        className={clsx(
-                            "mt-2 font-medium",
-                            clashDisplay.className,
-                        )}
-                    >
+                    <legend className="font-clash mt-2 font-medium">
                         Features
                     </legend>
                     <p className="xs-text text-text-muted mb-4">

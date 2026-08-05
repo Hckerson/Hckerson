@@ -140,6 +140,11 @@
 
     --color-border: var(--border);
 
+    /* next/font already emits --font-clash-display; registering it here turns
+       it into a `font-clash` utility, so components no longer have to import
+       the font object just to spread its .className. */
+    --font-clash: var(--font-clash-display);
+
     --breakpoint-xs: 480px;
 
     --animate-accordion-down: accordion-down 0.3s ease-out;

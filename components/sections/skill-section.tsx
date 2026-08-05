@@ -1,19 +1,12 @@
-import clsx from "clsx";
 import SkillCard from "../ui/cards/skill-card";
 import { skills } from "@/lib/data/mapped-data";
-import { clashDisplay } from "@/lib/fonts";
 
 export default function SkillSection() {
     return (
         <section className="bg-surface-secondary flex w-full">
             <div className="md-pad relative mx-auto w-full max-w-7xl space-y-6">
                 <div className="leading-[1.2]">
-                    <p
-                        className={clsx(
-                            clashDisplay.className,
-                            "base-text font-semibold",
-                        )}
-                    >
+                    <p className="font-clash base-text font-semibold">
                         Skills and Technologies
                     </p>
                     <p className="xs-text text-text-muted">

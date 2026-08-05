@@ -1,4 +1,7 @@
 "use client";
+// Swiper's stylesheet lives here rather than in the root layout — /projects is
+// the only route that uses it, and every other route was paying for it.
+import "swiper/css";
 import clsx from "clsx";
 import Image from "next/image";
 import { useState } from "react";
@@ -10,7 +13,6 @@ import ProjectCard from "@/components/ui/cards/project-card";
 import { Autoplay, EffectCoverflow } from "swiper/modules";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import { contactHref } from "@/lib/constant";
-import { clashDisplay } from "@/lib/fonts";
 import Link from "next/link";
 import Button from "@/components/ui/button";
 
@@ -51,9 +53,11 @@ export default function Projects() {
                                                         : (project.landscape ??
                                                           project.image)
                                                 }
-                                                alt={project.title}
+                                                alt=""
                                                 fill
-                                                className="bg-cover bg-center"
+                                                priority={project.id === 1}
+                                                sizes="100vw"
+                                                className="object-cover object-center"
                                             />
                                             <div className="absolute inset-0 bg-black/50"></div>
                                         </div>
@@ -92,12 +96,7 @@ export default function Projects() {
                 <div className="relative flex size-full flex-col items-center justify-center pr-2 md:pl-0">
                     <span className="absolute">
                         <div className="overflow-hidden">
-                            <p
-                                className={clsx(
-                                    "xxlarge-text font-semibold tracking-tighter",
-                                    clashDisplay.className,
-                                )}
-                            >
+                            <p className="xxlarge-text font-clash font-semibold tracking-tighter">
                                 {currentProject?.title}
                             </p>
                         </div>

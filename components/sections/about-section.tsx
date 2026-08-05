@@ -1,7 +1,5 @@
-import clsx from "clsx";
 import Button from "../ui/button";
 import { contactHref, initial } from "@/lib/constant";
-import { clashDisplay } from "@/lib/fonts";
 import { Link as LinkIcon } from "lucide-react";
 
 export default function AboutSection() {
@@ -14,12 +12,7 @@ export default function AboutSection() {
                     </p>
                 </div>
                 <div className="flex max-w-[60ch] flex-col gap-y-4">
-                    <h2
-                        className={clsx(
-                            "base-text text-text-primary font-bold",
-                            clashDisplay.className,
-                        )}
-                    >
+                    <h2 className="base-text text-text-primary font-clash font-bold">
                         A Full-Stack Engineer Focused on Scalable Design &
                         Experience.
                     </h2>

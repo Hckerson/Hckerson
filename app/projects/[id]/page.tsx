@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -6,7 +5,6 @@ import type { Metadata } from "next";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { GithubIcon } from "@/components/ui/brand-icons";
 import { projects } from "@/lib/data/mapped-data";
-import { clashDisplay } from "@/lib/fonts";
 
 type Params = { id: string };
 
@@ -62,12 +60,7 @@ export default async function ProjectPage({
             </Link>
 
             <header className="space-y-3">
-                <h1
-                    className={clsx(
-                        clashDisplay.className,
-                        "md-text text-text-primary font-bold",
-                    )}
-                >
+                <h1 className="font-clash md-text text-text-primary font-bold">
                     {project.title}
                 </h1>
                 <p className="xs-text text-text-muted max-w-[70ch]">
@@ -122,12 +115,7 @@ export default async function ProjectPage({
             </div>
 
             <section className="mt-10 space-y-2">
-                <h2
-                    className={clsx(
-                        clashDisplay.className,
-                        "base-text text-text-primary font-semibold",
-                    )}
-                >
+                <h2 className="font-clash base-text text-text-primary font-semibold">
                     What I learned
                 </h2>
                 <p className="xs-text text-text-muted max-w-[70ch]">
