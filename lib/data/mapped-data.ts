@@ -9,14 +9,13 @@ import {
     PricingPlan,
 } from "../interface";
 import { LuTags } from "react-icons/lu";
-import { FaBlog } from "react-icons/fa6";
 import { BsFolder2Open } from "react-icons/bs";
 import { VscGithubAlt } from "react-icons/vsc";
 
+// /blog is intentionally absent — the route exists but has no posts yet.
 const navlinks: Navlink[] = [
     { name: "Projects", link: "/projects", visible: "sm", icon: BsFolder2Open },
     { name: "Pricing", link: "/pricing", visible: "md", icon: LuTags },
-    { name: "Blog", link: "/blog", visible: "md", icon: FaBlog },
     {
         name: "Github",
         link: "https://github.com/hckerson",
