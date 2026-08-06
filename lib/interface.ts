@@ -7,7 +7,6 @@ export interface Navlink {
     // Structural rather than react-icons' IconType, so lucide icons and the
     // local brand SVGs in components/ui/brand-icons.tsx both satisfy it.
     icon: ComponentType<{ className?: string }>;
-    visible: string;
     external?: boolean;
 }
 

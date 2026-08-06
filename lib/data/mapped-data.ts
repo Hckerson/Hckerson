@@ -14,12 +14,11 @@ import { siteConfig } from "../constant";
 
 // /blog is intentionally absent — the route exists but has no posts yet.
 const navlinks: Navlink[] = [
-    { name: "Projects", link: "/projects", visible: "sm", icon: FolderOpen },
-    { name: "Pricing", link: "/pricing", visible: "md", icon: Tags },
+    { name: "Projects", link: "/projects", icon: FolderOpen },
+    { name: "Pricing", link: "/pricing", icon: Tags },
     {
         name: "Github",
         link: siteConfig.github,
-        visible: "md",
         icon: GithubIcon,
         external: true,
     },

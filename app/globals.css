@@ -29,31 +29,6 @@
     --accent-blue: #60a5fa;
 
     --border: rgba(255, 255, 255, 0.1);
-
-    /* Card Specifics (Dark defaults) */
-    --card-shadow-orange: #592b0b;
-    --card-fade-orange: #1c1615;
-    --card-shadow-cyan: #005862;
-    --card-fade-cyan: #051d27;
-    --card-shadow-green: #06260f;
-    --card-fade-green: #041616;
-    --card-shadow-purple: #3b0040;
-    --card-fade-purple: #190b27;
-    --card-shadow-red: #400001;
-    --card-fade-red: #1e0b12;
-    --card-shadow-violet: #8b0090;
-    --card-fade-violet: #0f1629;
-    --card-shadow-ash: #8b0090;
-    --card-fade-ash: #293544;
-    --card-shadow-mauve: #8b0090;
-    --card-fade-mauve: #1d1924;
-    --card-shadow-pink: #8b0090;
-    --card-fade-pink: #1c0e1e;
-
-    --blur-bg-1: hsla(210, 100%, 85%, 0.06);
-    --blur-bg-2: hsla(210, 100%, 55%, 0.02);
-    --blur-bg-3: hsla(210, 100%, 85%, 0.08);
-    --blur-bg-4: hsla(206 89.9% 12.1% / 0.08);
 }
 
 .light {
@@ -84,31 +59,6 @@
     --accent-blue: #2563eb;
 
     --border: rgba(0, 0, 0, 0.1);
-
-    /* Card Specifics (Light variants) */
-    --card-shadow-orange: #ffedd5;
-    --card-fade-orange: #fffaf5;
-    --card-shadow-cyan: #ecfeff;
-    --card-fade-cyan: #f7feff;
-    --card-shadow-green: #f0fdf4;
-    --card-fade-green: #fbfdfb;
-    --card-shadow-purple: #faf5ff;
-    --card-fade-purple: #fdfaff;
-    --card-shadow-red: #fef2f2;
-    --card-fade-red: #fffafa;
-    --card-shadow-violet: #f5f3ff;
-    --card-fade-violet: #fafaff;
-    --card-shadow-ash: #f8fafc;
-    --card-fade-ash: #fcfdfe;
-    --card-shadow-mauve: #fdf4ff;
-    --card-fade-mauve: #fefaff;
-    --card-shadow-pink: #fdf2f8;
-    --card-fade-pink: #fffafc;
-
-    --blur-bg-1: hsla(210, 100%, 45%, 0.06);
-    --blur-bg-2: hsla(210, 100%, 35%, 0.02);
-    --blur-bg-3: hsla(210, 100%, 45%, 0.08);
-    --blur-bg-4: hsla(206 89.9% 82.1% / 0.08);
 }
 
 @theme inline {
@@ -221,29 +171,15 @@
     @apply py-4 md:py-8 xl:py-12;
 }
 
-a:focus {
-    @apply outline-none;
+/* Was `a:focus { outline: none }`, which removed the focus ring from every
+   link and replaced it with nothing, leaving keyboard users with no visible
+   position. :focus-visible keeps the ring off for pointer clicks. */
+a:focus-visible,
+button:focus-visible {
+    @apply outline-accent-cyan rounded-sm outline-2 outline-offset-2;
 }
 
 body {
     background: var(--background);
     color: var(--foreground);
-}
-
-.blury {
-    background: radial-gradient(
-        50% 50% at 50% 50%,
-        var(--blur-bg-1) 0,
-        var(--blur-bg-2) 80%,
-        transparent 100%
-    );
-}
-
-.blury-01 {
-    background: radial-gradient(
-        68.54% 68.72% at 55.02% 51.46%,
-        var(--blur-bg-3) 0,
-        var(--blur-bg-4) 50%,
-        hsla(210, 100%, 45%, 0) 80%
-    );
 }
