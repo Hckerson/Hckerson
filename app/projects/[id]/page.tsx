@@ -18,6 +18,11 @@ export function generateStaticParams(): Params[] {
     return projects.map((project) => ({ id: String(project.id) }));
 }
 
+// The valid ids are exactly the ones above. Without this, Next renders unknown
+// ids on demand and caches the notFound() result as HTTP 200 — /projects/999
+// served the 404 page with a success status.
+export const dynamicParams = false;
+
 export async function generateMetadata({
     params,
 }: {
