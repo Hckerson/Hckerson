@@ -1,5 +1,6 @@
 import Navbar from "./ui/navbar";
 import Footer from "./ui/footer";
+import FooterGate from "./ui/footer-gate";
 
 // Server component. It was marked "use client" while using no client-side
 // APIs, which put a client boundary at the document root; Navbar declares
@@ -11,7 +12,9 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
         <body className="relative min-h-screen w-full antialiased">
             <Navbar />
             <main>{children}</main>
-            <Footer />
+            <FooterGate>
+                <Footer />
+            </FooterGate>
         </body>
     );
 }
