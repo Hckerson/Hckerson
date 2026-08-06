@@ -68,24 +68,27 @@ export default function Projects() {
                     </Swiper>
                 </div>
             </div>
-            <div className="absolute left-1 z-30 my-auto flex h-full w-2.5 sm:left-4 xl:left-10">
+            <div className="absolute left-1 z-30 my-auto flex h-full w-7 sm:left-4 xl:left-10">
                 <div className="relative flex size-full">
-                    <div className="relative my-auto flex h-full max-h-[80%] flex-col items-center justify-between">
-                        <div className="bg-border absolute inset-y-0 z-0 mx-auto w-px opacity-50"></div>
+                    <div className="relative my-auto flex h-full max-h-[80%] w-7 flex-col items-center justify-between">
+                        <div className="bg-border absolute inset-y-0 left-1/2 z-0 w-px -translate-x-1/2 opacity-50"></div>
                         {projects.map((project) => {
+                            const isCurrent = project.id === currentProject?.id;
                             return (
                                 <span
                                     key={project.id}
+                                    // The two states differ in colour and ring
+                                    // rather than in transform: scaling the
+                                    // whole pill shrank the digit with it, so
+                                    // inactive steps were unreadable.
                                     className={clsx(
-                                        "bg-surface-tertiary z-10 flex size-7 items-center justify-center rounded-full transition-all duration-800 ease-in",
-                                        project.id === currentProject?.id
-                                            ? "scale-100"
-                                            : "scale-45",
+                                        "z-10 flex items-center justify-center rounded-full border text-xs leading-none font-bold transition-all duration-500 ease-out",
+                                        isCurrent
+                                            ? "border-accent-cyan bg-accent-cyan text-background ring-accent-cyan/20 size-7 ring-4"
+                                            : "border-border bg-surface-tertiary/70 text-text-muted size-5 ring-0 backdrop-blur-sm",
                                     )}
                                 >
-                                    <p className="text-text-primary font-bold">
-                                        {project.id}
-                                    </p>
+                                    {project.id}
                                 </span>
                             );
                         })}
@@ -157,16 +160,20 @@ export default function Projects() {
                                 return (
                                     <SwiperSlide key={project.id} className="">
                                         {({ isActive }) => (
-                                            <a
-                                                href={project.liveUrl}
-                                                target="_blank"
+                                            // Matches the "View Project"
+                                            // button: the card is the same
+                                            // affordance, so it opens the case
+                                            // study rather than the live site.
+                                            <Link
+                                                href={`/projects/${project.id}`}
+                                                aria-label={`View the ${project.title} project`}
                                             >
                                                 <ProjectCard
                                                     hidden
                                                     data={project}
                                                     isActive={isActive}
                                                 />
-                                            </a>
+                                            </Link>
                                         )}
                                     </SwiperSlide>
                                 );
