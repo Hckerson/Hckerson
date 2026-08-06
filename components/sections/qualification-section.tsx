@@ -1,5 +1,5 @@
 import { workExperience } from "@/lib/data/mapped-data";
-import QulaificationCard from "../ui/cards/qualification-card";
+import QualificationCard from "../ui/cards/qualification-card";
 import { Accordion } from "@/components/ui/accordion";
 
 // Derive the item values once here so the accordion's `defaultValue` and the
@@ -30,7 +30,7 @@ export default function QualificationSection() {
                         defaultValue={items[0]?.value}
                     >
                         {items.map(({ work, value }, idx) => (
-                            <QulaificationCard
+                            <QualificationCard
                                 key={value}
                                 value={value}
                                 data={work}

@@ -7,7 +7,7 @@ import {
 import clsx from "clsx";
 import { Briefcase } from "lucide-react";
 
-export default function QulaificationCard({
+export default function QualificationCard({
     data,
     value,
     isLast,
@@ -58,15 +58,13 @@ export default function QulaificationCard({
                 <div className="box-border w-full p-3 pt-0 md:p-4 md:pt-0 xl:p-5 xl:pt-0">
                     <div className="flex">
                         <div className="flex-1 space-x-1">
-                            <p className={clsx("xs-text font-semibold")}>
-                                Description
-                            </p>
+                            <p className="xs-text font-semibold">Description</p>
                             <p className="xs-text text-text-muted my-2 font-medium">
                                 {data.description}
                             </p>
                         </div>
                         <div className="flex-1">
-                            <p className={clsx("xs-text font-semibold")}>
+                            <p className="xs-text font-semibold">
                                 Skills and Technologies
                             </p>
                             <ul className="my-2 flex flex-wrap gap-1.5">
@@ -76,7 +74,7 @@ export default function QulaificationCard({
                                             key={`${skill}-${idx}`}
                                             className="xs-text border-border bg-surface-tertiary text-text-primary flex items-center justify-center rounded-full border px-2 py-1 font-medium"
                                         >
-                                            <p>{skill}</p>
+                                            {skill}
                                         </li>
                                     );
                                 })}
@@ -84,7 +82,7 @@ export default function QulaificationCard({
                         </div>
                     </div>
                     <div>
-                        <p className={clsx("xs-text font-semibold")}>
+                        <p className="xs-text font-semibold">
                             Key Achievements
                         </p>
                         <ul className="my-2">
@@ -95,9 +93,7 @@ export default function QulaificationCard({
                                         className="flex gap-x-2"
                                     >
                                         <span className="xs-text bg-surface-tertiary text-text-muted flex size-4 items-center justify-center rounded-full font-medium">
-                                            <p className="text-[10px]">
-                                                {idx + 1}
-                                            </p>
+                                            <span className="text-[10px]"></span>
                                         </span>
                                         <p className="xs-text text-text-muted font-medium">
                                             {achievement}

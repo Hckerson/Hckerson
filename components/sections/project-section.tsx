@@ -7,7 +7,7 @@ export default function ProjectSection() {
             <div className="large-pad relative mx-auto w-full max-w-330">
                 <div className="leading-[1.2]">
                     <h2 className="font-clash base-text font-semibold">
-                        Featured Projecs
+                        Featured Projects
                     </h2>
                     <p className="xs-text text-text-muted">
                         {`Here are some of my recent projects. I'm always working on something new, so be sure to check back often.`}
