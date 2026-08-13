@@ -1,10 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { projects } from "@/lib/data/mapped-data";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { GithubIcon } from "@/components/ui/brand-icons";
-import { projects } from "@/lib/data/mapped-data";
 
 type Params = { id: string };
 
