@@ -12,15 +12,10 @@ function getProject(id: string) {
     return projects.find((project) => String(project.id) === id);
 }
 
-// Renders every project at build time; the route was previously dynamic (f)
-// even though it only ever reads from a static array.
 export function generateStaticParams(): Params[] {
     return projects.map((project) => ({ id: String(project.id) }));
 }
 
-// The valid ids are exactly the ones above. Without this, Next renders unknown
-// ids on demand and caches the notFound() result as HTTP 200 — /projects/999
-// served the 404 page with a success status.
 export const dynamicParams = false;
 
 export async function generateMetadata({

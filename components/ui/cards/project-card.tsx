@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import Image from "next/image";
-import { Eye, Menu } from "lucide-react";
 import { PortfolioProject } from "@/lib/interface";
 
 export default function ProjectCard({
@@ -26,22 +25,6 @@ export default function ProjectCard({
             )}
         >
             <div className="bg-background absolute inset-0 hidden opacity-20 transition-all duration-300 ease-in-out hover:translate-y-full"></div>
-            {!hidden && (
-                <>
-                    <span className="bg-background absolute -top-10 -left-10 z-20 flex size-9 items-center justify-center rounded-full transition-all duration-500 ease-in-out group-hover:translate-15">
-                        <Menu
-                            className="text-text-primary my-auto flex size-6 hover:scale-105"
-                            aria-hidden="true"
-                        />
-                    </span>
-                    <span className="bg-background absolute -top-10 -right-10 z-20 flex size-9 items-center justify-center rounded-full transition-all duration-500 ease-in-out group-hover:-translate-x-15 group-hover:translate-y-15">
-                        <Eye
-                            className="text-text-primary my-auto flex size-6 hover:scale-105"
-                            aria-hidden="true"
-                        />
-                    </span>
-                </>
-            )}
             {/* 531x856 matches the 1062x1712 sources. The old 500x1000
                 declared a 1:2 box the images never had, and `bg-cover` is a
                 background utility that does nothing to an <img>. */}
@@ -54,8 +37,16 @@ export default function ProjectCard({
                 className="size-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105"
             />
 
-            <div className="bg-background/20 absolute inset-x-0 bottom-0 h-10 space-y-1 p-4 leading-[1.1] backdrop-blur-md">
-                <p className="font-clash sm-text font-semibold">{title}</p>
+            {/* The caption sits on arbitrary artwork, so it can't take its
+                colours from the theme: `text-primary` went near-black in light
+                mode over a 20%-opacity wash and vanished on dark screenshots.
+                A dark scrim plus fixed white text reads on any image, and the
+                height is content-driven — the old `h-10` was shorter than the
+                line box it had to hold. */}
+            <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/85 via-black/55 to-transparent px-4 pt-10 pb-3 leading-[1.1]">
+                <p className="font-clash sm-text font-semibold text-white">
+                    {title}
+                </p>
             </div>
         </div>
     );
