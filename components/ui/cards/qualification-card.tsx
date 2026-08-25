@@ -5,7 +5,7 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion";
 import clsx from "clsx";
-import { Briefcase } from "lucide-react";
+import { Briefcase, Code2 } from "lucide-react";
 
 export default function QualificationCard({
     data,
@@ -16,6 +16,9 @@ export default function QualificationCard({
     value: string;
     isLast: boolean;
 }) {
+    const isJob = data.kind === "employment";
+    const Icon = isJob ? Briefcase : Code2;
+
     return (
         <AccordionItem
             value={value}
@@ -30,7 +33,7 @@ export default function QualificationCard({
                         <span className="flex items-center justify-center gap-x-2.5 md:gap-x-4">
                             <span className="block size-4 md:size-8 xl:size-10">
                                 <span className="bg-surface-tertiary flex size-full items-center justify-center rounded-full">
-                                    <Briefcase
+                                    <Icon
                                         className="size-6"
                                         aria-hidden="true"
                                     />
@@ -40,8 +43,18 @@ export default function QualificationCard({
                                 <span className="xs:text-[14px] block text-[12px] font-semibold sm:text-[16px] md:text-[18px] lg:text-[20px] 2xl:text-[20px]">
                                     {data.title}
                                 </span>
-                                <span className="xs-text text-text-muted block font-medium">
+                                <span className="xs-text text-text-muted flex items-center gap-x-2 font-medium">
                                     {data.company}
+                                    <span
+                                        className={clsx(
+                                            "rounded-full border px-1.5 py-px text-[10px] leading-tight font-medium",
+                                            isJob
+                                                ? "border-accent-green/40 text-accent-green"
+                                                : "border-accent-ash/40 text-accent-ash",
+                                        )}
+                                    >
+                                        {isJob ? "Employment" : "Project"}
+                                    </span>
                                 </span>
                             </span>
                         </span>

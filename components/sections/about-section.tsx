@@ -33,7 +33,7 @@ export default function AboutSection() {
                         architecture and intuitive design, using technologies
                         like{" "}
                         <span className="text-text-secondary font-semibold">
-                            React, Next.js, and Python
+                            React, Next.js, TypeScript and Node.js
                         </span>{" "}
                         to create systems that are as robust as they are
                         beautiful.

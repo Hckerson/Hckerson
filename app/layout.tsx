@@ -11,6 +11,8 @@ export const metadata: Metadata = {
         template: `%s — ${siteConfig.name}`,
     },
     description: siteConfig.description,
+    authors: [{ name: siteConfig.legalName, url: siteConfig.url }],
+    creator: siteConfig.legalName,
     alternates: { canonical: "/" },
     openGraph: {
         type: "website",
@@ -32,6 +34,34 @@ export const viewport: Viewport = {
         { media: "(prefers-color-scheme: dark)", color: "#050c14" },
         { media: "(prefers-color-scheme: light)", color: "#ffffff" },
     ],
+};
+
+const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: siteConfig.legalName,
+    alternateName: siteConfig.name,
+    jobTitle: siteConfig.role,
+    email: siteConfig.email,
+    url: siteConfig.url,
+    address: {
+        "@type": "PostalAddress",
+        addressLocality: "Lagos",
+        addressCountry: "NG",
+    },
+    affiliation: {
+        "@type": "CollegeOrUniversity",
+        name: siteConfig.university,
+    },
+    knowsAbout: [
+        "Full-Stack Development",
+        "TypeScript",
+        "React",
+        "Next.js",
+        "Node.js",
+        "PostgreSQL",
+    ],
+    sameAs: [siteConfig.github, siteConfig.linkedin, siteConfig.twitter],
 };
 
 export default function RootLayout({
@@ -60,6 +90,12 @@ export default function RootLayout({
                                 }
                             })()
                         `,
+                    }}
+                />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(personSchema),
                     }}
                 />
             </head>

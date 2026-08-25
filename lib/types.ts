@@ -1,5 +1,7 @@
 export type ProjectStatus = "active" | "planned" | "backlog" | "completed";
 
+export type ExperienceKind = "employment" | "personal-project";
+
 export type SkillCategory =
     | "Markup Language"
     | "Styling"

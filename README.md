@@ -81,5 +81,8 @@ public/              images and fonts only, no source
 
 ## Notes
 
-- `education` and `certifications` in `mapped-data.ts` are populated but not
-  yet surfaced anywhere.
+- `education` and `certifications` in `mapped-data.ts` render through
+  `components/sections/education-section.tsx` on the homepage.
+- `workExperience` entries carry a `kind` of `"employment"` or
+  `"personal-project"`. The qualification card badges them separately —
+  keep personal work out of the `"employment"` bucket.
