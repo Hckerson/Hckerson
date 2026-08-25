@@ -2,8 +2,6 @@ import { Copyright, Mail } from "lucide-react";
 import { GithubIcon, XIcon } from "./brand-icons";
 import { contactHref, siteConfig } from "@/lib/constant";
 
-// These were bare, unlabelled SVGs — visually social links, but not focusable,
-// not clickable and invisible to assistive tech.
 const socials = [
     { label: "X (Twitter)", href: siteConfig.twitter, Icon: XIcon },
     { label: "GitHub", href: siteConfig.github, Icon: GithubIcon },

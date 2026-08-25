@@ -1,6 +1,4 @@
 "use client";
-// Swiper's stylesheet lives here rather than in the root layout — /projects is
-// the only route that uses it, and every other route was paying for it.
 import "swiper/css";
 import clsx from "clsx";
 import Image from "next/image";
@@ -21,7 +19,6 @@ export default function Projects() {
         useState<PortfolioProject | null>(projects[0]);
     const [controlledSwiperInstance, setControlledSwiperInstance] =
         useState<SwiperType | null>(null);
-    // Mirrors the previous `window.innerWidth < 1024` threshold.
     const isMobile = useMediaQuery("(max-width: 1023px)");
 
     return (
@@ -77,10 +74,6 @@ export default function Projects() {
                             return (
                                 <span
                                     key={project.id}
-                                    // The two states differ in colour and ring
-                                    // rather than in transform: scaling the
-                                    // whole pill shrank the digit with it, so
-                                    // inactive steps were unreadable.
                                     className={clsx(
                                         "z-10 flex items-center justify-center rounded-full border text-xs leading-none font-bold transition-all duration-500 ease-out",
                                         isCurrent
@@ -119,7 +112,6 @@ export default function Projects() {
                                         View Project
                                     </Button>
                                 </Link>
-                                {/* Was a self-link back to /projects. */}
                                 <a href={contactHref} className="size-fit">
                                     <Button
                                         size="sm"
@@ -160,10 +152,6 @@ export default function Projects() {
                                 return (
                                     <SwiperSlide key={project.id} className="">
                                         {({ isActive }) => (
-                                            // Matches the "View Project"
-                                            // button: the card is the same
-                                            // affordance, so it opens the case
-                                            // study rather than the live site.
                                             <Link
                                                 href={`/projects/${project.id}`}
                                                 aria-label={`View the ${project.title} project`}

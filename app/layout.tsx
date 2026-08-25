@@ -4,13 +4,10 @@ import { clashDisplay } from "@/lib/fonts";
 import { siteConfig } from "@/lib/constant";
 import AppLayout from "@/components/app-layout";
 
-// The site previously exported no metadata at all: no title, description,
-// canonical, OpenGraph or Twitter card anywhere.
 export const metadata: Metadata = {
     metadataBase: new URL(siteConfig.url),
     title: {
         default: siteConfig.title,
-        // Route titles render as e.g. "Pricing — Hckerson".
         template: `%s — ${siteConfig.name}`,
     },
     description: siteConfig.description,
@@ -49,13 +46,6 @@ export default function RootLayout({
             suppressHydrationWarning
         >
             <head>
-                {/*
-                 * Runs before paint so the correct theme class is on <html>
-                 * ahead of first render, avoiding a flash of the wrong theme.
-                 * localStorage access is wrapped because it throws outright in
-                 * Safari private mode — unguarded, that aborted the whole
-                 * script and left the page with no theme class at all.
-                 */}
                 <script
                     dangerouslySetInnerHTML={{
                         __html: `

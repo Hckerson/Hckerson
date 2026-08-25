@@ -1,5 +1,3 @@
-// No "use client" — this page uses no client-side API. PricingCard declares
-// its own, which is what lets this route export metadata.
 import type { Metadata } from "next";
 import { pricingPlans } from "@/lib/data/mapped-data";
 import PricingCard from "@/components/ui/cards/pricing-card";

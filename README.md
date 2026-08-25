@@ -81,8 +81,5 @@ public/              images and fonts only, no source
 
 ## Notes
 
-- `/blog` is a placeholder: no posts, unlinked from the navbar, `noindex`, and
-  excluded from the sitemap. The `articles` array in `mapped-data.ts` is sample
-  content and is not rendered.
 - `education` and `certifications` in `mapped-data.ts` are populated but not
   yet surfaced anywhere.

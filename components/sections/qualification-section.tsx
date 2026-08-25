@@ -2,9 +2,6 @@ import { workExperience } from "@/lib/data/mapped-data";
 import QualificationCard from "../ui/cards/qualification-card";
 import { Accordion } from "@/components/ui/accordion";
 
-// Derive the item values once here so the accordion's `defaultValue` and the
-// items' `value` props cannot drift apart — previously the section passed
-// "Vouchmark" while each item registered as "Vouchmark-0", so nothing opened.
 const items = workExperience.map((work, idx) => ({
     work,
     value: `${work.company}-${idx}`,

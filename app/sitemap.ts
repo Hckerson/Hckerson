@@ -19,6 +19,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.5,
     }));
 
-    // /blog is excluded until it has posts; it is marked noindex.
     return [...routes, ...projectRoutes];
 }

@@ -4,8 +4,6 @@ import { ProjectStatus, SkillCategory } from "./types";
 export interface Navlink {
     name: string;
     link: string;
-    // Structural rather than react-icons' IconType, so lucide icons and the
-    // local brand SVGs in components/ui/brand-icons.tsx both satisfy it.
     icon: ComponentType<{ className?: string }>;
     external?: boolean;
 }
@@ -22,17 +20,6 @@ export interface PortfolioProject {
     githubUrl: string;
     category: string;
     learnings: string;
-}
-
-export interface Article {
-    id: number;
-    title: string;
-    excerpt: string;
-    image: string;
-    date: string;
-    readTime: string;
-    tags: string[];
-    url: string;
 }
 
 export interface WorkExperience {
