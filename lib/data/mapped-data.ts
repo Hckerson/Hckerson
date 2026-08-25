@@ -9,11 +9,13 @@ import {
 } from "../interface";
 import { FolderOpen, Tags } from "lucide-react";
 import { GithubIcon } from "@/components/ui/brand-icons";
-import { siteConfig } from "../constant";
+import { showPricing, siteConfig } from "../constant";
 
 const navlinks: Navlink[] = [
     { name: "Projects", link: "/projects", icon: FolderOpen },
-    { name: "Pricing", link: "/pricing", icon: Tags },
+    ...(showPricing
+        ? [{ name: "Pricing", link: "/pricing", icon: Tags }]
+        : []),
     {
         name: "Github",
         link: siteConfig.github,
@@ -115,6 +117,7 @@ const projects: PortfolioProject[] = [
 const workExperience: WorkExperience[] = [
     {
         title: "Full Stack Developer",
+        kind: "employment",
         company: "Vouchmark",
         location: "Global/Remote",
         period: "2024 - Present",
@@ -136,51 +139,15 @@ const workExperience: WorkExperience[] = [
             "Managing the end-to-end technical architecture and development for a business verification platform focused on African markets.",
         achievements: [
             "Architected a scalable full-stack solution from the ground up",
-            "Improved business verification efficiency through automated risk assessment tools",
+            "Built automated risk-assessment tooling that replaced manual supplier review steps",
         ],
     },
     {
-        title: "Full Stack Developer",
-        company: "Dropbox Clone",
-        location: "Remote",
-        period: "2023 - Present",
-        responsibilities: [
-            "Developed a clone of the Dropbox file sharing service using React, Node.js, and Firebase",
-            "Created a secure file upload/download functionality with drag-and-drop features",
-            "Built an efficient state management system for file operations",
-        ],
-        skills: ["React", "Node.js", "Firebase", "TypeScript", "Tailwind CSS"],
-        description:
-            "Built a fully functional cloud storage clone with real-time updates and secure file handling.",
-        achievements: [
-            "Implemented seamless drag-and-drop file uploading",
-            "Reduced file operation latency by 30% through optimized state management",
-        ],
-    },
-    {
-        title: "Backend Developer",
-        company: "One Place Clone",
-        location: "Remote",
-        period: "2024 - Present",
-        responsibilities: [
-            "Developed a clone of the One Place retail management system using React, Node.js, and PostgreSQL",
-            "Created a secure user authentication and authorization system",
-            "Built a responsive dashboard for sales and inventory tracking",
-            "Developed a market analysis tool and portfolio management features",
-        ],
-        skills: ["Node.js", "PostgreSQL", "React", "Express", "JWT"],
-        description:
-            "Engineered a robust backend for a retail management system focusing on data integrity and security.",
-        achievements: [
-            "Designed a scalable database schema for high-volume inventory tracking",
-            "Implemented role-based access control (RBAC) for enhanced security",
-        ],
-    },
-    {
-        title: "Full Stack Developer",
-        company: "Serene Heaven",
-        location: "Remote",
-        period: "2025 - Present",
+        title: "Serene Heaven — Hotel Booking Platform",
+        kind: "personal-project",
+        company: "Personal Project",
+        location: "Self-directed",
+        period: "2025",
         responsibilities: [
             "Developed responsive booking system with real-time availability",
             "Created admin dashboard for reservation management",
@@ -195,21 +162,69 @@ const workExperience: WorkExperience[] = [
             "Tailwind CSS",
         ],
         description:
-            "Lead developer for a luxury hotel booking platform with integrated booking logic and admin controls.",
+            "A luxury hotel booking platform built end to end, with booking logic, Stripe payments and admin controls.",
         achievements: [
             "Built a real-time room availability checker",
             "Automated reservation emails and confirmation workflows",
+        ],
+    },
+    {
+        title: "One Place — Retail Management System",
+        kind: "personal-project",
+        company: "Personal Project",
+        location: "Self-directed",
+        period: "2024",
+        responsibilities: [
+            "Built a retail management system with React, Node.js and PostgreSQL",
+            "Created a secure user authentication and authorization system",
+            "Built a responsive dashboard for sales and inventory tracking",
+            "Developed a market analysis tool and portfolio management features",
+        ],
+        skills: ["Node.js", "PostgreSQL", "React", "Express", "JWT"],
+        description:
+            "A retail management backend built to practise data integrity, access control and high-volume inventory modelling.",
+        achievements: [
+            "Designed a normalised database schema for high-volume inventory tracking",
+            "Implemented role-based access control (RBAC) across every API route",
+        ],
+    },
+    {
+        title: "Dropbox Clone — Cloud Storage",
+        kind: "personal-project",
+        company: "Personal Project",
+        location: "Self-directed",
+        period: "2023",
+        responsibilities: [
+            "Built a file sharing service with React, Node.js and Firebase",
+            "Created secure file upload/download with drag-and-drop support",
+            "Designed the state management model for concurrent file operations",
+        ],
+        skills: ["React", "Node.js", "Firebase", "TypeScript", "Tailwind CSS"],
+        description:
+            "A cloud storage clone with real-time sync and secure file handling, built to learn complex client-side state.",
+        achievements: [
+            "Implemented seamless drag-and-drop file uploading",
+            "Cut redundant re-renders during file operations by normalising the upload state tree",
         ],
     },
 ];
 
 const education: Education[] = [
     {
-        degree: "B.S.C in Computer Science",
+        degree: "B.Sc. Computer Science",
         institution: "Obafemi Awolowo University",
-        year: "2023-now",
+        start: "2023",
+        end: "2028",
+        inProgress: true,
         description:
-            "Still grinding. Focused on web development, algorithms, and database systems. trying to break into the web3 space",
+            "Coursework spanning algorithms, data structures, database systems and software engineering, alongside self-directed work in full-stack web development.",
+        coursework: [
+            "Data Structures & Algorithms",
+            "Database Systems",
+            "Operating Systems",
+            "Software Engineering",
+            "Computer Networks",
+        ],
     },
 ];
 

@@ -2,6 +2,7 @@ import HeroSection from "@/components/sections/hero-section";
 import SkillSection from "@/components/sections/skill-section";
 import AboutSection from "@/components/sections/about-section";
 import ProjectSection from "@/components/sections/project-section";
+import EducationSection from "@/components/sections/education-section";
 import QualificationSection from "@/components/sections/qualification-section";
 
 export default function Homepage() {
@@ -12,6 +13,7 @@ export default function Homepage() {
             <ProjectSection />
             <SkillSection />
             <QualificationSection />
+            <EducationSection />
         </div>
     );
 }

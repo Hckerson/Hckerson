@@ -16,7 +16,7 @@ export default function QualificationSection() {
                         Qualifications
                     </h2>
                     <p className="xs-text text-text-muted">
-                        Why you should hire me
+                        Professional experience and self-directed work.
                     </p>
                 </div>
 

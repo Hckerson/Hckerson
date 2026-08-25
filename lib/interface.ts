@@ -1,5 +1,5 @@
 import type { ComponentType } from "react";
-import { ProjectStatus, SkillCategory } from "./types";
+import { ExperienceKind, ProjectStatus, SkillCategory } from "./types";
 
 export interface Navlink {
     name: string;
@@ -24,6 +24,11 @@ export interface PortfolioProject {
 
 export interface WorkExperience {
     title: string;
+    /**
+     * Paid employment or self-directed work. Personal projects are labelled as
+     * such in the UI so they are never mistaken for a job.
+     */
+    kind: ExperienceKind;
     company: string;
     location: string;
     period: string;
@@ -36,8 +41,14 @@ export interface WorkExperience {
 export interface Education {
     degree: string;
     institution: string;
-    year: string;
+    /** Start year. */
+    start: string;
+    /** Graduation year, or the expected one while still enrolled. */
+    end: string;
+    /** True while enrolled — renders `end` as "Expected <year>". */
+    inProgress?: boolean;
     description: string;
+    coursework?: string[];
 }
 
 export interface Certification {
