@@ -8,9 +8,6 @@ import { navlinks } from "@/lib/data/mapped-data";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
-    // Tracks whether the bar should tuck away. The old state was called
-    // `scrollDirection` but set "up" while scrolling *down*, so the name said
-    // the opposite of both the value and the resulting transform.
     const [isHidden, setIsHidden] = useState(false);
     const pathname = usePathname();
 
@@ -97,8 +94,6 @@ export default function Navbar() {
                     <div className="bg-border h-5 w-px"></div>
 
                     <div className="hover:border-border hover:bg-surface-tertiary ml-1 flex items-center rounded-full p-1.5 hover:border">
-                        {/* Had no accessible name at all — screen readers
-                            announced only "button". */}
                         <button
                             type="button"
                             onClick={toggleTheme}

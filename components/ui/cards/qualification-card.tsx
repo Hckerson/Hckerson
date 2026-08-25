@@ -24,8 +24,6 @@ export default function QualificationCard({
                 !isLast && "border-border border-b",
             )}
         >
-            {/* AccordionTrigger renders a <button>, which may only contain
-                phrasing content — these were <div>/<p> before. */}
             <AccordionTrigger>
                 <span className="box-border block w-full p-2.5 md:p-4 xl:p-5">
                     <span className="flex w-full justify-between">

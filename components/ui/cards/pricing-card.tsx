@@ -2,6 +2,7 @@
 import Button from "../button";
 import { CircleCheck } from "lucide-react";
 import { PricingPlan } from "@/lib/interface";
+import { contactHrefFor } from "@/lib/constant";
 
 export default function PricingCard({ plan }: { plan: PricingPlan }) {
     return (
@@ -31,16 +32,13 @@ export default function PricingCard({ plan }: { plan: PricingPlan }) {
                             </span>
                         )}
                     </div>
-                    {/* `text-button-text` referenced a --color-button-text
-                        token that does not exist, so it produced no rule. */}
                     <Button
                         size="custom"
+                        href={contactHrefFor(`${plan.name} enquiry`)}
                         className="bg-accent-cyan w-full rounded-lg text-black"
                     >
                         Get started
                     </Button>
-                    {/* Was a <legend>, which is only valid inside a
-                        <fieldset>. */}
                     <h3 className="font-clash mt-2 font-medium">Features</h3>
                     <p className="xs-text text-text-muted mb-4">
                         Everything in {plan.starter}, plus:

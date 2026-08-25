@@ -1,14 +1,5 @@
 import type { SVGProps } from "react";
 
-/**
- * Brand marks, inlined.
- *
- * lucide-react deprecated its brand icons and will drop them in v1.0
- * (lucide-icons/lucide#670), so `Github` there is a dead end. These two are
- * the only brand marks the site uses, which is not worth a second icon
- * dependency. Paths are from Simple Icons (CC0).
- */
-
 export function GithubIcon(props: SVGProps<SVGSVGElement>) {
     return (
         <svg

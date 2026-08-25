@@ -90,9 +90,6 @@
 
     --color-border: var(--border);
 
-    /* next/font already emits --font-clash-display; registering it here turns
-       it into a `font-clash` utility, so components no longer have to import
-       the font object just to spread its .className. */
     --font-clash: var(--font-clash-display);
 
     --breakpoint-xs: 480px;
@@ -171,9 +168,6 @@
     @apply py-4 md:py-8 xl:py-12;
 }
 
-/* Was `a:focus { outline: none }`, which removed the focus ring from every
-   link and replaced it with nothing, leaving keyboard users with no visible
-   position. :focus-visible keeps the ring off for pointer clicks. */
 a:focus-visible,
 button:focus-visible {
     @apply outline-accent-cyan rounded-sm outline-2 outline-offset-2;

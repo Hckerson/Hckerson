@@ -8,8 +8,6 @@ export default function HeroSection() {
             <div className="absolute inset-0">
                 <div className="relative flex h-full w-full items-center justify-center">
                     <div className="flex max-w-[80ch] flex-col items-center gap-y-4 text-center md:gap-y-5 xl:gap-y-6">
-                        {/* The site's only h1. This was a <p>, leaving every
-                            page without a top-level heading. */}
                         <h1 className="font-clash md-text from-text-primary to-text-muted w-[15ch] bg-linear-to-b from-20% bg-clip-text text-center leading-none font-bold text-transparent">
                             <span className="block">Creative</span>
                             <span> Software Engineer.</span>
@@ -18,14 +16,13 @@ export default function HeroSection() {
                             {`I’m hckerson, a Full-Stack Engineer building high-performance products at the intersection of design and scalable architecture.`}{" "}
                         </p>
                         <span className="flex space-x-3">
-                            <a href={contactHref} className="size-fit">
-                                <Button
-                                    size="sm"
-                                    className="bg-accent-cyan text-background"
-                                >
-                                    Contact Me
-                                </Button>
-                            </a>
+                            <Button
+                                size="sm"
+                                href={contactHref}
+                                className="bg-accent-cyan text-background"
+                            >
+                                Contact Me
+                            </Button>
                             <Link href="/projects">
                                 <Button
                                     size="sm"

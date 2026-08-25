@@ -1,5 +1,4 @@
 import {
-    Article,
     Certification,
     Education,
     Navlink,
@@ -12,7 +11,6 @@ import { FolderOpen, Tags } from "lucide-react";
 import { GithubIcon } from "@/components/ui/brand-icons";
 import { siteConfig } from "../constant";
 
-// /blog is intentionally absent — the route exists but has no posts yet.
 const navlinks: Navlink[] = [
     { name: "Projects", link: "/projects", icon: FolderOpen },
     { name: "Pricing", link: "/pricing", icon: Tags },
@@ -105,61 +103,12 @@ const projects: PortfolioProject[] = [
             "Radix UI",
             "Lucide React",
         ],
-        liveUrl: "https://cresora.vercel.app", // Update with your actual URL
-        githubUrl: "https://github.com/hckerson/cresora", // Update with your actual repo
+        liveUrl: "https://cresora.vercel.app",
+        githubUrl: "https://github.com/hckerson/cresora",
         category: "frontend",
         status: "completed",
         learnings:
             "Built an interactive financial dashboard with React Flow for data visualization, implemented complex UI components with Radix UI, and created a responsive design system for financial data presentation. Mastered advanced React patterns for state management and component composition.",
-    },
-    // {
-    //     id: 5,
-    //     title: "",
-    //     description: "",
-    //     image: "",
-    //     landscape: "",
-    //     tags: [],
-    //     liveUrl: "",
-    //     githubUrl: "",
-    //     category: "",
-    //     status: "planned",
-    //     learnings: "",
-    // },
-];
-
-const articles: Article[] = [
-    {
-        id: 1,
-        title: "How I Optimized Next.js Page Load by 50%",
-        excerpt:
-            "A step-by-step guide on how I improved the performance of a Next.js application using various optimization techniques.",
-        image: "https://images.pexels.com/photos/4974915/pexels-photo-4974915.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        date: "May 15, 2023",
-        readTime: "6 min read",
-        tags: ["Next.js", "Performance", "Web Vitals"],
-        url: "/blog/optimizing-nextjs",
-    },
-    {
-        id: 2,
-        title: "Building a Stripe Subscription System with Supabase",
-        excerpt:
-            "Learn how to implement a complete subscription system using Stripe and Supabase for your SaaS application.",
-        image: "https://images.pexels.com/photos/5483075/pexels-photo-5483075.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        date: "April 22, 2023",
-        readTime: "8 min read",
-        tags: ["Stripe", "Supabase", "SaaS"],
-        url: "/blog/stripe-subscription-system",
-    },
-    {
-        id: 3,
-        title: "Lessons from My First Hackathon",
-        excerpt:
-            "Reflections and key takeaways from participating in my first 48-hour hackathon and what I would do differently next time.",
-        image: "https://images.pexels.com/photos/3182746/pexels-photo-3182746.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        date: "March 10, 2023",
-        readTime: "5 min read",
-        tags: ["Hackathon", "Team Collaboration", "Rapid Development"],
-        url: "/blog/hackathon-lessons",
     },
 ];
 
@@ -265,21 +214,6 @@ const education: Education[] = [
 ];
 
 const certifications: Certification[] = [
-    // {
-    //   name: "AWS Certified Developer",
-    //   issuer: "Amazon Web Services",
-    //   year: "2023",
-    // },
-    // {
-    //   name: "Google Cloud Professional Developer",
-    //   issuer: "Google",
-    //   year: "2022",
-    // },
-    // {
-    //   name: "React Advanced Concepts",
-    //   issuer: "Frontend Masters",
-    //   year: "2022",
-    // },
     {
         name: "W3Schools JavaScript Certification",
         issuer: "W3Schools",
@@ -336,7 +270,7 @@ const skills: Skill[] = [
     },
     {
         name: "NestJS",
-        icon: "/images/icons/nestjs.svg", // Missing icon
+        icon: "/images/icons/nestjs.svg",
         categories: ["Backend Framework"],
     },
     {
@@ -351,7 +285,7 @@ const skills: Skill[] = [
     },
     {
         name: "Prisma",
-        icon: "/images/icons/prisma.svg", // Missing icon
+        icon: "/images/icons/prisma.svg",
         categories: ["Database"],
     },
     {
@@ -417,7 +351,6 @@ const pricingPlans: PricingPlan[] = [
 export {
     navlinks,
     projects,
-    articles,
     workExperience,
     education,
     certifications,
