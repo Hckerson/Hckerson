@@ -1,13 +1,15 @@
-"use client";
-import useTheme from "@/hooks/useTheme";
 import Navbar from "./ui/navbar";
-import clsx from "clsx";
+import Footer from "./ui/footer";
+import FooterGate from "./ui/footer-gate";
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
     return (
-        <body className="relative h-screen w-full antialiased">
+        <body className="relative min-h-screen w-full antialiased">
             <Navbar />
-            <main className="">{children}</main>
+            <main>{children}</main>
+            <FooterGate>
+                <Footer />
+            </FooterGate>
         </body>
     );
 }

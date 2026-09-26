@@ -5,72 +5,87 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion";
 import clsx from "clsx";
-import { PiSuitcaseLight } from "react-icons/pi";
-import { workExperience } from "@/lib/data/mapped-data";
+import { Briefcase, Code2 } from "lucide-react";
 
-export default function QulaificationCard({
+export default function QualificationCard({
     data,
-    id,
+    value,
+    isLast,
 }: {
     data: WorkExperience;
-    id: number;
+    value: string;
+    isLast: boolean;
 }) {
+    const isJob = data.kind === "employment";
+    const Icon = isJob ? Briefcase : Code2;
+
     return (
         <AccordionItem
-            value={`${data.company}-${id}`}
+            value={value}
             className={clsx(
                 "box-border w-full overflow-hidden",
-                id !== workExperience.length - 1 && "border-b border-border",
+                !isLast && "border-border border-b",
             )}
         >
             <AccordionTrigger>
-                <div className="box-border w-full p-2.5 md:p-4 xl:p-5">
-                    <div className="flex w-full justify-between">
-                        <div className="flex items-center justify-center gap-x-2.5 md:gap-x-4">
-                            <div className="md:size-8 xl:size-10 size-4">
-                                <div className="flex size-full items-center justify-center rounded-full bg-surface-tertiary">
-                                    <PiSuitcaseLight size={24} />
-                                </div>
-                            </div>
-                            <div className="-space-y-1 text-start">
-                                <p className="xs:text-[14px] text-[12px] font-semibold sm:text-[16px] md:text-[18px] lg:text-[20px] 2xl:text-[20px]">
+                <span className="box-border block w-full p-2.5 md:p-4 xl:p-5">
+                    <span className="flex w-full justify-between">
+                        <span className="flex items-center justify-center gap-x-2.5 md:gap-x-4">
+                            <span className="block size-4 md:size-8 xl:size-10">
+                                <span className="bg-surface-tertiary flex size-full items-center justify-center rounded-full">
+                                    <Icon
+                                        className="size-6"
+                                        aria-hidden="true"
+                                    />
+                                </span>
+                            </span>
+                            <span className="block -space-y-1 text-start">
+                                <span className="xs:text-[14px] block text-[12px] font-semibold sm:text-[16px] md:text-[18px] lg:text-[20px] 2xl:text-[20px]">
                                     {data.title}
-                                </p>
-                                <p className="xs-text font-medium text-text-muted">
+                                </span>
+                                <span className="xs-text text-text-muted flex items-center gap-x-2 font-medium">
                                     {data.company}
-                                </p>
-                            </div>
-                        </div>
-                        <div className="flex flex-col text-end text-text-muted">
-                            <p className="xs-text">{data.location}</p>
-                            <p className="text-[12px]">{data.period}</p>
-                        </div>
-                    </div>
-                </div>
+                                    <span
+                                        className={clsx(
+                                            "rounded-full border px-1.5 py-px text-[10px] leading-tight font-medium",
+                                            isJob
+                                                ? "border-accent-green/40 text-accent-green"
+                                                : "border-accent-ash/40 text-accent-ash",
+                                        )}
+                                    >
+                                        {isJob ? "Employment" : "Project"}
+                                    </span>
+                                </span>
+                            </span>
+                        </span>
+                        <span className="text-text-muted flex flex-col text-end">
+                            <span className="xs-text">{data.location}</span>
+                            <span className="text-[12px]">{data.period}</span>
+                        </span>
+                    </span>
+                </span>
             </AccordionTrigger>
             <AccordionContent>
                 <div className="box-border w-full p-3 pt-0 md:p-4 md:pt-0 xl:p-5 xl:pt-0">
                     <div className="flex">
                         <div className="flex-1 space-x-1">
-                            <p className={clsx("xs-text font-semibold")}>
-                                Description
-                            </p>
-                            <p className="xs-text my-2 font-medium text-text-muted">
+                            <p className="xs-text font-semibold">Description</p>
+                            <p className="xs-text text-text-muted my-2 font-medium">
                                 {data.description}
                             </p>
                         </div>
                         <div className="flex-1">
-                            <p className={clsx("xs-text font-semibold")}>
+                            <p className="xs-text font-semibold">
                                 Skills and Technologies
                             </p>
-                            <ul className="flex flex-wrap gap-1.5 my-2">
+                            <ul className="my-2 flex flex-wrap gap-1.5">
                                 {data.skills.map((skill, idx) => {
                                     return (
                                         <li
                                             key={`${skill}-${idx}`}
-                                            className="xs-text flex items-center border border-border justify-center rounded-full bg-surface-tertiary px-2 py-1 font-medium text-text-primary"
+                                            className="xs-text border-border bg-surface-tertiary text-text-primary flex items-center justify-center rounded-full border px-2 py-1 font-medium"
                                         >
-                                            <p>{skill}</p>
+                                            {skill}
                                         </li>
                                     );
                                 })}
@@ -78,7 +93,7 @@ export default function QulaificationCard({
                         </div>
                     </div>
                     <div>
-                        <p className={clsx("xs-text font-semibold")}>
+                        <p className="xs-text font-semibold">
                             Key Achievements
                         </p>
                         <ul className="my-2">
@@ -88,12 +103,10 @@ export default function QulaificationCard({
                                         key={`${achievement}-${idx}`}
                                         className="flex gap-x-2"
                                     >
-                                        <span className="xs-text flex size-4 items-center justify-center rounded-full bg-surface-tertiary font-medium text-text-muted">
-                                            <p className="text-[10px]">
-                                                {idx + 1}
-                                            </p>
+                                        <span className="xs-text bg-surface-tertiary text-text-muted flex size-4 items-center justify-center rounded-full font-medium">
+                                            <span className="text-[10px]"></span>
                                         </span>
-                                        <p className="xs-text font-medium text-text-muted">
+                                        <p className="xs-text text-text-muted font-medium">
                                             {achievement}
                                         </p>
                                     </li>

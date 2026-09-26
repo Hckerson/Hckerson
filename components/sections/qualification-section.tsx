@@ -1,42 +1,39 @@
 import { workExperience } from "@/lib/data/mapped-data";
-import { clashDisplay } from "@/public/fonts/font";
-import clsx from "clsx";
-import QulaificationCard from "../ui/cards/qualification-card";
-import { Accordion } from "@radix-ui/react-accordion";
+import QualificationCard from "../ui/cards/qualification-card";
+import { Accordion } from "@/components/ui/accordion";
+
+const items = workExperience.map((work, idx) => ({
+    work,
+    value: `${work.company}-${idx}`,
+}));
 
 export default function QualificationSection() {
     return (
-        <section className="xlarge-pady flex w-full bg-surface-secondary">
+        <section className="xlarge-pady bg-surface-secondary flex w-full">
             <div className="md-pad relative mx-auto w-full max-w-7xl space-y-6">
                 <div className="leading-[1.2]">
-                    <p
-                        className={clsx(
-                            clashDisplay.className,
-                            "base-text font-semibold",
-                        )}
-                    >
+                    <h2 className="font-clash base-text font-semibold">
                         Qualifications
-                    </p>
+                    </h2>
                     <p className="xs-text text-text-muted">
-                        Why you should hire me
+                        Professional experience and self-directed work.
                     </p>
                 </div>
 
-                <div className="box-border w-full divide-y divide-border rounded-lg border border-border sm:rounded-xl lg:rounded-2xl">
+                <div className="divide-border border-border box-border w-full divide-y rounded-lg border sm:rounded-xl lg:rounded-2xl">
                     <Accordion
                         type="single"
-                        key={`${workExperience[0].company}`}
-                        defaultValue={`${workExperience[0].company}`}
+                        collapsible
+                        defaultValue={items[0]?.value}
                     >
-                        {workExperience.map((work, idx) => {
-                            return (
-                                <QulaificationCard
-                                    key={`${work.company}-${idx}`}
-                                    data={work}
-                                    id={idx}
-                                />
-                            );
-                        })}
+                        {items.map(({ work, value }, idx) => (
+                            <QualificationCard
+                                key={value}
+                                value={value}
+                                data={work}
+                                isLast={idx === items.length - 1}
+                            />
+                        ))}
                     </Accordion>
                 </div>
             </div>

@@ -1,18 +1,14 @@
 "use client";
 import clsx from "clsx";
 import Link from "next/link";
-import { Moon } from "lucide-react";
+import { House, Moon, Sun } from "lucide-react";
 import useTheme from "@/hooks/useTheme";
 import { useEffect, useState } from "react";
-import { MdLightMode } from "react-icons/md";
-import { LiaHomeSolid } from "react-icons/lia";
 import { navlinks } from "@/lib/data/mapped-data";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
-    const [scrollDirection, setScrollDirection] = useState<"up" | "down">(
-        "down",
-    );
+    const [isHidden, setIsHidden] = useState(false);
     const pathname = usePathname();
 
     useEffect(() => {
@@ -22,9 +18,9 @@ export default function Navbar() {
             const verticalOffset = window.scrollY;
 
             if (verticalOffset > lastScrollY) {
-                setScrollDirection("up");
+                setIsHidden(true);
             } else if (verticalOffset < lastScrollY) {
-                setScrollDirection("down");
+                setIsHidden(false);
             }
 
             lastScrollY = verticalOffset;
@@ -40,20 +36,17 @@ export default function Navbar() {
     const { currentTheme, toggleTheme } = useTheme();
     return (
         <nav
-            className={clsx(
-                "fixed z-50 flex h-20 w-full items-end bg-transparent xl:h-25",
-            )}
+            aria-label="Main"
+            className="fixed z-50 flex h-20 w-full items-end bg-transparent xl:h-25"
         >
             <div
                 className={clsx(
                     "bg-surface-secondary mx-auto h-fit overflow-hidden rounded-full transition-transform duration-300 ease-in-out",
-                    scrollDirection === "up"
-                        ? "-translate-y-8"
-                        : "translate-y-0",
+                    isHidden ? "-translate-y-8" : "translate-y-0",
                 )}
             >
                 <div className="flex items-center p-1 md:p-2">
-                    <Link href="/" className="pr-1">
+                    <Link href="/" aria-label="Home" className="pr-1">
                         <div
                             className={clsx(
                                 "hover:border-border hover:bg-surface-tertiary rounded-full p-1.5 hover:border",
@@ -61,7 +54,10 @@ export default function Navbar() {
                                     "border-border bg-surface-tertiary border",
                             )}
                         >
-                            <LiaHomeSolid className="size-3 md:size-4" />
+                            <House
+                                className="size-3 md:size-4"
+                                aria-hidden="true"
+                            />
                         </div>
                     </Link>
                     <div className="bg-border mr-1 h-5 w-px"></div>
@@ -85,23 +81,39 @@ export default function Navbar() {
                                         "border-border bg-surface-tertiary border",
                                 )}
                             >
-                                <span>
-                                    <Icon className="size-3 md:size-4" />
-                                </span>
-                                <p className="xs-text text-text-secondary font-medium">
+                                <Icon
+                                    className="size-3 md:size-4"
+                                    aria-hidden="true"
+                                />
+                                <span className="xs-text text-text-secondary font-medium">
                                     {link.name}
-                                </p>
+                                </span>
                             </Link>
                         );
                     })}
                     <div className="bg-border h-5 w-px"></div>
 
                     <div className="hover:border-border hover:bg-surface-tertiary ml-1 flex items-center rounded-full p-1.5 hover:border">
-                        <button type="button" onClick={toggleTheme}>
+                        <button
+                            type="button"
+                            onClick={toggleTheme}
+                            aria-label={
+                                currentTheme === "light"
+                                    ? "Switch to dark theme"
+                                    : "Switch to light theme"
+                            }
+                            className="cursor-pointer"
+                        >
                             {currentTheme === "light" ? (
-                                <MdLightMode className="size-3 md:size-4" />
+                                <Sun
+                                    className="size-3 md:size-4"
+                                    aria-hidden="true"
+                                />
                             ) : (
-                                <Moon className="size-3 md:size-4" />
+                                <Moon
+                                    className="size-3 md:size-4"
+                                    aria-hidden="true"
+                                />
                             )}
                         </button>
                     </div>

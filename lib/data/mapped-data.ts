@@ -1,5 +1,4 @@
 import {
-    Article,
     Certification,
     Education,
     Navlink,
@@ -8,20 +7,19 @@ import {
     WorkExperience,
     PricingPlan,
 } from "../interface";
-import { LuTags } from "react-icons/lu";
-import { FaBlog } from "react-icons/fa6";
-import { BsFolder2Open } from "react-icons/bs";
-import { VscGithubAlt } from "react-icons/vsc";
+import { FolderOpen, Tags } from "lucide-react";
+import { GithubIcon } from "@/components/ui/brand-icons";
+import { showPricing, siteConfig } from "../constant";
 
 const navlinks: Navlink[] = [
-    { name: "Projects", link: "/projects", visible: "sm", icon: BsFolder2Open },
-    { name: "Pricing", link: "/pricing", visible: "md", icon: LuTags },
-    { name: "Blog", link: "/blog", visible: "md", icon: FaBlog },
+    { name: "Projects", link: "/projects", icon: FolderOpen },
+    ...(showPricing
+        ? [{ name: "Pricing", link: "/pricing", icon: Tags }]
+        : []),
     {
         name: "Github",
-        link: "https://github.com/hckerson",
-        visible: "md",
-        icon: VscGithubAlt,
+        link: siteConfig.github,
+        icon: GithubIcon,
         external: true,
     },
 ];
@@ -32,8 +30,8 @@ const projects: PortfolioProject[] = [
         title: "Dropbox Website Clone",
         description:
             "A modern clone of the Dropbox website featuring file upload/download, real-time collaboration, and a responsive design that mirrors the original platform's sleek interface.",
-        image: "/images/projects/cover/dropbox.png",
-        landscape: "/images/projects/cover/dropbox-landscape.png",
+        image: "/images/projects/cover/dropbox.webp",
+        landscape: "/images/projects/cover/dropbox-landscape.webp",
         tags: [
             "Next.js",
             "TypeScript",
@@ -53,8 +51,8 @@ const projects: PortfolioProject[] = [
         title: "Playwork DREAMS",
         description:
             'An interactive digital "Playground of Possibility" where students participate in STEM, storytelling, and design competitions. It features a gamified national leaderboard and specialized creator roles.',
-        image: "/images/projects/cover/playwork.png",
-        landscape: "/images/projects/cover/playwork-landscape.png",
+        image: "/images/projects/cover/playwork.webp",
+        landscape: "/images/projects/cover/playwork-landscape.webp",
         tags: [
             "Next.js",
             "Tailwind CSS",
@@ -74,8 +72,8 @@ const projects: PortfolioProject[] = [
         title: "Serene Heaven",
         description:
             "A luxury hotel booking platform featuring elegant room displays, real-time availability checking, and seamless booking experience. Includes admin dashboard for managing reservations and room inventory.",
-        image: "/images/projects/cover/serene-haven.png",
-        landscape: "/images/projects/cover/serene-landscape.png",
+        image: "/images/projects/cover/serene-haven.webp",
+        landscape: "/images/projects/cover/serene-landscape.webp",
         tags: [
             "Next.js",
             "TypeScript",
@@ -96,8 +94,8 @@ const projects: PortfolioProject[] = [
         title: "Cresora - Finance Platform",
         description:
             "A comprehensive financial management platform designed for SMEs in Indonesia, featuring AI-powered insights, real-time cash tracking, bill management, and flexible reporting. Built with modern web technologies and interactive data visualization.",
-        image: "/images/projects/cover/cresora.png",
-        landscape: "/images/projects/cover/cresora-landscape.png",
+        image: "/images/projects/cover/cresora.webp",
+        landscape: "/images/projects/cover/cresora-landscape.webp",
         tags: [
             "Next.js",
             "TypeScript",
@@ -107,67 +105,19 @@ const projects: PortfolioProject[] = [
             "Radix UI",
             "Lucide React",
         ],
-        liveUrl: "https://cresora.vercel.app", // Update with your actual URL
-        githubUrl: "https://github.com/hckerson/cresora", // Update with your actual repo
+        liveUrl: "https://cresora.vercel.app",
+        githubUrl: "https://github.com/hckerson/cresora",
         category: "frontend",
         status: "completed",
         learnings:
             "Built an interactive financial dashboard with React Flow for data visualization, implemented complex UI components with Radix UI, and created a responsive design system for financial data presentation. Mastered advanced React patterns for state management and component composition.",
-    },
-    // {
-    //     id: 5,
-    //     title: "",
-    //     description: "",
-    //     image: "",
-    //     landscape: "",
-    //     tags: [],
-    //     liveUrl: "",
-    //     githubUrl: "",
-    //     category: "",
-    //     status: "planned",
-    //     learnings: "",
-    // },
-];
-
-const articles: Article[] = [
-    {
-        id: 1,
-        title: "How I Optimized Next.js Page Load by 50%",
-        excerpt:
-            "A step-by-step guide on how I improved the performance of a Next.js application using various optimization techniques.",
-        image: "https://images.pexels.com/photos/4974915/pexels-photo-4974915.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        date: "May 15, 2023",
-        readTime: "6 min read",
-        tags: ["Next.js", "Performance", "Web Vitals"],
-        url: "/blog/optimizing-nextjs",
-    },
-    {
-        id: 2,
-        title: "Building a Stripe Subscription System with Supabase",
-        excerpt:
-            "Learn how to implement a complete subscription system using Stripe and Supabase for your SaaS application.",
-        image: "https://images.pexels.com/photos/5483075/pexels-photo-5483075.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        date: "April 22, 2023",
-        readTime: "8 min read",
-        tags: ["Stripe", "Supabase", "SaaS"],
-        url: "/blog/stripe-subscription-system",
-    },
-    {
-        id: 3,
-        title: "Lessons from My First Hackathon",
-        excerpt:
-            "Reflections and key takeaways from participating in my first 48-hour hackathon and what I would do differently next time.",
-        image: "https://images.pexels.com/photos/3182746/pexels-photo-3182746.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        date: "March 10, 2023",
-        readTime: "5 min read",
-        tags: ["Hackathon", "Team Collaboration", "Rapid Development"],
-        url: "/blog/hackathon-lessons",
     },
 ];
 
 const workExperience: WorkExperience[] = [
     {
         title: "Full Stack Developer",
+        kind: "employment",
         company: "Vouchmark",
         location: "Global/Remote",
         period: "2024 - Present",
@@ -189,51 +139,15 @@ const workExperience: WorkExperience[] = [
             "Managing the end-to-end technical architecture and development for a business verification platform focused on African markets.",
         achievements: [
             "Architected a scalable full-stack solution from the ground up",
-            "Improved business verification efficiency through automated risk assessment tools",
+            "Built automated risk-assessment tooling that replaced manual supplier review steps",
         ],
     },
     {
-        title: "Full Stack Developer",
-        company: "Dropbox Clone",
-        location: "Remote",
-        period: "2023 - Present",
-        responsibilities: [
-            "Developed a clone of the Dropbox file sharing service using React, Node.js, and Firebase",
-            "Created a secure file upload/download functionality with drag-and-drop features",
-            "Built an efficient state management system for file operations",
-        ],
-        skills: ["React", "Node.js", "Firebase", "TypeScript", "Tailwind CSS"],
-        description:
-            "Built a fully functional cloud storage clone with real-time updates and secure file handling.",
-        achievements: [
-            "Implemented seamless drag-and-drop file uploading",
-            "Reduced file operation latency by 30% through optimized state management",
-        ],
-    },
-    {
-        title: "Backend Developer",
-        company: "One Place Clone",
-        location: "Remote",
-        period: "2024 - Present",
-        responsibilities: [
-            "Developed a clone of the One Place retail management system using React, Node.js, and PostgreSQL",
-            "Created a secure user authentication and authorization system",
-            "Built a responsive dashboard for sales and inventory tracking",
-            "Developed a market analysis tool and portfolio management features",
-        ],
-        skills: ["Node.js", "PostgreSQL", "React", "Express", "JWT"],
-        description:
-            "Engineered a robust backend for a retail management system focusing on data integrity and security.",
-        achievements: [
-            "Designed a scalable database schema for high-volume inventory tracking",
-            "Implemented role-based access control (RBAC) for enhanced security",
-        ],
-    },
-    {
-        title: "Full Stack Developer",
-        company: "Serene Heaven",
-        location: "Remote",
-        period: "2025 - Present",
+        title: "Serene Heaven — Hotel Booking Platform",
+        kind: "personal-project",
+        company: "Personal Project",
+        location: "Self-directed",
+        period: "2025",
         responsibilities: [
             "Developed responsive booking system with real-time availability",
             "Created admin dashboard for reservation management",
@@ -248,40 +162,73 @@ const workExperience: WorkExperience[] = [
             "Tailwind CSS",
         ],
         description:
-            "Lead developer for a luxury hotel booking platform with integrated booking logic and admin controls.",
+            "A luxury hotel booking platform built end to end, with booking logic, Stripe payments and admin controls.",
         achievements: [
             "Built a real-time room availability checker",
             "Automated reservation emails and confirmation workflows",
+        ],
+    },
+    {
+        title: "One Place — Retail Management System",
+        kind: "personal-project",
+        company: "Personal Project",
+        location: "Self-directed",
+        period: "2024",
+        responsibilities: [
+            "Built a retail management system with React, Node.js and PostgreSQL",
+            "Created a secure user authentication and authorization system",
+            "Built a responsive dashboard for sales and inventory tracking",
+            "Developed a market analysis tool and portfolio management features",
+        ],
+        skills: ["Node.js", "PostgreSQL", "React", "Express", "JWT"],
+        description:
+            "A retail management backend built to practise data integrity, access control and high-volume inventory modelling.",
+        achievements: [
+            "Designed a normalised database schema for high-volume inventory tracking",
+            "Implemented role-based access control (RBAC) across every API route",
+        ],
+    },
+    {
+        title: "Dropbox Clone — Cloud Storage",
+        kind: "personal-project",
+        company: "Personal Project",
+        location: "Self-directed",
+        period: "2023",
+        responsibilities: [
+            "Built a file sharing service with React, Node.js and Firebase",
+            "Created secure file upload/download with drag-and-drop support",
+            "Designed the state management model for concurrent file operations",
+        ],
+        skills: ["React", "Node.js", "Firebase", "TypeScript", "Tailwind CSS"],
+        description:
+            "A cloud storage clone with real-time sync and secure file handling, built to learn complex client-side state.",
+        achievements: [
+            "Implemented seamless drag-and-drop file uploading",
+            "Cut redundant re-renders during file operations by normalising the upload state tree",
         ],
     },
 ];
 
 const education: Education[] = [
     {
-        degree: "B.S.C in Computer Science",
+        degree: "B.Sc. Computer Science",
         institution: "Obafemi Awolowo University",
-        year: "2023-now",
+        start: "2023",
+        end: "2028",
+        inProgress: true,
         description:
-            "Still grinding. Focused on web development, algorithms, and database systems. trying to break into the web3 space",
+            "Coursework spanning algorithms, data structures, database systems and software engineering, alongside self-directed work in full-stack web development.",
+        coursework: [
+            "Data Structures & Algorithms",
+            "Database Systems",
+            "Operating Systems",
+            "Software Engineering",
+            "Computer Networks",
+        ],
     },
 ];
 
 const certifications: Certification[] = [
-    // {
-    //   name: "AWS Certified Developer",
-    //   issuer: "Amazon Web Services",
-    //   year: "2023",
-    // },
-    // {
-    //   name: "Google Cloud Professional Developer",
-    //   issuer: "Google",
-    //   year: "2022",
-    // },
-    // {
-    //   name: "React Advanced Concepts",
-    //   issuer: "Frontend Masters",
-    //   year: "2022",
-    // },
     {
         name: "W3Schools JavaScript Certification",
         issuer: "W3Schools",
@@ -338,7 +285,7 @@ const skills: Skill[] = [
     },
     {
         name: "NestJS",
-        icon: "/images/icons/nestjs.svg", // Missing icon
+        icon: "/images/icons/nestjs.svg",
         categories: ["Backend Framework"],
     },
     {
@@ -353,7 +300,7 @@ const skills: Skill[] = [
     },
     {
         name: "Prisma",
-        icon: "/images/icons/prisma.svg", // Missing icon
+        icon: "/images/icons/prisma.svg",
         categories: ["Database"],
     },
     {
@@ -419,7 +366,6 @@ const pricingPlans: PricingPlan[] = [
 export {
     navlinks,
     projects,
-    articles,
     workExperience,
     education,
     certifications,

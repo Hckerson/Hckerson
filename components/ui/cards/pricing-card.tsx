@@ -1,9 +1,8 @@
 "use client";
 import Button from "../button";
-import { Icon } from "@iconify-icon/react";
+import { CircleCheck } from "lucide-react";
 import { PricingPlan } from "@/lib/interface";
-import { clashDisplay } from "@/public/fonts/font";
-import clsx from "clsx";
+import { contactHrefFor } from "@/lib/constant";
 
 export default function PricingCard({ plan }: { plan: PricingPlan }) {
     return (
@@ -11,14 +10,9 @@ export default function PricingCard({ plan }: { plan: PricingPlan }) {
             <div className="size-full">
                 <div className="grid p-4 md:p-5 xl:p-6">
                     <div className="flex items-center justify-between">
-                        <p
-                            className={clsx(
-                                clashDisplay.className,
-                                "font-semibold",
-                            )}
-                        >
+                        <h2 className="font-clash font-semibold">
                             {plan.name}
-                        </p>
+                        </h2>
 
                         {plan.isPopular && (
                             <span className="xs-text border-border rounded-lg border px-2 py-1">
@@ -27,12 +21,7 @@ export default function PricingCard({ plan }: { plan: PricingPlan }) {
                         )}
                     </div>
                     <div className="my-4 flex items-end gap-x-2">
-                        <p
-                            className={clsx(
-                                "text-[24px] font-semibold xl:text-[28px] 2xl:text-[32px]",
-                                clashDisplay.className,
-                            )}
-                        >
+                        <p className="font-clash text-[24px] font-semibold xl:text-[28px] 2xl:text-[32px]">
                             {typeof plan.price === "number"
                                 ? `$${plan.price}`
                                 : plan.price}
@@ -45,20 +34,12 @@ export default function PricingCard({ plan }: { plan: PricingPlan }) {
                     </div>
                     <Button
                         size="custom"
-                        classname="w-full bg-accent-cyan text-button-text rounded-lg"
+                        href={contactHrefFor(`${plan.name} enquiry`)}
+                        className="bg-accent-cyan w-full rounded-lg text-black"
                     >
-                        <p className="text-black">
-                            Get started
-                        </p>
+                        Get started
                     </Button>
-                    <legend
-                        className={clsx(
-                            "mt-2 font-medium",
-                            clashDisplay.className,
-                        )}
-                    >
-                        Features
-                    </legend>
+                    <h3 className="font-clash mt-2 font-medium">Features</h3>
                     <p className="xs-text text-text-muted mb-4">
                         Everything in {plan.starter}, plus:
                     </p>
@@ -68,14 +49,11 @@ export default function PricingCard({ plan }: { plan: PricingPlan }) {
                                 key={`${feature}-${index}`}
                                 className="flex w-full items-center gap-x-2"
                             >
-                                <Icon
-                                    icon="icon-park-solid:check-one"
-                                    width="20"
-                                    height="20"
+                                <CircleCheck
+                                    className="text-accent-cyan size-5 shrink-0"
+                                    aria-hidden="true"
                                 />
-                                <p className="xs-text">
-                                    <span key={index}>{feature}</span>
-                                </p>
+                                <span className="xs-text">{feature}</span>
                             </li>
                         ))}
                     </ul>

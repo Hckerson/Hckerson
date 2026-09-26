@@ -1,34 +1,25 @@
 "use client";
+import "swiper/css";
 import clsx from "clsx";
-import Link from "next/link";
 import Image from "next/image";
-import "swiper/css/effect-fade";
-import Button from "@/components/ui/button";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { projects } from "@/lib/data/mapped-data";
 import { PortfolioProject } from "@/lib/interface";
-import { clashDisplay } from "@/public/fonts/font";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper";
 import ProjectCard from "@/components/ui/cards/project-card";
-import { Autoplay, EffectFade, EffectCoverflow } from "swiper/modules";
+import { Autoplay, EffectCoverflow } from "swiper/modules";
+import useMediaQuery from "@/hooks/useMediaQuery";
+import { contactHref } from "@/lib/constant";
+import Link from "next/link";
+import Button from "@/components/ui/button";
 
 export default function Projects() {
     const [currentProject, setCurrentProject] =
         useState<PortfolioProject | null>(projects[0]);
-    const projectLength = projects.length;
     const [controlledSwiperInstance, setControlledSwiperInstance] =
         useState<SwiperType | null>(null);
-    const [isMobile, setIsMobile] = useState(false);
-
-    useEffect(() => {
-        const checkMobile = () => {
-            setIsMobile(window.innerWidth < 1024);
-        };
-        checkMobile();
-        window.addEventListener("resize", checkMobile);
-        return () => window.removeEventListener("resize", checkMobile);
-    }, []);
+    const isMobile = useMediaQuery("(max-width: 1023px)");
 
     return (
         <div className="relative h-screen w-full">
@@ -37,7 +28,7 @@ export default function Projects() {
                     <Swiper
                         slidesPerView={1}
                         className="h-screen w-screen"
-                        modules={[EffectFade, EffectCoverflow]}
+                        modules={[EffectCoverflow]}
                         onSwiper={setControlledSwiperInstance}
                         effect="coverflow"
                         coverflowEffect={{
@@ -45,23 +36,25 @@ export default function Projects() {
                             slideShadows: false,
                         }}
                         loop={true}
-                        fadeEffect={{ crossFade: true }}
                         allowTouchMove={false}
                     >
                         {projects.map((project) => {
                             return (
                                 <SwiperSlide key={project.id} className="">
-                                    {({ isActive }) => (
+                                    {() => (
                                         <div className="relative size-full">
                                             <Image
                                                 src={
                                                     isMobile
-                                                        ? project.image!
-                                                        : project.landscape!
+                                                        ? project.image
+                                                        : (project.landscape ??
+                                                          project.image)
                                                 }
-                                                alt={project.title}
+                                                alt=""
                                                 fill
-                                                className="bg-cover bg-center"
+                                                priority={project.id === 1}
+                                                sizes="100vw"
+                                                className="object-cover object-center"
                                             />
                                             <div className="absolute inset-0 bg-black/50"></div>
                                         </div>
@@ -72,40 +65,34 @@ export default function Projects() {
                     </Swiper>
                 </div>
             </div>
-            <div className="absolute left-1 z-30 my-auto flex h-full w-2.5 sm:left-4 xl:left-10">
+            <div className="absolute left-1 z-30 my-auto flex h-full w-7 sm:left-4 xl:left-10">
                 <div className="relative flex size-full">
-                    <div className="relative my-auto flex h-full max-h-[80%] flex-col items-center justify-between">
-                        <div className="bg-border absolute inset-y-0 z-0 mx-auto w-px opacity-50"></div>
+                    <div className="relative my-auto flex h-full max-h-[80%] w-7 flex-col items-center justify-between">
+                        <div className="bg-border absolute inset-y-0 left-1/2 z-0 w-px -translate-x-1/2 opacity-50"></div>
                         {projects.map((project) => {
+                            const isCurrent = project.id === currentProject?.id;
                             return (
                                 <span
                                     key={project.id}
                                     className={clsx(
-                                        "bg-surface-tertiary z-10 flex size-7 items-center justify-center rounded-full transition-all duration-800 ease-in",
-                                        project.id === currentProject?.id
-                                            ? "scale-100"
-                                            : "scale-45",
+                                        "z-10 flex items-center justify-center rounded-full border text-xs leading-none font-bold transition-all duration-500 ease-out",
+                                        isCurrent
+                                            ? "border-accent-cyan bg-accent-cyan text-background ring-accent-cyan/20 size-7 ring-4"
+                                            : "border-border bg-surface-tertiary/70 text-text-muted size-5 ring-0 backdrop-blur-sm",
                                     )}
                                 >
-                                    <p className="text-text-primary font-bold">
-                                        {project.id}
-                                    </p>
+                                    {project.id}
                                 </span>
                             );
                         })}
                     </div>
                 </div>
             </div>
-            <div className="relative z-40 ml-10 grid h-full  text-white sm:ml-12 md:translate-y-0 md:grid-cols-[45%_auto] xl:ml-24">
+            <div className="relative z-40 ml-10 grid h-full overflow-hidden text-white sm:ml-12 md:translate-y-0 md:grid-cols-[45%_auto] xl:ml-24">
                 <div className="relative flex size-full flex-col items-center justify-center pr-2 md:pl-0">
                     <span className="absolute">
                         <div className="overflow-hidden">
-                            <p
-                                className={clsx(
-                                    "xxlarge-text font-semibold tracking-tighter",
-                                    clashDisplay.className,
-                                )}
-                            >
+                            <p className="xxlarge-text font-clash font-semibold tracking-tighter">
                                 {currentProject?.title}
                             </p>
                         </div>
@@ -116,28 +103,28 @@ export default function Projects() {
                             <span className="sm-text flex space-x-3">
                                 <Link
                                     href={`/projects/${currentProject?.id}`}
-                                    className="focus:outline- size-fit"
+                                    className="size-fit"
                                 >
                                     <Button
                                         size="sm"
-                                        classname="bg-accent-cyan text-background"
+                                        className="bg-accent-cyan text-background"
                                     >
                                         View Project
                                     </Button>
                                 </Link>
-                                <Link href="/projects">
+                                <a href={contactHref} className="size-fit">
                                     <Button
                                         size="sm"
-                                        classname="bg-transparent text-text-primary border border-border"
+                                        className="text-text-primary border-border border bg-transparent"
                                     >
                                         {`Let's Talk`}
                                     </Button>
-                                </Link>
+                                </a>
                             </span>
                         </div>
                     </span>
                 </div>
-                <div className=" md:relative absolute md:translate-x-0 translate-x-1000 md:flex md:h-full md:w-full">
+                <div className="absolute translate-x-1000 md:relative md:flex md:h-full md:w-full md:translate-x-0">
                     <div className="relative my-auto flex w-full overflow-x-hidden [scrollbar-width:none]">
                         <Swiper
                             spaceBetween={isMobile ? 12.5 : 25}
@@ -165,16 +152,16 @@ export default function Projects() {
                                 return (
                                     <SwiperSlide key={project.id} className="">
                                         {({ isActive }) => (
-                                            <a
-                                                href={project.liveUrl}
-                                                target="_blank"
+                                            <Link
+                                                href={`/projects/${project.id}`}
+                                                aria-label={`View the ${project.title} project`}
                                             >
                                                 <ProjectCard
                                                     hidden
                                                     data={project}
                                                     isActive={isActive}
                                                 />
-                                            </a>
+                                            </Link>
                                         )}
                                     </SwiperSlide>
                                 );

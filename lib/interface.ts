@@ -1,19 +1,12 @@
-import { IconType } from "react-icons";
-import {
-    ProjectLevel,
-    ProjectStatus,
-    ProjectType,
-    SkillCategory,
-} from "./types";
+import type { ComponentType } from "react";
+import { ExperienceKind, ProjectStatus, SkillCategory } from "./types";
 
 export interface Navlink {
     name: string;
     link: string;
-    icon: IconType;
-    visible: string;
+    icon: ComponentType<{ className?: string }>;
     external?: boolean;
 }
-
 
 export interface PortfolioProject {
     id: number;
@@ -29,19 +22,13 @@ export interface PortfolioProject {
     learnings: string;
 }
 
-export interface Article {
-    id: number;
-    title: string;
-    excerpt: string;
-    image: string;
-    date: string;
-    readTime: string;
-    tags: string[];
-    url: string;
-}
-
 export interface WorkExperience {
     title: string;
+    /**
+     * Paid employment or self-directed work. Personal projects are labelled as
+     * such in the UI so they are never mistaken for a job.
+     */
+    kind: ExperienceKind;
     company: string;
     location: string;
     period: string;
@@ -54,8 +41,14 @@ export interface WorkExperience {
 export interface Education {
     degree: string;
     institution: string;
-    year: string;
+    /** Start year. */
+    start: string;
+    /** Graduation year, or the expected one while still enrolled. */
+    end: string;
+    /** True while enrolled — renders `end` as "Expected <year>". */
+    inProgress?: boolean;
     description: string;
+    coursework?: string[];
 }
 
 export interface Certification {
