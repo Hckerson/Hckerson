@@ -1,0 +1,42 @@
+import { workExperience } from "@/lib/data/mapped-data";
+import QualificationCard from "@/components/ui/cards/qualification-card";
+import { Accordion } from "@/components/ui/accordion";
+
+const items = workExperience.map((work, idx) => ({
+    work,
+    value: `${work.company}-${idx}`,
+}));
+
+export default function QualificationSection() {
+    return (
+        <section className="xlarge-pady bg-surface-secondary flex w-full">
+            <div className="md-pad relative mx-auto w-full max-w-7xl space-y-6">
+                <div className="leading-[1.2]">
+                    <h2 className="font-clash base-text font-semibold">
+                        Qualifications
+                    </h2>
+                    <p className="xs-text text-text-muted">
+                        Professional experience and self-directed work.
+                    </p>
+                </div>
+
+                <div className="divide-border border-border box-border w-full divide-y rounded-lg border sm:rounded-xl lg:rounded-2xl">
+                    <Accordion
+                        type="single"
+                        collapsible
+                        defaultValue={items[0]?.value}
+                    >
+                        {items.map(({ work, value }, idx) => (
+                            <QualificationCard
+                                key={value}
+                                value={value}
+                                data={work}
+                                isLast={idx === items.length - 1}
+                            />
+                        ))}
+                    </Accordion>
+                </div>
+            </div>
+        </section>
+    );
+}
