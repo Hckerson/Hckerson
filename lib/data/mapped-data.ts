@@ -1,11 +1,30 @@
 import {
+    Award,
     Certification,
     Education,
+    Navlink,
     PortfolioProject,
+    ResumeData,
     Skill,
     WorkExperience,
     PricingPlan,
-} from "../interface";
+} from "@/lib/interface";
+import { FolderOpen, Tags } from "lucide-react";
+import { GithubIcon } from "@/components/ui/brand-icons";
+import { routes, showPricing, siteConfig } from "@/lib/constant";
+
+const navlinks: Navlink[] = [
+    { name: "Projects", link: routes.projects, icon: FolderOpen },
+    ...(showPricing
+        ? [{ name: "Pricing", link: routes.pricing, icon: Tags }]
+        : []),
+    {
+        name: "Github",
+        link: siteConfig.github,
+        icon: GithubIcon,
+        external: true,
+    },
+];
 
 const projects: PortfolioProject[] = [
     {
@@ -13,6 +32,8 @@ const projects: PortfolioProject[] = [
         title: "Dropbox Website Clone",
         description:
             "A modern clone of the Dropbox website featuring file upload/download, real-time collaboration, and a responsive design that mirrors the original platform's sleek interface.",
+        image: "/images/projects/cover/dropbox.webp",
+        landscape: "/images/projects/cover/dropbox-landscape.webp",
         tags: [
             "Next.js",
             "TypeScript",
@@ -32,6 +53,8 @@ const projects: PortfolioProject[] = [
         title: "Playwork DREAMS",
         description:
             'An interactive digital "Playground of Possibility" where students participate in STEM, storytelling, and design competitions. It features a gamified national leaderboard and specialized creator roles.',
+        image: "/images/projects/cover/playwork.webp",
+        landscape: "/images/projects/cover/playwork-landscape.webp",
         tags: [
             "Next.js",
             "Tailwind CSS",
@@ -51,6 +74,8 @@ const projects: PortfolioProject[] = [
         title: "Serene Heaven",
         description:
             "A luxury hotel booking platform featuring elegant room displays, real-time availability checking, and seamless booking experience. Includes admin dashboard for managing reservations and room inventory.",
+        image: "/images/projects/cover/serene-haven.webp",
+        landscape: "/images/projects/cover/serene-landscape.webp",
         tags: [
             "Next.js",
             "TypeScript",
@@ -71,6 +96,8 @@ const projects: PortfolioProject[] = [
         title: "Cresora - Finance Platform",
         description:
             "A comprehensive financial management platform designed for SMEs in Indonesia, featuring AI-powered insights, real-time cash tracking, bill management, and flexible reporting. Built with modern web technologies and interactive data visualization.",
+        image: "/images/projects/cover/cresora.webp",
+        landscape: "/images/projects/cover/cresora-landscape.webp",
         tags: [
             "Next.js",
             "TypeScript",
@@ -116,6 +143,25 @@ const workExperience: WorkExperience[] = [
             "Architected a scalable full-stack solution from the ground up",
             "Built automated risk-assessment tooling that replaced manual supplier review steps",
         ],
+    },
+    {
+        title: "Full Stack Developer",
+        kind: "employment",
+        company: "Tekcify",
+        location: "Remote",
+        period: "2024 - Present",
+        responsibilities: [
+            "Developed AI-powered products including automation tools, document intelligence systems, and chat-based assistants",
+            "Designed responsive frontend interfaces focused on usability and real-time interaction",
+            "Architected backend systems supporting AI pipelines, API orchestration, and scalable user operations",
+            "Contributed to product decisions, optimizing both performance and user experience",
+        ],
+        // Skills and achievements were never written for this role; the card
+        // hides empty lists until they are.
+        skills: [],
+        description:
+            "Developed AI-powered products including automation tools, document intelligence systems, and chat-based assistants.",
+        achievements: [],
     },
     {
         title: "Serene Heaven — Hotel Booking Platform",
@@ -219,63 +265,78 @@ const certifications: Certification[] = [
 const skills: Skill[] = [
     {
         name: "HTML",
+        icon: "/images/icons/html.webp",
         categories: ["Markup Language"],
     },
-    { name: "CSS", categories: ["Styling"] },
+    { name: "CSS", icon: "/images/icons/css.webp", categories: ["Styling"] },
     {
         name: "JavaScript",
+        icon: "/images/icons/js.webp",
         categories: ["Programming Language"],
     },
     {
         name: "TypeScript",
+        icon: "/images/icons/ts.webp",
         categories: ["Programming Language"],
     },
     {
         name: "React.js",
+        icon: "/images/icons/react.webp",
         categories: ["Frontend Library"],
     },
     {
         name: "Next.js",
+        icon: "/images/icons/nextjs.svg",
         categories: ["Fullstack Framework"],
     },
     {
         name: "Tailwind CSS",
+        icon: "/images/icons/tailwind.webp",
         categories: ["Styling"],
     },
     {
         name: "Framer Motion",
+        icon: "/images/icons/framer.webp",
         categories: ["Animations"],
     },
     {
         name: "Node.js",
+        icon: "/images/icons/nodejs.webp",
         categories: ["Backend Runtime"],
     },
     {
         name: "NestJS",
+        icon: "/images/icons/nestjs.svg",
         categories: ["Backend Framework"],
     },
     {
         name: "Go (Fiber)",
+        icon: "/images/icons/fiber.svg",
         categories: ["Backend Framework"],
     },
     {
         name: "PostgreSQL",
+        icon: "/images/icons/postgres.webp",
         categories: ["Database"],
     },
     {
         name: "Prisma",
+        icon: "/images/icons/prisma.svg",
         categories: ["Database"],
     },
     {
         name: "Firebase",
+        icon: "/images/icons/firebase.webp",
         categories: ["Database", "Auth"],
     },
     {
         name: "Git & GitHub",
+        icon: "/images/icons/git.webp",
         categories: ["Version Control"],
     },
     {
         name: "SEO",
+        icon: "/images/icons/seo.webp",
         categories: ["Search Optimization"],
     },
 ];
@@ -323,11 +384,58 @@ const pricingPlans: PricingPlan[] = [
     },
 ];
 
+const resumeSummary =
+    "Passionate Full Stack Developer with a strong foundation in modern web technologies. Experienced in building scalable applications with React, Next.js, and Node.js, and proficient in backend development with NestJS and databases like PostgreSQL and MongoDB. Dedicated to writing clean, maintainable code and delivering high-quality user experiences.";
+
+const languages: string[] = ["English (Fluent)", "Yoruba (Native)"];
+
+const awards: Award[] = [
+    {
+        name: "W3Schools Certified Developer",
+        year: "2024",
+        description:
+            "Achieved top scores in JavaScript and React certifications.",
+    },
+    {
+        name: "Hacktoberfest Contributor",
+        year: "2024",
+        description:
+            "Contributed to multiple open-source projects during the annual event.",
+    },
+];
+
+const interests: string[] = [
+    "Open Source",
+    "Web3",
+    "Blockchain",
+    "UI/UX Design",
+    "Machine Learning",
+];
+
+/** The resume PDF's content: the site's own arrays, plus the resume-only lists above. */
+const resumeData: ResumeData = {
+    profile: siteConfig,
+    summary: resumeSummary,
+    experience: workExperience,
+    education,
+    certifications,
+    skills: skills.map((skill) => skill.name),
+    // A resume lists shipped or in-flight work, never planned or backlog ideas.
+    projects: projects.filter(
+        ({ status }) => status === "completed" || status === "active",
+    ),
+    languages,
+    awards,
+    interests,
+};
+
 export {
+    navlinks,
     projects,
     workExperience,
     education,
     certifications,
     skills,
     pricingPlans,
+    resumeData,
 };

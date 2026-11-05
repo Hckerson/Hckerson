@@ -1,0 +1,185 @@
+@import "tailwindcss";
+@custom-variant light (&:where(.light, .light *));
+
+:root {
+    --background: #050c14;
+    --foreground: #ffffff;
+    --surface-primary: #050c14;
+    --surface-secondary: #0c0a09;
+    --surface-tertiary: #1c1917;
+    --text-sub: #78716c;
+    --text-primary: #ffffff;
+    --text-secondary: #d4d4d4;
+    --text-muted: #a8a29e;
+    --accent-cyan: #22d3ee;
+    --accent-orange: #fb923c;
+    --accent-green: #4ade80;
+    --accent-purple: #c084fc;
+    --accent-red: #f87171;
+    --accent-violet: #8b5cf6;
+    --accent-ash: #94a3b8;
+    --accent-mauve: #e879f9;
+    --accent-pink: #f472b6;
+    --accent-yellow: #facc15;
+    --accent-brown: #a8a29e;
+    --accent-clay: #d6d3d1;
+    --accent-blue: #60a5fa;
+
+    --border: rgba(255, 255, 255, 0.1);
+
+    /* Motion — see docs/MOTION.md. Theme-independent, so .light does not override them. */
+    --motion-duration-fast: 150ms;
+    --motion-duration-base: 300ms;
+    --motion-duration-slow: 500ms;
+    --motion-ease-out: cubic-bezier(0, 0, 0.58, 1);
+    --motion-ease-in: cubic-bezier(0.42, 0, 1, 1);
+}
+
+.light {
+    --background: #ffffff;
+    --foreground: #0c0a09;
+
+    --surface-primary: #ffffff;
+    --surface-secondary: #f5f5f4;
+    --surface-tertiary: #e7e5e4;
+
+    --text-primary: #0c0a09;
+    --text-secondary: #292524;
+    --text-muted: #57534e;
+    --text-sub: #78716c;
+
+    --accent-cyan: #0891b2;
+    --accent-orange: #ea580c;
+    --accent-green: #16a34a;
+    --accent-purple: #9333ea;
+    --accent-red: #dc2626;
+    --accent-violet: #7c3aed;
+    --accent-ash: #475569;
+    --accent-mauve: #d946ef;
+    --accent-pink: #db2777;
+    --accent-yellow: #ca8a04;
+    --accent-brown: #78350f;
+    --accent-clay: #78716c;
+    --accent-blue: #2563eb;
+
+    --border: rgba(0, 0, 0, 0.1);
+}
+
+@theme inline {
+    --color-foreground: var(--foreground);
+    --color-background: var(--background);
+
+    --color-surface-primary: var(--surface-primary);
+    --color-surface-secondary: var(--surface-secondary);
+    --color-surface-tertiary: var(--surface-tertiary);
+
+    --color-text-primary: var(--text-primary);
+    --color-text-secondary: var(--text-secondary);
+    --color-text-muted: var(--text-muted);
+    --color-text-sub: var(--text-sub);
+
+    --color-accent-cyan: var(--accent-cyan);
+    --color-accent-orange: var(--accent-orange);
+    --color-accent-green: var(--accent-green);
+    --color-accent-purple: var(--accent-purple);
+    --color-accent-red: var(--accent-red);
+    --color-accent-violet: var(--accent-violet);
+    --color-accent-ash: var(--accent-ash);
+    --color-accent-mauve: var(--accent-mauve);
+    --color-accent-pink: var(--accent-pink);
+    --color-accent-yellow: var(--accent-yellow);
+    --color-accent-brown: var(--accent-brown);
+    --color-accent-clay: var(--accent-clay);
+    --color-accent-blue: var(--accent-blue);
+
+    --color-border: var(--border);
+
+    --font-clash: var(--font-clash-display);
+
+    --breakpoint-xs: 480px;
+
+    --animate-accordion-down: accordion-down var(--motion-duration-base)
+        var(--motion-ease-out);
+    --animate-accordion-up: accordion-up var(--motion-duration-base)
+        var(--motion-ease-out);
+
+    @keyframes accordion-down {
+        from {
+            height: 0;
+        }
+        to {
+            height: var(--radix-accordion-content-height);
+        }
+    }
+
+    @keyframes accordion-up {
+        from {
+            height: var(--radix-accordion-content-height);
+        }
+        to {
+            height: 0;
+        }
+    }
+}
+
+.xxlarge-text {
+    @apply xs:text-[44px] text-[32px] leading-[1.1] sm:text-[56px] md:text-[68px] lg:text-[80px] xl:text-[92px] 2xl:text-[100px];
+}
+
+.xlarge-text {
+    @apply xs:text-[36px] text-[26px] leading-[1.1] sm:text-[46px] md:text-[56px] lg:text-[64px] xl:text-[72px] 2xl:text-[80px];
+}
+
+.large-text {
+    @apply xs:text-[28px] text-[22px] leading-[1.2] sm:text-[36px] md:text-[42px] lg:text-[48px] xl:text-[56px] 2xl:text-[64px];
+}
+
+.md-text {
+    @apply xs:text-[22px] text-[18px] sm:text-[26px] md:text-[30px] lg:text-[36px] xl:text-[42px] 2xl:text-[48px];
+}
+
+.base-text {
+    @apply xs:text-[16px] text-[14px] sm:text-[18px] md:text-[20px] lg:text-[24px] xl:text-[28px] 2xl:text-[32px];
+}
+
+.sm-text {
+    @apply xs:text-[11px] text-[10px] sm:text-[12px] md:text-[14px] lg:text-[16px] xl:text-[18px] 2xl:text-[20px];
+}
+
+.xs-text {
+    @apply xs:text-[9px] text-[8px] sm:text-[10px] md:text-[11px] lg:text-[12px] xl:text-[13px] 2xl:text-[14px];
+}
+
+.xlarge-pad {
+    @apply px-10 sm:px-16 lg:px-24 xl:px-32;
+}
+
+.large-pad {
+    @apply px-6 sm:px-10 lg:px-14 xl:px-20;
+}
+
+.md-pad {
+    @apply px-4 md:px-8 xl:px-12;
+}
+
+.xlarge-pady {
+    @apply py-20 sm:py-28 xl:py-38;
+}
+
+.large-pady {
+    @apply py-8 sm:py-12 xl:py-16;
+}
+
+.md-pady {
+    @apply py-4 md:py-8 xl:py-12;
+}
+
+a:focus-visible,
+button:focus-visible {
+    @apply outline-accent-cyan rounded-sm outline-2 outline-offset-2;
+}
+
+body {
+    background: var(--background);
+    color: var(--foreground);
+}

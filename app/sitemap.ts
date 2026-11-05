@@ -1,12 +1,12 @@
 import type { MetadataRoute } from "next";
 import { projects } from "@/lib/data/mapped-data";
-import { showPricing, siteConfig } from "@/lib/constant";
+import { routes, showPricing, siteConfig } from "@/lib/constant";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const routes = [
+    const pages = [
         { path: "", priority: 1 },
-        { path: "/projects", priority: 0.8 },
-        ...(showPricing ? [{ path: "/pricing", priority: 0.6 }] : []),
+        { path: routes.projects, priority: 0.8 },
+        ...(showPricing ? [{ path: routes.pricing, priority: 0.6 }] : []),
     ].map(({ path, priority }) => ({
         url: `${siteConfig.url}${path}`,
         changeFrequency: "monthly" as const,
@@ -14,10 +14,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }));
 
     const projectRoutes = projects.map((project) => ({
-        url: `${siteConfig.url}/projects/${project.id}`,
+        url: `${siteConfig.url}${routes.project(project.id)}`,
         changeFrequency: "yearly" as const,
         priority: 0.5,
     }));
 
-    return [...routes, ...projectRoutes];
+    return [...pages, ...projectRoutes];
 }

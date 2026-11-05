@@ -1,11 +1,8 @@
 # hckerson.com
 
-Personal portfolio — site content (projects, skills, work history, education,
-pricing) and SEO metadata routes.
+Personal portfolio site — projects, pricing and background.
 
-This branch has no UI: no pages, components, styles, fonts or images. It is a
-Next.js 16 (App Router) + TypeScript shell around the content, ready for a new
-front end.
+Built with Next.js 16 (App Router), React 19, TypeScript and Tailwind CSS v4.
 
 ## Requirements
 
@@ -16,7 +13,7 @@ front end.
 
 ```bash
 pnpm install
-pnpm dev          # http://localhost:4004 — serves /robots.txt and /sitemap.xml only
+pnpm dev          # http://localhost:4004
 ```
 
 ## Scripts
@@ -36,34 +33,56 @@ Before pushing, `pnpm lint && pnpm typecheck && pnpm build` should all pass.
 
 ## Environment
 
-| Variable               | Required   | Purpose                                          |
-| ---------------------- | ---------- | ------------------------------------------------ |
-| `NEXT_PUBLIC_SITE_URL` | production | Absolute base for `sitemap.xml` and `robots.txt` |
+| Variable               | Required   | Purpose                                                        |
+| ---------------------- | ---------- | -------------------------------------------------------------- |
+| `NEXT_PUBLIC_SITE_URL` | production | Absolute base for canonical URLs, OpenGraph images and sitemap |
 
 Without it, `siteConfig.url` falls back to `http://localhost:4004`, which is
-fine locally but emits a wrong `sitemap.xml` if deployed. Set it to the
-deployed origin, e.g. `https://hckerson.com`.
+fine locally but emits unusable share URLs and a wrong `sitemap.xml` if
+deployed. Set it to the deployed origin, e.g. `https://hckerson.com`.
 
 ## Layout
 
 ```
-app/                 robots.ts, sitemap.ts — metadata routes only
+app/                 routes, layout, globals.css, sitemap/robots/icon
+components/
+  app-layout.tsx     <body>, navbar, footer
+  sections/          homepage sections
+  ui/                buttons, cards, navbar, footer, brand icons
+hooks/               useTheme, useMediaQuery
 lib/
-  constant.ts        siteConfig (name, email, socials, URL), showPricing
-  data/              site content (projects, skills, work history, education, pricing)
+  constant.ts        siteConfig — name, email, socials, URL
+  data/              site content (projects, skills, work history, pricing)
+  fonts.ts           Clash Display via next/font/local
   interface.ts       content shapes
   types.ts           shared unions
+  utils.ts           cn() — clsx + tailwind-merge
+public/              images and fonts only, no source
 ```
 
 ## Conventions
 
-- **Content lives in `lib/data/mapped-data.ts`.** `sitemap.xml` derives its
-  `/projects/[id]` entries from `projects`.
-- `workExperience` entries carry a `kind` of `"employment"` or
-  `"personal-project"` — keep personal work out of the `"employment"` bucket.
+- **Content lives in `lib/data/mapped-data.ts`.** Adding a project there is
+  enough — `/projects`, the homepage section and the prerendered
+  `/projects/[id]` pages all derive from it via `generateStaticParams`.
+- **Styling** uses the design tokens in `app/globals.css` (`--surface-*`,
+  `--text-*`, `--accent-*`) exposed as Tailwind utilities through
+  `@theme inline`. Prefer those over raw colours.
+- **Type scale** uses the `xs-text` … `xxlarge-text` helper classes rather than
+  per-breakpoint `text-[Npx]` chains.
+- **Display font** is the `font-clash` utility, not an import of the font
+  object.
+- **Merging classes** goes through `cn()` so caller overrides win.
+- **Icons** come from `lucide-react`. Brand marks (GitHub, X) live in
+  `components/ui/brand-icons.tsx` — lucide has deprecated its brand icons and
+  will remove them in v1.0.
+- **Theme** is applied to `<html>` pre-paint by an inline script in
+  `app/layout.tsx`; `useTheme` treats that class as the source of truth.
 
 ## Notes
 
-- `app/sitemap.ts` still lists `/`, `/projects` and `/projects/[id]` (plus
-  `/pricing` when `showPricing` is on). Those pages are not on this branch, so
-  every URL in the sitemap 404s until a front end is added back.
+- `education` and `certifications` in `mapped-data.ts` render through
+  `components/sections/education-section.tsx` on the homepage.
+- `workExperience` entries carry a `kind` of `"employment"` or
+  `"personal-project"`. The qualification card badges them separately —
+  keep personal work out of the `"employment"` bucket.
