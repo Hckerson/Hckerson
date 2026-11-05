@@ -149,19 +149,30 @@ const workExperience: WorkExperience[] = [
         kind: "employment",
         company: "Tekcify",
         location: "Remote",
-        period: "2024 - Present",
+        period: "2025 - Present",
         responsibilities: [
             "Developed AI-powered products including automation tools, document intelligence systems, and chat-based assistants",
             "Designed responsive frontend interfaces focused on usability and real-time interaction",
             "Architected backend systems supporting AI pipelines, API orchestration, and scalable user operations",
             "Contributed to product decisions, optimizing both performance and user experience",
         ],
-        // No skills or achievements were written for this role; the card
-        // hides empty lists.
-        skills: [],
+        skills: [
+            "Next.js",
+            "TypeScript",
+            "NestJS",
+            "PostgreSQL",
+            "Prisma",
+            "Drizzle ORM",
+            "Redis",
+            "OAuth 2.0",
+        ],
         description:
-            "Developed AI-powered products including automation tools, document intelligence systems, and chat-based assistants.",
-        achievements: [],
+            "Full-stack engineering across Tekcify's product studio: its admin platform, the shared auth and account services, and the Binx and Plud products.",
+        achievements: [
+            "Built most of Tekcify's admin platform, a NestJS and Prisma API with a Next.js dashboard for users, subscriptions, revenue analytics, teams and roles across its products",
+            "Shipped features on Binx, an AI assistant that lives in WhatsApp, and Plud, an AI study workspace",
+            "Worked on the OAuth 2.0 auth server and account dashboard that sign users into every Tekcify product",
+        ],
     },
     {
         title: "Serene Heaven — Hotel Booking Platform",
