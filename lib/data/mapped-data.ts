@@ -1,28 +1,11 @@
 import {
     Certification,
     Education,
-    Navlink,
     PortfolioProject,
     Skill,
     WorkExperience,
     PricingPlan,
 } from "../interface";
-import { FolderOpen, Tags } from "lucide-react";
-import { GithubIcon } from "@/components/ui/brand-icons";
-import { showPricing, siteConfig } from "../constant";
-
-const navlinks: Navlink[] = [
-    { name: "Projects", link: "/projects", icon: FolderOpen },
-    ...(showPricing
-        ? [{ name: "Pricing", link: "/pricing", icon: Tags }]
-        : []),
-    {
-        name: "Github",
-        link: siteConfig.github,
-        icon: GithubIcon,
-        external: true,
-    },
-];
 
 const projects: PortfolioProject[] = [
     {
@@ -30,8 +13,6 @@ const projects: PortfolioProject[] = [
         title: "Dropbox Website Clone",
         description:
             "A modern clone of the Dropbox website featuring file upload/download, real-time collaboration, and a responsive design that mirrors the original platform's sleek interface.",
-        image: "/images/projects/cover/dropbox.webp",
-        landscape: "/images/projects/cover/dropbox-landscape.webp",
         tags: [
             "Next.js",
             "TypeScript",
@@ -51,8 +32,6 @@ const projects: PortfolioProject[] = [
         title: "Playwork DREAMS",
         description:
             'An interactive digital "Playground of Possibility" where students participate in STEM, storytelling, and design competitions. It features a gamified national leaderboard and specialized creator roles.',
-        image: "/images/projects/cover/playwork.webp",
-        landscape: "/images/projects/cover/playwork-landscape.webp",
         tags: [
             "Next.js",
             "Tailwind CSS",
@@ -72,8 +51,6 @@ const projects: PortfolioProject[] = [
         title: "Serene Heaven",
         description:
             "A luxury hotel booking platform featuring elegant room displays, real-time availability checking, and seamless booking experience. Includes admin dashboard for managing reservations and room inventory.",
-        image: "/images/projects/cover/serene-haven.webp",
-        landscape: "/images/projects/cover/serene-landscape.webp",
         tags: [
             "Next.js",
             "TypeScript",
@@ -94,8 +71,6 @@ const projects: PortfolioProject[] = [
         title: "Cresora - Finance Platform",
         description:
             "A comprehensive financial management platform designed for SMEs in Indonesia, featuring AI-powered insights, real-time cash tracking, bill management, and flexible reporting. Built with modern web technologies and interactive data visualization.",
-        image: "/images/projects/cover/cresora.webp",
-        landscape: "/images/projects/cover/cresora-landscape.webp",
         tags: [
             "Next.js",
             "TypeScript",
@@ -244,78 +219,63 @@ const certifications: Certification[] = [
 const skills: Skill[] = [
     {
         name: "HTML",
-        icon: "/images/icons/html.webp",
         categories: ["Markup Language"],
     },
-    { name: "CSS", icon: "/images/icons/css.webp", categories: ["Styling"] },
+    { name: "CSS", categories: ["Styling"] },
     {
         name: "JavaScript",
-        icon: "/images/icons/js.webp",
         categories: ["Programming Language"],
     },
     {
         name: "TypeScript",
-        icon: "/images/icons/ts.webp",
         categories: ["Programming Language"],
     },
     {
         name: "React.js",
-        icon: "/images/icons/react.webp",
         categories: ["Frontend Library"],
     },
     {
         name: "Next.js",
-        icon: "/images/icons/nextjs.svg",
         categories: ["Fullstack Framework"],
     },
     {
         name: "Tailwind CSS",
-        icon: "/images/icons/tailwind.webp",
         categories: ["Styling"],
     },
     {
         name: "Framer Motion",
-        icon: "/images/icons/framer.webp",
         categories: ["Animations"],
     },
     {
         name: "Node.js",
-        icon: "/images/icons/nodejs.webp",
         categories: ["Backend Runtime"],
     },
     {
         name: "NestJS",
-        icon: "/images/icons/nestjs.svg",
         categories: ["Backend Framework"],
     },
     {
         name: "Go (Fiber)",
-        icon: "/images/icons/fiber.svg",
         categories: ["Backend Framework"],
     },
     {
         name: "PostgreSQL",
-        icon: "/images/icons/postgres.webp",
         categories: ["Database"],
     },
     {
         name: "Prisma",
-        icon: "/images/icons/prisma.svg",
         categories: ["Database"],
     },
     {
         name: "Firebase",
-        icon: "/images/icons/firebase.webp",
         categories: ["Database", "Auth"],
     },
     {
         name: "Git & GitHub",
-        icon: "/images/icons/git.webp",
         categories: ["Version Control"],
     },
     {
         name: "SEO",
-        icon: "/images/icons/seo.webp",
         categories: ["Search Optimization"],
     },
 ];
@@ -364,7 +324,6 @@ const pricingPlans: PricingPlan[] = [
 ];
 
 export {
-    navlinks,
     projects,
     workExperience,
     education,
