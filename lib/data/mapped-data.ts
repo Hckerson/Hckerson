@@ -156,8 +156,8 @@ const workExperience: WorkExperience[] = [
             "Architected backend systems supporting AI pipelines, API orchestration, and scalable user operations",
             "Contributed to product decisions, optimizing both performance and user experience",
         ],
-        // Skills and achievements were never written for this role; the card
-        // hides empty lists until they are.
+        // No skills or achievements were written for this role; the card
+        // hides empty lists.
         skills: [],
         description:
             "Developed AI-powered products including automation tools, document intelligence systems, and chat-based assistants.",

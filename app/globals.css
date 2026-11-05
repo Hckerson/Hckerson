@@ -28,11 +28,8 @@
     --border: rgba(255, 255, 255, 0.1);
 
     /* Motion — see docs/MOTION.md. Theme-independent, so .light does not override them. */
-    --motion-duration-fast: 150ms;
     --motion-duration-base: 300ms;
-    --motion-duration-slow: 500ms;
     --motion-ease-out: cubic-bezier(0, 0, 0.58, 1);
-    --motion-ease-in: cubic-bezier(0.42, 0, 1, 1);
 }
 
 .light {
