@@ -1,0 +1,333 @@
+import {
+    Certification,
+    Education,
+    PortfolioProject,
+    Skill,
+    WorkExperience,
+    PricingPlan,
+} from "../interface";
+
+const projects: PortfolioProject[] = [
+    {
+        id: 1,
+        title: "Dropbox Website Clone",
+        description:
+            "A modern clone of the Dropbox website featuring file upload/download, real-time collaboration, and a responsive design that mirrors the original platform's sleek interface.",
+        tags: [
+            "Next.js",
+            "TypeScript",
+            "Tailwind CSS",
+            "Firebase",
+            "React Query",
+        ],
+        liveUrl: "https://dropbox-clone-seven-psi.vercel.app/",
+        githubUrl: "https://github.com/hckerson/dropbox-clone",
+        category: "fullstack",
+        status: "completed",
+        learnings:
+            "Implemented drag-and-drop file uploads, real-time file synchronization, and mastered complex state management for file operations.",
+    },
+    {
+        id: 2,
+        title: "Playwork DREAMS",
+        description:
+            'An interactive digital "Playground of Possibility" where students participate in STEM, storytelling, and design competitions. It features a gamified national leaderboard and specialized creator roles.',
+        tags: [
+            "Next.js",
+            "Tailwind CSS",
+            "Framer Motion",
+            "Radix UI",
+            "AI Integration",
+        ],
+        liveUrl: "https://play-sage-nine.vercel.app/",
+        githubUrl: "https://github.com/hckerson/play-sage-nine",
+        category: "frontend",
+        status: "completed",
+        learnings:
+            "Built an interactive platform with a gamified national leaderboard system, integrated AI tools for instant student feedback, and implemented specialized creator role experiences.",
+    },
+    {
+        id: 3,
+        title: "Serene Heaven",
+        description:
+            "A luxury hotel booking platform featuring elegant room displays, real-time availability checking, and seamless booking experience. Includes admin dashboard for managing reservations and room inventory.",
+        tags: [
+            "Next.js",
+            "TypeScript",
+            "Tailwind CSS",
+            "React Query",
+            "Framer Motion",
+            "Stripe",
+        ],
+        liveUrl: "https://serene-heaven.vercel.app/",
+        githubUrl: "https://github.com/hckerson/serene-heaven",
+        category: "frontend",
+        status: "completed",
+        learnings:
+            "Implemented secure payment processing with Stripe, built a responsive booking system, and created an intuitive admin interface for hotel management.",
+    },
+    {
+        id: 4,
+        title: "Cresora - Finance Platform",
+        description:
+            "A comprehensive financial management platform designed for SMEs in Indonesia, featuring AI-powered insights, real-time cash tracking, bill management, and flexible reporting. Built with modern web technologies and interactive data visualization.",
+        tags: [
+            "Next.js",
+            "TypeScript",
+            "Tailwind CSS",
+            "React Flow",
+            "Framer Motion",
+            "Radix UI",
+            "Lucide React",
+        ],
+        liveUrl: "https://cresora.vercel.app",
+        githubUrl: "https://github.com/hckerson/cresora",
+        category: "frontend",
+        status: "completed",
+        learnings:
+            "Built an interactive financial dashboard with React Flow for data visualization, implemented complex UI components with Radix UI, and created a responsive design system for financial data presentation. Mastered advanced React patterns for state management and component composition.",
+    },
+];
+
+const workExperience: WorkExperience[] = [
+    {
+        title: "Full Stack Developer",
+        kind: "employment",
+        company: "Vouchmark",
+        location: "Global/Remote",
+        period: "2024 - Present",
+        responsibilities: [
+            "Leading the design and implementation of both frontend and backend architectures",
+            "Developing a robust business verification platform for supplier onboarding and trust scoring",
+            "Integrating complex ERP systems like SAP with the Vouchmark platform",
+            "Ensuring scalability and security of the entire system architecture",
+        ],
+        skills: [
+            "Next.js",
+            "TypeScript",
+            "Node.js",
+            "PostgreSQL",
+            "System Architecture",
+            "ERP Integration",
+        ],
+        description:
+            "Managing the end-to-end technical architecture and development for a business verification platform focused on African markets.",
+        achievements: [
+            "Architected a scalable full-stack solution from the ground up",
+            "Built automated risk-assessment tooling that replaced manual supplier review steps",
+        ],
+    },
+    {
+        title: "Serene Heaven — Hotel Booking Platform",
+        kind: "personal-project",
+        company: "Personal Project",
+        location: "Self-directed",
+        period: "2025",
+        responsibilities: [
+            "Developed responsive booking system with real-time availability",
+            "Created admin dashboard for reservation management",
+            "Built room inventory management system",
+            "Implemented user authentication and authorization",
+        ],
+        skills: [
+            "Next.js",
+            "TypeScript",
+            "Prisma",
+            "PostgreSQL",
+            "Tailwind CSS",
+        ],
+        description:
+            "A luxury hotel booking platform built end to end, with booking logic, Stripe payments and admin controls.",
+        achievements: [
+            "Built a real-time room availability checker",
+            "Automated reservation emails and confirmation workflows",
+        ],
+    },
+    {
+        title: "One Place — Retail Management System",
+        kind: "personal-project",
+        company: "Personal Project",
+        location: "Self-directed",
+        period: "2024",
+        responsibilities: [
+            "Built a retail management system with React, Node.js and PostgreSQL",
+            "Created a secure user authentication and authorization system",
+            "Built a responsive dashboard for sales and inventory tracking",
+            "Developed a market analysis tool and portfolio management features",
+        ],
+        skills: ["Node.js", "PostgreSQL", "React", "Express", "JWT"],
+        description:
+            "A retail management backend built to practise data integrity, access control and high-volume inventory modelling.",
+        achievements: [
+            "Designed a normalised database schema for high-volume inventory tracking",
+            "Implemented role-based access control (RBAC) across every API route",
+        ],
+    },
+    {
+        title: "Dropbox Clone — Cloud Storage",
+        kind: "personal-project",
+        company: "Personal Project",
+        location: "Self-directed",
+        period: "2023",
+        responsibilities: [
+            "Built a file sharing service with React, Node.js and Firebase",
+            "Created secure file upload/download with drag-and-drop support",
+            "Designed the state management model for concurrent file operations",
+        ],
+        skills: ["React", "Node.js", "Firebase", "TypeScript", "Tailwind CSS"],
+        description:
+            "A cloud storage clone with real-time sync and secure file handling, built to learn complex client-side state.",
+        achievements: [
+            "Implemented seamless drag-and-drop file uploading",
+            "Cut redundant re-renders during file operations by normalising the upload state tree",
+        ],
+    },
+];
+
+const education: Education[] = [
+    {
+        degree: "B.Sc. Computer Science",
+        institution: "Obafemi Awolowo University",
+        start: "2023",
+        end: "2028",
+        inProgress: true,
+        description:
+            "Coursework spanning algorithms, data structures, database systems and software engineering, alongside self-directed work in full-stack web development.",
+        coursework: [
+            "Data Structures & Algorithms",
+            "Database Systems",
+            "Operating Systems",
+            "Software Engineering",
+            "Computer Networks",
+        ],
+    },
+];
+
+const certifications: Certification[] = [
+    {
+        name: "W3Schools JavaScript Certification",
+        issuer: "W3Schools",
+        year: "2024",
+    },
+    {
+        name: "W3Schools React Certification",
+        issuer: "W3Schools",
+        year: "2024",
+    },
+];
+
+const skills: Skill[] = [
+    {
+        name: "HTML",
+        categories: ["Markup Language"],
+    },
+    { name: "CSS", categories: ["Styling"] },
+    {
+        name: "JavaScript",
+        categories: ["Programming Language"],
+    },
+    {
+        name: "TypeScript",
+        categories: ["Programming Language"],
+    },
+    {
+        name: "React.js",
+        categories: ["Frontend Library"],
+    },
+    {
+        name: "Next.js",
+        categories: ["Fullstack Framework"],
+    },
+    {
+        name: "Tailwind CSS",
+        categories: ["Styling"],
+    },
+    {
+        name: "Framer Motion",
+        categories: ["Animations"],
+    },
+    {
+        name: "Node.js",
+        categories: ["Backend Runtime"],
+    },
+    {
+        name: "NestJS",
+        categories: ["Backend Framework"],
+    },
+    {
+        name: "Go (Fiber)",
+        categories: ["Backend Framework"],
+    },
+    {
+        name: "PostgreSQL",
+        categories: ["Database"],
+    },
+    {
+        name: "Prisma",
+        categories: ["Database"],
+    },
+    {
+        name: "Firebase",
+        categories: ["Database", "Auth"],
+    },
+    {
+        name: "Git & GitHub",
+        categories: ["Version Control"],
+    },
+    {
+        name: "SEO",
+        categories: ["Search Optimization"],
+    },
+];
+
+const pricingPlans: PricingPlan[] = [
+    {
+        name: "MVP Starter",
+        price: 300,
+        starter: "our free plan",
+        description: "Perfect for validating your idea with a solid MVP.",
+        features: [
+            "UI/UX Design Direction",
+            "Single Platform Development",
+            "Core Features Implementation",
+            "2 Rounds of Revisions",
+            "Deployment & Handover",
+        ],
+    },
+    {
+        name: "Full-Stack SaaS",
+        price: 500,
+        starter: "MVP Starter",
+        description: "A complete, scalable SaaS solution from scratch.",
+        features: [
+            "Full-Stack Development",
+            "Complex Database Schema",
+            "Stripe/Payment Integration",
+            "Advanced Auth & Security",
+            "30 Days Post-Launch Support",
+        ],
+        isPopular: true,
+    },
+    {
+        name: "Custom Enterprise",
+        price: "Custom",
+        starter: "Full-Stack SaaS",
+        description: "Tailored solutions for complex business needs.",
+        features: [
+            "Dedicated Development Team",
+            "Legacy System Integration",
+            "High-Performance Optimization",
+            "Custom Feature Architecture",
+            "Ongoing Maintenance & Support",
+        ],
+    },
+];
+
+export {
+    projects,
+    workExperience,
+    education,
+    certifications,
+    skills,
+    pricingPlans,
+};
