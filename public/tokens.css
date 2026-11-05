@@ -1,0 +1,163 @@
+:root {
+    --colors-primary: ;
+    --colors-primary-dark: ;
+    --colors-primary-light: ;
+
+    --colors-accent: ;
+    --colors-accent-dark: ;
+    --colors-accent-light: ;
+
+    --colors-highlight: ;
+    --colors-highlight-dark: ;
+    --colors-highlight-light: ;
+
+    --colors-success: ;
+    --colors-success-light: ;
+    --colors-warning: ;
+    --colors-warning-light: ;
+    --colors-error: ;
+    --colors-error-light: ;
+    --colors-info: ;
+    --colors-info-light: ;
+
+    --colors-background: ;
+    --colors-background-alt: ;
+    --colors-background-muted: ;
+
+    --colors-text: ;
+    --colors-text-secondary: ;
+    --colors-text-muted: ;
+    --colors-text-inverse: ;
+
+    --colors-border: ;
+    --colors-border-light: ;
+    --colors-border-dark: ;
+
+    --colors-overlay: ;
+
+    --fonts-display: ;
+    --fonts-body: ;
+    --fonts-mono: ;
+
+    --font-sizes-h1: ;
+    --line-heights-h1: ;
+    --font-weights-h1: ;
+
+    --font-sizes-h2: ;
+    --line-heights-h2: ;
+    --font-weights-h2: ;
+
+    --font-sizes-h3: ;
+    --line-heights-h3: ;
+    --font-weights-h3: ;
+
+    --font-sizes-h4: ;
+    --line-heights-h4: ;
+    --font-weights-h4: ;
+
+    --font-sizes-h5: ;
+    --line-heights-h5: ;
+    --font-weights-h5: ;
+
+    --font-sizes-h6: ;
+    --line-heights-h6: ;
+    --font-weights-h6: ;
+
+    --font-sizes-lg: ;
+    --line-heights-lg: ;
+    --font-weights-lg: ;
+
+    --font-sizes-base: ;
+    --line-heights-base: ;
+    --font-weights-base: ;
+
+    --font-sizes-sm: ;
+    --line-heights-sm: ;
+    --font-weights-sm: ;
+
+    --font-sizes-xs: ;
+    --line-heights-xs: ;
+    --font-weights-xs: ;
+
+    --font-sizes-label: ;
+    --line-heights-label: ;
+    --font-weights-label: ;
+
+    --font-sizes-caption: ;
+    --line-heights-caption: ;
+    --font-weights-caption: ;
+
+    --font-sizes-micro: ;
+    --line-heights-micro: ;
+    --font-weights-micro: ;
+    --letter-spacings-micro: ;
+
+    --measures-prose: ;
+
+    --spacing-0: ;
+    --spacing-1: ;
+    --spacing-2: ;
+    --spacing-3: ;
+    --spacing-4: ;
+    --spacing-5: ;
+    --spacing-6: ;
+    --spacing-8: ;
+    --spacing-10: ;
+    --spacing-12: ;
+    --spacing-16: ;
+    --spacing-20: ;
+    --spacing-24: ;
+    --spacing-32: ;
+
+    --gaps-xs: ;
+    --gaps-sm: ;
+    --gaps-md: ;
+    --gaps-lg: ;
+    --gaps-xl: ;
+
+    --paddings-xs: ;
+    --paddings-sm: ;
+    --paddings-md: ;
+    --paddings-lg: ;
+    --paddings-xl: ;
+    --paddings-2xl: ;
+
+    --margins-section-sm: ;
+    --margins-section-md: ;
+    --margins-section-lg: ;
+    --margins-section-xl: ;
+
+    --durations-fast: ;
+    --durations-normal: ;
+    --durations-slow: ;
+    --durations-slower: ;
+
+    --timing-functions-in: ;
+    --timing-functions-out: ;
+    --timing-functions-in-out: ;
+    --timing-functions-linear: ;
+    --timing-functions-smooth: ;
+
+    --shadows-sm: ;
+    --shadows-md: ;
+    --shadows-lg: ;
+    --shadows-xl: ;
+    --shadows-2xl: ;
+
+    --radii-none: ;
+    --radii-xs: ;
+    --radii-sm: ;
+    --radii-md: ;
+    --radii-lg: ;
+    --radii-xl: ;
+    --radii-full: ;
+
+    --z-indices-base: ;
+    --z-indices-dropdown: ;
+    --z-indices-sticky: ;
+    --z-indices-fixed: ;
+    --z-indices-modal-backdrop: ;
+    --z-indices-modal: ;
+    --z-indices-popover: ;
+    --z-indices-tooltip: ;
+}
