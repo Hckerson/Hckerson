@@ -45,26 +45,34 @@ deployed. Set it to the deployed origin, e.g. `https://hckerson.com`.
 
 ```
 app/                 routes, layout, globals.css, sitemap/robots/icon
+  resume.pdf/        static resume PDF, rendered at build time
 components/
   app-layout.tsx     <body>, navbar, footer
+  projects/          /projects page parts: backdrop, rail, detail, carousel
+  resume/            the resume PDF document and its parts (server-only)
   sections/          homepage sections
   ui/                buttons, cards, navbar, footer, brand icons
 hooks/               useTheme, useMediaQuery
 lib/
-  constant.ts        siteConfig — name, email, socials, URL
-  data/              site content (projects, skills, work history, pricing)
+  constant.ts        siteConfig, routes, contact links, flags
+  data/              site content (projects, skills, work history, pricing),
+                     plus resumeData for the PDF
   fonts.ts           Clash Display via next/font/local
   interface.ts       content shapes
   types.ts           shared unions
   utils.ts           cn() — clsx + tailwind-merge
 public/              images and fonts only, no source
+docs/                MOTION.md and feature plans
 ```
 
 ## Conventions
 
 - **Content lives in `lib/data/mapped-data.ts`.** Adding a project there is
   enough — `/projects`, the homepage section and the prerendered
-  `/projects/[id]` pages all derive from it via `generateStaticParams`.
+  `/projects/[id]` pages all derive from it via `generateStaticParams`, and
+  `/resume.pdf` is rebuilt from the same content.
+- **Internal links** come from `routes` in `lib/constant.ts`, never string
+  literals.
 - **Styling** uses the design tokens in `app/globals.css` (`--surface-*`,
   `--text-*`, `--accent-*`) exposed as Tailwind utilities through
   `@theme inline`. Prefer those over raw colours.

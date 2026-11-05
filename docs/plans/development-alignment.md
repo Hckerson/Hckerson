@@ -1,6 +1,6 @@
 # Plan — Bring `development` in line with `.claude/CLAUDE.md`
 
-Branch `development` @ `2e9977e` · 2026-11-05 · Status: Executed 2026-11-05 in `9476bc0`, `158419a`, `e183736`, `d6c61df`, `c2b6851`, plus the Tekcify entry (D8) — not verified by the gate or a browser
+Written against `development` @ `2e9977e` · 2026-11-05 · Status: Done. Executed in `9476bc0`, `158419a`, `e183736`, `d6c61df`, `c2b6851`, the Tekcify entry (D8) and the PDF fixes; verified by the gate and in the browser. The branches were then swapped, so this work now lives on `master`.
 
 ## 1. Thesis / Problem Framing
 
@@ -64,7 +64,14 @@ Removed from the earlier list: the footer's social links. They read from `siteCo
 export interface ResumeData {
     profile: Pick<
         typeof siteConfig,
-        "legalName" | "name" | "email" | "location" | "github" | "linkedin" | "twitter" | "url"
+        | "legalName"
+        | "name"
+        | "email"
+        | "location"
+        | "github"
+        | "linkedin"
+        | "twitter"
+        | "url"
     > & { phone?: string };
     summary: string;
     experience: WorkExperience[];
