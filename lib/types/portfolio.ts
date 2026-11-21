@@ -1,5 +1,7 @@
 export type ProjectStatus = "active" | "planned" | "backlog" | "completed";
 
+export type ProjectCategory = "fullstack" | "frontend";
+
 export type ExperienceKind = "employment" | "personal-project";
 
 export type SkillCategory =
@@ -26,7 +28,7 @@ export interface PortfolioProject {
     status: ProjectStatus;
     liveUrl: string;
     githubUrl: string;
-    category: string;
+    category: ProjectCategory;
     learnings: string;
 }
 
