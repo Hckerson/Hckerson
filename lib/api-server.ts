@@ -1,16 +1,21 @@
 import "server-only";
+import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
-import { API_BASE_URL } from "@/lib/constants";
+import { API_BASE_URL, SESSION_COOKIE } from "@/lib/constants";
 
-export const backendFetch = async (path: string, init: RequestInit = {}) =>
-    fetch(`${API_BASE_URL}${path}`, {
+export const backendFetch = async (path: string, init: RequestInit = {}) => {
+    const token = (await cookies()).get(SESSION_COOKIE)?.value;
+
+    return fetch(`${API_BASE_URL}${path}`, {
         ...init,
         cache: "no-store",
         headers: {
             "Content-Type": "application/json",
             ...init.headers,
+            ...(token ? { Authorization: `Bearer ${token}` } : {}),
         },
     });
+};
 
 export const readJson = async (source: Request | Response): Promise<unknown> =>
     await source.json().catch(() => null);

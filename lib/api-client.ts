@@ -1,7 +1,7 @@
 import axios from "axios";
-import { API_BASE_URL } from "@/lib/constants";
+import { API_BASE_URL, AUTH_ROUTE_PREFIX, LOGIN_ROUTE } from "@/lib/constants";
 import type { ApiResponse, Endpoint } from "@/lib/types/api";
-import type { AxiosInstance, AxiosRequestConfig } from "axios";
+import type { AxiosInstance, AxiosRequestConfig, AxiosError } from "axios";
 
 const defaultConfig: AxiosRequestConfig = {
     baseURL: API_BASE_URL,
@@ -55,3 +55,18 @@ export const query = {
     delete: <T = unknown>(url: Endpoint<T>, config?: AxiosRequestConfig) =>
         request<T>({ method: "DELETE", url, ...config }),
 };
+
+apiClient.interceptors.response.use(
+    (response) => response,
+    (error: AxiosError) => {
+        if (error.response?.status === 401) {
+            if (
+                typeof window !== "undefined" &&
+                !window.location.pathname.startsWith(AUTH_ROUTE_PREFIX)
+            ) {
+                window.location.href = LOGIN_ROUTE;
+            }
+        }
+        return Promise.reject(error);
+    },
+);
