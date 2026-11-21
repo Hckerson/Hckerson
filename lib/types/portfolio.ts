@@ -1,4 +1,22 @@
-import { ExperienceKind, ProjectStatus, SkillCategory } from "./types";
+export type ProjectStatus = "active" | "planned" | "backlog" | "completed";
+
+export type ExperienceKind = "employment" | "personal-project";
+
+export type SkillCategory =
+    | "Markup Language"
+    | "Styling"
+    | "Programming Language"
+    | "Frontend Library"
+    | "Fullstack Framework"
+    | "Animations"
+    | "Backend Runtime"
+    | "Database"
+    | "Auth"
+    | "Backend Framework"
+    | "Web Framework"
+    | "Version Control"
+    | "Search Optimization"
+    | "other";
 
 export interface PortfolioProject {
     id: number;
@@ -14,10 +32,6 @@ export interface PortfolioProject {
 
 export interface WorkExperience {
     title: string;
-    /**
-     * Paid employment or self-directed work. Keep personal projects out of
-     * `"employment"` so they are never mistaken for a job.
-     */
     kind: ExperienceKind;
     company: string;
     location: string;
@@ -31,11 +45,8 @@ export interface WorkExperience {
 export interface Education {
     degree: string;
     institution: string;
-    /** Start year. */
     start: string;
-    /** Graduation year, or the expected one while still enrolled. */
     end: string;
-    /** True while enrolled — `end` is then the expected graduation year. */
     inProgress?: boolean;
     description: string;
     coursework?: string[];

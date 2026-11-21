@@ -1,11 +1,11 @@
-import {
+import type {
     Certification,
     Education,
     PortfolioProject,
     Skill,
     WorkExperience,
     PricingPlan,
-} from "../interface";
+} from "@/lib/types";
 
 const projects: PortfolioProject[] = [
     {
