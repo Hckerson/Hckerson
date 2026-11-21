@@ -164,6 +164,10 @@ const starterConfig: ConfigArray = [
         files: TESTS,
         rules: { "max-lines": "off" },
     },
+    {
+        files: ["lib/services/**/*.ts"],
+        rules: { "no-console": "off" },
+    },
 ];
 
 const eslintConfig = [
