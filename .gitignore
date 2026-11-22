@@ -44,3 +44,5 @@ next-env.d.ts
 # local tool output
 __pycache__/
 /.playwright-mcp/
+
+/.claude/skills/
